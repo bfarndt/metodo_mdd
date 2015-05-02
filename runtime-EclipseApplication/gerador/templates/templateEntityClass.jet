@@ -1,0 +1,21 @@
+<?php
+
+class <f:uc length="1"><c:get select="$e/@name" /></f:uc>
+{
+	<c:iterate select="$e/Feature" var="f">
+		private $<c:get select="$f/@name" />;
+	</c:iterate>
+	<c:iterate select="$e/Feature" var="f">
+		public function get<f:uc length="1"><c:get select="$f/@name" /></f:uc>()
+		{
+			return $this-><c:get select="$f/@name" />;
+		}
+		
+		public function set<f:uc length="1"><c:get select="$f/@name" /></f:uc>($<c:get select="$f/@name" />)
+		{
+			$this-><c:get select="$f/@name" /> = <c:get select="$f/@name" />;
+		}
+	</c:iterate>
+}
+
+?>

@@ -1,0 +1,63 @@
+<?php
+
+include "<c:get select="$e/@name" />.class.php";
+
+class <f:uc length="1"><c:get select="$e/@name" /></f:uc>DB
+{
+	private $dbconn;
+	private $dbname = "jet";
+	private $user = "jet";
+	private $password = "jet";
+	
+	public function __construct()
+	{
+		$this->dbconn = pg_connect("dbname=" . $this->dbname . " user=" . $this->user . " password=" . $this->password);
+	}
+	
+	public function add($<c:get select="$e/@name" />)
+	{
+		$query = pg_query('INSERT INTO <f:lc><c:get select="$e/@name" /></f:lc>(<c:iterate select="$e/Feature" var="f" delimiter=", "
+		><c:get select="$f/@name" /></c:iterate>) VALUES(<c:iterate select="$e/Feature" var="f" delimiter=", "
+		>"' . $<c:get select="$e/@name" />->get<f:uc length="1"><c:get select="$f/@name" /></f:uc>() . '"</c:iterate>)');
+		
+		return (pg_affected_rows($query) > 0);
+	}
+	
+	public function update($<c:get select="$e/@name" />)
+	{
+		$query = pg_query('UPDATE <f:lc><c:get select="$e/@name" /></f:lc> SET
+			<c:iterate select="$e/Feature" var="f" delimiter=", "
+				><c:get select="$f/@name" /> = "' . $<c:get select="$e/@name" />->get<f:uc length="1"><c:get select="$f/@name" /></f:uc>() . '"</c:iterate>');
+		
+		return (pg_affected_rows($query) > 0);
+	}
+	
+	public function destroy()
+	{
+		$query = pg_query("DELETE FROM <f:lc><c:get select="$e/@name" /></f:lc>");
+		
+		return (pg_affected_rows($query) > 0);
+	}
+	
+	public function getAll()
+	{
+		$result = array();
+		
+		$query = pg_query("SELECT * FROM <f:lc><c:get select="$e/@name" /></f:lc>");
+		
+		if ( ! $query) {
+			while ($row = pg_fetch_assoc($query)) {
+				$<c:get select="$e/@name" /> = new <f:uc length="1"><c:get select="$e/@name" /></f:uc>();
+				<c:iterate select="$e/Feature" var="f">
+					$<c:get select="$e/@name" />->set<f:uc length="1"><c:get select="$f/@name" /></f:uc>($row["<c:get select="$f/@name" />"]);
+				</c:iterate>
+				
+				$result[] = $<c:get select="$e/@name" />;
+			}
+		}
+		
+		return $result;
+	}
+}
+
+?>

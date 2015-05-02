@@ -1,0 +1,7 @@
+<c:iterate select="/Domainmodel/Entity" var="e">
+CREATE TABLE <f:lc><c:get select="$e/@name" /></f:lc>
+(
+	<c:iterate select="$e/Feature" var="f" delimiter=", "
+		><c:get select="$f/@name" /> text</c:iterate>
+);
+</c:iterate>
