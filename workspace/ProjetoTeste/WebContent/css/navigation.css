@@ -1,0 +1,135 @@
+@CHARSET "ISO-8859-1";
+
+table.navMainTable {
+    border: 1px solid #000000;
+}
+
+td.navTopArea {
+    font-size: large;
+    text-align: center;
+    background-color: #EEEEFF;
+}
+
+td.navLeftArea {
+    width: 200px;
+    background-color: #EEEEFF;
+    vertical-align: top;
+}
+td.navRightArea {
+    width: 200px;
+    background-color: #EEEEFF;
+    vertical-align: top;
+}
+td.navBottomArea {
+    width: 200px;
+    background-color: #EEEEFF;
+    vertical-align: top;
+    text-align: center;
+}
+td.navMainArea {
+    width: 600px;
+	font-size: large;
+    text-align: left;
+    vertical-align: top;
+}
+div.summaryItem {
+	border-bottom: 1px dotted #555555;
+}
+
+.summaryTitle {
+	color: #000044;
+	font-size: medium;
+}
+
+.summaryField {
+	color: #444444;
+	font-size: small;
+	text-decoration: none;
+}
+
+div.componentTitle {
+	color: #440044;
+	text-align: center;
+	font-size: medium;
+	padding-bottom: 10px;
+}
+
+div.componentLink {
+	padding-top: 10px;
+	font-size: medium;
+	text-align: right;
+}
+
+div.userContentTitle {
+	font-size: medium;
+	color: #005500;
+	text-align: center;
+	background: #AAEEAA;
+}
+
+div.userContent {
+}
+
+span.userContentDate {
+	font-size: small;
+	color: #005500;
+}
+
+span.userContentName {
+	font-size: small;
+	color: #000000;
+	font-weight: bold;
+	font-style: italic;
+}
+
+div.userContentTextTitle {
+	font-size: medium;
+	color: #000000;
+	background: #DDDDDD;
+	padding-left: 5px;
+	font-weight: bold;
+}
+
+div.userContentText {
+	font-size: small;
+	font-style: italic;
+	color: #555555;
+	background: #EEEEEE;
+	padding: 8px;
+}
+span.userContentWarning {
+	font-size: medium;
+	color: #990000;
+	padding-left: 5px;
+	font-weight: bold;
+}
+	
+div.noticiaData {
+	padding-bottom: 10px;
+	font-size: x-small;
+	color: #555555;
+	text-align: right;
+}
+
+span.noticiaTitulo {
+	text-align: left;
+	color: #770000;
+	font-size: medium;
+}
+
+span.noticiaResumo {
+	text-align: left;
+	color: #000000;
+	font-weight: bold;
+	font-size: small;
+}
+
+div.noticiaConteudo {
+	font-size: medium;
+	color: #111144;
+	padding-top: 5px;
+}
+
+img.noticiaImagem {
+	margin: 10px;
+}

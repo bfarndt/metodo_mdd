@@ -1,0 +1,33 @@
+
+
+<table class="adminMainTable" width="100%" border="1">
+    <tr>
+        <td class="adminMainTitle" colspan="2">Administrative area</td>
+    </tr>
+    <tr>
+        <td class="menu">Entities: <br />
+        <br />
+        
+        <a href="generated.actions.NoticiaActions.showAllNoticias.do">Noticia</a><br />
+        
+        <a href="generated.actions.AreaDePesquisaActions.showAllAreaDePesquisas.do">AreaDePesquisa</a><br />
+        
+        <a href="generated.actions.ProjetoDePesquisaActions.showAllProjetoDePesquisas.do">ProjetoDePesquisa</a><br />
+        
+        <a href="generated.actions.SuporteActions.showAllSuportes.do">Suporte</a><br />
+        
+        <a href="generated.actions.LinkActions.showAllLinks.do">Link</a><br />
+        
+        <a href="generated.actions.PublicacaoActions.showAllPublicacaos.do">Publicacao</a><br />
+        
+        <a href="generated.actions.ColegaActions.showAllColegas.do">Colega</a><br />
+        
+		
+		
+		<br /> Outras acoes: <br />
+        <br />
+		<a href="generated.usercontent.UserContentActions.showModerationForm.do">Moderacao de comentarios de usuario</a>
+		
+		
+        </td>
+        <td class="mainArea">

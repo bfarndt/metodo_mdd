@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ASCII"?>
+<webNav:Navigation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:webNav="http://www.ufscar.br/dc/webnav/WebNav" projectName="P&#xe1;gina pessoal">
+  <components xsi:type="webNav:NavList" name="menuPrincipal">
+    <listItems text="principal" page="//@pages.0"/>
+    <listItems text="apoio" page="//@pages.1"/>
+    <listItems text="noticias" page="//@pages.3"/>
+    <listItems text="projetos" page="//@pages.7"/>
+    <listItems text="colegas" page="//@pages.5"/>
+    <listItems text="links" page="//@pages.4"/>
+  </components>
+  <components xsi:type="webNav:Text" name="rodape" text="P&#xe1;gina de Fulano de tal. 2009"/>
+  <components xsi:type="webNav:Text" name="bemVindo" text="Bem-vindo &#xe0; minha p&#xe1;gina!"/>
+  <components xsi:type="webNav:Text" name="topoNoticias" text="Not&#xed;cias"/>
+  <components xsi:type="webNav:Summary" componentTitle="Apoio financeiro:" name="resumoApoio" entity="Suporte" titleField="agencia" page="//@pages.1"/>
+  <components xsi:type="webNav:Summary" componentTitle="&#xda;ltimas not&#xed;cias:" linkTitle="Ver todas not&#xed;cias" componentLink="//@pages.3" name="resumoNoticias" entity="Noticia" summarySize="3" titleField="titulo" summaryField="resumo" page="//@pages.2"/>
+  <components xsi:type="webNav:Summary" componentTitle="Todas not&amp;iacute;cias:" name="listaNoticias" entity="Noticia" titleField="titulo" summaryField="resumo" page="//@pages.2"/>
+  <components xsi:type="webNav:Summary" name="listaLinks" entity="Link" titleField="titulo" summaryField="url"/>
+  <components xsi:type="webNav:Summary" componentTitle="Projetos de pesquisa:" name="listaProjetos" entity="ProjetoDePesquisa" titleField="titulo" summaryField="descricao" page="//@pages.8"/>
+  <components xsi:type="webNav:Summary" componentTitle="Colegas de trabalho" name="listaColegas" entity="Colega" titleField="nome" summaryField="homepage" page="//@pages.6"/>
+  <components xsi:type="webNav:EntityView" linkTitle="Ver todas not&#xed;cias" componentLink="//@pages.3" name="verNoticia" entity="Noticia">
+    <htmlContent content="&lt;img src=&quot;${3}&quot; align=left width=&quot;100&quot; height=&quot;100&quot; class=&quot;noticiaImagem&quot;>"/>
+    <htmlContent content="&lt;div class=&quot;noticiaData&quot;>${1}&lt;/div>"/>
+    <htmlContent content="&lt;span class=&quot;noticiaTitulo&quot;>${2}&lt;/span>"/>
+    <htmlContent content="&lt;span class=&quot;noticiaResumo&quot;>${4}&lt;/span>"/>
+    <htmlContent content="&lt;hr>"/>
+    <htmlContent content="&lt;div class=&quot;noticiaConteudo&quot;>${5}&lt;/div>"/>
+    <listEntityFields fieldName="data" fieldType="DATE"/>
+    <listEntityFields fieldName="titulo" fieldType="TEXT"/>
+    <listEntityFields fieldName="imagem" fieldType="IMAGE"/>
+    <listEntityFields fieldName="resumo" fieldType="TEXT"/>
+    <listEntityFields fieldName="conteudo" fieldType="TEXT"/>
+  </components>
+  <components xsi:type="webNav:EntityView" linkTitle="Ver todos projetos" componentLink="//@pages.7" name="verProjeto" entity="ProjetoDePesquisa">
+    <htmlContent content="T&#xed;tulo: ${1}&lt;br/>"/>
+    <htmlContent content="Descri&#xe7;&#xe3;o: ${2}&lt;br/>"/>
+    <htmlContent content="Vig&#xea;ncia: ${3} a ${4}&lt;br/>"/>
+    <htmlContent content="Apoio financeiro: ${5}&lt;br/>"/>
+    <htmlContent content="&#xc1;rea de interesse: ${6}&lt;br/>"/>
+    <listEntityFields fieldName="titulo" fieldType="TEXT"/>
+    <listEntityFields fieldName="descricao" fieldType="TEXT"/>
+    <listEntityFields fieldName="dataInicio" fieldType="DATE"/>
+    <listEntityFields fieldName="dataFim" fieldType="DATE"/>
+    <listEntityFields fieldName="apoio" fieldType="REFERENCE"/>
+    <listEntityFields fieldName="area" fieldType="REFERENCE"/>
+  </components>
+  <components xsi:type="webNav:EntityView" linkTitle="Ver todos colegas" componentLink="//@pages.5" name="verColega" entity="Colega">
+    <htmlContent content="Nome: ${1}&lt;br/>"/>
+    <htmlContent content="Homepage: ${2}&lt;br/>"/>
+    <listEntityFields fieldName="nome" fieldType="TEXT"/>
+    <listEntityFields fieldName="homepage" fieldType="TEXT"/>
+  </components>
+  <components xsi:type="webNav:EntityView" name="verApoio" entity="Suporte">
+    <htmlContent content="&lt;img src=&quot;${1}&quot; align=left class=&quot;apoioIcone&quot;>"/>
+    <htmlContent content="${2}&lt;br/>"/>
+    <listEntityFields fieldName="icone" fieldType="IMAGE"/>
+    <listEntityFields fieldName="agencia" fieldType="TEXT"/>
+  </components>
+  <pages name="index" title="Principal" top="//@components.0" left="//@components.0" right="//@components.4" bottom="//@components.1" main="//@components.5"/>
+  <pages name="verApoio" title="Apoio" top="//@components.0" left="//@components.0" bottom="//@components.1" main="//@components.4"/>
+  <pages name="verNoticia" title="Not&#xed;cia" top="//@components.3" left="//@components.0" right="//@components.7" bottom="//@components.1" main="//@components.10"/>
+  <pages name="todasNoticias" title="Todas not&amp;iacute;cias" top="//@components.3" left="//@components.0" bottom="//@components.1" main="//@components.6"/>
+  <pages name="linksInteressantes" title="Links interessantes" top="//@components.0" bottom="//@components.1" main="//@components.7"/>
+  <pages name="colegas" title="Colegas de trabalho" top="//@components.0" bottom="//@components.1" main="//@components.9"/>
+  <pages name="colega" title="Colega" top="//@components.0" bottom="//@components.1" main="//@components.12"/>
+  <pages name="projetos" title="Projetos de pesquisa" top="//@components.0" bottom="//@components.1" main="//@components.8"/>
+  <pages name="verProjeto" title="Projeto de pesquisa" left="//@components.0" bottom="//@components.1" main="//@components.11"/>
+</webNav:Navigation>

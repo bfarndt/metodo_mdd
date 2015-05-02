@@ -1,0 +1,14 @@
+package <c:get select="$theConfiguration/@daosPackage" />;
+
+import <c:get select="$theConfiguration/@daoAbstractFactoryFullName" />;
+import <c:get select="$theConfiguration/@msSqlDaoFactoryFullName" />;
+
+public class <c:get select="$theConfiguration/@defaultDAOFactoryProviderClass" /> {
+    private static <c:get select="$theConfiguration/@daoAbstractFactoryClass" /> theInstance = null;
+    
+    public static <c:get select="$theConfiguration/@daoAbstractFactoryClass" /> getDefaultDAOFactoryInstance() {
+        if(theInstance == null)
+            theInstance = new <c:get select="$theConfiguration/@msSqlDaoFactoryClass" />();
+        return theInstance;
+    }
+}

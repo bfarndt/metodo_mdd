@@ -1,0 +1,72 @@
+<%@ jet startTag="<*" endTag="*>" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@page import="generated.beans.*"%>
+<%@page import="generated.daos.*"%>
+<%@page import="java.util.*"%>
+<%@page import="core.database.*"%>
+<c:if test="$featuresModel/WebDomainFeatures/@userContent = 'true'">
+<%@page import="generated.usercontent.*"%>
+</c:if>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../css/navigation.css" />
+<title><c:get select="$page/@title" /></title>
+<script type="text/javascript" src="../js/util.js"></script>
+</head>
+<body>
+
+<table class="navMainTable">
+<tr><td class="navTopArea" colspan="3">
+<!-- begin top -->
+<c:if test="$page/top">
+	<c:setVariable select="$page/top" var="component" />
+	<c:set select="$component" name="location">top</c:set> 
+	<c:include template="templates/navigation/pages/components.jet" passVariables="component,featuresModel" />
+</c:if>
+<!-- end top -->
+</td></tr>
+<tr><td class="navLeftArea">
+<!-- begin left -->
+<c:if test="$page/left">
+	<c:setVariable select="$page/left" var="component" />
+	<c:set select="$component" name="location">left</c:set>
+	<c:include template="templates/navigation/pages/components.jet" passVariables="component,featuresModel" />
+</c:if>
+<!-- end left -->
+</td>
+<td class="navMainArea">
+<!-- begin main -->
+<c:if test="$page/main">
+	<c:setVariable select="$page/main" var="component" />
+	<c:set select="$component" name="location">main</c:set>
+	<c:include template="templates/navigation/pages/components.jet" passVariables="component,featuresModel" />
+</c:if>
+<!-- end main -->
+</td>
+<td class="navRightArea">
+<!-- begin right -->
+<c:if test="$page/right">
+	<c:setVariable select="$page/right" var="component" />
+	<c:set select="$component" name="location">right</c:set>
+	<c:include template="templates/navigation/pages/components.jet" passVariables="component,featuresModel" />
+</c:if>
+<!-- end right -->
+</td></tr>
+<tr><td class="navBottomArea" colspan="3">
+<!-- begin bottom -->
+<c:if test="$page/left">
+	<c:setVariable select="$page/bottom" var="component" />
+	<c:set select="$component" name="location">bottom</c:set>
+	<c:include template="templates/navigation/pages/components.jet" passVariables="component,featuresModel" />
+</c:if>
+<!-- end bottom -->
+</td></tr>
+</table>
+
+</body>
+</html>

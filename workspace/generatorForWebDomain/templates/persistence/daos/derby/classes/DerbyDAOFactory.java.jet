@@ -1,0 +1,24 @@
+package <c:get select="$theConfiguration/@derbyDaosPackage" />;
+
+import core.database.ConnectionProvider;
+import <c:get select="$theConfiguration/@daoAbstractFactoryFullName" />;
+<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+import <c:get select="$userType/@fullDaoClassName" />;
+</c:iterate>
+
+public class <c:get select="$theConfiguration/@derbyDaoFactoryClass" /> extends <c:get select="$theConfiguration/@daoAbstractFactoryClass" /> {
+    ConnectionProvider connectionProvider;
+    
+    public <c:get select="$theConfiguration/@derbyDaoFactoryClass" />(ConnectionProvider connectionProvider) {
+        this.connectionProvider = connectionProvider;
+    }
+    
+    @Override
+<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+    public <c:get select="$userType/@daoClass" /> get<c:get select="$userType/@daoClass" />() {
+        <c:get select="$userType/@daoClass" /> dao = new <c:get select="$userType/@derbyDAOClass" />();
+        dao.setConnectionProvider(connectionProvider);
+        return dao;
+    }
+</c:iterate>
+}

@@ -1,0 +1,35 @@
+<%@ jet startTag="<*" endTag="*>" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="ctrl"%>  
+<%@ taglib uri="/WEB-INF/tags/mytaglib.tld" prefix="mytaglib"%>
+<%@ taglib uri="/WEB-INF/tags/myfunctions.tld" prefix="f"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/admin.css" />
+<title>Moderacao de comentarios</title>
+</head>
+<body>
+<%@ include file="/admin/jspf/adminPrefix.jspf" %>
+
+<div class="userContentTitle">Comentarios de usuarios nao aprovados:</div>
+<ctrl:forEach items="${unnaprovedUserContent}" var="uc">
+<div class="userContent">
+<span class="userContentDate"><fmt:formatDate pattern="dd/MM/yyyy - hh:mm:ss" value="${uc.date}"/></span>
+<span class="userContentName">${uc.name}</span> <br/>
+<div class="userContentTextTitle">${uc.title}</div>
+<div class="userContentText">${uc.content}</div>
+<div class="moderationActions">
+<a class="button" href="generated.usercontent.UserContentActions.approveUserContent.do?userContentId=${uc.userContentId}">Aprovar</a>
+<a class="button" href="generated.usercontent.UserContentActions.deleteUserContent.do?userContentId=${uc.userContentId}">Remover</a>
+</div>
+</div>
+</ctrl:forEach>
+
+<%@ include file="/admin/jspf/adminSuffix.jspf" %>
+</body>
+</html>

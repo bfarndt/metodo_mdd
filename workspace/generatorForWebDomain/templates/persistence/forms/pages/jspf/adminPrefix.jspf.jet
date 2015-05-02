@@ -1,0 +1,21 @@
+<%@ jet startTag="<*" endTag="*>" %>
+
+<table class="adminMainTable" width="100%" border="1">
+    <tr>
+        <td class="adminMainTitle" colspan="2">Administrative area</td>
+    </tr>
+    <tr>
+        <td class="menu">Entities: <br />
+        <br />
+        <c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+        <a href="<c:get select="$theConfiguration/@actionsPackage" />.<c:get select="$userType/@actionClass" />.<c:get select="$userType/@showAllAction" />.do"><c:get select="$userType/@name" /></a><br />
+        </c:iterate>
+		<c:if test="$featuresModel/WebDomainFeatures/@userContent = 'true'">
+		<c:if test="$featuresModel/WebDomainFeatures/@moderation = 'true'">
+		<br /> Outras acoes: <br />
+        <br />
+		<a href="generated.usercontent.UserContentActions.showModerationForm.do">Moderacao de comentarios de usuario</a>
+		</c:if>
+		</c:if>
+        </td>
+        <td class="mainArea">

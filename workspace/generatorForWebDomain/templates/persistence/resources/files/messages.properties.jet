@@ -1,0 +1,35 @@
+<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+########################## {$userType/@name} #######################
+
+# fields
+<c:iterate select="$userType/attributes" var="anAttribute">
+<c:get select="$userType/@fullBeanName" />.<c:get select="$anAttribute/@name" />.label=<c:get select="$anAttribute/@name" />
+</c:iterate>
+
+# references
+<c:iterate select="$userType/referenceList" var="aReference">
+<c:get select="$userType/@fullBeanName" />.<c:get select="$aReference/@name" />.label=<c:get select="$aReference/@name" />
+</c:iterate>
+
+# selection dialog messages
+<c:get select="$userType/@fullBeanName" />.currentlySelected.label=<c:get select="$userType/@name" /> selecionado
+<c:get select="$userType/@fullBeanName" />.select.label=Selecione um <c:get select="$userType/@name" />
+
+# Action messages
+<c:get select="$userType/@fullBeanName" />.save.ok=<c:get select="$userType/@name" /> salvo com sucesso
+<c:get select="$userType/@fullBeanName" />.save.failed=Ocorreu um problema ao salvar <c:get select="$userType/@name" />
+<c:get select="$userType/@fullBeanName" />.delete.ok=<c:get select="$userType/@name" /> removido com sucesso
+<c:get select="$userType/@fullBeanName" />.delete.failed=Ocorreu um problema ao remover <c:get select="$userType/@name" />
+<c:get select="$userType/@fullBeanName" />.list.title=Lista de <c:get select="$userType/@name" />s
+<c:get select="$userType/@fullBeanName" />.new=Cadastrar novo <c:get select="$userType/@name" />
+<c:get select="$userType/@fullBeanName" />.empty=Nao ha <c:get select="$userType/@name" />s cadastrados
+</c:iterate>
+
+
+# General messages
+saveButton=Salvar
+selectButton=Selecionar
+uploadButton=Enviar
+closeButton=Fechar
+image.upload.ok=Imagem enviada com sucesso!
+image.upload.failed=Erro ao enviar imagem!

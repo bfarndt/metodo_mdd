@@ -1,0 +1,176 @@
+Project "Página pessoal"
+Components {
+	
+	List menuPrincipal
+		"principal" -> index
+		"apoio" -> verApoio
+		"noticias" -> todasNoticias
+		"projetos" -> projetos
+		"colegas" -> colegas
+		"links" -> linksInteressantes
+	Text rodape [ "Página de Fulano de tal. 2009" ]
+	Text bemVindo [ "Bem-vindo à minha página!" ]
+	Text topoNoticias [ "Notícias" ]
+
+	Summary resumoApoio 
+		entity "Suporte" 
+		title_field "agencia" -> verApoio
+		title "Apoio financeiro:"
+	
+	Summary resumoNoticias 
+		entity "Noticia" 
+		size 3
+		title_field "titulo" 
+		summary_field "resumo" -> verNoticia 
+		title "Últimas notícias:" 
+		link "Ver todas notícias" -> todasNoticias
+
+	Summary listaNoticias
+		entity "Noticia" 
+		title_field "titulo" 
+		summary_field "resumo" -> verNoticia
+		title "Todas not&iacute;cias:" 
+
+	Summary listaLinks
+		entity "Link" 
+		title_field "titulo" 
+		summary_field "url"
+
+	Summary listaProjetos
+		entity "ProjetoDePesquisa" 
+		title_field "titulo" 
+		summary_field "descricao" -> verProjeto
+		title "Projetos de pesquisa:" 
+		
+	Summary listaColegas
+		entity "Colega"
+		title_field "nome"
+		summary_field "homepage" -> colega
+		title "Colegas de trabalho"
+
+	View verNoticia entity "Noticia"
+	html [ "<img src=\"${3}\" align=left width=\"100\" height=\"100\" class=\"noticiaImagem\">"
+	       "<div class=\"noticiaData\">${1}</div>"
+	       "<span class=\"noticiaTitulo\">${2}</span>" 
+	       "<span class=\"noticiaResumo\">${4}</span>"
+	       "<hr>"
+	       "<div class=\"noticiaConteudo\">${5}</div>"]
+	fields [
+		"data" DATE
+		"titulo" TEXT
+		"imagem" IMAGE
+		"resumo" TEXT
+		"conteudo" TEXT
+	]
+	link "Ver todas notícias" -> todasNoticias
+
+	View verProjeto entity "ProjetoDePesquisa"
+	html [ "Título: ${1}<br/>"
+	       "Descrição: ${2}<br/>"
+	       "Vigência: ${3} a ${4}<br/>"
+	       "Apoio financeiro: ${5}<br/>"
+	       "Área de interesse: ${6}<br/>"
+	] 
+	fields [
+		"titulo" TEXT
+		"descricao" TEXT
+		"dataInicio" DATE
+		"dataFim" DATE
+		"apoio" REFERENCE
+		"area" REFERENCE
+	]
+	link "Ver todos projetos" -> projetos
+	
+	View verColega entity "Colega"
+	html [ "Nome: ${1}<br/>"
+	       "Homepage: ${2}<br/>"
+	]
+	fields [
+		"nome" TEXT
+		"homepage" TEXT
+	]
+	link "Ver todos colegas" -> colegas
+
+
+	View verApoio entity "Suporte"
+	html [ "<img src=\"${1}\" align=left class=\"apoioIcone\">"
+	       "${2}<br/>"
+	]
+	fields [
+		"icone" IMAGE
+		"agencia" TEXT
+	]
+
+}
+
+Page index "Principal" {
+	top	( menuPrincipal ),
+	left ( menuPrincipal ),
+	right ( resumoApoio ),
+	bottom ( rodape ),
+	main ( resumoNoticias )
+}
+
+Page verApoio "Apoio" {
+	top	( menuPrincipal ),
+	left ( menuPrincipal ),
+	right (),
+	bottom ( rodape ),
+	main ( resumoApoio )
+}
+
+Page verNoticia "Notícia" {
+	top	( topoNoticias ),
+	left ( menuPrincipal ),
+	right ( listaLinks ),
+	bottom ( rodape ),
+	main ( verNoticia )
+}
+
+Page todasNoticias "Todas not&iacute;cias" {
+	top	( topoNoticias ),
+	left ( menuPrincipal ),
+	right (),
+	bottom ( rodape ),
+	main ( listaNoticias )
+}
+
+Page linksInteressantes "Links interessantes" {
+	top	( menuPrincipal ),
+	left ( ),
+	right ( ),
+	bottom ( rodape ),
+	main ( listaLinks )
+}
+
+Page colegas "Colegas de trabalho" {
+	top	( menuPrincipal ),
+	left ( ),
+	right ( ),
+	bottom ( rodape ),
+	main ( listaColegas )
+}
+
+Page colega "Colega" {
+	top	( menuPrincipal ),
+	left ( ),
+	right ( ),
+	bottom ( rodape ),
+	main ( verColega )	
+}
+
+Page projetos "Projetos de pesquisa" {
+	top	( menuPrincipal ),
+	left ( ),
+	right ( ),
+	bottom ( rodape ),
+	main ( listaProjetos )
+}
+
+Page verProjeto "Projeto de pesquisa" {
+	top	( ),
+	left ( menuPrincipal ),
+	right (),
+	bottom ( rodape ),
+	main ( verProjeto )
+}

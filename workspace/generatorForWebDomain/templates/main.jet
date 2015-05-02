@@ -1,0 +1,13 @@
+<c:load url="ProjetoTesteGerador/src/entradaGerador/My.webdomainfeatures" urlContext="workspace" loader="org.eclipse.jet.emf" var="featuresModel"/>
+<c:load url="ProjetoTesteGerador/src-gen/entradaGerador/paginaPessoalNavegacao.xmi" urlContext="workspace" loader="org.eclipse.jet.emf" var="navigationModel"/>
+
+<c:include template="templates/persistence/common/common.jet" />
+   
+<c:include template="templates/persistence/beans/generateBeans.jet" />
+<c:include template="templates/persistence/daos/generateDAOs.jet" />
+<c:include template="templates/persistence/actions/generateActions.jet" />
+<c:include template="templates/persistence/forms/generateForms.jet" />
+<c:include template="templates/persistence/resources/generateResources.jet" />
+<c:include template="templates/userContent/generateUserContent.jet" />
+
+<c:include template="templates/navigation/generatePages.jet" />

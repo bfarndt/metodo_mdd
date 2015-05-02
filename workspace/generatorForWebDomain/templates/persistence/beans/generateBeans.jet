@@ -1,0 +1,12 @@
+<%-- Depends: common/common.jet --%>
+
+<%-- Generate bean classes --%>
+<ws:project name="{$theConfiguration/@project}">
+	<ws:folder path="{$theConfiguration/@srcfolder}">
+		<java:package name="{$theConfiguration/@beansPackage}">
+			<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+				<java:class name="{$userType/@name}" template="templates/persistence/beans/classes/BeanClass.java.jet" />
+			</c:iterate>    
+		</java:package>
+	</ws:folder>
+</ws:project>

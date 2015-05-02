@@ -1,0 +1,207 @@
+package <c:get select="$theConfiguration/@derbyDaosPackage" />;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import <c:get select="$userType/@fullDaoClassName" />;
+import <c:get select="$userType/@fullBeanName" />;
+
+<%-- useful pieces of recurring code --%>
+<c:set select="$userType" name="allAttributesForSQL"
+	><c:iterate select="$userType/attributes" var="attribute" delimiter=", "
+		><c:get select="$attribute/@name" /></c:iterate
+	><c:iterate select="$userType/referenceList" var="reference"
+	    >, <c:get select="$reference/@name" /></c:iterate
+	></c:set
+><c:set select="$userType" name="allAttributesAsQuestionMarksForSQL"
+	><c:iterate select="$userType/attributes" var="attribute" delimiter=", "
+		>?</c:iterate
+    ><c:iterate select="$userType/referenceList" var="reference"
+        >, ?</c:iterate
+    ></c:set
+><c:set select="$userType" name="allAttributesWithQuestionMarksForSQL"
+	><c:iterate select="$userType/attributes" var="attribute" delimiter=", "
+		><c:get select="$attribute/@name" /> = ?</c:iterate
+    ><c:iterate select="$userType/referenceList" var="reference"
+        >, <c:get select="$reference/@name" /> = ?</c:iterate
+    ></c:set
+><c:set select="$userType" name="createUserTypeInstanceFromResultSet">
+                <c:get select="$userType/@idFieldType" /> <c:get select="$userType/@idField" /> = rs.<c:get select="$userType/@idFieldTypeResultSetGetter" />("<c:get select="$userType/@idField" />");
+                <c:iterate select="$userType/attributes" var="attribute">
+                <c:if test="not($attribute/@fieldType = 'IMAGE')">
+                <c:get select="$attribute/@javaType" /> <c:get select="$attribute/@name" /> = <c:if test="$attribute/@resultSetTypeGetterForceCast = 'true'">(<c:get select="$attribute/@javaType" />)</c:if>rs.<c:get select="$attribute/@resultSetTypeGetter" />("<c:get select="$attribute/@name" />");
+                </c:if>
+                <c:if test="$attribute/@fieldType = 'IMAGE'">
+                java.sql.Blob blob<c:get select="$attribute/@name" /> = rs.getBlob("<c:get select="$attribute/@name" />");
+                byte[] <c:get select="$attribute/@name" /> = blob<c:get select="$attribute/@name" />.getBytes(1, (int)(blob<c:get select="$attribute/@name" />.length()));
+                </c:if>
+                </c:iterate>
+                <c:iterate select="$userType/referenceList" var="reference">
+                long ref<c:get select="$reference/@name" /> = rs.getLong("<c:get select="$reference/@name" />");
+                </c:iterate>
+                
+                <c:get select="$userType/@name" /> <c:get select="$userType/@instanceName" /> = new <c:get select="$userType/@name" />();
+                <c:get select="$userType/@instanceName" />.<c:get select="$userType/@idFieldSetter" />(<c:get select="$userType/@idField" />);
+                <c:iterate select="$userType/attributes" var="attribute">
+                <c:get select="$userType/@instanceName" />.<c:get select="$attribute/@javaSetter" />(<c:get select="$attribute/@name" />);
+                </c:iterate>
+                <c:iterate select="$userType/referenceList" var="reference">
+                <c:get select="$reference/referencedType/@fullDaoClassName" /> <c:get select="$reference/@name" />DAO = core.database.DefaultDAOFactoryProvider.getDefaultDAOFactoryInstance().get<c:get select="$reference/referencedType/@name" />DAO();
+                <c:get select="$reference/referencedType/@fullBeanName" /> <c:get select="$reference/@name" /> = <c:get select="$reference/@name" />DAO.get<c:get select="$reference/referencedType/@name" />(ref<c:get select="$reference/@name" />);
+                <c:get select="$userType/@instanceName" />.<c:get select="$reference/@javaSetter" />(<c:get select="$reference/@name" />);
+                </c:iterate>
+</c:set>
+
+public class <c:get select="$userType/@derbyDAOClass" /> extends <c:get select="$userType/@daoClass" /> {
+    @Override
+    public List<<c:get select="$userType/@name" />> getAll<c:get select="$userType/@name" />s() {
+        Connection conn = getConnection();
+        try {
+            String query = "SELECT <c:get select="$userType/@idField" />, <c:get select="$userType/@allAttributesForSQL" /> form <c:get select="$userType/@name" />";
+            PreparedStatement ps = conn.prepareStatement(query);
+            
+            ResultSet rs = ps.executeQuery();
+            List<<c:get select="$userType/@name" />> result = new ArrayList<<c:get select="$userType/@name" />>();
+            
+            while(rs.next()) {
+                <c:get select="$userType/@createUserTypeInstanceFromResultSet" />
+                
+                result.add(<c:get select="$userType/@instanceName" />);
+            }
+            
+            return result;
+        } catch(SQLException se) {
+            se.printStackTrace();
+            return null;
+        } finally {
+            returnConnection(conn);
+        }
+    }
+
+    @Override
+    public <c:get select="$userType/@name" /> get<c:get select="$userType/@name" />(<c:get select="$userType/@idFieldType" /> <c:get select="$userType/@idField" />Parameter) {
+        Connection conn = getConnection();
+        try {
+            String query = "SELECT <c:get select="$userType/@idField" />, <c:get select="$userType/@allAttributesForSQL" /> from <c:get select="$userType/@name" /> WHERE <c:get select="$userType/@idField" /> = ?";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.<c:get select="$userType/@idFieldTypePreparedStatementSetter" />(1,<c:get select="$userType/@idField" />Parameter);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()) {
+                <c:get select="$userType/@createUserTypeInstanceFromResultSet" />
+                
+                return <c:get select="$userType/@instanceName" />;
+            }
+            
+            return null;
+        } catch(SQLException se) {
+            se.printStackTrace();
+            return null;
+        } finally {
+            returnConnection(conn);
+        }
+    }
+
+    @Override
+    public boolean saveOrUpdate<c:get select="$userType/@name" />(<c:get select="$userType/@name" /> <c:get select="$userType/@instanceName" />) {
+        if(<c:get select="$userType/@instanceName" />.<c:get select="$userType/@idFieldGetter" />() > 0) {
+            <c:get select="$userType/@name" /> existent<c:get select="$userType/@name" /> = get<c:get select="$userType/@name" />(<c:get select="$userType/@instanceName" />.<c:get select="$userType/@idFieldGetter" />());
+            if(existent<c:get select="$userType/@name" /> != null) {
+                return update<c:get select="$userType/@name" />(<c:get select="$userType/@instanceName" />);
+            }
+        }
+        return insert<c:get select="$userType/@name" />(<c:get select="$userType/@instanceName" />);
+    }
+
+    @Override
+    public boolean insert<c:get select="$userType/@name" />(<c:get select="$userType/@name" /> <c:get select="$userType/@instanceName" />) {
+        Connection conn = getConnection();
+        try {
+            String query = "INSERT INTO <c:get select="$userType/@name" /> (<c:get select="$userType/@allAttributesForSQL" />) values (<c:get select="$userType/@allAttributesAsQuestionMarksForSQL" />)";
+            PreparedStatement ps = conn.prepareStatement(query);
+    
+			<% int i=1; %>
+            <c:iterate select="$userType/attributes" var="attribute">
+            ps.<c:get select="$attribute/@preparedStatementTypeSetter"/>(<%=i++%>, <c:if test="$attribute/@fieldType = 'DATE'"
+            >new java.sql.Timestamp(</c:if
+            ><c:get select="$userType/@instanceName"/>.<c:get select="$attribute/@javaGetter"/>()<c:if test="$attribute/@fieldType = 'DATE'"
+            >.getTime())</c:if
+            >);
+			</c:iterate>     
+            <c:iterate select="$userType/referenceList" var="reference">
+            if(<c:get select="$userType/@instanceName"/>.<c:get select="$reference/@javaGetter" />() != null)
+                ps.setLong(<%=i%>, <c:get select="$userType/@instanceName"/>.<c:get select="$reference/@javaGetter" />().<c:get select="$reference/referencedType/@idFieldGetter" />());
+            else ps.setLong(<%=i++%>, -1);
+            </c:iterate>     
+			       
+            int rows = ps.executeUpdate();
+            if(rows == 1)
+                return true;
+            return false;
+        } catch(SQLException se) {
+            se.printStackTrace();
+            return false;
+        } finally {
+            returnConnection(conn);
+        }
+    }
+
+    @Override
+    public boolean update<c:get select="$userType/@name" />(<c:get select="$userType/@name" /> <c:get select="$userType/@instanceName" />) {
+        Connection conn = getConnection();
+        try {
+            String query = "UPDATE <c:get select="$userType/@name" /> set <c:get select="$userType/@allAttributesWithQuestionMarksForSQL" /> WHERE <c:get select="$userType/@idField" /> = ?";
+            PreparedStatement ps = conn.prepareStatement(query);
+
+			<% int i2=1; %>
+            <c:iterate select="$userType/attributes" var="attribute">
+            ps.<c:get select="$attribute/@preparedStatementTypeSetter"/>(<%=i2++%>, <c:if test="$attribute/@fieldType = 'DATE'"
+            >new java.sql.Timestamp(</c:if
+            ><c:get select="$userType/@instanceName"/>.<c:get select="$attribute/@javaGetter"/>()<c:if test="$attribute/@fieldType = 'DATE'"
+            >.getTime())</c:if
+            >);
+			</c:iterate>            
+            <c:iterate select="$userType/referenceList" var="reference">
+            if(<c:get select="$userType/@instanceName"/>.<c:get select="$reference/@javaGetter" />() != null)
+                ps.setLong(<%=i2%>, <c:get select="$userType/@instanceName"/>.<c:get select="$reference/@javaGetter" />().<c:get select="$reference/referencedType/@idFieldGetter" />());
+            else ps.setLong(<%=i2++%>, -1);
+            </c:iterate>     
+            ps.<c:get select="$userType/@idFieldTypePreparedStatementSetter" />(<%=i2%>, <c:get select="$userType/@instanceName" />.<c:get select="$userType/@idFieldGetter" />());
+            
+            int rows = ps.executeUpdate();
+            if(rows == 1)
+                return true;
+            return false;
+        } catch(SQLException se) {
+            se.printStackTrace();
+            return false;
+        } finally {
+            returnConnection(conn);
+        }
+    }
+
+    @Override
+    public boolean delete<c:get select="$userType/@name" />(<c:get select="$userType/@idFieldType" /> <c:get select="$userType/@idField" />) {
+        Connection conn = getConnection();
+        try {
+            String query = "DELETE FROM <c:get select="$userType/@name" /> where <c:get select="$userType/@idField" /> = ?";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.<c:get select="$userType/@idFieldTypePreparedStatementSetter" />(1,<c:get select="$userType/@idField" />);
+            
+            int rows = ps.executeUpdate();
+            if(rows == 1)
+                return true;
+            return false;
+        } catch(SQLException se) {
+            se.printStackTrace();
+            return false;
+        } finally {
+            returnConnection(conn);
+        }
+    }
+}

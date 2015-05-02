@@ -1,0 +1,20 @@
+<%@ jet startTag="<*" endTag="*>" %>
+<!-- begin userContent area -->
+<% { %>
+<hr>
+<div class="userContentTitle">Comentarios de usuarios:</div>
+<% UserContentDAO daoUserContent = DefaultUserContentDAOFactoryProvider.getDefaultDAOFactoryInstance().getUserContentDAO();
+   List<UserContent> allUserContent = daoUserContent.getAllUserContent(request.getParameter("entityName"), Long.parseLong(request.getParameter("idParameter")));
+   for(UserContent uc: allUserContent) {
+%>
+<div class="userContent">
+<span class="userContentDate"><%=new java.text.SimpleDateFormat("dd/MM/yyyy - hh:mm:ss").format(uc.getDate())%></span>
+<span class="userContentName"><%=uc.getName()%></span> <br/>
+<div class="userContentTextTitle"><%=uc.getTitle()%></div>
+<div class="userContentText"><%=uc.getContent()%></div>
+</div>
+<% } %>
+<br/>
+<input type="button" value="Enviar comentario" onclick="popup('uploadUserCommentForm.jsp?entityName=<%=request.getParameter("entityName")%>&entityId=<%=request.getParameter("idParameter")%>',300,400)" /><br/>
+<% } %>
+<!-- end userContent area -->

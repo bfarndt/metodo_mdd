@@ -1,0 +1,110 @@
+<%-- Set configuration variable --%>
+<c:setVariable select="/WebDomainAdministrationModel/configuration" var="theConfiguration" />
+
+<%-- Set main packages --%>
+<c:set select="$theConfiguration" name="beansPackage"><c:get select="$theConfiguration/@package" />.beans</c:set>
+<c:set select="$theConfiguration" name="actionsPackage"><c:get select="$theConfiguration/@package" />.actions</c:set>
+<c:set select="$theConfiguration" name="resourcesPackage"><c:get select="$theConfiguration/@package" />.resources</c:set>
+<c:set select="$theConfiguration" name="daosPackage"><c:get select="$theConfiguration/@package" />.daos</c:set>
+<c:set select="$theConfiguration" name="daoAbstractFactoryClass">DAOAbstractFactory</c:set>
+<c:set select="$theConfiguration" name="daoAbstractFactoryFullName"><c:get select="$theConfiguration/@daosPackage" />.<c:get select="$theConfiguration/@daoAbstractFactoryClass" /></c:set>
+<c:set select="$theConfiguration" name="defaultDAOFactoryProviderClass">DefaultDAOFactoryProvider</c:set>
+
+<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+<%-- Set bean package and fully qualified bean name --%>
+	<c:set select="$userType" name="fullBeanName"><c:get select="$theConfiguration/@beansPackage" />.<c:get select="$userType/@name" /></c:set>
+<%-- Set action names and fully qualified action names --%>
+	<c:set select="$userType" name="actionClass"><c:get select="$userType/@name" />Actions</c:set>
+	<c:set select="$userType" name="actionClassFullPath"><c:get select="$theConfiguration/@actionsPackage" />.<c:get select="$userType/@actionClass" /></c:set>
+	<c:set select="$userType" name="saveAction">save<c:get select="$userType/@name" /></c:set>
+	<c:set select="$userType" name="deleteAction">delete<c:get select="$userType/@name" /></c:set>
+	<c:set select="$userType" name="loadFormAction">load<c:get select="$userType/@name" />Form</c:set>
+	<c:set select="$userType" name="showAllAction">showAll<c:get select="$userType/@name" />s</c:set>
+    <c:set select="$userType" name="showAllForSelectionAction">showAll<c:get select="$userType/@name" />sForSelection</c:set>
+<%-- Set DAO names --%>
+	<c:set select="$userType" name="daoClass"><c:get select="$userType/@name" />DAO</c:set>
+	<c:set select="$userType" name="fullDaoClassName"><c:get select="$theConfiguration/@daosPackage" />.<c:get select="$userType/@daoClass" /></c:set>
+<%-- Add id field to the types --%>
+	<c:set select="$userType" name="idField"><f:lc length="1"><c:get select="$userType/@name" /></f:lc>Id</c:set>
+	<c:set select="$userType" name="idFieldType">long</c:set>
+	<c:set select="$userType" name="idFieldTypeFromStringMethod">Long.parseLong</c:set>
+	<c:set select="$userType" name="idFieldTypeResultSetGetter">getLong</c:set>
+	<c:set select="$userType" name="idFieldTypePreparedStatementSetter">setLong</c:set>
+	<c:set select="$userType" name="idFieldSetter">set<f:uc length="1"><c:get select="$userType/@idField" /></f:uc></c:set>
+	<c:set select="$userType" name="idFieldGetter">get<f:uc length="1"><c:get select="$userType/@idField" /></f:uc></c:set>
+<%-- Set instance name (Ex: class User, instance userObj) --%>
+	<c:set select="$userType" name="instanceName"><f:lc length="1"><c:get select="$userType/@name" /></f:lc></c:set>
+<%-- Add content type field for image fields --%>
+    <c:iterate select="$userType/attributes" var="attribute">
+        <c:if test="$attribute/@fieldType = 'IMAGE'">
+            <c:addElement select="$userType" name="attributes" var="newAttribute" />
+            <c:set select="$newAttribute" name="name"><c:get select="$attribute/@name" />ContentType</c:set>
+            <c:set select="$newAttribute" name="fieldSize">30</c:set>
+            <c:set select="$newAttribute" name="isImageContentType">true</c:set>
+        </c:if>
+    </c:iterate>
+</c:iterate>
+
+<%-- transform all fields and references into Java and database attributes --%> 
+<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+	<c:iterate select="$userType/attributes" var="anAttribute">
+		<%-- attribute setter and getter --%>
+		<c:set select="$anAttribute" name="javaSetter">set<f:uc length="1"><c:get select="$anAttribute/@name" /></f:uc></c:set>
+		<c:set select="$anAttribute" name="javaGetter">get<f:uc length="1"><c:get select="$anAttribute/@name" /></f:uc></c:set>
+		<c:set select="$anAttribute" name="javaType">String</c:set>
+		<c:set select="$anAttribute" name="resultSetTypeGetter">getString</c:set>
+		<c:set select="$anAttribute" name="preparedStatementTypeSetter">setString</c:set>
+		<c:if test="$anAttribute/@fieldType = 'DATE'">
+			<c:set select="$anAttribute" name="javaType">java.util.Date</c:set>
+			<c:set select="$anAttribute" name="resultSetTypeGetter">getTimestamp</c:set>
+			<c:set select="$anAttribute" name="preparedStatementTypeSetter">setTimestamp</c:set>
+		</c:if>
+        <c:if test="$anAttribute/@fieldType = 'IMAGE'">
+            <c:set select="$anAttribute" name="javaType">byte[]</c:set>
+            <c:set select="$anAttribute" name="resultSetTypeGetter">getObject</c:set>
+            <c:set select="$anAttribute" name="resultSetTypeGetterForceCast">true</c:set>
+            <c:set select="$anAttribute" name="preparedStatementTypeSetter">setObject</c:set>
+        </c:if>
+        <c:if test="$anAttribute/@fieldType = 'INT'">
+            <c:set select="$anAttribute" name="javaType">int</c:set>
+            <c:set select="$anAttribute" name="resultSetTypeGetter">getInt</c:set>
+            <c:set select="$anAttribute" name="preparedStatementTypeSetter">setInt</c:set>
+        </c:if>
+        <c:if test="$anAttribute/@fieldType = 'LONG'">
+            <c:set select="$anAttribute" name="javaType">long</c:set>
+            <c:set select="$anAttribute" name="resultSetTypeGetter">getLong</c:set>
+            <c:set select="$anAttribute" name="preparedStatementTypeSetter">setLong</c:set>
+        </c:if>
+        <c:if test="$anAttribute/@fieldType = 'REAL'">
+            <c:set select="$anAttribute" name="javaType">float</c:set>
+            <c:set select="$anAttribute" name="resultSetTypeGetter">getFloat</c:set>
+            <c:set select="$anAttribute" name="preparedStatementTypeSetter">setFloat</c:set>
+        </c:if>
+        <c:if test="$anAttribute/@fieldType = 'CURRENCY'">
+            <c:set select="$anAttribute" name="javaType">float</c:set>
+            <c:set select="$anAttribute" name="resultSetTypeGetter">getFloat</c:set>
+            <c:set select="$anAttribute" name="preparedStatementTypeSetter">setFloat</c:set>
+        </c:if>
+	</c:iterate>
+	<c:iterate select="$userType/referenceList" var="aReference">
+		<c:set select="$aReference" name="javaSetter">set<f:uc length="1"><c:get select="$aReference/@name" /></f:uc></c:set>
+		<c:set select="$aReference" name="javaGetter">get<f:uc length="1"><c:get select="$aReference/@name" /></f:uc></c:set>
+		<c:set select="$aReference" name="javaType"><c:get select="$aReference/referencedType/@fullBeanName" /></c:set>
+	</c:iterate>
+</c:iterate>
+
+<%-- set all types, field and references message keys --%> 
+<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+	<c:iterate select="$userType/attributes" var="anAttribute">
+		<c:set select="$anAttribute" name="messageKey"><c:get select="$userType/@fullBeanName" />.<c:get select="$anAttribute/@name" />.label</c:set>
+	</c:iterate>
+    <c:iterate select="$userType/referenceList" var="aReference">
+        <c:set select="$aReference" name="messageKey"><c:get select="$userType/@fullBeanName" />.<c:get select="$aReference/@name" />.label</c:set>
+    </c:iterate>
+</c:iterate>
+
+<%-- set paths for pages --%> 
+<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+	<c:set select="$userType" name="editPagePath"><c:get select="$theConfiguration/@webpath" />/Edit<c:get select="$userType/@name" />.jsp</c:set>
+    <c:set select="$userType" name="listPagePath"><c:get select="$theConfiguration/@webpath" />/List<c:get select="$userType/@name" />.jsp</c:set>
+</c:iterate>

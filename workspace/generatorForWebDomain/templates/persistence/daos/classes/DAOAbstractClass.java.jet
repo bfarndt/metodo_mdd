@@ -1,0 +1,15 @@
+package <c:get select="$theConfiguration/@daosPackage" />;
+
+import java.util.List;
+
+import core.database.BaseDAO;
+import <c:get select="$userType/@fullBeanName" />;
+
+public abstract class <c:get select="$userType/@daoClass" /> extends BaseDAO {
+    public abstract List<<c:get select="$userType/@name" />> getAll<c:get select="$userType/@name" />s();
+    public abstract <c:get select="$userType/@name" /> get<c:get select="$userType/@name" />(<c:get select="$userType/@idFieldType" /> <c:get select="$userType/@idField" />Parameter);
+    public abstract boolean saveOrUpdate<c:get select="$userType/@name" />(<c:get select="$userType/@name" /> <c:get select="$userType/@instanceName" />);
+    public abstract boolean insert<c:get select="$userType/@name" />(<c:get select="$userType/@name" /> <c:get select="$userType/@instanceName" />);
+    public abstract boolean update<c:get select="$userType/@name" />(<c:get select="$userType/@name" /> <c:get select="$userType/@instanceName" />);
+    public abstract boolean delete<c:get select="$userType/@name" />(<c:get select="$userType/@idFieldType" /> <c:get select="$userType/@idField" />);
+}

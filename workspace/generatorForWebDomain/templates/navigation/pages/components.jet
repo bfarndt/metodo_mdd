@@ -1,0 +1,137 @@
+<%@ jet startTag="<*" endTag="*>" %>
+<% { %>
+<c:if test="$component/@componentTitle">
+<div class="componentTitle"><c:get select="$component/@componentTitle" /></div>
+</c:if>
+	<c:if test="emf.eClass($component)/@name = 'Text'">
+		<c:get select="$component/@text" />
+	</c:if> 
+	<c:if test="emf.eClass($component)/@name = 'NavList'">
+			<c:if test="$component/@location = 'top' or $component/@location = 'bottom'">
+				<c:iterate select="$component/listItems" var="li" delimiter="|">
+				<a href="<c:get select="$li/page/@name" />.jsp"><c:get select="$li/@text" /></a>
+				</c:iterate>
+			</c:if>
+			<c:if test="$component/@location != 'top' and $component/@location != 'bottom'">
+				<c:iterate select="$component/listItems" var="li" delimiter="<br/>">
+				<a href="<c:get select="$li/page/@name" />.jsp"><c:get select="$li/@text" /></a>
+				</c:iterate>
+			</c:if>
+		<br/>
+	</c:if> 
+	<c:if test="$component/self::Summary">
+		<%
+		<c:get select="$component/@entity" />DAO dao = DefaultDAOFactoryProvider.getDefaultDAOFactoryInstance().get<c:get select="$component/@entity" />DAO();
+		List<<c:get select="$component/@entity" />> list<c:get select="$component/@entity" /> = dao.getAll<c:get select="$component/@entity" />s();
+		<c:if test="$component/@summarySize > 0">
+			int count = 0;
+		</c:if>
+		for(<c:get select="$component/@entity" /> a<c:get select="$component/@entity" /> : list<c:get select="$component/@entity" />) {
+		<c:if test="$component/@summarySize > 0">
+			if(count++ >= <c:get select="$component/@summarySize" />) break;
+		</c:if>
+		%>
+		<div class="summaryItem">
+		<span class="summaryTitle">
+		<c:if test="$component/page">
+			<a href="<c:get select="$component/page/@name" />.jsp?idParameter=<%=a<c:get select="$component/@entity" />.get<c:get select="$component/@entity" />Id()%>&entityName=<c:get select="$component/@entity" />" class="summaryTitle">
+		</c:if>
+		<c:set select="$component" name="upperCaseTitleField"><f:uc length="1"><c:get select="$component/@titleField" /></f:uc></c:set>
+		<%=a<c:get select="$component/@entity" />.get<c:get select="$component/@upperCaseTitleField" />()%>
+		<c:if test="$component/page">
+			</a>
+		</c:if>
+		</span><br/>
+		<c:if test="$component/@summaryField">
+			<span class="summaryField">
+			<c:if test="$component/page">
+				<a href="<c:get select="$component/page/@name" />.jsp?idParameter=<%=a<c:get select="$component/@entity" />.get<c:get select="$component/@entity" />Id()%>&entityName=<c:get select="$component/@entity" />" class="summaryField">
+			</c:if>
+			<c:set select="$component" name="upperCaseSummaryField"><f:uc length="1"><c:get select="$component/@summaryField" /></f:uc></c:set>
+			<%=a<c:get select="$component/@entity" />.get<c:get select="$component/@upperCaseSummaryField" />()%>
+			<c:if test="$component/page">
+				</a>
+			</c:if>
+			</span><br/>
+		</c:if>
+		</div>
+		<% } %>
+	
+	</c:if>
+	<c:if test="$component/self::EntityView">
+		<% long idParameter = Long.parseLong(request.getParameter("idParameter"));
+		<c:get select="$component/@entity" />DAO dao = DefaultDAOFactoryProvider.getDefaultDAOFactoryInstance().get<c:get select="$component/@entity" />DAO();
+		<c:get select="$component/@entity" /> a<c:get select="$component/@entity" /> = dao.get<c:get select="$component/@entity" />(idParameter);
+		if(a<c:get select="$component/@entity" /> != null) {
+			<c:iterate select="$component/listEntityFields" var="lef">
+				<c:if test="$lef/@fieldType = 'IMAGE'">
+					<c:set select="$lef" name="upperCaseFieldName"><f:uc length="1"><c:get select="$lef/@fieldName" /></f:uc></c:set>
+				
+				    request.getSession().setAttribute("a<c:get select="$component/@entity" /><c:get select="$lef/@fieldName" />ContentType",a<c:get select="$component/@entity" />.get<c:get select="$lef/@upperCaseFieldName" />ContentType());
+    				request.getSession().setAttribute("a<c:get select="$component/@entity" /><c:get select="$lef/@fieldName" />",a<c:get select="$component/@entity" />.get<c:get select="$lef/@upperCaseFieldName" />());
+				</c:if>
+			</c:iterate>
+		%>
+
+		<c:iterate select="$component/htmlContent" var="hitem">
+			<*
+			// Este trecho eh processado pelo JET, e nao JSP!
+			br.ufscar.dc.webnav.webNav.HtmlItem hi = (br.ufscar.dc.webnav.webNav.HtmlItem)context.getVariable("hitem"); 
+			br.ufscar.dc.webnav.webNav.EntityView comp = (br.ufscar.dc.webnav.webNav.EntityView) hi.eContainer();
+			java.util.List<br.ufscar.dc.webnav.webNav.EntityField> fields = comp.getListEntityFields();
+			String beanName = "a"+comp.getEntity();
+			String text = hi.getContent();
+			text = text.replaceAll("\\\\\"", "\"");
+			String ret = "";
+			int index = -1;
+		
+			String fieldName = "", fieldType = "";
+		
+			while ((index = text.indexOf("${")) != -1) {
+				String line = "";
+				line += text.substring(0, index);
+				text = text.substring(index + 2);
+				index = text.indexOf("}");
+				int fieldNumber = Integer.parseInt(text.substring(0, index));
+				br.ufscar.dc.webnav.webNav.EntityField field = fields.get(fieldNumber - 1);
+				fieldName = (String) field.eGet(field.eClass()
+						.getEStructuralFeature("fieldName"));
+				fieldType = (String) field.eGet(field.eClass()
+						.getEStructuralFeature("fieldType"));
+
+				if (fieldType.equals("IMAGE")) {
+					line += "core.actions.CommonActions.showSessionImage.do?imageId=";
+					line += beanName + fieldName;
+				} else if (fieldType.equals("DATE")) {
+					line += "<%=new java.text.SimpleDateFormat(\"dd/MM/yyyy\").format(";
+					line += beanName + "." + "get" + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1) + "()";
+					line += ")%>";
+				} else if (fieldType.equals("REFERENCE")) {
+					line += "<%=" + beanName + "." + "get" + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1) + "()" + ".getSummary()%>";
+				} else {
+					line += "<%=" + beanName + "." + "get" + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1) + "()" + "%>";
+				}
+				text = text.substring(index + 1);
+				ret += line;
+			}
+			ret += text;
+			if(fieldType.equals("IMAGE"))
+				ret = "<% if("+beanName + "." + "get" + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1) + "()" + ".length>0) { %>" + ret;
+			if(fieldType.equals("IMAGE"))
+				ret += "<% } %>";
+			out.write(ret+"\n");
+		*>
+		</c:iterate>
+
+		<% } %>
+
+		<c:if test="$featuresModel/WebDomainFeatures/@userContent = 'true'">
+			<c:include template="templates/navigation/pages/userContent.jet" />
+		</c:if>
+
+		<c:if test="$component/componentLink">
+			<div class="componentLink"><a href="<c:get select="$component/componentLink/@name" />.jsp"><c:get select="$component/@linkTitle" /></a></div>
+		</c:if>
+	</c:if>
+	<c:if test="$component/self::Text">Text</c:if>
+<% } %>

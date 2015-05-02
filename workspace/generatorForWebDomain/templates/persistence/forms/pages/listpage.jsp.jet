@@ -1,0 +1,57 @@
+<%@ jet startTag="<*" endTag="*>" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="ctrl"%>  
+<%@ taglib uri="/WEB-INF/tags/mytaglib.tld" prefix="mytaglib"%>
+<%@ taglib uri="/WEB-INF/tags/myfunctions.tld" prefix="f"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/admin.css" />
+<link rel="stylesheet" type="text/css" href="css/listStyle/listStyle.css" />
+<title>Administrative area: <c:get select="$userType/@name" /></title>
+</head>
+<body>
+<%@ include file="/<c:get select="$theConfiguration/@webpath" />/jspf/adminPrefix.jspf" %>
+
+<mytaglib:showlist items="${all<c:get select="$userType/@name" />s}"
+                   titleList="<c:get select="$userType/@fullBeanName" />.list.title"
+                   insertCaption="<c:get select="$userType/@fullBeanName" />.new"
+                   notExistItemsMessage="<c:get select="$userType/@fullBeanName" />.empty"
+                   titles="<c:iterate select="$userType/attributes[@appearsInLists='true']" var="attribute" delimiter=","
+							><c:get select="$attribute/@messageKey" /></c:iterate><c:iterate select="$userType/referenceList[@appearsInLists='true']" var="reference"
+                            >,<c:get select="$reference/@messageKey" /></c:iterate>"
+                   properties="<c:iterate select="$userType/attributes[@appearsInLists='true']" var="attribute" delimiter=","
+							><c:if test="$attribute/@fieldType = 'DATE' or $attribute/@fieldType = 'CURRENCY'">*</c:if><c:get select="$attribute/@name" /></c:iterate
+							><c:iterate select="$userType/referenceList[@appearsInLists='true']" var="reference"
+                            >,<c:get select="$reference/@name" /></c:iterate>"
+                   sizes="<c:iterate select="$userType/attributes[@appearsInLists='true']" var="attribute" delimiter=","
+							><c:get select="$attribute/@fieldSize" /></c:iterate
+							><c:iterate select="$userType/referenceList[@appearsInLists='true']" var="reference"
+                            >,<c:get select="$reference/@fieldSize" /></c:iterate>"
+                   idProperty="<c:get select="$userType/@idField" />"
+                   idParameter="<c:get select="$userType/@idField" />"
+                   insertLink="<c:get select="$userType/@actionClassFullPath" />.<c:get select="$userType/@loadFormAction" />.do"
+                   deleteLink="<c:get select="$userType/@actionClassFullPath" />.<c:get select="$userType/@deleteAction" />.do"
+                   updateLink="<c:get select="$userType/@actionClassFullPath" />.<c:get select="$userType/@loadFormAction" />.do"
+                   viewLink="<c:get select="$userType/@actionClassFullPath" />.<c:get select="$userType/@loadFormAction" />.do"
+                   paging="5"
+                   originLink="<c:get select="$userType/@actionClassFullPath" />.<c:get select="$userType/@showAllAction" />.do"
+                   highlight="true">
+    <jsp:attribute name="specialEvaluation">
+        <c:iterate select="$userType/attributes[@appearsInLists='true']" var="attribute"><c:if test="$attribute/@fieldType = 'DATE'"
+        ><ctrl:if test="${specialPropertyName == '<c:get select="$attribute/@name" />'}">
+            ${f:formatSimpleDate(evaluatedItem.<c:get select="$attribute/@name" />)}
+        </ctrl:if></c:if><c:if test="$attribute/@fieldType = 'CURRENCY'"
+        ><ctrl:if test="${specialPropertyName == '<c:get select="$attribute/@name" />'}">
+            ${f:formatCurrency(evaluatedItem.<c:get select="$attribute/@name" />)}
+        </ctrl:if></c:if></c:iterate>
+    </jsp:attribute>
+</mytaglib:showlist>
+
+<%@ include file="/<c:get select="$theConfiguration/@webpath" />/jspf/adminSuffix.jspf" %>
+</body>
+</html>
