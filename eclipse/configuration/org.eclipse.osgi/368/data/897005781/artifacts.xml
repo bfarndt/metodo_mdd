@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<repository name='/home/pacoteExperimento.v3/eclipse/.eclipseextension' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1.0.0'>
+  <properties size='3'>
+    <property name='p2.timestamp' value='1429553448420'/>
+    <property name='org.eclipse.update.site.policy' value='USER-EXCLUDE'/>
+    <property name='org.eclipse.update.site.list' value=''/>
+  </properties>
+  <mappings size='3'>
+    <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
+    <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
+  </mappings>
+  <artifacts size='17'>
+    <artifact classifier='osgi.bundle' id='WebDomainAdministrationModeler.editor' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='65896'/>
+        <property name='download.size' value='65896'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/WebDomainAdministrationModeler.editor_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/WebDomainAdministrationModeler.editor_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jet.core' version='1.2.1.v201101271243'>
+      <properties size='2'>
+        <property name='artifact.size' value='155597'/>
+        <property name='download.size' value='155597'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/org.eclipse.jet.core_1.2.1.v201101271243.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/org.eclipse.jet.core_1.2.1.v201101271243.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='WebDomainAdministrationModeler.edit' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='21165'/>
+        <property name='download.size' value='21165'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/WebDomainAdministrationModeler.edit_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/WebDomainAdministrationModeler.edit_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='WebDomainAdministrationModeler' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='41031'/>
+        <property name='download.size' value='41031'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/WebDomainAdministrationModeler_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/WebDomainAdministrationModeler_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='WebDomainAdministrationModeler.diagram' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='321538'/>
+        <property name='download.size' value='321538'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/WebDomainAdministrationModeler.diagram_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/WebDomainAdministrationModeler.diagram_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='br.ufscar.dc.webnav' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='119609'/>
+        <property name='download.size' value='119609'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.webnav_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.webnav_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='br.ufscar.dc.webnav.tests' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='2550'/>
+        <property name='download.size' value='2550'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.webnav.tests_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.webnav.tests_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='br.ufscar.dc.webnav.ui' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='75823'/>
+        <property name='download.size' value='75823'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.webnav.ui_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.webnav.ui_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='br.ufscar.jetmapping' version='1.0.0.201411060945'>
+      <properties size='2'>
+        <property name='artifact.size' value='8351'/>
+        <property name='download.size' value='8351'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/br.ufscar.jetmapping_1.0.0.201411060945.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/br.ufscar.jetmapping_1.0.0.201411060945.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='br.ufscar.dc.splitJETEditor' version='1.0.0.201411060945'>
+      <properties size='2'>
+        <property name='artifact.size' value='28241'/>
+        <property name='download.size' value='28241'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.splitJETEditor_1.0.0.201411060945.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.splitJETEditor_1.0.0.201411060945.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jet' version='1.1.1.v201101311015'>
+      <properties size='2'>
+        <property name='artifact.size' value='915172'/>
+        <property name='download.size' value='915172'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/org.eclipse.jet_1.1.1.v201101311015.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/org.eclipse.jet_1.1.1.v201101311015.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='WebDomainFeaturesModeler.tests' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='5422'/>
+        <property name='download.size' value='5422'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/WebDomainFeaturesModeler.tests_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/WebDomainFeaturesModeler.tests_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='WebDomainFeaturesModeler' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='13023'/>
+        <property name='download.size' value='13023'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/WebDomainFeaturesModeler_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/WebDomainFeaturesModeler_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='WebDomainFeaturesModeler.edit' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='7333'/>
+        <property name='download.size' value='7333'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/WebDomainFeaturesModeler.edit_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/WebDomainFeaturesModeler.edit_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jet.ui' version='1.0.0.v200906120900'>
+      <properties size='2'>
+        <property name='artifact.size' value='73936'/>
+        <property name='download.size' value='73936'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/org.eclipse.jet.ui_1.0.0.v200906120900.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/org.eclipse.jet.ui_1.0.0.v200906120900.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='WebDomainFeaturesModeler.editor' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='62979'/>
+        <property name='download.size' value='62979'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/WebDomainFeaturesModeler.editor_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/WebDomainFeaturesModeler.editor_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='WebDomainAdministrationModeler.tests' version='1.0.0.201411060938'>
+      <properties size='2'>
+        <property name='artifact.size' value='9050'/>
+        <property name='download.size' value='9050'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/pacoteExperimento.v3/eclipse/plugins/WebDomainAdministrationModeler.tests_1.0.0.201411060938.jar'/>
+        <property name='file.name' value='/home/pacoteExperimento.v3/eclipse/plugins/WebDomainAdministrationModeler.tests_1.0.0.201411060938.jar'/>
+      </repositoryProperties>
+    </artifact>
+  </artifacts>
+</repository>
