@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="/home/pacoteExperimento.v3/eclipse" version="1.7.0_71">
+<bootpath>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/resources.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/rt.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/jsse.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/jce.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/charsets.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/jfr.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse" version="1.7.0_71">
+<bootpath>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/resources.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/rt.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jsse.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jce.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/charsets.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jfr.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/eclipse" version="1.7.0_71">
+<bootpath>
+<entry path="/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/eclipse/jre/lib/resources.jar"/>
+<entry path="/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/eclipse/jre/lib/rt.jar"/>
+<entry path="/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/eclipse/jre/lib/jsse.jar"/>
+<entry path="/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/eclipse/jre/lib/jce.jar"/>
+<entry path="/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/eclipse/jre/lib/charsets.jar"/>
+<entry path="/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/eclipse/jre/lib/jfr.jar"/>
+<entry path="/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre" version="1.7.0_71">
+<bootpath>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/resources.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/rt.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jsse.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jce.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/charsets.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jfr.jar"/>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/home/daniel/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/var/www/html/pacoteExperimento.v3/eclipse" version="1.7.0_71">
+<bootpath>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/resources.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/rt.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/jsse.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/jce.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/charsets.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/jfr.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/home/pacoteExperimento.v3/eclipse/jre" version="1.7.0_71">
+<bootpath>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/resources.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/rt.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/jsse.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/jce.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/charsets.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/jfr.jar"/>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/home/pacoteExperimento.v3/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse" version="1.7.0_71">
+<bootpath>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/resources.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/rt.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jsse.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jce.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/charsets.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jfr.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre" version="1.7.0_71">
+<bootpath>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/resources.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/rt.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jsse.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jce.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/charsets.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/jfr.jar"/>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/home/arndt/Área de Trabalho/pacoteExperimento.v3/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>
