@@ -1,0 +1,24 @@
+project "proj2"
+
+begin
+
+datatype String
+
+entity E1 {
+	
+}
+
+entity E2 {
+	
+}
+
+entity Bruno {
+	cpf:String
+	endereco:String
+}
+
+page A {
+	header: true
+}
+
+end
