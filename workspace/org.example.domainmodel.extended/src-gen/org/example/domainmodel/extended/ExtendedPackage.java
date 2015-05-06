@@ -345,13 +345,40 @@ public interface ExtendedPackage extends EPackage
   int PAGE__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Forms</b></em>' containment reference list.
+   * The feature id for the '<em><b>Title</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PAGE__FORMS = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int PAGE__TITLE = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Header</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE__HEADER = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Footer</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE__FOOTER = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Forms</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE__FORMS = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Page</em>' class.
@@ -360,7 +387,35 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAGE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int PAGE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link org.example.domainmodel.extended.impl.FormTypesImpl <em>Form Types</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.domainmodel.extended.impl.FormTypesImpl
+   * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getFormTypes()
+   * @generated
+   */
+  int FORM_TYPES = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_TYPES__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Form Types</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_TYPES_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.example.domainmodel.extended.impl.FormImpl <em>Form</em>}' class.
@@ -370,7 +425,7 @@ public interface ExtendedPackage extends EPackage
    * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getForm()
    * @generated
    */
-  int FORM = 9;
+  int FORM = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -379,16 +434,52 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM__NAME = 0;
+  int FORM__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Entitys</b></em>' containment reference list.
+   * The feature id for the '<em><b>Get</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORM__ENTITYS = 1;
+  int FORM__GET = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Post</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM__POST = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Put</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM__PUT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Delete</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM__DELETE = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM__ENTITY = ABSTRACT_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Form</em>' class.
@@ -397,7 +488,99 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM_FEATURE_COUNT = 2;
+  int FORM_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link org.example.domainmodel.extended.impl.FormNewEntityOnlyImpl <em>Form New Entity Only</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.domainmodel.extended.impl.FormNewEntityOnlyImpl
+   * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getFormNewEntityOnly()
+   * @generated
+   */
+  int FORM_NEW_ENTITY_ONLY = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_NEW_ENTITY_ONLY__NAME = FORM_TYPES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_NEW_ENTITY_ONLY__ENTITY = FORM_TYPES_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Form New Entity Only</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_NEW_ENTITY_ONLY_FEATURE_COUNT = FORM_TYPES_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.example.domainmodel.extended.impl.FormReportImpl <em>Form Report</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.domainmodel.extended.impl.FormReportImpl
+   * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getFormReport()
+   * @generated
+   */
+  int FORM_REPORT = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_REPORT__NAME = FORM_TYPES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Filter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_REPORT__FILTER = FORM_TYPES_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Order</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_REPORT__ORDER = FORM_TYPES_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Pagination</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_REPORT__PAGINATION = FORM_TYPES_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Form Report</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_REPORT_FEATURE_COUNT = FORM_TYPES_FEATURE_COUNT + 3;
 
 
   /**
@@ -623,15 +806,69 @@ public interface ExtendedPackage extends EPackage
   EAttribute getPage_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.example.domainmodel.extended.Page#getForms <em>Forms</em>}'.
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.Page#getTitle <em>Title</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Forms</em>'.
+   * @return the meta object for the attribute '<em>Title</em>'.
+   * @see org.example.domainmodel.extended.Page#getTitle()
+   * @see #getPage()
+   * @generated
+   */
+  EAttribute getPage_Title();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.Page#getHeader <em>Header</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Header</em>'.
+   * @see org.example.domainmodel.extended.Page#getHeader()
+   * @see #getPage()
+   * @generated
+   */
+  EAttribute getPage_Header();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.Page#getFooter <em>Footer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Footer</em>'.
+   * @see org.example.domainmodel.extended.Page#getFooter()
+   * @see #getPage()
+   * @generated
+   */
+  EAttribute getPage_Footer();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.example.domainmodel.extended.Page#getForms <em>Forms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Forms</em>'.
    * @see org.example.domainmodel.extended.Page#getForms()
    * @see #getPage()
    * @generated
    */
   EReference getPage_Forms();
+
+  /**
+   * Returns the meta object for class '{@link org.example.domainmodel.extended.FormTypes <em>Form Types</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Form Types</em>'.
+   * @see org.example.domainmodel.extended.FormTypes
+   * @generated
+   */
+  EClass getFormTypes();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.FormTypes#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.example.domainmodel.extended.FormTypes#getName()
+   * @see #getFormTypes()
+   * @generated
+   */
+  EAttribute getFormTypes_Name();
 
   /**
    * Returns the meta object for class '{@link org.example.domainmodel.extended.Form <em>Form</em>}'.
@@ -644,26 +881,123 @@ public interface ExtendedPackage extends EPackage
   EClass getForm();
 
   /**
-   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.Form#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.Form#getGet <em>Get</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.example.domainmodel.extended.Form#getName()
+   * @return the meta object for the attribute '<em>Get</em>'.
+   * @see org.example.domainmodel.extended.Form#getGet()
    * @see #getForm()
    * @generated
    */
-  EAttribute getForm_Name();
+  EAttribute getForm_Get();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.example.domainmodel.extended.Form#getEntitys <em>Entitys</em>}'.
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.Form#getPost <em>Post</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Entitys</em>'.
-   * @see org.example.domainmodel.extended.Form#getEntitys()
+   * @return the meta object for the attribute '<em>Post</em>'.
+   * @see org.example.domainmodel.extended.Form#getPost()
    * @see #getForm()
    * @generated
    */
-  EReference getForm_Entitys();
+  EAttribute getForm_Post();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.Form#getPut <em>Put</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Put</em>'.
+   * @see org.example.domainmodel.extended.Form#getPut()
+   * @see #getForm()
+   * @generated
+   */
+  EAttribute getForm_Put();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.Form#getDelete <em>Delete</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Delete</em>'.
+   * @see org.example.domainmodel.extended.Form#getDelete()
+   * @see #getForm()
+   * @generated
+   */
+  EAttribute getForm_Delete();
+
+  /**
+   * Returns the meta object for the reference '{@link org.example.domainmodel.extended.Form#getEntity <em>Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Entity</em>'.
+   * @see org.example.domainmodel.extended.Form#getEntity()
+   * @see #getForm()
+   * @generated
+   */
+  EReference getForm_Entity();
+
+  /**
+   * Returns the meta object for class '{@link org.example.domainmodel.extended.FormNewEntityOnly <em>Form New Entity Only</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Form New Entity Only</em>'.
+   * @see org.example.domainmodel.extended.FormNewEntityOnly
+   * @generated
+   */
+  EClass getFormNewEntityOnly();
+
+  /**
+   * Returns the meta object for the reference '{@link org.example.domainmodel.extended.FormNewEntityOnly#getEntity <em>Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Entity</em>'.
+   * @see org.example.domainmodel.extended.FormNewEntityOnly#getEntity()
+   * @see #getFormNewEntityOnly()
+   * @generated
+   */
+  EReference getFormNewEntityOnly_Entity();
+
+  /**
+   * Returns the meta object for class '{@link org.example.domainmodel.extended.FormReport <em>Form Report</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Form Report</em>'.
+   * @see org.example.domainmodel.extended.FormReport
+   * @generated
+   */
+  EClass getFormReport();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.FormReport#getFilter <em>Filter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Filter</em>'.
+   * @see org.example.domainmodel.extended.FormReport#getFilter()
+   * @see #getFormReport()
+   * @generated
+   */
+  EAttribute getFormReport_Filter();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.FormReport#getOrder <em>Order</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Order</em>'.
+   * @see org.example.domainmodel.extended.FormReport#getOrder()
+   * @see #getFormReport()
+   * @generated
+   */
+  EAttribute getFormReport_Order();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.FormReport#getPagination <em>Pagination</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pagination</em>'.
+   * @see org.example.domainmodel.extended.FormReport#getPagination()
+   * @see #getFormReport()
+   * @generated
+   */
+  EAttribute getFormReport_Pagination();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -875,12 +1209,54 @@ public interface ExtendedPackage extends EPackage
     EAttribute PAGE__NAME = eINSTANCE.getPage_Name();
 
     /**
-     * The meta object literal for the '<em><b>Forms</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PAGE__TITLE = eINSTANCE.getPage_Title();
+
+    /**
+     * The meta object literal for the '<em><b>Header</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PAGE__HEADER = eINSTANCE.getPage_Header();
+
+    /**
+     * The meta object literal for the '<em><b>Footer</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PAGE__FOOTER = eINSTANCE.getPage_Footer();
+
+    /**
+     * The meta object literal for the '<em><b>Forms</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference PAGE__FORMS = eINSTANCE.getPage_Forms();
+
+    /**
+     * The meta object literal for the '{@link org.example.domainmodel.extended.impl.FormTypesImpl <em>Form Types</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.domainmodel.extended.impl.FormTypesImpl
+     * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getFormTypes()
+     * @generated
+     */
+    EClass FORM_TYPES = eINSTANCE.getFormTypes();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_TYPES__NAME = eINSTANCE.getFormTypes_Name();
 
     /**
      * The meta object literal for the '{@link org.example.domainmodel.extended.impl.FormImpl <em>Form</em>}' class.
@@ -893,20 +1269,96 @@ public interface ExtendedPackage extends EPackage
     EClass FORM = eINSTANCE.getForm();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Get</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FORM__NAME = eINSTANCE.getForm_Name();
+    EAttribute FORM__GET = eINSTANCE.getForm_Get();
 
     /**
-     * The meta object literal for the '<em><b>Entitys</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Post</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FORM__ENTITYS = eINSTANCE.getForm_Entitys();
+    EAttribute FORM__POST = eINSTANCE.getForm_Post();
+
+    /**
+     * The meta object literal for the '<em><b>Put</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM__PUT = eINSTANCE.getForm_Put();
+
+    /**
+     * The meta object literal for the '<em><b>Delete</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM__DELETE = eINSTANCE.getForm_Delete();
+
+    /**
+     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FORM__ENTITY = eINSTANCE.getForm_Entity();
+
+    /**
+     * The meta object literal for the '{@link org.example.domainmodel.extended.impl.FormNewEntityOnlyImpl <em>Form New Entity Only</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.domainmodel.extended.impl.FormNewEntityOnlyImpl
+     * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getFormNewEntityOnly()
+     * @generated
+     */
+    EClass FORM_NEW_ENTITY_ONLY = eINSTANCE.getFormNewEntityOnly();
+
+    /**
+     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FORM_NEW_ENTITY_ONLY__ENTITY = eINSTANCE.getFormNewEntityOnly_Entity();
+
+    /**
+     * The meta object literal for the '{@link org.example.domainmodel.extended.impl.FormReportImpl <em>Form Report</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.domainmodel.extended.impl.FormReportImpl
+     * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getFormReport()
+     * @generated
+     */
+    EClass FORM_REPORT = eINSTANCE.getFormReport();
+
+    /**
+     * The meta object literal for the '<em><b>Filter</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_REPORT__FILTER = eINSTANCE.getFormReport_Filter();
+
+    /**
+     * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_REPORT__ORDER = eINSTANCE.getFormReport_Order();
+
+    /**
+     * The meta object literal for the '<em><b>Pagination</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_REPORT__PAGINATION = eINSTANCE.getFormReport_Pagination();
 
   }
 

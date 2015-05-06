@@ -60,17 +60,40 @@ Boolean:
 Page:
 	'page' name = ID
 	'{'
-		'header' ':' header = STRING
-		'footer' ':' STRING
-		(forms += [Form])*
+		'title' ':' title = STRING
+		'header' ':' header = Boolean
+		'footer' ':' footer = Boolean
+		(forms += [FormTypes])*
 	'}'
+;
+
+FormTypes:
+	Form | FormNewEntityOnly | FormReport
 ;
 
 Form:
 	'form' name = ID
 	'{'
-		'isShow' ':' show = Boolean
-		'isEdit' ':' Boolean
+		'get' ':' get = Boolean
+		'post' ':' post = Boolean
+		'put' ':' put = Boolean
+		'delete' ':' delete = Boolean
 		entity = [Entity]
+	'}'
+;
+
+FormNewEntityOnly:
+	'formNewEntity' name = ID
+	'{'
+		entity = [Entity]
+	'}'
+;
+
+FormReport:
+	'formReport' name = ID
+	'{'
+		'filter' ':' filter = Boolean
+		'order' ':' order = Boolean
+		'pagination' ':' pagination = Boolean
 	'}'
 ;

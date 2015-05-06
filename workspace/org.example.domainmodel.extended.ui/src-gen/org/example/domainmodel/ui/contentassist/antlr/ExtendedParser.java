@@ -39,6 +39,8 @@ public class ExtendedParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getAbstractElementAccess().getAlternatives(), "rule__AbstractElement__Alternatives");
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
+					put(grammarAccess.getBooleanAccess().getAlternatives(), "rule__Boolean__Alternatives");
+					put(grammarAccess.getFormTypesAccess().getAlternatives(), "rule__FormTypes__Alternatives");
 					put(grammarAccess.getDomainmodelAccess().getGroup(), "rule__Domainmodel__Group__0");
 					put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
@@ -51,6 +53,8 @@ public class ExtendedParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
 					put(grammarAccess.getPageAccess().getGroup(), "rule__Page__Group__0");
 					put(grammarAccess.getFormAccess().getGroup(), "rule__Form__Group__0");
+					put(grammarAccess.getFormNewEntityOnlyAccess().getGroup(), "rule__FormNewEntityOnly__Group__0");
+					put(grammarAccess.getFormReportAccess().getGroup(), "rule__FormReport__Group__0");
 					put(grammarAccess.getDomainmodelAccess().getNomeProjAssignment_1(), "rule__Domainmodel__NomeProjAssignment_1");
 					put(grammarAccess.getDomainmodelAccess().getElementsAssignment_3(), "rule__Domainmodel__ElementsAssignment_3");
 					put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
@@ -64,9 +68,22 @@ public class ExtendedParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFeatureAccess().getNameAssignment_1(), "rule__Feature__NameAssignment_1");
 					put(grammarAccess.getFeatureAccess().getTypeAssignment_3(), "rule__Feature__TypeAssignment_3");
 					put(grammarAccess.getPageAccess().getNameAssignment_1(), "rule__Page__NameAssignment_1");
-					put(grammarAccess.getPageAccess().getFormsAssignment_9(), "rule__Page__FormsAssignment_9");
+					put(grammarAccess.getPageAccess().getTitleAssignment_5(), "rule__Page__TitleAssignment_5");
+					put(grammarAccess.getPageAccess().getHeaderAssignment_8(), "rule__Page__HeaderAssignment_8");
+					put(grammarAccess.getPageAccess().getFooterAssignment_11(), "rule__Page__FooterAssignment_11");
+					put(grammarAccess.getPageAccess().getFormsAssignment_12(), "rule__Page__FormsAssignment_12");
 					put(grammarAccess.getFormAccess().getNameAssignment_1(), "rule__Form__NameAssignment_1");
-					put(grammarAccess.getFormAccess().getEntitysAssignment_9(), "rule__Form__EntitysAssignment_9");
+					put(grammarAccess.getFormAccess().getGetAssignment_5(), "rule__Form__GetAssignment_5");
+					put(grammarAccess.getFormAccess().getPostAssignment_8(), "rule__Form__PostAssignment_8");
+					put(grammarAccess.getFormAccess().getPutAssignment_11(), "rule__Form__PutAssignment_11");
+					put(grammarAccess.getFormAccess().getDeleteAssignment_14(), "rule__Form__DeleteAssignment_14");
+					put(grammarAccess.getFormAccess().getEntityAssignment_15(), "rule__Form__EntityAssignment_15");
+					put(grammarAccess.getFormNewEntityOnlyAccess().getNameAssignment_1(), "rule__FormNewEntityOnly__NameAssignment_1");
+					put(grammarAccess.getFormNewEntityOnlyAccess().getEntityAssignment_3(), "rule__FormNewEntityOnly__EntityAssignment_3");
+					put(grammarAccess.getFormReportAccess().getNameAssignment_1(), "rule__FormReport__NameAssignment_1");
+					put(grammarAccess.getFormReportAccess().getFilterAssignment_5(), "rule__FormReport__FilterAssignment_5");
+					put(grammarAccess.getFormReportAccess().getOrderAssignment_8(), "rule__FormReport__OrderAssignment_8");
+					put(grammarAccess.getFormReportAccess().getPaginationAssignment_11(), "rule__FormReport__PaginationAssignment_11");
 				}
 			};
 		}

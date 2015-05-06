@@ -143,10 +143,35 @@ public class ExtendedSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ExtendedPackage.FORM_TYPES:
+      {
+        FormTypes formTypes = (FormTypes)theEObject;
+        T result = caseFormTypes(formTypes);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ExtendedPackage.FORM:
       {
         Form form = (Form)theEObject;
         T result = caseForm(form);
+        if (result == null) result = caseAbstractElement(form);
+        if (result == null) result = caseFormTypes(form);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExtendedPackage.FORM_NEW_ENTITY_ONLY:
+      {
+        FormNewEntityOnly formNewEntityOnly = (FormNewEntityOnly)theEObject;
+        T result = caseFormNewEntityOnly(formNewEntityOnly);
+        if (result == null) result = caseFormTypes(formNewEntityOnly);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExtendedPackage.FORM_REPORT:
+      {
+        FormReport formReport = (FormReport)theEObject;
+        T result = caseFormReport(formReport);
+        if (result == null) result = caseFormTypes(formReport);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -299,6 +324,22 @@ public class ExtendedSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Form Types</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Form Types</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFormTypes(FormTypes object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Form</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -310,6 +351,38 @@ public class ExtendedSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseForm(Form object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Form New Entity Only</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Form New Entity Only</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFormNewEntityOnly(FormNewEntityOnly object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Form Report</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Form Report</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFormReport(FormReport object)
   {
     return null;
   }

@@ -17,6 +17,9 @@ import org.example.domainmodel.extended.ExtendedFactory;
 import org.example.domainmodel.extended.ExtendedPackage;
 import org.example.domainmodel.extended.Feature;
 import org.example.domainmodel.extended.Form;
+import org.example.domainmodel.extended.FormNewEntityOnly;
+import org.example.domainmodel.extended.FormReport;
+import org.example.domainmodel.extended.FormTypes;
 import org.example.domainmodel.extended.Import;
 import org.example.domainmodel.extended.PackageDeclaration;
 import org.example.domainmodel.extended.Page;
@@ -98,7 +101,28 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass formTypesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass formEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass formNewEntityOnlyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass formReportEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -378,9 +402,59 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getPage_Title()
+  {
+    return (EAttribute)pageEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPage_Header()
+  {
+    return (EAttribute)pageEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPage_Footer()
+  {
+    return (EAttribute)pageEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getPage_Forms()
   {
-    return (EReference)pageEClass.getEStructuralFeatures().get(1);
+    return (EReference)pageEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFormTypes()
+  {
+    return formTypesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFormTypes_Name()
+  {
+    return (EAttribute)formTypesEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -398,7 +472,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getForm_Name()
+  public EAttribute getForm_Get()
   {
     return (EAttribute)formEClass.getEStructuralFeatures().get(0);
   }
@@ -408,9 +482,99 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForm_Entitys()
+  public EAttribute getForm_Post()
   {
-    return (EReference)formEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)formEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getForm_Put()
+  {
+    return (EAttribute)formEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getForm_Delete()
+  {
+    return (EAttribute)formEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForm_Entity()
+  {
+    return (EReference)formEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFormNewEntityOnly()
+  {
+    return formNewEntityOnlyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFormNewEntityOnly_Entity()
+  {
+    return (EReference)formNewEntityOnlyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFormReport()
+  {
+    return formReportEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFormReport_Filter()
+  {
+    return (EAttribute)formReportEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFormReport_Order()
+  {
+    return (EAttribute)formReportEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFormReport_Pagination()
+  {
+    return (EAttribute)formReportEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -472,11 +636,28 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 
     pageEClass = createEClass(PAGE);
     createEAttribute(pageEClass, PAGE__NAME);
+    createEAttribute(pageEClass, PAGE__TITLE);
+    createEAttribute(pageEClass, PAGE__HEADER);
+    createEAttribute(pageEClass, PAGE__FOOTER);
     createEReference(pageEClass, PAGE__FORMS);
 
+    formTypesEClass = createEClass(FORM_TYPES);
+    createEAttribute(formTypesEClass, FORM_TYPES__NAME);
+
     formEClass = createEClass(FORM);
-    createEAttribute(formEClass, FORM__NAME);
-    createEReference(formEClass, FORM__ENTITYS);
+    createEAttribute(formEClass, FORM__GET);
+    createEAttribute(formEClass, FORM__POST);
+    createEAttribute(formEClass, FORM__PUT);
+    createEAttribute(formEClass, FORM__DELETE);
+    createEReference(formEClass, FORM__ENTITY);
+
+    formNewEntityOnlyEClass = createEClass(FORM_NEW_ENTITY_ONLY);
+    createEReference(formNewEntityOnlyEClass, FORM_NEW_ENTITY_ONLY__ENTITY);
+
+    formReportEClass = createEClass(FORM_REPORT);
+    createEAttribute(formReportEClass, FORM_REPORT__FILTER);
+    createEAttribute(formReportEClass, FORM_REPORT__ORDER);
+    createEAttribute(formReportEClass, FORM_REPORT__PAGINATION);
   }
 
   /**
@@ -514,6 +695,10 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
     dataTypeEClass.getESuperTypes().add(this.getType());
     entityEClass.getESuperTypes().add(this.getType());
     pageEClass.getESuperTypes().add(this.getAbstractElement());
+    formEClass.getESuperTypes().add(this.getAbstractElement());
+    formEClass.getESuperTypes().add(this.getFormTypes());
+    formNewEntityOnlyEClass.getESuperTypes().add(this.getFormTypes());
+    formReportEClass.getESuperTypes().add(this.getFormTypes());
 
     // Initialize classes and features; add operations and parameters
     initEClass(domainmodelEClass, Domainmodel.class, "Domainmodel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -545,11 +730,28 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 
     initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPage_Name(), ecorePackage.getEString(), "name", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPage_Forms(), this.getForm(), null, "forms", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPage_Title(), ecorePackage.getEString(), "title", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPage_Header(), ecorePackage.getEString(), "header", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPage_Footer(), ecorePackage.getEString(), "footer", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPage_Forms(), this.getFormTypes(), null, "forms", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(formTypesEClass, FormTypes.class, "FormTypes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFormTypes_Name(), ecorePackage.getEString(), "name", null, 0, 1, FormTypes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getForm_Name(), ecorePackage.getEString(), "name", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getForm_Entitys(), this.getEntity(), null, "entitys", null, 0, -1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getForm_Get(), ecorePackage.getEString(), "get", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getForm_Post(), ecorePackage.getEString(), "post", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getForm_Put(), ecorePackage.getEString(), "put", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getForm_Delete(), ecorePackage.getEString(), "delete", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForm_Entity(), this.getEntity(), null, "entity", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(formNewEntityOnlyEClass, FormNewEntityOnly.class, "FormNewEntityOnly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFormNewEntityOnly_Entity(), this.getEntity(), null, "entity", null, 0, 1, FormNewEntityOnly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(formReportEClass, FormReport.class, "FormReport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFormReport_Filter(), ecorePackage.getEString(), "filter", null, 0, 1, FormReport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFormReport_Order(), ecorePackage.getEString(), "order", null, 0, 1, FormReport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFormReport_Pagination(), ecorePackage.getEString(), "pagination", null, 0, 1, FormReport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

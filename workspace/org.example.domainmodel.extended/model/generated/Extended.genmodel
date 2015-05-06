@@ -34,11 +34,28 @@
     </genClasses>
     <genClasses ecoreClass="Extended.ecore#//Page">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Page/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Extended.ecore#//Page/forms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Page/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Page/header"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Page/footer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Extended.ecore#//Page/forms"/>
+    </genClasses>
+    <genClasses ecoreClass="Extended.ecore#//FormTypes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//FormTypes/name"/>
     </genClasses>
     <genClasses ecoreClass="Extended.ecore#//Form">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Form/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Extended.ecore#//Form/entitys"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Form/get"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Form/post"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Form/put"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Form/delete"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Extended.ecore#//Form/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="Extended.ecore#//FormNewEntityOnly">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Extended.ecore#//FormNewEntityOnly/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="Extended.ecore#//FormReport">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//FormReport/filter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//FormReport/order"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//FormReport/pagination"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

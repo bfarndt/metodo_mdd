@@ -19,6 +19,8 @@ import org.example.domainmodel.extended.Entity;
 import org.example.domainmodel.extended.ExtendedPackage;
 import org.example.domainmodel.extended.Feature;
 import org.example.domainmodel.extended.Form;
+import org.example.domainmodel.extended.FormNewEntityOnly;
+import org.example.domainmodel.extended.FormReport;
 import org.example.domainmodel.extended.Import;
 import org.example.domainmodel.extended.PackageDeclaration;
 import org.example.domainmodel.extended.Page;
@@ -61,8 +63,24 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				}
 				else break;
 			case ExtendedPackage.FORM:
-				if(context == grammarAccess.getFormRule()) {
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getFormRule() ||
+				   context == grammarAccess.getFormTypesRule()) {
 					sequence_Form(context, (Form) semanticObject); 
+					return; 
+				}
+				else break;
+			case ExtendedPackage.FORM_NEW_ENTITY_ONLY:
+				if(context == grammarAccess.getFormNewEntityOnlyRule() ||
+				   context == grammarAccess.getFormTypesRule()) {
+					sequence_FormNewEntityOnly(context, (FormNewEntityOnly) semanticObject); 
+					return; 
+				}
+				else break;
+			case ExtendedPackage.FORM_REPORT:
+				if(context == grammarAccess.getFormReportRule() ||
+				   context == grammarAccess.getFormTypesRule()) {
+					sequence_FormReport(context, (FormReport) semanticObject); 
 					return; 
 				}
 				else break;
@@ -136,10 +154,83 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (name=ID entitys+=Entity*)
+	 *     (name=ID entity=[Entity|ID])
+	 */
+	protected void sequence_FormNewEntityOnly(EObject context, FormNewEntityOnly semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_NEW_ENTITY_ONLY__ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_NEW_ENTITY_ONLY__ENTITY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getFormNewEntityOnlyAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFormNewEntityOnlyAccess().getEntityEntityIDTerminalRuleCall_3_0_1(), semanticObject.getEntity());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID filter=Boolean order=Boolean pagination=Boolean)
+	 */
+	protected void sequence_FormReport(EObject context, FormReport semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_REPORT__FILTER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_REPORT__FILTER));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_REPORT__ORDER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_REPORT__ORDER));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_REPORT__PAGINATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_REPORT__PAGINATION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getFormReportAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFormReportAccess().getFilterBooleanParserRuleCall_5_0(), semanticObject.getFilter());
+		feeder.accept(grammarAccess.getFormReportAccess().getOrderBooleanParserRuleCall_8_0(), semanticObject.getOrder());
+		feeder.accept(grammarAccess.getFormReportAccess().getPaginationBooleanParserRuleCall_11_0(), semanticObject.getPagination());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         name=ID 
+	 *         get=Boolean 
+	 *         post=Boolean 
+	 *         put=Boolean 
+	 *         delete=Boolean 
+	 *         entity=[Entity|ID]
+	 *     )
 	 */
 	protected void sequence_Form(EObject context, Form semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM__GET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM__GET));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM__POST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM__POST));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM__PUT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM__PUT));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM__DELETE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM__DELETE));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM__ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM__ENTITY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getFormAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFormAccess().getGetBooleanParserRuleCall_5_0(), semanticObject.getGet());
+		feeder.accept(grammarAccess.getFormAccess().getPostBooleanParserRuleCall_8_0(), semanticObject.getPost());
+		feeder.accept(grammarAccess.getFormAccess().getPutBooleanParserRuleCall_11_0(), semanticObject.getPut());
+		feeder.accept(grammarAccess.getFormAccess().getDeleteBooleanParserRuleCall_14_0(), semanticObject.getDelete());
+		feeder.accept(grammarAccess.getFormAccess().getEntityEntityIDTerminalRuleCall_15_0_1(), semanticObject.getEntity());
+		feeder.finish();
 	}
 	
 	
@@ -170,7 +261,7 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (name=ID forms+=Form*)
+	 *     (name=ID title=STRING header=Boolean footer=Boolean forms+=[FormTypes|ID]*)
 	 */
 	protected void sequence_Page(EObject context, Page semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

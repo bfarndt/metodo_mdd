@@ -104,6 +104,15 @@ public interface ExtendedFactory extends EFactory
   Page createPage();
 
   /**
+   * Returns a new object of class '<em>Form Types</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Form Types</em>'.
+   * @generated
+   */
+  FormTypes createFormTypes();
+
+  /**
    * Returns a new object of class '<em>Form</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,6 +120,24 @@ public interface ExtendedFactory extends EFactory
    * @generated
    */
   Form createForm();
+
+  /**
+   * Returns a new object of class '<em>Form New Entity Only</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Form New Entity Only</em>'.
+   * @generated
+   */
+  FormNewEntityOnly createFormNewEntityOnly();
+
+  /**
+   * Returns a new object of class '<em>Form Report</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Form Report</em>'.
+   * @generated
+   */
+  FormReport createFormReport();
 
   /**
    * Returns the package supported by this factory.

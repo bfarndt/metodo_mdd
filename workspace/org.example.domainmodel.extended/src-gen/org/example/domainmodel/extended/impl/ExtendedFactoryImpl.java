@@ -73,7 +73,10 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
       case ExtendedPackage.ENTITY: return createEntity();
       case ExtendedPackage.FEATURE: return createFeature();
       case ExtendedPackage.PAGE: return createPage();
+      case ExtendedPackage.FORM_TYPES: return createFormTypes();
       case ExtendedPackage.FORM: return createForm();
+      case ExtendedPackage.FORM_NEW_ENTITY_ONLY: return createFormNewEntityOnly();
+      case ExtendedPackage.FORM_REPORT: return createFormReport();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -183,10 +186,43 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public FormTypes createFormTypes()
+  {
+    FormTypesImpl formTypes = new FormTypesImpl();
+    return formTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Form createForm()
   {
     FormImpl form = new FormImpl();
     return form;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FormNewEntityOnly createFormNewEntityOnly()
+  {
+    FormNewEntityOnlyImpl formNewEntityOnly = new FormNewEntityOnlyImpl();
+    return formNewEntityOnly;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FormReport createFormReport()
+  {
+    FormReportImpl formReport = new FormReportImpl();
+    return formReport;
   }
 
   /**

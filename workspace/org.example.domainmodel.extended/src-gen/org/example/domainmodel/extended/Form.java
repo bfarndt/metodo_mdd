@@ -2,9 +2,6 @@
  */
 package org.example.domainmodel.extended;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,8 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.example.domainmodel.extended.Form#getName <em>Name</em>}</li>
- *   <li>{@link org.example.domainmodel.extended.Form#getEntitys <em>Entitys</em>}</li>
+ *   <li>{@link org.example.domainmodel.extended.Form#getGet <em>Get</em>}</li>
+ *   <li>{@link org.example.domainmodel.extended.Form#getPost <em>Post</em>}</li>
+ *   <li>{@link org.example.domainmodel.extended.Form#getPut <em>Put</em>}</li>
+ *   <li>{@link org.example.domainmodel.extended.Form#getDelete <em>Delete</em>}</li>
+ *   <li>{@link org.example.domainmodel.extended.Form#getEntity <em>Entity</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,48 +23,136 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Form extends EObject
+public interface Form extends AbstractElement, FormTypes
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Get</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Get</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.example.domainmodel.extended.ExtendedPackage#getForm_Name()
+   * @return the value of the '<em>Get</em>' attribute.
+   * @see #setGet(String)
+   * @see org.example.domainmodel.extended.ExtendedPackage#getForm_Get()
    * @model
    * @generated
    */
-  String getName();
+  String getGet();
 
   /**
-   * Sets the value of the '{@link org.example.domainmodel.extended.Form#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.example.domainmodel.extended.Form#getGet <em>Get</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Get</em>' attribute.
+   * @see #getGet()
    * @generated
    */
-  void setName(String value);
+  void setGet(String value);
 
   /**
-   * Returns the value of the '<em><b>Entitys</b></em>' containment reference list.
-   * The list contents are of type {@link org.example.domainmodel.extended.Entity}.
+   * Returns the value of the '<em><b>Post</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Entitys</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Post</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Entitys</em>' containment reference list.
-   * @see org.example.domainmodel.extended.ExtendedPackage#getForm_Entitys()
-   * @model containment="true"
+   * @return the value of the '<em>Post</em>' attribute.
+   * @see #setPost(String)
+   * @see org.example.domainmodel.extended.ExtendedPackage#getForm_Post()
+   * @model
    * @generated
    */
-  EList<Entity> getEntitys();
+  String getPost();
+
+  /**
+   * Sets the value of the '{@link org.example.domainmodel.extended.Form#getPost <em>Post</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Post</em>' attribute.
+   * @see #getPost()
+   * @generated
+   */
+  void setPost(String value);
+
+  /**
+   * Returns the value of the '<em><b>Put</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Put</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Put</em>' attribute.
+   * @see #setPut(String)
+   * @see org.example.domainmodel.extended.ExtendedPackage#getForm_Put()
+   * @model
+   * @generated
+   */
+  String getPut();
+
+  /**
+   * Sets the value of the '{@link org.example.domainmodel.extended.Form#getPut <em>Put</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Put</em>' attribute.
+   * @see #getPut()
+   * @generated
+   */
+  void setPut(String value);
+
+  /**
+   * Returns the value of the '<em><b>Delete</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Delete</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Delete</em>' attribute.
+   * @see #setDelete(String)
+   * @see org.example.domainmodel.extended.ExtendedPackage#getForm_Delete()
+   * @model
+   * @generated
+   */
+  String getDelete();
+
+  /**
+   * Sets the value of the '{@link org.example.domainmodel.extended.Form#getDelete <em>Delete</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Delete</em>' attribute.
+   * @see #getDelete()
+   * @generated
+   */
+  void setDelete(String value);
+
+  /**
+   * Returns the value of the '<em><b>Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Entity</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Entity</em>' reference.
+   * @see #setEntity(Entity)
+   * @see org.example.domainmodel.extended.ExtendedPackage#getForm_Entity()
+   * @model
+   * @generated
+   */
+  Entity getEntity();
+
+  /**
+   * Sets the value of the '{@link org.example.domainmodel.extended.Form#getEntity <em>Entity</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Entity</em>' reference.
+   * @see #getEntity()
+   * @generated
+   */
+  void setEntity(Entity value);
 
 } // Form

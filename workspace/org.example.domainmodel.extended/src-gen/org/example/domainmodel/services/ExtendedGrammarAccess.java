@@ -105,12 +105,13 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cImportParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cPageParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cFormParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//AbstractElement:
-		//	PackageDeclaration | Type | Import | Page;
+		//	PackageDeclaration | Type | Import | Page | Form;
 		public ParserRule getRule() { return rule; }
 
-		//PackageDeclaration | Type | Import | Page
+		//PackageDeclaration | Type | Import | Page | Form
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//PackageDeclaration
@@ -124,6 +125,9 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Page
 		public RuleCall getPageParserRuleCall_3() { return cPageParserRuleCall_3; }
+
+		//Form
+		public RuleCall getFormParserRuleCall_4() { return cFormParserRuleCall_4; }
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
@@ -346,6 +350,26 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getTypeTypeQualifiedNameParserRuleCall_3_0_1() { return cTypeTypeQualifiedNameParserRuleCall_3_0_1; }
 	}
 
+	public class BooleanElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Boolean");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//Boolean:
+		//	"true" | "false";
+		public ParserRule getRule() { return rule; }
+
+		//"true" | "false"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"true"
+		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+
+		//"false"
+		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
+	}
+
 	public class PageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Page");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -353,21 +377,30 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cHeaderKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cTitleKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final RuleCall cSTRINGTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
-		private final Keyword cFooterKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cTitleAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTitleSTRINGTerminalRuleCall_5_0 = (RuleCall)cTitleAssignment_5.eContents().get(0);
+		private final Keyword cHeaderKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final RuleCall cSTRINGTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-		private final Assignment cFormsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cFormsFormParserRuleCall_9_0 = (RuleCall)cFormsAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cHeaderAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cHeaderBooleanParserRuleCall_8_0 = (RuleCall)cHeaderAssignment_8.eContents().get(0);
+		private final Keyword cFooterKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cFooterAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cFooterBooleanParserRuleCall_11_0 = (RuleCall)cFooterAssignment_11.eContents().get(0);
+		private final Assignment cFormsAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final CrossReference cFormsFormTypesCrossReference_12_0 = (CrossReference)cFormsAssignment_12.eContents().get(0);
+		private final RuleCall cFormsFormTypesIDTerminalRuleCall_12_0_1 = (RuleCall)cFormsFormTypesCrossReference_12_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//Page:
-		//	"page" name=ID "{" "header" ":" STRING "footer" ":" STRING forms+=Form* "}";
+		//	"page" name=ID "{" "title" ":" title=STRING "header" ":" header=Boolean "footer" ":" footer=Boolean
+		//	forms+=[FormTypes]* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"page" name=ID "{" "header" ":" STRING "footer" ":" STRING forms+=Form* "}"
+		//"page" name=ID "{" "title" ":" title=STRING "header" ":" header=Boolean "footer" ":" footer=Boolean forms+=[FormTypes]*
+		//"}"
 		public Group getGroup() { return cGroup; }
 
 		//"page"
@@ -382,32 +415,77 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//"header"
-		public Keyword getHeaderKeyword_3() { return cHeaderKeyword_3; }
+		//"title"
+		public Keyword getTitleKeyword_3() { return cTitleKeyword_3; }
 
 		//":"
 		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
 
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_5() { return cSTRINGTerminalRuleCall_5; }
+		//title=STRING
+		public Assignment getTitleAssignment_5() { return cTitleAssignment_5; }
 
-		//"footer"
-		public Keyword getFooterKeyword_6() { return cFooterKeyword_6; }
+		//STRING
+		public RuleCall getTitleSTRINGTerminalRuleCall_5_0() { return cTitleSTRINGTerminalRuleCall_5_0; }
+
+		//"header"
+		public Keyword getHeaderKeyword_6() { return cHeaderKeyword_6; }
 
 		//":"
 		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
 
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_8() { return cSTRINGTerminalRuleCall_8; }
+		//header=Boolean
+		public Assignment getHeaderAssignment_8() { return cHeaderAssignment_8; }
 
-		//forms+=Form*
-		public Assignment getFormsAssignment_9() { return cFormsAssignment_9; }
+		//Boolean
+		public RuleCall getHeaderBooleanParserRuleCall_8_0() { return cHeaderBooleanParserRuleCall_8_0; }
 
-		//Form
-		public RuleCall getFormsFormParserRuleCall_9_0() { return cFormsFormParserRuleCall_9_0; }
+		//"footer"
+		public Keyword getFooterKeyword_9() { return cFooterKeyword_9; }
+
+		//":"
+		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
+
+		//footer=Boolean
+		public Assignment getFooterAssignment_11() { return cFooterAssignment_11; }
+
+		//Boolean
+		public RuleCall getFooterBooleanParserRuleCall_11_0() { return cFooterBooleanParserRuleCall_11_0; }
+
+		//forms+=[FormTypes]*
+		public Assignment getFormsAssignment_12() { return cFormsAssignment_12; }
+
+		//[FormTypes]
+		public CrossReference getFormsFormTypesCrossReference_12_0() { return cFormsFormTypesCrossReference_12_0; }
+
+		//ID
+		public RuleCall getFormsFormTypesIDTerminalRuleCall_12_0_1() { return cFormsFormTypesIDTerminalRuleCall_12_0_1; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+	}
+
+	public class FormTypesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FormTypes");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cFormParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cFormNewEntityOnlyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cFormReportParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//FormTypes:
+		//	Form | FormNewEntityOnly | FormReport;
+		public ParserRule getRule() { return rule; }
+
+		//Form | FormNewEntityOnly | FormReport
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Form
+		public RuleCall getFormParserRuleCall_0() { return cFormParserRuleCall_0; }
+
+		//FormNewEntityOnly
+		public RuleCall getFormNewEntityOnlyParserRuleCall_1() { return cFormNewEntityOnlyParserRuleCall_1; }
+
+		//FormReport
+		public RuleCall getFormReportParserRuleCall_2() { return cFormReportParserRuleCall_2; }
 	}
 
 	public class FormElements extends AbstractParserRuleElementFinder {
@@ -417,21 +495,34 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cIsShowKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cGetKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final RuleCall cSTRINGTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
-		private final Keyword cIsEditKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cGetAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cGetBooleanParserRuleCall_5_0 = (RuleCall)cGetAssignment_5.eContents().get(0);
+		private final Keyword cPostKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final RuleCall cSTRINGTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-		private final Assignment cEntitysAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cEntitysEntityParserRuleCall_9_0 = (RuleCall)cEntitysAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cPostAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cPostBooleanParserRuleCall_8_0 = (RuleCall)cPostAssignment_8.eContents().get(0);
+		private final Keyword cPutKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cPutAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cPutBooleanParserRuleCall_11_0 = (RuleCall)cPutAssignment_11.eContents().get(0);
+		private final Keyword cDeleteKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cColonKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cDeleteAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cDeleteBooleanParserRuleCall_14_0 = (RuleCall)cDeleteAssignment_14.eContents().get(0);
+		private final Assignment cEntityAssignment_15 = (Assignment)cGroup.eContents().get(15);
+		private final CrossReference cEntityEntityCrossReference_15_0 = (CrossReference)cEntityAssignment_15.eContents().get(0);
+		private final RuleCall cEntityEntityIDTerminalRuleCall_15_0_1 = (RuleCall)cEntityEntityCrossReference_15_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//Form:
-		//	"form" name=ID "{" "isShow" ":" STRING "isEdit" ":" STRING entitys+=Entity* "}";
+		//	"form" name=ID "{" "get" ":" get=Boolean "post" ":" post=Boolean "put" ":" put=Boolean "delete" ":" delete=Boolean
+		//	entity=[Entity] "}";
 		public ParserRule getRule() { return rule; }
 
-		//"form" name=ID "{" "isShow" ":" STRING "isEdit" ":" STRING entitys+=Entity* "}"
+		//"form" name=ID "{" "get" ":" get=Boolean "post" ":" post=Boolean "put" ":" put=Boolean "delete" ":" delete=Boolean
+		//entity=[Entity] "}"
 		public Group getGroup() { return cGroup; }
 
 		//"form"
@@ -446,32 +537,190 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//"isShow"
-		public Keyword getIsShowKeyword_3() { return cIsShowKeyword_3; }
+		//"get"
+		public Keyword getGetKeyword_3() { return cGetKeyword_3; }
 
 		//":"
 		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
 
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_5() { return cSTRINGTerminalRuleCall_5; }
+		//get=Boolean
+		public Assignment getGetAssignment_5() { return cGetAssignment_5; }
 
-		//"isEdit"
-		public Keyword getIsEditKeyword_6() { return cIsEditKeyword_6; }
+		//Boolean
+		public RuleCall getGetBooleanParserRuleCall_5_0() { return cGetBooleanParserRuleCall_5_0; }
+
+		//"post"
+		public Keyword getPostKeyword_6() { return cPostKeyword_6; }
 
 		//":"
 		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
 
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_8() { return cSTRINGTerminalRuleCall_8; }
+		//post=Boolean
+		public Assignment getPostAssignment_8() { return cPostAssignment_8; }
 
-		//entitys+=Entity*
-		public Assignment getEntitysAssignment_9() { return cEntitysAssignment_9; }
+		//Boolean
+		public RuleCall getPostBooleanParserRuleCall_8_0() { return cPostBooleanParserRuleCall_8_0; }
 
-		//Entity
-		public RuleCall getEntitysEntityParserRuleCall_9_0() { return cEntitysEntityParserRuleCall_9_0; }
+		//"put"
+		public Keyword getPutKeyword_9() { return cPutKeyword_9; }
+
+		//":"
+		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
+
+		//put=Boolean
+		public Assignment getPutAssignment_11() { return cPutAssignment_11; }
+
+		//Boolean
+		public RuleCall getPutBooleanParserRuleCall_11_0() { return cPutBooleanParserRuleCall_11_0; }
+
+		//"delete"
+		public Keyword getDeleteKeyword_12() { return cDeleteKeyword_12; }
+
+		//":"
+		public Keyword getColonKeyword_13() { return cColonKeyword_13; }
+
+		//delete=Boolean
+		public Assignment getDeleteAssignment_14() { return cDeleteAssignment_14; }
+
+		//Boolean
+		public RuleCall getDeleteBooleanParserRuleCall_14_0() { return cDeleteBooleanParserRuleCall_14_0; }
+
+		//entity=[Entity]
+		public Assignment getEntityAssignment_15() { return cEntityAssignment_15; }
+
+		//[Entity]
+		public CrossReference getEntityEntityCrossReference_15_0() { return cEntityEntityCrossReference_15_0; }
+
+		//ID
+		public RuleCall getEntityEntityIDTerminalRuleCall_15_0_1() { return cEntityEntityIDTerminalRuleCall_15_0_1; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
+	}
+
+	public class FormNewEntityOnlyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FormNewEntityOnly");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFormNewEntityKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cEntityAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cEntityEntityCrossReference_3_0 = (CrossReference)cEntityAssignment_3.eContents().get(0);
+		private final RuleCall cEntityEntityIDTerminalRuleCall_3_0_1 = (RuleCall)cEntityEntityCrossReference_3_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//FormNewEntityOnly:
+		//	"formNewEntity" name=ID "{" entity=[Entity] "}";
+		public ParserRule getRule() { return rule; }
+
+		//"formNewEntity" name=ID "{" entity=[Entity] "}"
+		public Group getGroup() { return cGroup; }
+
+		//"formNewEntity"
+		public Keyword getFormNewEntityKeyword_0() { return cFormNewEntityKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//entity=[Entity]
+		public Assignment getEntityAssignment_3() { return cEntityAssignment_3; }
+
+		//[Entity]
+		public CrossReference getEntityEntityCrossReference_3_0() { return cEntityEntityCrossReference_3_0; }
+
+		//ID
+		public RuleCall getEntityEntityIDTerminalRuleCall_3_0_1() { return cEntityEntityIDTerminalRuleCall_3_0_1; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+
+	public class FormReportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FormReport");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFormReportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cFilterKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cFilterAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cFilterBooleanParserRuleCall_5_0 = (RuleCall)cFilterAssignment_5.eContents().get(0);
+		private final Keyword cOrderKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cOrderAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cOrderBooleanParserRuleCall_8_0 = (RuleCall)cOrderAssignment_8.eContents().get(0);
+		private final Keyword cPaginationKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cPaginationAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cPaginationBooleanParserRuleCall_11_0 = (RuleCall)cPaginationAssignment_11.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		
+		//FormReport:
+		//	"formReport" name=ID "{" "filter" ":" filter=Boolean "order" ":" order=Boolean "pagination" ":" pagination=Boolean
+		//	"}";
+		public ParserRule getRule() { return rule; }
+
+		//"formReport" name=ID "{" "filter" ":" filter=Boolean "order" ":" order=Boolean "pagination" ":" pagination=Boolean "}"
+		public Group getGroup() { return cGroup; }
+
+		//"formReport"
+		public Keyword getFormReportKeyword_0() { return cFormReportKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//"filter"
+		public Keyword getFilterKeyword_3() { return cFilterKeyword_3; }
+
+		//":"
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+
+		//filter=Boolean
+		public Assignment getFilterAssignment_5() { return cFilterAssignment_5; }
+
+		//Boolean
+		public RuleCall getFilterBooleanParserRuleCall_5_0() { return cFilterBooleanParserRuleCall_5_0; }
+
+		//"order"
+		public Keyword getOrderKeyword_6() { return cOrderKeyword_6; }
+
+		//":"
+		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
+
+		//order=Boolean
+		public Assignment getOrderAssignment_8() { return cOrderAssignment_8; }
+
+		//Boolean
+		public RuleCall getOrderBooleanParserRuleCall_8_0() { return cOrderBooleanParserRuleCall_8_0; }
+
+		//"pagination"
+		public Keyword getPaginationKeyword_9() { return cPaginationKeyword_9; }
+
+		//":"
+		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
+
+		//pagination=Boolean
+		public Assignment getPaginationAssignment_11() { return cPaginationAssignment_11; }
+
+		//Boolean
+		public RuleCall getPaginationBooleanParserRuleCall_11_0() { return cPaginationBooleanParserRuleCall_11_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 	
 	
@@ -485,8 +734,12 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	private final DataTypeElements pDataType;
 	private final EntityElements pEntity;
 	private final FeatureElements pFeature;
+	private final BooleanElements pBoolean;
 	private final PageElements pPage;
+	private final FormTypesElements pFormTypes;
 	private final FormElements pForm;
+	private final FormNewEntityOnlyElements pFormNewEntityOnly;
+	private final FormReportElements pFormReport;
 	
 	private final Grammar grammar;
 
@@ -507,8 +760,12 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDataType = new DataTypeElements();
 		this.pEntity = new EntityElements();
 		this.pFeature = new FeatureElements();
+		this.pBoolean = new BooleanElements();
 		this.pPage = new PageElements();
+		this.pFormTypes = new FormTypesElements();
 		this.pForm = new FormElements();
+		this.pFormNewEntityOnly = new FormNewEntityOnlyElements();
+		this.pFormReport = new FormReportElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -559,7 +816,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AbstractElement:
-	//	PackageDeclaration | Type | Import | Page;
+	//	PackageDeclaration | Type | Import | Page | Form;
 	public AbstractElementElements getAbstractElementAccess() {
 		return pAbstractElement;
 	}
@@ -638,8 +895,19 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		return getFeatureAccess().getRule();
 	}
 
+	//Boolean:
+	//	"true" | "false";
+	public BooleanElements getBooleanAccess() {
+		return pBoolean;
+	}
+	
+	public ParserRule getBooleanRule() {
+		return getBooleanAccess().getRule();
+	}
+
 	//Page:
-	//	"page" name=ID "{" "header" ":" STRING "footer" ":" STRING forms+=Form* "}";
+	//	"page" name=ID "{" "title" ":" title=STRING "header" ":" header=Boolean "footer" ":" footer=Boolean
+	//	forms+=[FormTypes]* "}";
 	public PageElements getPageAccess() {
 		return pPage;
 	}
@@ -648,14 +916,46 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		return getPageAccess().getRule();
 	}
 
+	//FormTypes:
+	//	Form | FormNewEntityOnly | FormReport;
+	public FormTypesElements getFormTypesAccess() {
+		return pFormTypes;
+	}
+	
+	public ParserRule getFormTypesRule() {
+		return getFormTypesAccess().getRule();
+	}
+
 	//Form:
-	//	"form" name=ID "{" "isShow" ":" STRING "isEdit" ":" STRING entitys+=Entity* "}";
+	//	"form" name=ID "{" "get" ":" get=Boolean "post" ":" post=Boolean "put" ":" put=Boolean "delete" ":" delete=Boolean
+	//	entity=[Entity] "}";
 	public FormElements getFormAccess() {
 		return pForm;
 	}
 	
 	public ParserRule getFormRule() {
 		return getFormAccess().getRule();
+	}
+
+	//FormNewEntityOnly:
+	//	"formNewEntity" name=ID "{" entity=[Entity] "}";
+	public FormNewEntityOnlyElements getFormNewEntityOnlyAccess() {
+		return pFormNewEntityOnly;
+	}
+	
+	public ParserRule getFormNewEntityOnlyRule() {
+		return getFormNewEntityOnlyAccess().getRule();
+	}
+
+	//FormReport:
+	//	"formReport" name=ID "{" "filter" ":" filter=Boolean "order" ":" order=Boolean "pagination" ":" pagination=Boolean
+	//	"}";
+	public FormReportElements getFormReportAccess() {
+		return pFormReport;
+	}
+	
+	public ParserRule getFormReportRule() {
+		return getFormReportAccess().getRule();
 	}
 
 	//terminal ID:

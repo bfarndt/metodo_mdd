@@ -120,9 +120,24 @@ public class ExtendedAdapterFactory extends AdapterFactoryImpl
         return createPageAdapter();
       }
       @Override
+      public Adapter caseFormTypes(FormTypes object)
+      {
+        return createFormTypesAdapter();
+      }
+      @Override
       public Adapter caseForm(Form object)
       {
         return createFormAdapter();
+      }
+      @Override
+      public Adapter caseFormNewEntityOnly(FormNewEntityOnly object)
+      {
+        return createFormNewEntityOnlyAdapter();
+      }
+      @Override
+      public Adapter caseFormReport(FormReport object)
+      {
+        return createFormReportAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -282,6 +297,21 @@ public class ExtendedAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.example.domainmodel.extended.FormTypes <em>Form Types</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.example.domainmodel.extended.FormTypes
+   * @generated
+   */
+  public Adapter createFormTypesAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.example.domainmodel.extended.Form <em>Form</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -292,6 +322,36 @@ public class ExtendedAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFormAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.example.domainmodel.extended.FormNewEntityOnly <em>Form New Entity Only</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.example.domainmodel.extended.FormNewEntityOnly
+   * @generated
+   */
+  public Adapter createFormNewEntityOnlyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.example.domainmodel.extended.FormReport <em>Form Report</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.example.domainmodel.extended.FormReport
+   * @generated
+   */
+  public Adapter createFormReportAdapter()
   {
     return null;
   }
