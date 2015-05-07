@@ -52,6 +52,7 @@ public class ExtendedParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityAccess().getGroup_2(), "rule__Entity__Group_2__0");
 					put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
 					put(grammarAccess.getPageAccess().getGroup(), "rule__Page__Group__0");
+					put(grammarAccess.getPageAccess().getGroup_3(), "rule__Page__Group_3__0");
 					put(grammarAccess.getFormAccess().getGroup(), "rule__Form__Group__0");
 					put(grammarAccess.getFormNewEntityOnlyAccess().getGroup(), "rule__FormNewEntityOnly__Group__0");
 					put(grammarAccess.getFormReportAccess().getGroup(), "rule__FormReport__Group__0");
@@ -68,10 +69,10 @@ public class ExtendedParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFeatureAccess().getNameAssignment_1(), "rule__Feature__NameAssignment_1");
 					put(grammarAccess.getFeatureAccess().getTypeAssignment_3(), "rule__Feature__TypeAssignment_3");
 					put(grammarAccess.getPageAccess().getNameAssignment_1(), "rule__Page__NameAssignment_1");
-					put(grammarAccess.getPageAccess().getTitleAssignment_5(), "rule__Page__TitleAssignment_5");
-					put(grammarAccess.getPageAccess().getHeaderAssignment_8(), "rule__Page__HeaderAssignment_8");
-					put(grammarAccess.getPageAccess().getFooterAssignment_11(), "rule__Page__FooterAssignment_11");
-					put(grammarAccess.getPageAccess().getFormsAssignment_12(), "rule__Page__FormsAssignment_12");
+					put(grammarAccess.getPageAccess().getTitleAssignment_3_2(), "rule__Page__TitleAssignment_3_2");
+					put(grammarAccess.getPageAccess().getHeaderAssignment_6(), "rule__Page__HeaderAssignment_6");
+					put(grammarAccess.getPageAccess().getFooterAssignment_9(), "rule__Page__FooterAssignment_9");
+					put(grammarAccess.getPageAccess().getFormsAssignment_10(), "rule__Page__FormsAssignment_10");
 					put(grammarAccess.getFormAccess().getNameAssignment_1(), "rule__Form__NameAssignment_1");
 					put(grammarAccess.getFormAccess().getGetAssignment_5(), "rule__Form__GetAssignment_5");
 					put(grammarAccess.getFormAccess().getPostAssignment_8(), "rule__Form__PostAssignment_8");

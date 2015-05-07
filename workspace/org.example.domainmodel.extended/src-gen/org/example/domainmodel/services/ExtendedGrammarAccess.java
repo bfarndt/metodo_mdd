@@ -105,13 +105,13 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cImportParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cPageParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cFormParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cFormTypesParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//AbstractElement:
-		//	PackageDeclaration | Type | Import | Page | Form;
+		//	PackageDeclaration | Type | Import | Page | FormTypes;
 		public ParserRule getRule() { return rule; }
 
-		//PackageDeclaration | Type | Import | Page | Form
+		//PackageDeclaration | Type | Import | Page | FormTypes
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//PackageDeclaration
@@ -126,8 +126,8 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		//Page
 		public RuleCall getPageParserRuleCall_3() { return cPageParserRuleCall_3; }
 
-		//Form
-		public RuleCall getFormParserRuleCall_4() { return cFormParserRuleCall_4; }
+		//FormTypes
+		public RuleCall getFormTypesParserRuleCall_4() { return cFormTypesParserRuleCall_4; }
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
@@ -377,30 +377,31 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cTitleKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cTitleAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cTitleSTRINGTerminalRuleCall_5_0 = (RuleCall)cTitleAssignment_5.eContents().get(0);
-		private final Keyword cHeaderKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cHeaderAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cHeaderBooleanParserRuleCall_8_0 = (RuleCall)cHeaderAssignment_8.eContents().get(0);
-		private final Keyword cFooterKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cFooterAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cFooterBooleanParserRuleCall_11_0 = (RuleCall)cFooterAssignment_11.eContents().get(0);
-		private final Assignment cFormsAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final CrossReference cFormsFormTypesCrossReference_12_0 = (CrossReference)cFormsAssignment_12.eContents().get(0);
-		private final RuleCall cFormsFormTypesIDTerminalRuleCall_12_0_1 = (RuleCall)cFormsFormTypesCrossReference_12_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cTitleKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cTitleAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cTitleSTRINGTerminalRuleCall_3_2_0 = (RuleCall)cTitleAssignment_3_2.eContents().get(0);
+		private final Keyword cHeaderKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cHeaderAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cHeaderBooleanParserRuleCall_6_0 = (RuleCall)cHeaderAssignment_6.eContents().get(0);
+		private final Keyword cFooterKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cColonKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cFooterAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cFooterBooleanParserRuleCall_9_0 = (RuleCall)cFooterAssignment_9.eContents().get(0);
+		private final Assignment cFormsAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final CrossReference cFormsFormTypesCrossReference_10_0 = (CrossReference)cFormsAssignment_10.eContents().get(0);
+		private final RuleCall cFormsFormTypesIDTerminalRuleCall_10_0_1 = (RuleCall)cFormsFormTypesCrossReference_10_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//Page:
-		//	"page" name=ID "{" "title" ":" title=STRING "header" ":" header=Boolean "footer" ":" footer=Boolean
+		//	"page" name=ID "{" ("title" ":" title=STRING)? "header" ":" header=Boolean "footer" ":" footer=Boolean
 		//	forms+=[FormTypes]* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"page" name=ID "{" "title" ":" title=STRING "header" ":" header=Boolean "footer" ":" footer=Boolean forms+=[FormTypes]*
-		//"}"
+		//"page" name=ID "{" ("title" ":" title=STRING)? "header" ":" header=Boolean "footer" ":" footer=Boolean
+		//forms+=[FormTypes]* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"page"
@@ -415,53 +416,56 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
+		//("title" ":" title=STRING)?
+		public Group getGroup_3() { return cGroup_3; }
+
 		//"title"
-		public Keyword getTitleKeyword_3() { return cTitleKeyword_3; }
+		public Keyword getTitleKeyword_3_0() { return cTitleKeyword_3_0; }
 
 		//":"
-		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
 
 		//title=STRING
-		public Assignment getTitleAssignment_5() { return cTitleAssignment_5; }
+		public Assignment getTitleAssignment_3_2() { return cTitleAssignment_3_2; }
 
 		//STRING
-		public RuleCall getTitleSTRINGTerminalRuleCall_5_0() { return cTitleSTRINGTerminalRuleCall_5_0; }
+		public RuleCall getTitleSTRINGTerminalRuleCall_3_2_0() { return cTitleSTRINGTerminalRuleCall_3_2_0; }
 
 		//"header"
-		public Keyword getHeaderKeyword_6() { return cHeaderKeyword_6; }
+		public Keyword getHeaderKeyword_4() { return cHeaderKeyword_4; }
 
 		//":"
-		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
+		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
 
 		//header=Boolean
-		public Assignment getHeaderAssignment_8() { return cHeaderAssignment_8; }
+		public Assignment getHeaderAssignment_6() { return cHeaderAssignment_6; }
 
 		//Boolean
-		public RuleCall getHeaderBooleanParserRuleCall_8_0() { return cHeaderBooleanParserRuleCall_8_0; }
+		public RuleCall getHeaderBooleanParserRuleCall_6_0() { return cHeaderBooleanParserRuleCall_6_0; }
 
 		//"footer"
-		public Keyword getFooterKeyword_9() { return cFooterKeyword_9; }
+		public Keyword getFooterKeyword_7() { return cFooterKeyword_7; }
 
 		//":"
-		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
+		public Keyword getColonKeyword_8() { return cColonKeyword_8; }
 
 		//footer=Boolean
-		public Assignment getFooterAssignment_11() { return cFooterAssignment_11; }
+		public Assignment getFooterAssignment_9() { return cFooterAssignment_9; }
 
 		//Boolean
-		public RuleCall getFooterBooleanParserRuleCall_11_0() { return cFooterBooleanParserRuleCall_11_0; }
+		public RuleCall getFooterBooleanParserRuleCall_9_0() { return cFooterBooleanParserRuleCall_9_0; }
 
 		//forms+=[FormTypes]*
-		public Assignment getFormsAssignment_12() { return cFormsAssignment_12; }
+		public Assignment getFormsAssignment_10() { return cFormsAssignment_10; }
 
 		//[FormTypes]
-		public CrossReference getFormsFormTypesCrossReference_12_0() { return cFormsFormTypesCrossReference_12_0; }
+		public CrossReference getFormsFormTypesCrossReference_10_0() { return cFormsFormTypesCrossReference_10_0; }
 
 		//ID
-		public RuleCall getFormsFormTypesIDTerminalRuleCall_12_0_1() { return cFormsFormTypesIDTerminalRuleCall_12_0_1; }
+		public RuleCall getFormsFormTypesIDTerminalRuleCall_10_0_1() { return cFormsFormTypesIDTerminalRuleCall_10_0_1; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 
 	public class FormTypesElements extends AbstractParserRuleElementFinder {
@@ -816,7 +820,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AbstractElement:
-	//	PackageDeclaration | Type | Import | Page | Form;
+	//	PackageDeclaration | Type | Import | Page | FormTypes;
 	public AbstractElementElements getAbstractElementAccess() {
 		return pAbstractElement;
 	}
@@ -906,7 +910,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Page:
-	//	"page" name=ID "{" "title" ":" title=STRING "header" ":" header=Boolean "footer" ":" footer=Boolean
+	//	"page" name=ID "{" ("title" ":" title=STRING)? "header" ":" header=Boolean "footer" ":" footer=Boolean
 	//	forms+=[FormTypes]* "}";
 	public PageElements getPageAccess() {
 		return pPage;

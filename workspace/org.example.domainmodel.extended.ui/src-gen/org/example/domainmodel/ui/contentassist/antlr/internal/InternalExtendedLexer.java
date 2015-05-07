@@ -401,10 +401,10 @@ public class InternalExtendedLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:27:7: ( 'title' )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:27:9: 'title'
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:27:7: ( 'header' )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:27:9: 'header'
             {
-            match("title"); 
+            match("header"); 
 
 
             }
@@ -422,10 +422,10 @@ public class InternalExtendedLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:28:7: ( 'header' )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:28:9: 'header'
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:28:7: ( 'footer' )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:28:9: 'footer'
             {
-            match("header"); 
+            match("footer"); 
 
 
             }
@@ -443,10 +443,10 @@ public class InternalExtendedLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:29:7: ( 'footer' )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:29:9: 'footer'
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:29:7: ( 'title' )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:29:9: 'title'
             {
-            match("footer"); 
+            match("title"); 
 
 
             }
@@ -695,10 +695,10 @@ public class InternalExtendedLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3629:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3629:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3712:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3712:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3629:11: ( '^' )?
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3712:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -707,7 +707,7 @@ public class InternalExtendedLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3629:11: '^'
+                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3712:11: '^'
                     {
                     match('^'); 
 
@@ -725,7 +725,7 @@ public class InternalExtendedLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3629:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3712:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -774,10 +774,10 @@ public class InternalExtendedLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3631:10: ( ( '0' .. '9' )+ )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3631:12: ( '0' .. '9' )+
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3714:10: ( ( '0' .. '9' )+ )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3714:12: ( '0' .. '9' )+
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3631:12: ( '0' .. '9' )+
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3714:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -791,7 +791,7 @@ public class InternalExtendedLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3631:13: '0' .. '9'
+            	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3714:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -823,10 +823,10 @@ public class InternalExtendedLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3633:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3633:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3716:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3716:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3633:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3716:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -844,10 +844,10 @@ public class InternalExtendedLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3633:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3716:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3633:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3716:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -863,7 +863,7 @@ public class InternalExtendedLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3633:21: '\\\\' .
+                    	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3716:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -871,7 +871,7 @@ public class InternalExtendedLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3633:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3716:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -896,10 +896,10 @@ public class InternalExtendedLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3633:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3716:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3633:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3716:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -915,7 +915,7 @@ public class InternalExtendedLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3633:54: '\\\\' .
+                    	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3716:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -923,7 +923,7 @@ public class InternalExtendedLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3633:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3716:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -966,12 +966,12 @@ public class InternalExtendedLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3635:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3635:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3718:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3718:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3635:24: ( options {greedy=false; } : . )*
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3718:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -996,7 +996,7 @@ public class InternalExtendedLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3635:52: .
+            	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3718:52: .
             	    {
             	    matchAny(); 
 
@@ -1026,12 +1026,12 @@ public class InternalExtendedLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3637:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3637:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3720:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3720:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3637:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3720:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1044,7 +1044,7 @@ public class InternalExtendedLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3637:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3720:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1064,7 +1064,7 @@ public class InternalExtendedLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3637:40: ( ( '\\r' )? '\\n' )?
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3720:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1073,9 +1073,9 @@ public class InternalExtendedLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3637:41: ( '\\r' )? '\\n'
+                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3720:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3637:41: ( '\\r' )?
+                    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3720:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1084,7 +1084,7 @@ public class InternalExtendedLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3637:41: '\\r'
+                            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3720:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1116,10 +1116,10 @@ public class InternalExtendedLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3639:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3639:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3722:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3722:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3639:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3722:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1173,8 +1173,8 @@ public class InternalExtendedLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3641:16: ( . )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3641:18: .
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3724:16: ( . )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3724:18: .
             {
             matchAny(); 
 
@@ -1468,7 +1468,7 @@ public class InternalExtendedLexer extends Lexer {
     static final String DFA12_maxS =
         "\1\uffff\1\162\1\157\1\165\1\145\1\170\2\uffff\1\52\1\155\1\145\1\uffff\2\145\1\162\1\141\1\172\2\uffff\2\uffff\1\57\2\uffff\1\165\1\164\1\uffff\1\154\1\162\1\154\1\157\1\147\1\163\1\164\1\147\2\164\4\uffff\1\160\1\164\1\154\1\uffff\1\141\1\164\1\144\1\156\5\uffff\1\145\1\154\1\163\1\164\1\155\1\164\1\152\1\153\1\151\1\164\1\172\1\151\1\172\1\151\1\145\1\157\1\141\1\145\1\144\1\172\1\145\1\171\1\172\3\145\1\172\2\145\1\141\1\172\1\156\1\172\1\uffff\1\156\1\uffff\1\164\1\156\1\162\2\164\1\145\1\uffff\1\162\1\172\1\uffff\2\172\1\162\2\145\1\uffff\1\162\1\143\1\147\1\uffff\1\141\1\uffff\1\172\1\171\1\144\1\164\1\171\1\145\1\162\1\172\3\uffff\1\172\1\167\1\160\1\172\1\164\1\145\1\164\1\uffff\1\172\1\163\1\172\1\160\2\172\2\uffff\1\105\1\157\1\uffff\2\172\1\151\1\uffff\1\172\1\uffff\1\145\2\uffff\1\156\1\162\2\uffff\1\157\1\uffff\1\172\2\164\1\156\1\uffff\1\151\2\172\1\164\2\uffff\1\171\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\6\uffff\1\7\1\10\3\uffff\1\17\5\uffff\1\37\1\40\3\uffff\1\44\1\45\2\uffff\1\37\12\uffff\1\7\1\10\1\13\1\11\3\uffff\1\17\4\uffff\1\40\1\41\1\42\1\43\1\44\41\uffff\1\27\1\uffff\1\5\6\uffff\1\25\2\uffff\1\1\5\uffff\1\24\3\uffff\1\20\1\uffff\1\26\10\uffff\1\36\1\21\1\2\7\uffff\1\4\6\uffff\1\34\1\23\2\uffff\1\33\3\uffff\1\15\1\uffff\1\12\1\uffff\1\30\1\22\2\uffff\1\3\1\6\1\uffff\1\16\4\uffff\1\14\4\uffff\1\32\1\35\2\uffff\1\31";
+        "\6\uffff\1\7\1\10\3\uffff\1\17\5\uffff\1\37\1\40\3\uffff\1\44\1\45\2\uffff\1\37\12\uffff\1\7\1\10\1\13\1\11\3\uffff\1\17\4\uffff\1\40\1\41\1\42\1\43\1\44\41\uffff\1\27\1\uffff\1\5\6\uffff\1\25\2\uffff\1\1\5\uffff\1\24\3\uffff\1\20\1\uffff\1\26\10\uffff\1\36\1\23\1\2\7\uffff\1\4\6\uffff\1\34\1\22\2\uffff\1\33\3\uffff\1\15\1\uffff\1\12\1\uffff\1\30\1\21\2\uffff\1\3\1\6\1\uffff\1\16\4\uffff\1\14\4\uffff\1\32\1\35\2\uffff\1\31";
     static final String DFA12_specialS =
         "\1\1\22\uffff\1\2\1\0\u0096\uffff}>";
     static final String[] DFA12_transitionS = {

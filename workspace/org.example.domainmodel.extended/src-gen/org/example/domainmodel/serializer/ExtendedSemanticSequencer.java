@@ -71,14 +71,16 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				}
 				else break;
 			case ExtendedPackage.FORM_NEW_ENTITY_ONLY:
-				if(context == grammarAccess.getFormNewEntityOnlyRule() ||
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getFormNewEntityOnlyRule() ||
 				   context == grammarAccess.getFormTypesRule()) {
 					sequence_FormNewEntityOnly(context, (FormNewEntityOnly) semanticObject); 
 					return; 
 				}
 				else break;
 			case ExtendedPackage.FORM_REPORT:
-				if(context == grammarAccess.getFormReportRule() ||
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getFormReportRule() ||
 				   context == grammarAccess.getFormTypesRule()) {
 					sequence_FormReport(context, (FormReport) semanticObject); 
 					return; 
@@ -261,7 +263,7 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (name=ID title=STRING header=Boolean footer=Boolean forms+=[FormTypes|ID]*)
+	 *     (name=ID title=STRING? header=Boolean footer=Boolean forms+=[FormTypes|ID]*)
 	 */
 	protected void sequence_Page(EObject context, Page semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

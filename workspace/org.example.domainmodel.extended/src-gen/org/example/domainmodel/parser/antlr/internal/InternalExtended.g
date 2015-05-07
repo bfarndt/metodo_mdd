@@ -257,11 +257,11 @@ ruleAbstractElement returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractElementAccess().getFormParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getAbstractElementAccess().getFormTypesParserRuleCall_4()); 
     }
-    this_Form_4=ruleForm
+    this_FormTypes_4=ruleFormTypes
     { 
-        $current = $this_Form_4.current; 
+        $current = $this_FormTypes_4.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -711,19 +711,19 @@ rulePage returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_2());
     }
-	otherlv_3='title' 
+(	otherlv_3='title' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getPageAccess().getTitleKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getPageAccess().getTitleKeyword_3_0());
     }
 	otherlv_4=':' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getPageAccess().getColonKeyword_4());
+    	newLeafNode(otherlv_4, grammarAccess.getPageAccess().getColonKeyword_3_1());
     }
 (
 (
 		lv_title_5_0=RULE_STRING
 		{
-			newLeafNode(lv_title_5_0, grammarAccess.getPageAccess().getTitleSTRINGTerminalRuleCall_5_0()); 
+			newLeafNode(lv_title_5_0, grammarAccess.getPageAccess().getTitleSTRINGTerminalRuleCall_3_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -737,18 +737,18 @@ rulePage returns [EObject current=null]
 	    }
 
 )
-)	otherlv_6='header' 
+))?	otherlv_6='header' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getPageAccess().getHeaderKeyword_6());
+    	newLeafNode(otherlv_6, grammarAccess.getPageAccess().getHeaderKeyword_4());
     }
 	otherlv_7=':' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getPageAccess().getColonKeyword_7());
+    	newLeafNode(otherlv_7, grammarAccess.getPageAccess().getColonKeyword_5());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPageAccess().getHeaderBooleanParserRuleCall_8_0()); 
+	        newCompositeNode(grammarAccess.getPageAccess().getHeaderBooleanParserRuleCall_6_0()); 
 	    }
 		lv_header_8_0=ruleBoolean		{
 	        if ($current==null) {
@@ -765,16 +765,16 @@ rulePage returns [EObject current=null]
 )
 )	otherlv_9='footer' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getPageAccess().getFooterKeyword_9());
+    	newLeafNode(otherlv_9, grammarAccess.getPageAccess().getFooterKeyword_7());
     }
 	otherlv_10=':' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getPageAccess().getColonKeyword_10());
+    	newLeafNode(otherlv_10, grammarAccess.getPageAccess().getColonKeyword_8());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPageAccess().getFooterBooleanParserRuleCall_11_0()); 
+	        newCompositeNode(grammarAccess.getPageAccess().getFooterBooleanParserRuleCall_9_0()); 
 	    }
 		lv_footer_11_0=ruleBoolean		{
 	        if ($current==null) {
@@ -798,18 +798,66 @@ rulePage returns [EObject current=null]
         }
 	otherlv_12=RULE_ID
 	{
-		newLeafNode(otherlv_12, grammarAccess.getPageAccess().getFormsFormTypesCrossReference_12_0()); 
+		newLeafNode(otherlv_12, grammarAccess.getPageAccess().getFormsFormTypesCrossReference_10_0()); 
 	}
 
 )
 )*	otherlv_13='}' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_13());
+    	newLeafNode(otherlv_13, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_11());
     }
 )
 ;
 
 
+
+
+
+// Entry rule entryRuleFormTypes
+entryRuleFormTypes returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getFormTypesRule()); }
+	 iv_ruleFormTypes=ruleFormTypes 
+	 { $current=$iv_ruleFormTypes.current; } 
+	 EOF 
+;
+
+// Rule FormTypes
+ruleFormTypes returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getFormTypesAccess().getFormParserRuleCall_0()); 
+    }
+    this_Form_0=ruleForm
+    { 
+        $current = $this_Form_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getFormTypesAccess().getFormNewEntityOnlyParserRuleCall_1()); 
+    }
+    this_FormNewEntityOnly_1=ruleFormNewEntityOnly
+    { 
+        $current = $this_FormNewEntityOnly_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getFormTypesAccess().getFormReportParserRuleCall_2()); 
+    }
+    this_FormReport_2=ruleFormReport
+    { 
+        $current = $this_FormReport_2.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
 
 
 

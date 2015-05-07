@@ -19,7 +19,7 @@ PackageDeclaration:
 ;
 
 AbstractElement:
-	PackageDeclaration | Type | Import | Page | Form
+	PackageDeclaration | Type | Import | Page | FormTypes
 ;
 
 QualifiedName:
@@ -60,7 +60,7 @@ Boolean:
 Page:
 	'page' name = ID
 	'{'
-		'title' ':' title = STRING
+		('title' ':' title = STRING)?
 		'header' ':' header = Boolean
 		'footer' ':' footer = Boolean
 		(forms += [FormTypes])*

@@ -695,7 +695,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
     dataTypeEClass.getESuperTypes().add(this.getType());
     entityEClass.getESuperTypes().add(this.getType());
     pageEClass.getESuperTypes().add(this.getAbstractElement());
-    formEClass.getESuperTypes().add(this.getAbstractElement());
+    formTypesEClass.getESuperTypes().add(this.getAbstractElement());
     formEClass.getESuperTypes().add(this.getFormTypes());
     formNewEntityOnlyEClass.getESuperTypes().add(this.getFormTypes());
     formReportEClass.getESuperTypes().add(this.getFormTypes());

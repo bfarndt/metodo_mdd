@@ -7,7 +7,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.example.domainmodel.extended.ExtendedPackage;
 import org.example.domainmodel.extended.FormTypes;
@@ -25,7 +24,7 @@ import org.example.domainmodel.extended.FormTypes;
  *
  * @generated
  */
-public class FormTypesImpl extends MinimalEObjectImpl.Container implements FormTypes
+public class FormTypesImpl extends AbstractElementImpl implements FormTypes
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.example.domainmodel.extended.Entity;
 import org.example.domainmodel.extended.ExtendedPackage;
 import org.example.domainmodel.extended.Form;
-import org.example.domainmodel.extended.FormTypes;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,6 @@ import org.example.domainmodel.extended.FormTypes;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.example.domainmodel.extended.impl.FormImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.impl.FormImpl#getGet <em>Get</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.impl.FormImpl#getPost <em>Post</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.impl.FormImpl#getPut <em>Put</em>}</li>
@@ -32,28 +30,8 @@ import org.example.domainmodel.extended.FormTypes;
  *
  * @generated
  */
-public class FormImpl extends AbstractElementImpl implements Form
+public class FormImpl extends FormTypesImpl implements Form
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The default value of the '{@link #getGet() <em>Get</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -163,29 +141,6 @@ public class FormImpl extends AbstractElementImpl implements Form
   protected EClass eStaticClass()
   {
     return ExtendedPackage.Literals.FORM;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExtendedPackage.FORM__NAME, oldName, name));
   }
 
   /**
@@ -333,8 +288,6 @@ public class FormImpl extends AbstractElementImpl implements Form
   {
     switch (featureID)
     {
-      case ExtendedPackage.FORM__NAME:
-        return getName();
       case ExtendedPackage.FORM__GET:
         return getGet();
       case ExtendedPackage.FORM__POST:
@@ -360,9 +313,6 @@ public class FormImpl extends AbstractElementImpl implements Form
   {
     switch (featureID)
     {
-      case ExtendedPackage.FORM__NAME:
-        setName((String)newValue);
-        return;
       case ExtendedPackage.FORM__GET:
         setGet((String)newValue);
         return;
@@ -392,9 +342,6 @@ public class FormImpl extends AbstractElementImpl implements Form
   {
     switch (featureID)
     {
-      case ExtendedPackage.FORM__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case ExtendedPackage.FORM__GET:
         setGet(GET_EDEFAULT);
         return;
@@ -424,8 +371,6 @@ public class FormImpl extends AbstractElementImpl implements Form
   {
     switch (featureID)
     {
-      case ExtendedPackage.FORM__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ExtendedPackage.FORM__GET:
         return GET_EDEFAULT == null ? get != null : !GET_EDEFAULT.equals(get);
       case ExtendedPackage.FORM__POST:
@@ -446,52 +391,12 @@ public class FormImpl extends AbstractElementImpl implements Form
    * @generated
    */
   @Override
-  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == FormTypes.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case ExtendedPackage.FORM__NAME: return ExtendedPackage.FORM_TYPES__NAME;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == FormTypes.class)
-    {
-      switch (baseFeatureID)
-      {
-        case ExtendedPackage.FORM_TYPES__NAME: return ExtendedPackage.FORM__NAME;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String toString()
   {
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", get: ");
+    result.append(" (get: ");
     result.append(get);
     result.append(", post: ");
     result.append(post);

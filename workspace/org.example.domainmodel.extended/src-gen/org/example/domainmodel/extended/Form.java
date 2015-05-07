@@ -23,7 +23,7 @@ package org.example.domainmodel.extended;
  * @model
  * @generated
  */
-public interface Form extends AbstractElement, FormTypes
+public interface Form extends FormTypes
 {
   /**
    * Returns the value of the '<em><b>Get</b></em>' attribute.

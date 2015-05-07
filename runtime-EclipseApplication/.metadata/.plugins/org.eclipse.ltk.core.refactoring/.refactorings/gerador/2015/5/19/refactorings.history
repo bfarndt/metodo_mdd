@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;gerador/templates/templateFormGet.jet&apos; to &apos;templateForm.jet&apos;" description="Rename resource &apos;templateFormGet.jet&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="templates/templateFormGet.jet" name="templateForm.jet" stamp="1430924339178" updateReferences="true"/>
+</session>

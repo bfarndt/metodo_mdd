@@ -406,7 +406,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM_TYPES__NAME = 0;
+  int FORM_TYPES__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Form Types</em>' class.
@@ -415,7 +415,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM_TYPES_FEATURE_COUNT = 1;
+  int FORM_TYPES_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.example.domainmodel.extended.impl.FormImpl <em>Form</em>}' class.
@@ -434,7 +434,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int FORM__NAME = FORM_TYPES__NAME;
 
   /**
    * The feature id for the '<em><b>Get</b></em>' attribute.
@@ -443,7 +443,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM__GET = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int FORM__GET = FORM_TYPES_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Post</b></em>' attribute.
@@ -452,7 +452,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM__POST = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int FORM__POST = FORM_TYPES_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Put</b></em>' attribute.
@@ -461,7 +461,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM__PUT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+  int FORM__PUT = FORM_TYPES_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Delete</b></em>' attribute.
@@ -470,7 +470,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM__DELETE = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
+  int FORM__DELETE = FORM_TYPES_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Entity</b></em>' reference.
@@ -479,7 +479,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM__ENTITY = ABSTRACT_ELEMENT_FEATURE_COUNT + 5;
+  int FORM__ENTITY = FORM_TYPES_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Form</em>' class.
@@ -488,7 +488,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 6;
+  int FORM_FEATURE_COUNT = FORM_TYPES_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link org.example.domainmodel.extended.impl.FormNewEntityOnlyImpl <em>Form New Entity Only</em>}' class.

@@ -147,6 +147,7 @@ public class ExtendedSwitch<T> extends Switch<T>
       {
         FormTypes formTypes = (FormTypes)theEObject;
         T result = caseFormTypes(formTypes);
+        if (result == null) result = caseAbstractElement(formTypes);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -154,8 +155,8 @@ public class ExtendedSwitch<T> extends Switch<T>
       {
         Form form = (Form)theEObject;
         T result = caseForm(form);
-        if (result == null) result = caseAbstractElement(form);
         if (result == null) result = caseFormTypes(form);
+        if (result == null) result = caseAbstractElement(form);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -164,6 +165,7 @@ public class ExtendedSwitch<T> extends Switch<T>
         FormNewEntityOnly formNewEntityOnly = (FormNewEntityOnly)theEObject;
         T result = caseFormNewEntityOnly(formNewEntityOnly);
         if (result == null) result = caseFormTypes(formNewEntityOnly);
+        if (result == null) result = caseAbstractElement(formNewEntityOnly);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -172,6 +174,7 @@ public class ExtendedSwitch<T> extends Switch<T>
         FormReport formReport = (FormReport)theEObject;
         T result = caseFormReport(formReport);
         if (result == null) result = caseFormTypes(formReport);
+        if (result == null) result = caseAbstractElement(formReport);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
