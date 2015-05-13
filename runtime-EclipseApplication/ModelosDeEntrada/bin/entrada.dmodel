@@ -12,7 +12,7 @@ entity Bruno {
 	cpf: string
 	endereco: string
 	nascimento: date
-	mensalidade: money
+	mensalidade: currency
 }
 
 form formShowBruno {
