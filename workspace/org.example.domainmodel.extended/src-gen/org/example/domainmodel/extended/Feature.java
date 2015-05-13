@@ -12,7 +12,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.example.domainmodel.extended.Feature#isMany <em>Many</em>}</li>
+ *   <li>{@link org.example.domainmodel.extended.Feature#getMin <em>Min</em>}</li>
+ *   <li>{@link org.example.domainmodel.extended.Feature#getMax <em>Max</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.Feature#getName <em>Name</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.Feature#getType <em>Type</em>}</li>
  * </ul>
@@ -25,30 +26,56 @@ import org.eclipse.emf.ecore.EObject;
 public interface Feature extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Many</b></em>' attribute.
+   * Returns the value of the '<em><b>Min</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Many</em>' attribute isn't clear,
+   * If the meaning of the '<em>Min</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Many</em>' attribute.
-   * @see #setMany(boolean)
-   * @see org.example.domainmodel.extended.ExtendedPackage#getFeature_Many()
+   * @return the value of the '<em>Min</em>' attribute.
+   * @see #setMin(int)
+   * @see org.example.domainmodel.extended.ExtendedPackage#getFeature_Min()
    * @model
    * @generated
    */
-  boolean isMany();
+  int getMin();
 
   /**
-   * Sets the value of the '{@link org.example.domainmodel.extended.Feature#isMany <em>Many</em>}' attribute.
+   * Sets the value of the '{@link org.example.domainmodel.extended.Feature#getMin <em>Min</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Many</em>' attribute.
-   * @see #isMany()
+   * @param value the new value of the '<em>Min</em>' attribute.
+   * @see #getMin()
    * @generated
    */
-  void setMany(boolean value);
+  void setMin(int value);
+
+  /**
+   * Returns the value of the '<em><b>Max</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Max</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Max</em>' attribute.
+   * @see #setMax(int)
+   * @see org.example.domainmodel.extended.ExtendedPackage#getFeature_Max()
+   * @model
+   * @generated
+   */
+  int getMax();
+
+  /**
+   * Sets the value of the '{@link org.example.domainmodel.extended.Feature#getMax <em>Max</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Max</em>' attribute.
+   * @see #getMax()
+   * @generated
+   */
+  void setMax(int value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -77,29 +104,29 @@ public interface Feature extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Type</b></em>' reference.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type</em>' reference isn't clear,
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(Type)
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(AbstractType)
    * @see org.example.domainmodel.extended.ExtendedPackage#getFeature_Type()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  Type getType();
+  AbstractType getType();
 
   /**
-   * Sets the value of the '{@link org.example.domainmodel.extended.Feature#getType <em>Type</em>}' reference.
+   * Sets the value of the '{@link org.example.domainmodel.extended.Feature#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' reference.
+   * @param value the new value of the '<em>Type</em>' containment reference.
    * @see #getType()
    * @generated
    */
-  void setType(Type value);
+  void setType(AbstractType value);
 
 } // Feature

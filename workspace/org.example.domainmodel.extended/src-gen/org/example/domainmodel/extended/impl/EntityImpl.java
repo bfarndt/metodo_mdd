@@ -28,6 +28,7 @@ import org.example.domainmodel.extended.Feature;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.example.domainmodel.extended.impl.EntityImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.impl.EntityImpl#getSuperType <em>Super Type</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.impl.EntityImpl#getFeatures <em>Features</em>}</li>
  * </ul>
@@ -35,8 +36,28 @@ import org.example.domainmodel.extended.Feature;
  *
  * @generated
  */
-public class EntityImpl extends TypeImpl implements Entity
+public class EntityImpl extends AbstractElementImpl implements Entity
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -76,6 +97,29 @@ public class EntityImpl extends TypeImpl implements Entity
   protected EClass eStaticClass()
   {
     return ExtendedPackage.Literals.ENTITY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExtendedPackage.ENTITY__NAME, oldName, name));
   }
 
   /**
@@ -161,6 +205,8 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
+      case ExtendedPackage.ENTITY__NAME:
+        return getName();
       case ExtendedPackage.ENTITY__SUPER_TYPE:
         if (resolve) return getSuperType();
         return basicGetSuperType();
@@ -181,6 +227,9 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
+      case ExtendedPackage.ENTITY__NAME:
+        setName((String)newValue);
+        return;
       case ExtendedPackage.ENTITY__SUPER_TYPE:
         setSuperType((Entity)newValue);
         return;
@@ -202,6 +251,9 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
+      case ExtendedPackage.ENTITY__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case ExtendedPackage.ENTITY__SUPER_TYPE:
         setSuperType((Entity)null);
         return;
@@ -222,12 +274,31 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
+      case ExtendedPackage.ENTITY__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ExtendedPackage.ENTITY__SUPER_TYPE:
         return superType != null;
       case ExtendedPackage.ENTITY__FEATURES:
         return features != null && !features.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //EntityImpl

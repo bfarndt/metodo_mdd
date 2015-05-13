@@ -3,6 +3,7 @@
 package org.example.domainmodel.extended.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -10,9 +11,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.example.domainmodel.extended.AbstractType;
 import org.example.domainmodel.extended.ExtendedPackage;
 import org.example.domainmodel.extended.Feature;
-import org.example.domainmodel.extended.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,8 @@ import org.example.domainmodel.extended.Type;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.example.domainmodel.extended.impl.FeatureImpl#isMany <em>Many</em>}</li>
+ *   <li>{@link org.example.domainmodel.extended.impl.FeatureImpl#getMin <em>Min</em>}</li>
+ *   <li>{@link org.example.domainmodel.extended.impl.FeatureImpl#getMax <em>Max</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.impl.FeatureImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.impl.FeatureImpl#getType <em>Type</em>}</li>
  * </ul>
@@ -32,24 +34,44 @@ import org.example.domainmodel.extended.Type;
 public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
 {
   /**
-   * The default value of the '{@link #isMany() <em>Many</em>}' attribute.
+   * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isMany()
+   * @see #getMin()
    * @generated
    * @ordered
    */
-  protected static final boolean MANY_EDEFAULT = false;
+  protected static final int MIN_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #isMany() <em>Many</em>}' attribute.
+   * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isMany()
+   * @see #getMin()
    * @generated
    * @ordered
    */
-  protected boolean many = MANY_EDEFAULT;
+  protected int min = MIN_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMax()
+   * @generated
+   * @ordered
+   */
+  protected static final int MAX_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMax()
+   * @generated
+   * @ordered
+   */
+  protected int max = MAX_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -72,14 +94,14 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected Type type;
+  protected AbstractType type;
 
   /**
    * <!-- begin-user-doc -->
@@ -107,9 +129,9 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isMany()
+  public int getMin()
   {
-    return many;
+    return min;
   }
 
   /**
@@ -117,12 +139,35 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMany(boolean newMany)
+  public void setMin(int newMin)
   {
-    boolean oldMany = many;
-    many = newMany;
+    int oldMin = min;
+    min = newMin;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExtendedPackage.FEATURE__MANY, oldMany, many));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExtendedPackage.FEATURE__MIN, oldMin, min));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getMax()
+  {
+    return max;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMax(int newMax)
+  {
+    int oldMax = max;
+    max = newMax;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExtendedPackage.FEATURE__MAX, oldMax, max));
   }
 
   /**
@@ -153,27 +198,7 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getType()
-  {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (Type)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExtendedPackage.FEATURE__TYPE, oldType, type));
-      }
-    }
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type basicGetType()
+  public AbstractType getType()
   {
     return type;
   }
@@ -183,12 +208,53 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(Type newType)
+  public NotificationChain basicSetType(AbstractType newType, NotificationChain msgs)
   {
-    Type oldType = type;
+    AbstractType oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExtendedPackage.FEATURE__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExtendedPackage.FEATURE__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(AbstractType newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExtendedPackage.FEATURE__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExtendedPackage.FEATURE__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExtendedPackage.FEATURE__TYPE, newType, newType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ExtendedPackage.FEATURE__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -201,13 +267,14 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case ExtendedPackage.FEATURE__MANY:
-        return isMany();
+      case ExtendedPackage.FEATURE__MIN:
+        return getMin();
+      case ExtendedPackage.FEATURE__MAX:
+        return getMax();
       case ExtendedPackage.FEATURE__NAME:
         return getName();
       case ExtendedPackage.FEATURE__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -222,14 +289,17 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case ExtendedPackage.FEATURE__MANY:
-        setMany((Boolean)newValue);
+      case ExtendedPackage.FEATURE__MIN:
+        setMin((Integer)newValue);
+        return;
+      case ExtendedPackage.FEATURE__MAX:
+        setMax((Integer)newValue);
         return;
       case ExtendedPackage.FEATURE__NAME:
         setName((String)newValue);
         return;
       case ExtendedPackage.FEATURE__TYPE:
-        setType((Type)newValue);
+        setType((AbstractType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -245,14 +315,17 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case ExtendedPackage.FEATURE__MANY:
-        setMany(MANY_EDEFAULT);
+      case ExtendedPackage.FEATURE__MIN:
+        setMin(MIN_EDEFAULT);
+        return;
+      case ExtendedPackage.FEATURE__MAX:
+        setMax(MAX_EDEFAULT);
         return;
       case ExtendedPackage.FEATURE__NAME:
         setName(NAME_EDEFAULT);
         return;
       case ExtendedPackage.FEATURE__TYPE:
-        setType((Type)null);
+        setType((AbstractType)null);
         return;
     }
     super.eUnset(featureID);
@@ -268,8 +341,10 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case ExtendedPackage.FEATURE__MANY:
-        return many != MANY_EDEFAULT;
+      case ExtendedPackage.FEATURE__MIN:
+        return min != MIN_EDEFAULT;
+      case ExtendedPackage.FEATURE__MAX:
+        return max != MAX_EDEFAULT;
       case ExtendedPackage.FEATURE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ExtendedPackage.FEATURE__TYPE:
@@ -289,8 +364,10 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (many: ");
-    result.append(many);
+    result.append(" (min: ");
+    result.append(min);
+    result.append(", max: ");
+    result.append(max);
     result.append(", name: ");
     result.append(name);
     result.append(')');

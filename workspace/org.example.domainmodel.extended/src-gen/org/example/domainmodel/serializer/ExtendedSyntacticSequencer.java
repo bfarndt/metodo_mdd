@@ -23,9 +23,21 @@ public class ExtendedSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getDataTypeRule())
+			return getDataTypeToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * DataType:
+	 * 	'string' | 'int' | 'float' | 'currency' | 'date' | 'time' | 'boolean'
+	 * ;
+	 */
+	protected String getDataTypeToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "string";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

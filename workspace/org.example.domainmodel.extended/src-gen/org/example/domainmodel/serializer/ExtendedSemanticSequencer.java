@@ -13,7 +13,7 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEOb
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.example.domainmodel.extended.DataType;
+import org.example.domainmodel.extended.AbstractType;
 import org.example.domainmodel.extended.Domainmodel;
 import org.example.domainmodel.extended.Entity;
 import org.example.domainmodel.extended.ExtendedPackage;
@@ -34,11 +34,9 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ExtendedPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case ExtendedPackage.DATA_TYPE:
-				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getDataTypeRule() ||
-				   context == grammarAccess.getTypeRule()) {
-					sequence_DataType(context, (DataType) semanticObject); 
+			case ExtendedPackage.ABSTRACT_TYPE:
+				if(context == grammarAccess.getAbstractTypeRule()) {
+					sequence_AbstractType(context, (AbstractType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -50,8 +48,8 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				else break;
 			case ExtendedPackage.ENTITY:
 				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getEntityRule() ||
-				   context == grammarAccess.getTypeRule()) {
+				   context == grammarAccess.getAbstractTypeRule() ||
+				   context == grammarAccess.getEntityRule()) {
 					sequence_Entity(context, (Entity) semanticObject); 
 					return; 
 				}
@@ -113,17 +111,10 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     {AbstractType}
 	 */
-	protected void sequence_DataType(EObject context, DataType semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.TYPE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.TYPE__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDataTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+	protected void sequence_AbstractType(EObject context, AbstractType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -147,7 +138,7 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (many?='many'? name=ID type=[Type|QualifiedName])
+	 *     ((min=INT max=INT)? name=ID type=AbstractType)
 	 */
 	protected void sequence_Feature(EObject context, Feature semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

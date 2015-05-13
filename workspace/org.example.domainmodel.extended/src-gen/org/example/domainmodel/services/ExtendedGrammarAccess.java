@@ -102,23 +102,23 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cPackageDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cImportParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cPageParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cFormTypesParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//AbstractElement:
-		//	PackageDeclaration | Type | Import | Page | FormTypes;
+		//	PackageDeclaration | Entity | Import | Page | FormTypes;
 		public ParserRule getRule() { return rule; }
 
-		//PackageDeclaration | Type | Import | Page | FormTypes
+		//PackageDeclaration | Entity | Import | Page | FormTypes
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//PackageDeclaration
 		public RuleCall getPackageDeclarationParserRuleCall_0() { return cPackageDeclarationParserRuleCall_0; }
 
-		//Type
-		public RuleCall getTypeParserRuleCall_1() { return cTypeParserRuleCall_1; }
+		//Entity
+		public RuleCall getEntityParserRuleCall_1() { return cEntityParserRuleCall_1; }
 
 		//Import
 		public RuleCall getImportParserRuleCall_2() { return cImportParserRuleCall_2; }
@@ -202,21 +202,29 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
 	}
 
-	public class TypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
+	public class AbstractTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cDataTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cAbstractTypeAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final RuleCall cDataTypeParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
 		private final RuleCall cEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//Type:
-		//	DataType | Entity;
+		//AbstractType:
+		//	{AbstractType} DataType | Entity;
 		public ParserRule getRule() { return rule; }
 
-		//DataType | Entity
+		//{AbstractType} DataType | Entity
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//{AbstractType} DataType
+		public Group getGroup_0() { return cGroup_0; }
+
+		//{AbstractType}
+		public Action getAbstractTypeAction_0_0() { return cAbstractTypeAction_0_0; }
+
 		//DataType
-		public RuleCall getDataTypeParserRuleCall_0() { return cDataTypeParserRuleCall_0; }
+		public RuleCall getDataTypeParserRuleCall_0_1() { return cDataTypeParserRuleCall_0_1; }
 
 		//Entity
 		public RuleCall getEntityParserRuleCall_1() { return cEntityParserRuleCall_1; }
@@ -224,26 +232,42 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class DataTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataType");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDatatypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cStringKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cIntKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cFloatKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cCurrencyKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cDateKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cTimeKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cBooleanKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
 		
 		//DataType:
-		//	"datatype" name=ID;
+		//	"string" | "int" | "float" | "currency" | "date" | "time" | "boolean";
 		public ParserRule getRule() { return rule; }
 
-		//"datatype" name=ID
-		public Group getGroup() { return cGroup; }
+		//"string" | "int" | "float" | "currency" | "date" | "time" | "boolean"
+		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"datatype"
-		public Keyword getDatatypeKeyword_0() { return cDatatypeKeyword_0; }
+		//"string"
+		public Keyword getStringKeyword_0() { return cStringKeyword_0; }
 
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//"int"
+		public Keyword getIntKeyword_1() { return cIntKeyword_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//"float"
+		public Keyword getFloatKeyword_2() { return cFloatKeyword_2; }
+
+		//"currency"
+		public Keyword getCurrencyKeyword_3() { return cCurrencyKeyword_3; }
+
+		//"date"
+		public Keyword getDateKeyword_4() { return cDateKeyword_4; }
+
+		//"time"
+		public Keyword getTimeKeyword_5() { return cTimeKeyword_5; }
+
+		//"boolean"
+		public Keyword getBooleanKeyword_6() { return cBooleanKeyword_6; }
 	}
 
 	public class EntityElements extends AbstractParserRuleElementFinder {
@@ -309,27 +333,42 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	public class FeatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Feature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cManyAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cManyManyKeyword_0_0 = (Keyword)cManyAssignment_0.eContents().get(0);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final Assignment cMinAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cMinINTTerminalRuleCall_0_0_0 = (RuleCall)cMinAssignment_0_0.eContents().get(0);
+		private final Keyword cFullStopFullStopKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cMaxAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cMaxINTTerminalRuleCall_0_2_0 = (RuleCall)cMaxAssignment_0_2.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cTypeTypeCrossReference_3_0 = (CrossReference)cTypeAssignment_3.eContents().get(0);
-		private final RuleCall cTypeTypeQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cTypeTypeCrossReference_3_0.eContents().get(1);
+		private final RuleCall cTypeAbstractTypeParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
 		
 		//Feature:
-		//	many?="many"? name=ID ":" type=[Type|QualifiedName];
+		//	(min=INT ".." max=INT)? name=ID ":" type=AbstractType;
 		public ParserRule getRule() { return rule; }
 
-		//many?="many"? name=ID ":" type=[Type|QualifiedName]
+		//(min=INT ".." max=INT)? name=ID ":" type=AbstractType
 		public Group getGroup() { return cGroup; }
 
-		//many?="many"?
-		public Assignment getManyAssignment_0() { return cManyAssignment_0; }
+		//(min=INT ".." max=INT)?
+		public Group getGroup_0() { return cGroup_0; }
 
-		//"many"
-		public Keyword getManyManyKeyword_0_0() { return cManyManyKeyword_0_0; }
+		//min=INT
+		public Assignment getMinAssignment_0_0() { return cMinAssignment_0_0; }
+
+		//INT
+		public RuleCall getMinINTTerminalRuleCall_0_0_0() { return cMinINTTerminalRuleCall_0_0_0; }
+
+		//".."
+		public Keyword getFullStopFullStopKeyword_0_1() { return cFullStopFullStopKeyword_0_1; }
+
+		//max=INT
+		public Assignment getMaxAssignment_0_2() { return cMaxAssignment_0_2; }
+
+		//INT
+		public RuleCall getMaxINTTerminalRuleCall_0_2_0() { return cMaxINTTerminalRuleCall_0_2_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -340,14 +379,11 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//type=[Type|QualifiedName]
+		//type=AbstractType
 		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 
-		//[Type|QualifiedName]
-		public CrossReference getTypeTypeCrossReference_3_0() { return cTypeTypeCrossReference_3_0; }
-
-		//QualifiedName
-		public RuleCall getTypeTypeQualifiedNameParserRuleCall_3_0_1() { return cTypeTypeQualifiedNameParserRuleCall_3_0_1; }
+		//AbstractType
+		public RuleCall getTypeAbstractTypeParserRuleCall_3_0() { return cTypeAbstractTypeParserRuleCall_3_0; }
 	}
 
 	public class BooleanElements extends AbstractParserRuleElementFinder {
@@ -734,7 +770,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	private final QualifiedNameElements pQualifiedName;
 	private final ImportElements pImport;
 	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
-	private final TypeElements pType;
+	private final AbstractTypeElements pAbstractType;
 	private final DataTypeElements pDataType;
 	private final EntityElements pEntity;
 	private final FeatureElements pFeature;
@@ -760,7 +796,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pImport = new ImportElements();
 		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
-		this.pType = new TypeElements();
+		this.pAbstractType = new AbstractTypeElements();
 		this.pDataType = new DataTypeElements();
 		this.pEntity = new EntityElements();
 		this.pFeature = new FeatureElements();
@@ -820,7 +856,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AbstractElement:
-	//	PackageDeclaration | Type | Import | Page | FormTypes;
+	//	PackageDeclaration | Entity | Import | Page | FormTypes;
 	public AbstractElementElements getAbstractElementAccess() {
 		return pAbstractElement;
 	}
@@ -859,18 +895,18 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		return getQualifiedNameWithWildcardAccess().getRule();
 	}
 
-	//Type:
-	//	DataType | Entity;
-	public TypeElements getTypeAccess() {
-		return pType;
+	//AbstractType:
+	//	{AbstractType} DataType | Entity;
+	public AbstractTypeElements getAbstractTypeAccess() {
+		return pAbstractType;
 	}
 	
-	public ParserRule getTypeRule() {
-		return getTypeAccess().getRule();
+	public ParserRule getAbstractTypeRule() {
+		return getAbstractTypeAccess().getRule();
 	}
 
 	//DataType:
-	//	"datatype" name=ID;
+	//	"string" | "int" | "float" | "currency" | "date" | "time" | "boolean";
 	public DataTypeElements getDataTypeAccess() {
 		return pDataType;
 	}
@@ -890,7 +926,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Feature:
-	//	many?="many"? name=ID ":" type=[Type|QualifiedName];
+	//	(min=INT ".." max=INT)? name=ID ":" type=AbstractType;
 	public FeatureElements getFeatureAccess() {
 		return pFeature;
 	}

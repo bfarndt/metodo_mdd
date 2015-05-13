@@ -59,22 +59,13 @@ public interface ExtendedFactory extends EFactory
   Import createImport();
 
   /**
-   * Returns a new object of class '<em>Type</em>'.
+   * Returns a new object of class '<em>Abstract Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type</em>'.
+   * @return a new object of class '<em>Abstract Type</em>'.
    * @generated
    */
-  Type createType();
-
-  /**
-   * Returns a new object of class '<em>Data Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type</em>'.
-   * @generated
-   */
-  DataType createDataType();
+  AbstractType createAbstractType();
 
   /**
    * Returns a new object of class '<em>Entity</em>'.

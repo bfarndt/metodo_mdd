@@ -19,7 +19,7 @@ PackageDeclaration:
 ;
 
 AbstractElement:
-	PackageDeclaration | Type | Import | Page | FormTypes
+	PackageDeclaration | Entity | Import | Page | FormTypes
 ;
 
 QualifiedName:
@@ -34,12 +34,12 @@ QualifiedNameWithWildcard:
 	QualifiedName '.*'?
 ;
 
-Type:
-	DataType | Entity
+AbstractType:
+	{AbstractType} DataType | Entity
 ;
 
 DataType:
-	'datatype' name = ID
+	'string' | 'int' | 'float' | 'currency' | 'date' | 'time' | 'boolean'
 ;
 
 Entity:
@@ -50,7 +50,7 @@ Entity:
 ;
 
 Feature:
-	(many ?= 'many')? name = ID ':' type = [Type | QualifiedName]
+	(min=INT '..' max=INT)? name = ID ':' type = AbstractType
 ;
 
 Boolean:

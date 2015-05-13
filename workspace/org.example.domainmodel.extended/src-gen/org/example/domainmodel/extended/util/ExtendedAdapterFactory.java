@@ -95,14 +95,9 @@ public class ExtendedAdapterFactory extends AdapterFactoryImpl
         return createImportAdapter();
       }
       @Override
-      public Adapter caseType(Type object)
+      public Adapter caseAbstractType(AbstractType object)
       {
-        return createTypeAdapter();
-      }
-      @Override
-      public Adapter caseDataType(DataType object)
-      {
-        return createDataTypeAdapter();
+        return createAbstractTypeAdapter();
       }
       @Override
       public Adapter caseEntity(Entity object)
@@ -222,31 +217,16 @@ public class ExtendedAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.example.domainmodel.extended.Type <em>Type</em>}'.
+   * Creates a new adapter for an object of class '{@link org.example.domainmodel.extended.AbstractType <em>Abstract Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.example.domainmodel.extended.Type
+   * @see org.example.domainmodel.extended.AbstractType
    * @generated
    */
-  public Adapter createTypeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.example.domainmodel.extended.DataType <em>Data Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.example.domainmodel.extended.DataType
-   * @generated
-   */
-  public Adapter createDataTypeAdapter()
+  public Adapter createAbstractTypeAdapter()
   {
     return null;
   }

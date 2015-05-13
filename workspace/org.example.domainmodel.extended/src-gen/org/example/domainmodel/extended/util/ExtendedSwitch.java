@@ -102,20 +102,10 @@ public class ExtendedSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ExtendedPackage.TYPE:
+      case ExtendedPackage.ABSTRACT_TYPE:
       {
-        Type type = (Type)theEObject;
-        T result = caseType(type);
-        if (result == null) result = caseAbstractElement(type);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ExtendedPackage.DATA_TYPE:
-      {
-        DataType dataType = (DataType)theEObject;
-        T result = caseDataType(dataType);
-        if (result == null) result = caseType(dataType);
-        if (result == null) result = caseAbstractElement(dataType);
+        AbstractType abstractType = (AbstractType)theEObject;
+        T result = caseAbstractType(abstractType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -123,8 +113,8 @@ public class ExtendedSwitch<T> extends Switch<T>
       {
         Entity entity = (Entity)theEObject;
         T result = caseEntity(entity);
-        if (result == null) result = caseType(entity);
         if (result == null) result = caseAbstractElement(entity);
+        if (result == null) result = caseAbstractType(entity);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -247,33 +237,17 @@ public class ExtendedSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseType(Type object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDataType(DataType object)
+  public T caseAbstractType(AbstractType object)
   {
     return null;
   }

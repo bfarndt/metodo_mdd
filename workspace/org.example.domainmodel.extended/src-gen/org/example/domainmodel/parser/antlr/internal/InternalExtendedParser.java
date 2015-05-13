@@ -21,10 +21,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalExtendedParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'project'", "'begin'", "'end'", "'package'", "'{'", "'}'", "'.'", "'import'", "'.*'", "'datatype'", "'entity'", "'extends'", "'many'", "':'", "'true'", "'false'", "'page'", "'title'", "'header'", "'footer'", "'form'", "'get'", "'post'", "'put'", "'delete'", "'formNewEntity'", "'formReport'", "'filter'", "'order'", "'pagination'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'project'", "'begin'", "'end'", "'package'", "'{'", "'}'", "'.'", "'import'", "'.*'", "'string'", "'int'", "'float'", "'currency'", "'date'", "'time'", "'boolean'", "'entity'", "'extends'", "'..'", "':'", "'true'", "'false'", "'page'", "'title'", "'header'", "'footer'", "'form'", "'get'", "'post'", "'put'", "'delete'", "'formNewEntity'", "'formReport'", "'filter'", "'order'", "'pagination'"
     };
     public static final int RULE_ID=5;
-    public static final int T__40=40;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -36,30 +35,37 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
     public static final int RULE_ANY_OTHER=10;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
     public static final int T__19=19;
-    public static final int T__31=31;
-    public static final int RULE_STRING=4;
-    public static final int T__32=32;
-    public static final int T__33=33;
     public static final int T__16=16;
-    public static final int T__34=34;
     public static final int T__15=15;
-    public static final int T__35=35;
     public static final int T__18=18;
-    public static final int T__36=36;
     public static final int T__17=17;
-    public static final int T__37=37;
     public static final int T__12=12;
-    public static final int T__38=38;
     public static final int T__11=11;
-    public static final int T__39=39;
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_INT=6;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_STRING=4;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int RULE_WS=9;
 
     // delegates
@@ -197,7 +203,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==14||LA1_0==18||(LA1_0>=20 && LA1_0<=21)||LA1_0==27||LA1_0==31||(LA1_0>=36 && LA1_0<=37)) ) {
+                if ( (LA1_0==14||LA1_0==18||LA1_0==27||LA1_0==33||LA1_0==37||(LA1_0>=42 && LA1_0<=43)) ) {
                     alt1=1;
                 }
 
@@ -367,7 +373,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==14||LA2_0==18||(LA2_0>=20 && LA2_0<=21)||LA2_0==27||LA2_0==31||(LA2_0>=36 && LA2_0<=37)) ) {
+                if ( (LA2_0==14||LA2_0==18||LA2_0==27||LA2_0==33||LA2_0==37||(LA2_0>=42 && LA2_0<=43)) ) {
                     alt2=1;
                 }
 
@@ -471,13 +477,13 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractElement"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:214:1: ruleAbstractElement returns [EObject current=null] : (this_PackageDeclaration_0= rulePackageDeclaration | this_Type_1= ruleType | this_Import_2= ruleImport | this_Page_3= rulePage | this_FormTypes_4= ruleFormTypes ) ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:214:1: ruleAbstractElement returns [EObject current=null] : (this_PackageDeclaration_0= rulePackageDeclaration | this_Entity_1= ruleEntity | this_Import_2= ruleImport | this_Page_3= rulePage | this_FormTypes_4= ruleFormTypes ) ;
     public final EObject ruleAbstractElement() throws RecognitionException {
         EObject current = null;
 
         EObject this_PackageDeclaration_0 = null;
 
-        EObject this_Type_1 = null;
+        EObject this_Entity_1 = null;
 
         EObject this_Import_2 = null;
 
@@ -489,10 +495,10 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:217:28: ( (this_PackageDeclaration_0= rulePackageDeclaration | this_Type_1= ruleType | this_Import_2= ruleImport | this_Page_3= rulePage | this_FormTypes_4= ruleFormTypes ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:218:1: (this_PackageDeclaration_0= rulePackageDeclaration | this_Type_1= ruleType | this_Import_2= ruleImport | this_Page_3= rulePage | this_FormTypes_4= ruleFormTypes )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:217:28: ( (this_PackageDeclaration_0= rulePackageDeclaration | this_Entity_1= ruleEntity | this_Import_2= ruleImport | this_Page_3= rulePage | this_FormTypes_4= ruleFormTypes ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:218:1: (this_PackageDeclaration_0= rulePackageDeclaration | this_Entity_1= ruleEntity | this_Import_2= ruleImport | this_Page_3= rulePage | this_FormTypes_4= ruleFormTypes )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:218:1: (this_PackageDeclaration_0= rulePackageDeclaration | this_Type_1= ruleType | this_Import_2= ruleImport | this_Page_3= rulePage | this_FormTypes_4= ruleFormTypes )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:218:1: (this_PackageDeclaration_0= rulePackageDeclaration | this_Entity_1= ruleEntity | this_Import_2= ruleImport | this_Page_3= rulePage | this_FormTypes_4= ruleFormTypes )
             int alt3=5;
             switch ( input.LA(1) ) {
             case 14:
@@ -500,8 +506,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
                 alt3=1;
                 }
                 break;
-            case 20:
-            case 21:
+            case 27:
                 {
                 alt3=2;
                 }
@@ -511,14 +516,14 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
                 alt3=3;
                 }
                 break;
-            case 27:
+            case 33:
                 {
                 alt3=4;
                 }
                 break;
-            case 31:
-            case 36:
             case 37:
+            case 42:
+            case 43:
                 {
                 alt3=5;
                 }
@@ -550,18 +555,18 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:229:5: this_Type_1= ruleType
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:229:5: this_Entity_1= ruleEntity
                     {
                      
-                            newCompositeNode(grammarAccess.getAbstractElementAccess().getTypeParserRuleCall_1()); 
+                            newCompositeNode(grammarAccess.getAbstractElementAccess().getEntityParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleType_in_ruleAbstractElement460);
-                    this_Type_1=ruleType();
+                    pushFollow(FOLLOW_ruleEntity_in_ruleAbstractElement460);
+                    this_Entity_1=ruleEntity();
 
                     state._fsp--;
 
                      
-                            current = this_Type_1; 
+                            current = this_Entity_1; 
                             afterParserOrEnumRuleCall();
                         
 
@@ -977,26 +982,26 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleQualifiedNameWithWildcard"
 
 
-    // $ANTLR start "entryRuleType"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:397:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
-    public final EObject entryRuleType() throws RecognitionException {
+    // $ANTLR start "entryRuleAbstractType"
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:397:1: entryRuleAbstractType returns [EObject current=null] : iv_ruleAbstractType= ruleAbstractType EOF ;
+    public final EObject entryRuleAbstractType() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleType = null;
+        EObject iv_ruleAbstractType = null;
 
 
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:398:2: (iv_ruleType= ruleType EOF )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:399:2: iv_ruleType= ruleType EOF
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:398:2: (iv_ruleAbstractType= ruleAbstractType EOF )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:399:2: iv_ruleAbstractType= ruleAbstractType EOF
             {
-             newCompositeNode(grammarAccess.getTypeRule()); 
-            pushFollow(FOLLOW_ruleType_in_entryRuleType933);
-            iv_ruleType=ruleType();
+             newCompositeNode(grammarAccess.getAbstractTypeRule()); 
+            pushFollow(FOLLOW_ruleAbstractType_in_entryRuleAbstractType933);
+            iv_ruleAbstractType=ruleAbstractType();
 
             state._fsp--;
 
-             current =iv_ruleType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleType943); 
+             current =iv_ruleAbstractType; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractType943); 
 
             }
 
@@ -1010,33 +1015,31 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleType"
+    // $ANTLR end "entryRuleAbstractType"
 
 
-    // $ANTLR start "ruleType"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:406:1: ruleType returns [EObject current=null] : (this_DataType_0= ruleDataType | this_Entity_1= ruleEntity ) ;
-    public final EObject ruleType() throws RecognitionException {
+    // $ANTLR start "ruleAbstractType"
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:406:1: ruleAbstractType returns [EObject current=null] : ( ( () ruleDataType ) | this_Entity_2= ruleEntity ) ;
+    public final EObject ruleAbstractType() throws RecognitionException {
         EObject current = null;
 
-        EObject this_DataType_0 = null;
-
-        EObject this_Entity_1 = null;
+        EObject this_Entity_2 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:409:28: ( (this_DataType_0= ruleDataType | this_Entity_1= ruleEntity ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:410:1: (this_DataType_0= ruleDataType | this_Entity_1= ruleEntity )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:409:28: ( ( ( () ruleDataType ) | this_Entity_2= ruleEntity ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:410:1: ( ( () ruleDataType ) | this_Entity_2= ruleEntity )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:410:1: (this_DataType_0= ruleDataType | this_Entity_1= ruleEntity )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:410:1: ( ( () ruleDataType ) | this_Entity_2= ruleEntity )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==20) ) {
+            if ( ((LA6_0>=20 && LA6_0<=26)) ) {
                 alt6=1;
             }
-            else if ( (LA6_0==21) ) {
+            else if ( (LA6_0==27) ) {
                 alt6=2;
             }
             else {
@@ -1047,36 +1050,52 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:411:5: this_DataType_0= ruleDataType
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:410:2: ( () ruleDataType )
                     {
-                     
-                            newCompositeNode(grammarAccess.getTypeAccess().getDataTypeParserRuleCall_0()); 
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:410:2: ( () ruleDataType )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:410:3: () ruleDataType
+                    {
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:410:3: ()
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:411:5: 
+                    {
+
+                            current = forceCreateModelElement(
+                                grammarAccess.getAbstractTypeAccess().getAbstractTypeAction_0_0(),
+                                current);
                         
-                    pushFollow(FOLLOW_ruleDataType_in_ruleType990);
-                    this_DataType_0=ruleDataType();
+
+                    }
+
+                     
+                            newCompositeNode(grammarAccess.getAbstractTypeAccess().getDataTypeParserRuleCall_0_1()); 
+                        
+                    pushFollow(FOLLOW_ruleDataType_in_ruleAbstractType994);
+                    ruleDataType();
 
                     state._fsp--;
 
                      
-                            current = this_DataType_0; 
                             afterParserOrEnumRuleCall();
                         
 
                     }
+
+
+                    }
                     break;
                 case 2 :
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:421:5: this_Entity_1= ruleEntity
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:426:5: this_Entity_2= ruleEntity
                     {
                      
-                            newCompositeNode(grammarAccess.getTypeAccess().getEntityParserRuleCall_1()); 
+                            newCompositeNode(grammarAccess.getAbstractTypeAccess().getEntityParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleEntity_in_ruleType1017);
-                    this_Entity_1=ruleEntity();
+                    pushFollow(FOLLOW_ruleEntity_in_ruleAbstractType1022);
+                    this_Entity_2=ruleEntity();
 
                     state._fsp--;
 
                      
-                            current = this_Entity_1; 
+                            current = this_Entity_2; 
                             afterParserOrEnumRuleCall();
                         
 
@@ -1099,29 +1118,29 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleType"
+    // $ANTLR end "ruleAbstractType"
 
 
     // $ANTLR start "entryRuleDataType"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:437:1: entryRuleDataType returns [EObject current=null] : iv_ruleDataType= ruleDataType EOF ;
-    public final EObject entryRuleDataType() throws RecognitionException {
-        EObject current = null;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:442:1: entryRuleDataType returns [String current=null] : iv_ruleDataType= ruleDataType EOF ;
+    public final String entryRuleDataType() throws RecognitionException {
+        String current = null;
 
-        EObject iv_ruleDataType = null;
+        AntlrDatatypeRuleToken iv_ruleDataType = null;
 
 
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:438:2: (iv_ruleDataType= ruleDataType EOF )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:439:2: iv_ruleDataType= ruleDataType EOF
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:443:2: (iv_ruleDataType= ruleDataType EOF )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:444:2: iv_ruleDataType= ruleDataType EOF
             {
              newCompositeNode(grammarAccess.getDataTypeRule()); 
-            pushFollow(FOLLOW_ruleDataType_in_entryRuleDataType1052);
+            pushFollow(FOLLOW_ruleDataType_in_entryRuleDataType1058);
             iv_ruleDataType=ruleDataType();
 
             state._fsp--;
 
-             current =iv_ruleDataType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDataType1062); 
+             current =iv_ruleDataType.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDataType1069); 
 
             }
 
@@ -1139,52 +1158,141 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataType"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:446:1: ruleDataType returns [EObject current=null] : (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) ) ;
-    public final EObject ruleDataType() throws RecognitionException {
-        EObject current = null;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:451:1: ruleDataType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'string' | kw= 'int' | kw= 'float' | kw= 'currency' | kw= 'date' | kw= 'time' | kw= 'boolean' ) ;
+    public final AntlrDatatypeRuleToken ruleDataType() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token kw=null;
 
          enterRule(); 
             
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:449:28: ( (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:450:1: (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:454:28: ( (kw= 'string' | kw= 'int' | kw= 'float' | kw= 'currency' | kw= 'date' | kw= 'time' | kw= 'boolean' ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:455:1: (kw= 'string' | kw= 'int' | kw= 'float' | kw= 'currency' | kw= 'date' | kw= 'time' | kw= 'boolean' )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:450:1: (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:450:3: otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) )
-            {
-            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleDataType1099); 
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:455:1: (kw= 'string' | kw= 'int' | kw= 'float' | kw= 'currency' | kw= 'date' | kw= 'time' | kw= 'boolean' )
+            int alt7=7;
+            switch ( input.LA(1) ) {
+            case 20:
+                {
+                alt7=1;
+                }
+                break;
+            case 21:
+                {
+                alt7=2;
+                }
+                break;
+            case 22:
+                {
+                alt7=3;
+                }
+                break;
+            case 23:
+                {
+                alt7=4;
+                }
+                break;
+            case 24:
+                {
+                alt7=5;
+                }
+                break;
+            case 25:
+                {
+                alt7=6;
+                }
+                break;
+            case 26:
+                {
+                alt7=7;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
 
-                	newLeafNode(otherlv_0, grammarAccess.getDataTypeAccess().getDatatypeKeyword_0());
-                
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:454:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:455:1: (lv_name_1_0= RULE_ID )
-            {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:455:1: (lv_name_1_0= RULE_ID )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:456:3: lv_name_1_0= RULE_ID
-            {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDataType1116); 
-
-            			newLeafNode(lv_name_1_0, grammarAccess.getDataTypeAccess().getNameIDTerminalRuleCall_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getDataTypeRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"name",
-                    		lv_name_1_0, 
-                    		"ID");
-            	    
-
+                throw nvae;
             }
 
+            switch (alt7) {
+                case 1 :
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:456:2: kw= 'string'
+                    {
+                    kw=(Token)match(input,20,FOLLOW_20_in_ruleDataType1107); 
 
-            }
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDataTypeAccess().getStringKeyword_0()); 
+                        
 
+                    }
+                    break;
+                case 2 :
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:463:2: kw= 'int'
+                    {
+                    kw=(Token)match(input,21,FOLLOW_21_in_ruleDataType1126); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDataTypeAccess().getIntKeyword_1()); 
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:470:2: kw= 'float'
+                    {
+                    kw=(Token)match(input,22,FOLLOW_22_in_ruleDataType1145); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDataTypeAccess().getFloatKeyword_2()); 
+                        
+
+                    }
+                    break;
+                case 4 :
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:477:2: kw= 'currency'
+                    {
+                    kw=(Token)match(input,23,FOLLOW_23_in_ruleDataType1164); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDataTypeAccess().getCurrencyKeyword_3()); 
+                        
+
+                    }
+                    break;
+                case 5 :
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:484:2: kw= 'date'
+                    {
+                    kw=(Token)match(input,24,FOLLOW_24_in_ruleDataType1183); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDataTypeAccess().getDateKeyword_4()); 
+                        
+
+                    }
+                    break;
+                case 6 :
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:491:2: kw= 'time'
+                    {
+                    kw=(Token)match(input,25,FOLLOW_25_in_ruleDataType1202); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDataTypeAccess().getTimeKeyword_5()); 
+                        
+
+                    }
+                    break;
+                case 7 :
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:498:2: kw= 'boolean'
+                    {
+                    kw=(Token)match(input,26,FOLLOW_26_in_ruleDataType1221); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDataTypeAccess().getBooleanKeyword_6()); 
+                        
+
+                    }
+                    break;
 
             }
 
@@ -1206,7 +1314,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEntity"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:480:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:511:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
     public final EObject entryRuleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -1214,17 +1322,17 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:481:2: (iv_ruleEntity= ruleEntity EOF )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:482:2: iv_ruleEntity= ruleEntity EOF
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:512:2: (iv_ruleEntity= ruleEntity EOF )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:513:2: iv_ruleEntity= ruleEntity EOF
             {
              newCompositeNode(grammarAccess.getEntityRule()); 
-            pushFollow(FOLLOW_ruleEntity_in_entryRuleEntity1157);
+            pushFollow(FOLLOW_ruleEntity_in_entryRuleEntity1261);
             iv_ruleEntity=ruleEntity();
 
             state._fsp--;
 
              current =iv_ruleEntity; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEntity1167); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEntity1271); 
 
             }
 
@@ -1242,7 +1350,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntity"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:489:1: ruleEntity returns [EObject current=null] : (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' ) ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:520:1: ruleEntity returns [EObject current=null] : (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' ) ;
     public final EObject ruleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -1257,23 +1365,23 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:492:28: ( (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:493:1: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:523:28: ( (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:524:1: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:493:1: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:493:3: otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}'
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:524:1: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:524:3: otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,21,FOLLOW_21_in_ruleEntity1204); 
+            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleEntity1308); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEntityAccess().getEntityKeyword_0());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:497:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:498:1: (lv_name_1_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:528:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:529:1: (lv_name_1_0= RULE_ID )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:498:1: (lv_name_1_0= RULE_ID )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:499:3: lv_name_1_0= RULE_ID
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:529:1: (lv_name_1_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:530:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity1221); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity1325); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1293,26 +1401,26 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:515:2: (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:546:2: (otherlv_2= 'extends' ( ( ruleQualifiedName ) ) )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==22) ) {
-                alt7=1;
+            if ( (LA8_0==28) ) {
+                alt8=1;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:515:4: otherlv_2= 'extends' ( ( ruleQualifiedName ) )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:546:4: otherlv_2= 'extends' ( ( ruleQualifiedName ) )
                     {
-                    otherlv_2=(Token)match(input,22,FOLLOW_22_in_ruleEntity1239); 
+                    otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleEntity1343); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getEntityAccess().getExtendsKeyword_2_0());
                         
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:519:1: ( ( ruleQualifiedName ) )
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:520:1: ( ruleQualifiedName )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:550:1: ( ( ruleQualifiedName ) )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:551:1: ( ruleQualifiedName )
                     {
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:520:1: ( ruleQualifiedName )
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:521:3: ruleQualifiedName
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:551:1: ( ruleQualifiedName )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:552:3: ruleQualifiedName
                     {
 
                     			if (current==null) {
@@ -1322,7 +1430,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getEntityAccess().getSuperTypeEntityCrossReference_2_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleEntity1262);
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleEntity1366);
                     ruleQualifiedName();
 
                     state._fsp--;
@@ -1342,32 +1450,32 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,15,FOLLOW_15_in_ruleEntity1276); 
+            otherlv_4=(Token)match(input,15,FOLLOW_15_in_ruleEntity1380); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:538:1: ( (lv_features_5_0= ruleFeature ) )*
-            loop8:
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:569:1: ( (lv_features_5_0= ruleFeature ) )*
+            loop9:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( (LA8_0==RULE_ID||LA8_0==23) ) {
-                    alt8=1;
+                if ( ((LA9_0>=RULE_ID && LA9_0<=RULE_INT)) ) {
+                    alt9=1;
                 }
 
 
-                switch (alt8) {
+                switch (alt9) {
             	case 1 :
-            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:539:1: (lv_features_5_0= ruleFeature )
+            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:570:1: (lv_features_5_0= ruleFeature )
             	    {
-            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:539:1: (lv_features_5_0= ruleFeature )
-            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:540:3: lv_features_5_0= ruleFeature
+            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:570:1: (lv_features_5_0= ruleFeature )
+            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:571:3: lv_features_5_0= ruleFeature
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEntityAccess().getFeaturesFeatureParserRuleCall_4_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleFeature_in_ruleEntity1297);
+            	    pushFollow(FOLLOW_ruleFeature_in_ruleEntity1401);
             	    lv_features_5_0=ruleFeature();
 
             	    state._fsp--;
@@ -1391,11 +1499,11 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop9;
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleEntity1310); 
+            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleEntity1414); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5());
                 
@@ -1420,7 +1528,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFeature"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:568:1: entryRuleFeature returns [EObject current=null] : iv_ruleFeature= ruleFeature EOF ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:599:1: entryRuleFeature returns [EObject current=null] : iv_ruleFeature= ruleFeature EOF ;
     public final EObject entryRuleFeature() throws RecognitionException {
         EObject current = null;
 
@@ -1428,17 +1536,17 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:569:2: (iv_ruleFeature= ruleFeature EOF )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:570:2: iv_ruleFeature= ruleFeature EOF
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:600:2: (iv_ruleFeature= ruleFeature EOF )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:601:2: iv_ruleFeature= ruleFeature EOF
             {
              newCompositeNode(grammarAccess.getFeatureRule()); 
-            pushFollow(FOLLOW_ruleFeature_in_entryRuleFeature1346);
+            pushFollow(FOLLOW_ruleFeature_in_entryRuleFeature1450);
             iv_ruleFeature=ruleFeature();
 
             state._fsp--;
 
              current =iv_ruleFeature; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFeature1356); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFeature1460); 
 
             }
 
@@ -1456,47 +1564,91 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFeature"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:577:1: ruleFeature returns [EObject current=null] : ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) ) ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:608:1: ruleFeature returns [EObject current=null] : ( ( ( (lv_min_0_0= RULE_INT ) ) otherlv_1= '..' ( (lv_max_2_0= RULE_INT ) ) )? ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_type_5_0= ruleAbstractType ) ) ) ;
     public final EObject ruleFeature() throws RecognitionException {
         EObject current = null;
 
-        Token lv_many_0_0=null;
-        Token lv_name_1_0=null;
-        Token otherlv_2=null;
+        Token lv_min_0_0=null;
+        Token otherlv_1=null;
+        Token lv_max_2_0=null;
+        Token lv_name_3_0=null;
+        Token otherlv_4=null;
+        EObject lv_type_5_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:580:28: ( ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:581:1: ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:611:28: ( ( ( ( (lv_min_0_0= RULE_INT ) ) otherlv_1= '..' ( (lv_max_2_0= RULE_INT ) ) )? ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_type_5_0= ruleAbstractType ) ) ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:612:1: ( ( ( (lv_min_0_0= RULE_INT ) ) otherlv_1= '..' ( (lv_max_2_0= RULE_INT ) ) )? ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_type_5_0= ruleAbstractType ) ) )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:581:1: ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:581:2: ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( ruleQualifiedName ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:612:1: ( ( ( (lv_min_0_0= RULE_INT ) ) otherlv_1= '..' ( (lv_max_2_0= RULE_INT ) ) )? ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_type_5_0= ruleAbstractType ) ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:612:2: ( ( (lv_min_0_0= RULE_INT ) ) otherlv_1= '..' ( (lv_max_2_0= RULE_INT ) ) )? ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_type_5_0= ruleAbstractType ) )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:581:2: ( (lv_many_0_0= 'many' ) )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:612:2: ( ( (lv_min_0_0= RULE_INT ) ) otherlv_1= '..' ( (lv_max_2_0= RULE_INT ) ) )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA9_0==23) ) {
-                alt9=1;
+            if ( (LA10_0==RULE_INT) ) {
+                alt10=1;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:582:1: (lv_many_0_0= 'many' )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:612:3: ( (lv_min_0_0= RULE_INT ) ) otherlv_1= '..' ( (lv_max_2_0= RULE_INT ) )
                     {
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:582:1: (lv_many_0_0= 'many' )
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:583:3: lv_many_0_0= 'many'
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:612:3: ( (lv_min_0_0= RULE_INT ) )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:613:1: (lv_min_0_0= RULE_INT )
                     {
-                    lv_many_0_0=(Token)match(input,23,FOLLOW_23_in_ruleFeature1399); 
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:613:1: (lv_min_0_0= RULE_INT )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:614:3: lv_min_0_0= RULE_INT
+                    {
+                    lv_min_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFeature1503); 
 
-                            newLeafNode(lv_many_0_0, grammarAccess.getFeatureAccess().getManyManyKeyword_0_0());
-                        
+                    			newLeafNode(lv_min_0_0, grammarAccess.getFeatureAccess().getMinINTTerminalRuleCall_0_0_0()); 
+                    		
 
                     	        if (current==null) {
                     	            current = createModelElement(grammarAccess.getFeatureRule());
                     	        }
-                           		setWithLastConsumed(current, "many", true, "many");
+                           		setWithLastConsumed(
+                           			current, 
+                           			"min",
+                            		lv_min_0_0, 
+                            		"INT");
                     	    
+
+                    }
+
+
+                    }
+
+                    otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleFeature1520); 
+
+                        	newLeafNode(otherlv_1, grammarAccess.getFeatureAccess().getFullStopFullStopKeyword_0_1());
+                        
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:634:1: ( (lv_max_2_0= RULE_INT ) )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:635:1: (lv_max_2_0= RULE_INT )
+                    {
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:635:1: (lv_max_2_0= RULE_INT )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:636:3: lv_max_2_0= RULE_INT
+                    {
+                    lv_max_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFeature1537); 
+
+                    			newLeafNode(lv_max_2_0, grammarAccess.getFeatureAccess().getMaxINTTerminalRuleCall_0_2_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getFeatureRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"max",
+                            		lv_max_2_0, 
+                            		"INT");
+                    	    
+
+                    }
+
 
                     }
 
@@ -1506,15 +1658,15 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:596:3: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:597:1: (lv_name_1_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:652:4: ( (lv_name_3_0= RULE_ID ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:653:1: (lv_name_3_0= RULE_ID )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:597:1: (lv_name_1_0= RULE_ID )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:598:3: lv_name_1_0= RULE_ID
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:653:1: (lv_name_3_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:654:3: lv_name_3_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFeature1430); 
+            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFeature1561); 
 
-            			newLeafNode(lv_name_1_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_name_3_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -1523,7 +1675,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"name",
-                    		lv_name_1_0, 
+                    		lv_name_3_0, 
                     		"ID");
             	    
 
@@ -1532,30 +1684,33 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleFeature1447); 
+            otherlv_4=(Token)match(input,30,FOLLOW_30_in_ruleFeature1578); 
 
-                	newLeafNode(otherlv_2, grammarAccess.getFeatureAccess().getColonKeyword_2());
+                	newLeafNode(otherlv_4, grammarAccess.getFeatureAccess().getColonKeyword_2());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:618:1: ( ( ruleQualifiedName ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:619:1: ( ruleQualifiedName )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:674:1: ( (lv_type_5_0= ruleAbstractType ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:675:1: (lv_type_5_0= ruleAbstractType )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:619:1: ( ruleQualifiedName )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:620:3: ruleQualifiedName
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:675:1: (lv_type_5_0= ruleAbstractType )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:676:3: lv_type_5_0= ruleAbstractType
             {
-
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getFeatureRule());
-            	        }
-                    
              
-            	        newCompositeNode(grammarAccess.getFeatureAccess().getTypeTypeCrossReference_3_0()); 
+            	        newCompositeNode(grammarAccess.getFeatureAccess().getTypeAbstractTypeParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleFeature1470);
-            ruleQualifiedName();
+            pushFollow(FOLLOW_ruleAbstractType_in_ruleFeature1599);
+            lv_type_5_0=ruleAbstractType();
 
             state._fsp--;
 
-             
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getFeatureRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"type",
+                    		lv_type_5_0, 
+                    		"AbstractType");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -1585,7 +1740,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoolean"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:641:1: entryRuleBoolean returns [String current=null] : iv_ruleBoolean= ruleBoolean EOF ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:700:1: entryRuleBoolean returns [String current=null] : iv_ruleBoolean= ruleBoolean EOF ;
     public final String entryRuleBoolean() throws RecognitionException {
         String current = null;
 
@@ -1593,17 +1748,17 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:642:2: (iv_ruleBoolean= ruleBoolean EOF )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:643:2: iv_ruleBoolean= ruleBoolean EOF
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:701:2: (iv_ruleBoolean= ruleBoolean EOF )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:702:2: iv_ruleBoolean= ruleBoolean EOF
             {
              newCompositeNode(grammarAccess.getBooleanRule()); 
-            pushFollow(FOLLOW_ruleBoolean_in_entryRuleBoolean1507);
+            pushFollow(FOLLOW_ruleBoolean_in_entryRuleBoolean1636);
             iv_ruleBoolean=ruleBoolean();
 
             state._fsp--;
 
              current =iv_ruleBoolean.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBoolean1518); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBoolean1647); 
 
             }
 
@@ -1621,7 +1776,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoolean"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:650:1: ruleBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:709:1: ruleBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleBoolean() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1630,30 +1785,30 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:653:28: ( (kw= 'true' | kw= 'false' ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:654:1: (kw= 'true' | kw= 'false' )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:712:28: ( (kw= 'true' | kw= 'false' ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:713:1: (kw= 'true' | kw= 'false' )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:654:1: (kw= 'true' | kw= 'false' )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:713:1: (kw= 'true' | kw= 'false' )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA10_0==25) ) {
-                alt10=1;
+            if ( (LA11_0==31) ) {
+                alt11=1;
             }
-            else if ( (LA10_0==26) ) {
-                alt10=2;
+            else if ( (LA11_0==32) ) {
+                alt11=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:655:2: kw= 'true'
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:714:2: kw= 'true'
                     {
-                    kw=(Token)match(input,25,FOLLOW_25_in_ruleBoolean1556); 
+                    kw=(Token)match(input,31,FOLLOW_31_in_ruleBoolean1685); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBooleanAccess().getTrueKeyword_0()); 
@@ -1662,9 +1817,9 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:662:2: kw= 'false'
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:721:2: kw= 'false'
                     {
-                    kw=(Token)match(input,26,FOLLOW_26_in_ruleBoolean1575); 
+                    kw=(Token)match(input,32,FOLLOW_32_in_ruleBoolean1704); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBooleanAccess().getFalseKeyword_1()); 
@@ -1693,7 +1848,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePage"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:675:1: entryRulePage returns [EObject current=null] : iv_rulePage= rulePage EOF ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:734:1: entryRulePage returns [EObject current=null] : iv_rulePage= rulePage EOF ;
     public final EObject entryRulePage() throws RecognitionException {
         EObject current = null;
 
@@ -1701,17 +1856,17 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:676:2: (iv_rulePage= rulePage EOF )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:677:2: iv_rulePage= rulePage EOF
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:735:2: (iv_rulePage= rulePage EOF )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:736:2: iv_rulePage= rulePage EOF
             {
              newCompositeNode(grammarAccess.getPageRule()); 
-            pushFollow(FOLLOW_rulePage_in_entryRulePage1615);
+            pushFollow(FOLLOW_rulePage_in_entryRulePage1744);
             iv_rulePage=rulePage();
 
             state._fsp--;
 
              current =iv_rulePage; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePage1625); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePage1754); 
 
             }
 
@@ -1729,7 +1884,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePage"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:684:1: rulePage returns [EObject current=null] : (otherlv_0= 'page' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )? otherlv_6= 'header' otherlv_7= ':' ( (lv_header_8_0= ruleBoolean ) ) otherlv_9= 'footer' otherlv_10= ':' ( (lv_footer_11_0= ruleBoolean ) ) ( (otherlv_12= RULE_ID ) )* otherlv_13= '}' ) ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:743:1: rulePage returns [EObject current=null] : (otherlv_0= 'page' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )? otherlv_6= 'header' otherlv_7= ':' ( (lv_header_8_0= ruleBoolean ) ) otherlv_9= 'footer' otherlv_10= ':' ( (lv_footer_11_0= ruleBoolean ) ) ( (otherlv_12= RULE_ID ) )* otherlv_13= '}' ) ;
     public final EObject rulePage() throws RecognitionException {
         EObject current = null;
 
@@ -1753,23 +1908,23 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:687:28: ( (otherlv_0= 'page' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )? otherlv_6= 'header' otherlv_7= ':' ( (lv_header_8_0= ruleBoolean ) ) otherlv_9= 'footer' otherlv_10= ':' ( (lv_footer_11_0= ruleBoolean ) ) ( (otherlv_12= RULE_ID ) )* otherlv_13= '}' ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:688:1: (otherlv_0= 'page' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )? otherlv_6= 'header' otherlv_7= ':' ( (lv_header_8_0= ruleBoolean ) ) otherlv_9= 'footer' otherlv_10= ':' ( (lv_footer_11_0= ruleBoolean ) ) ( (otherlv_12= RULE_ID ) )* otherlv_13= '}' )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:746:28: ( (otherlv_0= 'page' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )? otherlv_6= 'header' otherlv_7= ':' ( (lv_header_8_0= ruleBoolean ) ) otherlv_9= 'footer' otherlv_10= ':' ( (lv_footer_11_0= ruleBoolean ) ) ( (otherlv_12= RULE_ID ) )* otherlv_13= '}' ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:747:1: (otherlv_0= 'page' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )? otherlv_6= 'header' otherlv_7= ':' ( (lv_header_8_0= ruleBoolean ) ) otherlv_9= 'footer' otherlv_10= ':' ( (lv_footer_11_0= ruleBoolean ) ) ( (otherlv_12= RULE_ID ) )* otherlv_13= '}' )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:688:1: (otherlv_0= 'page' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )? otherlv_6= 'header' otherlv_7= ':' ( (lv_header_8_0= ruleBoolean ) ) otherlv_9= 'footer' otherlv_10= ':' ( (lv_footer_11_0= ruleBoolean ) ) ( (otherlv_12= RULE_ID ) )* otherlv_13= '}' )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:688:3: otherlv_0= 'page' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )? otherlv_6= 'header' otherlv_7= ':' ( (lv_header_8_0= ruleBoolean ) ) otherlv_9= 'footer' otherlv_10= ':' ( (lv_footer_11_0= ruleBoolean ) ) ( (otherlv_12= RULE_ID ) )* otherlv_13= '}'
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:747:1: (otherlv_0= 'page' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )? otherlv_6= 'header' otherlv_7= ':' ( (lv_header_8_0= ruleBoolean ) ) otherlv_9= 'footer' otherlv_10= ':' ( (lv_footer_11_0= ruleBoolean ) ) ( (otherlv_12= RULE_ID ) )* otherlv_13= '}' )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:747:3: otherlv_0= 'page' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )? otherlv_6= 'header' otherlv_7= ':' ( (lv_header_8_0= ruleBoolean ) ) otherlv_9= 'footer' otherlv_10= ':' ( (lv_footer_11_0= ruleBoolean ) ) ( (otherlv_12= RULE_ID ) )* otherlv_13= '}'
             {
-            otherlv_0=(Token)match(input,27,FOLLOW_27_in_rulePage1662); 
+            otherlv_0=(Token)match(input,33,FOLLOW_33_in_rulePage1791); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getPageAccess().getPageKeyword_0());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:692:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:693:1: (lv_name_1_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:751:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:752:1: (lv_name_1_0= RULE_ID )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:693:1: (lv_name_1_0= RULE_ID )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:694:3: lv_name_1_0= RULE_ID
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:752:1: (lv_name_1_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:753:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePage1679); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePage1808); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getPageAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1789,36 +1944,36 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,15,FOLLOW_15_in_rulePage1696); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_rulePage1825); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:714:1: (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:773:1: (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) ) )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0==28) ) {
-                alt11=1;
+            if ( (LA12_0==34) ) {
+                alt12=1;
             }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:714:3: otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:773:3: otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,28,FOLLOW_28_in_rulePage1709); 
+                    otherlv_3=(Token)match(input,34,FOLLOW_34_in_rulePage1838); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getPageAccess().getTitleKeyword_3_0());
                         
-                    otherlv_4=(Token)match(input,24,FOLLOW_24_in_rulePage1721); 
+                    otherlv_4=(Token)match(input,30,FOLLOW_30_in_rulePage1850); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getPageAccess().getColonKeyword_3_1());
                         
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:722:1: ( (lv_title_5_0= RULE_STRING ) )
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:723:1: (lv_title_5_0= RULE_STRING )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:781:1: ( (lv_title_5_0= RULE_STRING ) )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:782:1: (lv_title_5_0= RULE_STRING )
                     {
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:723:1: (lv_title_5_0= RULE_STRING )
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:724:3: lv_title_5_0= RULE_STRING
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:782:1: (lv_title_5_0= RULE_STRING )
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:783:3: lv_title_5_0= RULE_STRING
                     {
-                    lv_title_5_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePage1738); 
+                    lv_title_5_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePage1867); 
 
                     			newLeafNode(lv_title_5_0, grammarAccess.getPageAccess().getTitleSTRINGTerminalRuleCall_3_2_0()); 
                     		
@@ -1844,24 +1999,24 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,29,FOLLOW_29_in_rulePage1757); 
+            otherlv_6=(Token)match(input,35,FOLLOW_35_in_rulePage1886); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getPageAccess().getHeaderKeyword_4());
                 
-            otherlv_7=(Token)match(input,24,FOLLOW_24_in_rulePage1769); 
+            otherlv_7=(Token)match(input,30,FOLLOW_30_in_rulePage1898); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getPageAccess().getColonKeyword_5());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:748:1: ( (lv_header_8_0= ruleBoolean ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:749:1: (lv_header_8_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:807:1: ( (lv_header_8_0= ruleBoolean ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:808:1: (lv_header_8_0= ruleBoolean )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:749:1: (lv_header_8_0= ruleBoolean )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:750:3: lv_header_8_0= ruleBoolean
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:808:1: (lv_header_8_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:809:3: lv_header_8_0= ruleBoolean
             {
              
             	        newCompositeNode(grammarAccess.getPageAccess().getHeaderBooleanParserRuleCall_6_0()); 
             	    
-            pushFollow(FOLLOW_ruleBoolean_in_rulePage1790);
+            pushFollow(FOLLOW_ruleBoolean_in_rulePage1919);
             lv_header_8_0=ruleBoolean();
 
             state._fsp--;
@@ -1883,24 +2038,24 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,30,FOLLOW_30_in_rulePage1802); 
+            otherlv_9=(Token)match(input,36,FOLLOW_36_in_rulePage1931); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getPageAccess().getFooterKeyword_7());
                 
-            otherlv_10=(Token)match(input,24,FOLLOW_24_in_rulePage1814); 
+            otherlv_10=(Token)match(input,30,FOLLOW_30_in_rulePage1943); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getPageAccess().getColonKeyword_8());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:774:1: ( (lv_footer_11_0= ruleBoolean ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:775:1: (lv_footer_11_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:833:1: ( (lv_footer_11_0= ruleBoolean ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:834:1: (lv_footer_11_0= ruleBoolean )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:775:1: (lv_footer_11_0= ruleBoolean )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:776:3: lv_footer_11_0= ruleBoolean
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:834:1: (lv_footer_11_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:835:3: lv_footer_11_0= ruleBoolean
             {
              
             	        newCompositeNode(grammarAccess.getPageAccess().getFooterBooleanParserRuleCall_9_0()); 
             	    
-            pushFollow(FOLLOW_ruleBoolean_in_rulePage1835);
+            pushFollow(FOLLOW_ruleBoolean_in_rulePage1964);
             lv_footer_11_0=ruleBoolean();
 
             state._fsp--;
@@ -1922,30 +2077,30 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:792:2: ( (otherlv_12= RULE_ID ) )*
-            loop12:
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:851:2: ( (otherlv_12= RULE_ID ) )*
+            loop13:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA12_0==RULE_ID) ) {
-                    alt12=1;
+                if ( (LA13_0==RULE_ID) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt13) {
             	case 1 :
-            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:793:1: (otherlv_12= RULE_ID )
+            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:852:1: (otherlv_12= RULE_ID )
             	    {
-            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:793:1: (otherlv_12= RULE_ID )
-            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:794:3: otherlv_12= RULE_ID
+            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:852:1: (otherlv_12= RULE_ID )
+            	    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:853:3: otherlv_12= RULE_ID
             	    {
 
             	    			if (current==null) {
             	    	            current = createModelElement(grammarAccess.getPageRule());
             	    	        }
             	            
-            	    otherlv_12=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePage1855); 
+            	    otherlv_12=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePage1984); 
 
             	    		newLeafNode(otherlv_12, grammarAccess.getPageAccess().getFormsFormTypesCrossReference_10_0()); 
             	    	
@@ -1957,11 +2112,11 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop13;
                 }
             } while (true);
 
-            otherlv_13=(Token)match(input,16,FOLLOW_16_in_rulePage1868); 
+            otherlv_13=(Token)match(input,16,FOLLOW_16_in_rulePage1997); 
 
                 	newLeafNode(otherlv_13, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_11());
                 
@@ -1986,7 +2141,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormTypes"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:817:1: entryRuleFormTypes returns [EObject current=null] : iv_ruleFormTypes= ruleFormTypes EOF ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:876:1: entryRuleFormTypes returns [EObject current=null] : iv_ruleFormTypes= ruleFormTypes EOF ;
     public final EObject entryRuleFormTypes() throws RecognitionException {
         EObject current = null;
 
@@ -1994,17 +2149,17 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:818:2: (iv_ruleFormTypes= ruleFormTypes EOF )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:819:2: iv_ruleFormTypes= ruleFormTypes EOF
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:877:2: (iv_ruleFormTypes= ruleFormTypes EOF )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:878:2: iv_ruleFormTypes= ruleFormTypes EOF
             {
              newCompositeNode(grammarAccess.getFormTypesRule()); 
-            pushFollow(FOLLOW_ruleFormTypes_in_entryRuleFormTypes1904);
+            pushFollow(FOLLOW_ruleFormTypes_in_entryRuleFormTypes2033);
             iv_ruleFormTypes=ruleFormTypes();
 
             state._fsp--;
 
              current =iv_ruleFormTypes; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFormTypes1914); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFormTypes2043); 
 
             }
 
@@ -2022,7 +2177,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormTypes"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:826:1: ruleFormTypes returns [EObject current=null] : (this_Form_0= ruleForm | this_FormNewEntityOnly_1= ruleFormNewEntityOnly | this_FormReport_2= ruleFormReport ) ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:885:1: ruleFormTypes returns [EObject current=null] : (this_Form_0= ruleForm | this_FormNewEntityOnly_1= ruleFormNewEntityOnly | this_FormReport_2= ruleFormReport ) ;
     public final EObject ruleFormTypes() throws RecognitionException {
         EObject current = null;
 
@@ -2036,42 +2191,42 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:829:28: ( (this_Form_0= ruleForm | this_FormNewEntityOnly_1= ruleFormNewEntityOnly | this_FormReport_2= ruleFormReport ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:830:1: (this_Form_0= ruleForm | this_FormNewEntityOnly_1= ruleFormNewEntityOnly | this_FormReport_2= ruleFormReport )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:888:28: ( (this_Form_0= ruleForm | this_FormNewEntityOnly_1= ruleFormNewEntityOnly | this_FormReport_2= ruleFormReport ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:889:1: (this_Form_0= ruleForm | this_FormNewEntityOnly_1= ruleFormNewEntityOnly | this_FormReport_2= ruleFormReport )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:830:1: (this_Form_0= ruleForm | this_FormNewEntityOnly_1= ruleFormNewEntityOnly | this_FormReport_2= ruleFormReport )
-            int alt13=3;
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:889:1: (this_Form_0= ruleForm | this_FormNewEntityOnly_1= ruleFormNewEntityOnly | this_FormReport_2= ruleFormReport )
+            int alt14=3;
             switch ( input.LA(1) ) {
-            case 31:
-                {
-                alt13=1;
-                }
-                break;
-            case 36:
-                {
-                alt13=2;
-                }
-                break;
             case 37:
                 {
-                alt13=3;
+                alt14=1;
+                }
+                break;
+            case 42:
+                {
+                alt14=2;
+                }
+                break;
+            case 43:
+                {
+                alt14=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:831:5: this_Form_0= ruleForm
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:890:5: this_Form_0= ruleForm
                     {
                      
                             newCompositeNode(grammarAccess.getFormTypesAccess().getFormParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleForm_in_ruleFormTypes1961);
+                    pushFollow(FOLLOW_ruleForm_in_ruleFormTypes2090);
                     this_Form_0=ruleForm();
 
                     state._fsp--;
@@ -2084,12 +2239,12 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:841:5: this_FormNewEntityOnly_1= ruleFormNewEntityOnly
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:900:5: this_FormNewEntityOnly_1= ruleFormNewEntityOnly
                     {
                      
                             newCompositeNode(grammarAccess.getFormTypesAccess().getFormNewEntityOnlyParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleFormNewEntityOnly_in_ruleFormTypes1988);
+                    pushFollow(FOLLOW_ruleFormNewEntityOnly_in_ruleFormTypes2117);
                     this_FormNewEntityOnly_1=ruleFormNewEntityOnly();
 
                     state._fsp--;
@@ -2102,12 +2257,12 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:851:5: this_FormReport_2= ruleFormReport
+                    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:910:5: this_FormReport_2= ruleFormReport
                     {
                      
                             newCompositeNode(grammarAccess.getFormTypesAccess().getFormReportParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleFormReport_in_ruleFormTypes2015);
+                    pushFollow(FOLLOW_ruleFormReport_in_ruleFormTypes2144);
                     this_FormReport_2=ruleFormReport();
 
                     state._fsp--;
@@ -2140,7 +2295,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleForm"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:867:1: entryRuleForm returns [EObject current=null] : iv_ruleForm= ruleForm EOF ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:926:1: entryRuleForm returns [EObject current=null] : iv_ruleForm= ruleForm EOF ;
     public final EObject entryRuleForm() throws RecognitionException {
         EObject current = null;
 
@@ -2148,17 +2303,17 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:868:2: (iv_ruleForm= ruleForm EOF )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:869:2: iv_ruleForm= ruleForm EOF
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:927:2: (iv_ruleForm= ruleForm EOF )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:928:2: iv_ruleForm= ruleForm EOF
             {
              newCompositeNode(grammarAccess.getFormRule()); 
-            pushFollow(FOLLOW_ruleForm_in_entryRuleForm2050);
+            pushFollow(FOLLOW_ruleForm_in_entryRuleForm2179);
             iv_ruleForm=ruleForm();
 
             state._fsp--;
 
              current =iv_ruleForm; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleForm2060); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleForm2189); 
 
             }
 
@@ -2176,7 +2331,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleForm"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:876:1: ruleForm returns [EObject current=null] : (otherlv_0= 'form' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'get' otherlv_4= ':' ( (lv_get_5_0= ruleBoolean ) ) otherlv_6= 'post' otherlv_7= ':' ( (lv_post_8_0= ruleBoolean ) ) otherlv_9= 'put' otherlv_10= ':' ( (lv_put_11_0= ruleBoolean ) ) otherlv_12= 'delete' otherlv_13= ':' ( (lv_delete_14_0= ruleBoolean ) ) ( (otherlv_15= RULE_ID ) ) otherlv_16= '}' ) ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:935:1: ruleForm returns [EObject current=null] : (otherlv_0= 'form' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'get' otherlv_4= ':' ( (lv_get_5_0= ruleBoolean ) ) otherlv_6= 'post' otherlv_7= ':' ( (lv_post_8_0= ruleBoolean ) ) otherlv_9= 'put' otherlv_10= ':' ( (lv_put_11_0= ruleBoolean ) ) otherlv_12= 'delete' otherlv_13= ':' ( (lv_delete_14_0= ruleBoolean ) ) ( (otherlv_15= RULE_ID ) ) otherlv_16= '}' ) ;
     public final EObject ruleForm() throws RecognitionException {
         EObject current = null;
 
@@ -2205,23 +2360,23 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:879:28: ( (otherlv_0= 'form' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'get' otherlv_4= ':' ( (lv_get_5_0= ruleBoolean ) ) otherlv_6= 'post' otherlv_7= ':' ( (lv_post_8_0= ruleBoolean ) ) otherlv_9= 'put' otherlv_10= ':' ( (lv_put_11_0= ruleBoolean ) ) otherlv_12= 'delete' otherlv_13= ':' ( (lv_delete_14_0= ruleBoolean ) ) ( (otherlv_15= RULE_ID ) ) otherlv_16= '}' ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:880:1: (otherlv_0= 'form' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'get' otherlv_4= ':' ( (lv_get_5_0= ruleBoolean ) ) otherlv_6= 'post' otherlv_7= ':' ( (lv_post_8_0= ruleBoolean ) ) otherlv_9= 'put' otherlv_10= ':' ( (lv_put_11_0= ruleBoolean ) ) otherlv_12= 'delete' otherlv_13= ':' ( (lv_delete_14_0= ruleBoolean ) ) ( (otherlv_15= RULE_ID ) ) otherlv_16= '}' )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:938:28: ( (otherlv_0= 'form' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'get' otherlv_4= ':' ( (lv_get_5_0= ruleBoolean ) ) otherlv_6= 'post' otherlv_7= ':' ( (lv_post_8_0= ruleBoolean ) ) otherlv_9= 'put' otherlv_10= ':' ( (lv_put_11_0= ruleBoolean ) ) otherlv_12= 'delete' otherlv_13= ':' ( (lv_delete_14_0= ruleBoolean ) ) ( (otherlv_15= RULE_ID ) ) otherlv_16= '}' ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:939:1: (otherlv_0= 'form' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'get' otherlv_4= ':' ( (lv_get_5_0= ruleBoolean ) ) otherlv_6= 'post' otherlv_7= ':' ( (lv_post_8_0= ruleBoolean ) ) otherlv_9= 'put' otherlv_10= ':' ( (lv_put_11_0= ruleBoolean ) ) otherlv_12= 'delete' otherlv_13= ':' ( (lv_delete_14_0= ruleBoolean ) ) ( (otherlv_15= RULE_ID ) ) otherlv_16= '}' )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:880:1: (otherlv_0= 'form' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'get' otherlv_4= ':' ( (lv_get_5_0= ruleBoolean ) ) otherlv_6= 'post' otherlv_7= ':' ( (lv_post_8_0= ruleBoolean ) ) otherlv_9= 'put' otherlv_10= ':' ( (lv_put_11_0= ruleBoolean ) ) otherlv_12= 'delete' otherlv_13= ':' ( (lv_delete_14_0= ruleBoolean ) ) ( (otherlv_15= RULE_ID ) ) otherlv_16= '}' )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:880:3: otherlv_0= 'form' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'get' otherlv_4= ':' ( (lv_get_5_0= ruleBoolean ) ) otherlv_6= 'post' otherlv_7= ':' ( (lv_post_8_0= ruleBoolean ) ) otherlv_9= 'put' otherlv_10= ':' ( (lv_put_11_0= ruleBoolean ) ) otherlv_12= 'delete' otherlv_13= ':' ( (lv_delete_14_0= ruleBoolean ) ) ( (otherlv_15= RULE_ID ) ) otherlv_16= '}'
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:939:1: (otherlv_0= 'form' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'get' otherlv_4= ':' ( (lv_get_5_0= ruleBoolean ) ) otherlv_6= 'post' otherlv_7= ':' ( (lv_post_8_0= ruleBoolean ) ) otherlv_9= 'put' otherlv_10= ':' ( (lv_put_11_0= ruleBoolean ) ) otherlv_12= 'delete' otherlv_13= ':' ( (lv_delete_14_0= ruleBoolean ) ) ( (otherlv_15= RULE_ID ) ) otherlv_16= '}' )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:939:3: otherlv_0= 'form' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'get' otherlv_4= ':' ( (lv_get_5_0= ruleBoolean ) ) otherlv_6= 'post' otherlv_7= ':' ( (lv_post_8_0= ruleBoolean ) ) otherlv_9= 'put' otherlv_10= ':' ( (lv_put_11_0= ruleBoolean ) ) otherlv_12= 'delete' otherlv_13= ':' ( (lv_delete_14_0= ruleBoolean ) ) ( (otherlv_15= RULE_ID ) ) otherlv_16= '}'
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleForm2097); 
+            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleForm2226); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getFormAccess().getFormKeyword_0());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:884:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:885:1: (lv_name_1_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:943:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:944:1: (lv_name_1_0= RULE_ID )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:885:1: (lv_name_1_0= RULE_ID )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:886:3: lv_name_1_0= RULE_ID
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:944:1: (lv_name_1_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:945:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForm2114); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForm2243); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getFormAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2241,28 +2396,28 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleForm2131); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleForm2260); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getFormAccess().getLeftCurlyBracketKeyword_2());
                 
-            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleForm2143); 
+            otherlv_3=(Token)match(input,38,FOLLOW_38_in_ruleForm2272); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getFormAccess().getGetKeyword_3());
                 
-            otherlv_4=(Token)match(input,24,FOLLOW_24_in_ruleForm2155); 
+            otherlv_4=(Token)match(input,30,FOLLOW_30_in_ruleForm2284); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getFormAccess().getColonKeyword_4());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:914:1: ( (lv_get_5_0= ruleBoolean ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:915:1: (lv_get_5_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:973:1: ( (lv_get_5_0= ruleBoolean ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:974:1: (lv_get_5_0= ruleBoolean )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:915:1: (lv_get_5_0= ruleBoolean )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:916:3: lv_get_5_0= ruleBoolean
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:974:1: (lv_get_5_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:975:3: lv_get_5_0= ruleBoolean
             {
              
             	        newCompositeNode(grammarAccess.getFormAccess().getGetBooleanParserRuleCall_5_0()); 
             	    
-            pushFollow(FOLLOW_ruleBoolean_in_ruleForm2176);
+            pushFollow(FOLLOW_ruleBoolean_in_ruleForm2305);
             lv_get_5_0=ruleBoolean();
 
             state._fsp--;
@@ -2284,24 +2439,24 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,33,FOLLOW_33_in_ruleForm2188); 
+            otherlv_6=(Token)match(input,39,FOLLOW_39_in_ruleForm2317); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getFormAccess().getPostKeyword_6());
                 
-            otherlv_7=(Token)match(input,24,FOLLOW_24_in_ruleForm2200); 
+            otherlv_7=(Token)match(input,30,FOLLOW_30_in_ruleForm2329); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getFormAccess().getColonKeyword_7());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:940:1: ( (lv_post_8_0= ruleBoolean ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:941:1: (lv_post_8_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:999:1: ( (lv_post_8_0= ruleBoolean ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1000:1: (lv_post_8_0= ruleBoolean )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:941:1: (lv_post_8_0= ruleBoolean )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:942:3: lv_post_8_0= ruleBoolean
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1000:1: (lv_post_8_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1001:3: lv_post_8_0= ruleBoolean
             {
              
             	        newCompositeNode(grammarAccess.getFormAccess().getPostBooleanParserRuleCall_8_0()); 
             	    
-            pushFollow(FOLLOW_ruleBoolean_in_ruleForm2221);
+            pushFollow(FOLLOW_ruleBoolean_in_ruleForm2350);
             lv_post_8_0=ruleBoolean();
 
             state._fsp--;
@@ -2323,24 +2478,24 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,34,FOLLOW_34_in_ruleForm2233); 
+            otherlv_9=(Token)match(input,40,FOLLOW_40_in_ruleForm2362); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getFormAccess().getPutKeyword_9());
                 
-            otherlv_10=(Token)match(input,24,FOLLOW_24_in_ruleForm2245); 
+            otherlv_10=(Token)match(input,30,FOLLOW_30_in_ruleForm2374); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getFormAccess().getColonKeyword_10());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:966:1: ( (lv_put_11_0= ruleBoolean ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:967:1: (lv_put_11_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1025:1: ( (lv_put_11_0= ruleBoolean ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1026:1: (lv_put_11_0= ruleBoolean )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:967:1: (lv_put_11_0= ruleBoolean )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:968:3: lv_put_11_0= ruleBoolean
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1026:1: (lv_put_11_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1027:3: lv_put_11_0= ruleBoolean
             {
              
             	        newCompositeNode(grammarAccess.getFormAccess().getPutBooleanParserRuleCall_11_0()); 
             	    
-            pushFollow(FOLLOW_ruleBoolean_in_ruleForm2266);
+            pushFollow(FOLLOW_ruleBoolean_in_ruleForm2395);
             lv_put_11_0=ruleBoolean();
 
             state._fsp--;
@@ -2362,24 +2517,24 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,35,FOLLOW_35_in_ruleForm2278); 
+            otherlv_12=(Token)match(input,41,FOLLOW_41_in_ruleForm2407); 
 
                 	newLeafNode(otherlv_12, grammarAccess.getFormAccess().getDeleteKeyword_12());
                 
-            otherlv_13=(Token)match(input,24,FOLLOW_24_in_ruleForm2290); 
+            otherlv_13=(Token)match(input,30,FOLLOW_30_in_ruleForm2419); 
 
                 	newLeafNode(otherlv_13, grammarAccess.getFormAccess().getColonKeyword_13());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:992:1: ( (lv_delete_14_0= ruleBoolean ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:993:1: (lv_delete_14_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1051:1: ( (lv_delete_14_0= ruleBoolean ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1052:1: (lv_delete_14_0= ruleBoolean )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:993:1: (lv_delete_14_0= ruleBoolean )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:994:3: lv_delete_14_0= ruleBoolean
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1052:1: (lv_delete_14_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1053:3: lv_delete_14_0= ruleBoolean
             {
              
             	        newCompositeNode(grammarAccess.getFormAccess().getDeleteBooleanParserRuleCall_14_0()); 
             	    
-            pushFollow(FOLLOW_ruleBoolean_in_ruleForm2311);
+            pushFollow(FOLLOW_ruleBoolean_in_ruleForm2440);
             lv_delete_14_0=ruleBoolean();
 
             state._fsp--;
@@ -2401,18 +2556,18 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1010:2: ( (otherlv_15= RULE_ID ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1011:1: (otherlv_15= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1069:2: ( (otherlv_15= RULE_ID ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1070:1: (otherlv_15= RULE_ID )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1011:1: (otherlv_15= RULE_ID )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1012:3: otherlv_15= RULE_ID
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1070:1: (otherlv_15= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1071:3: otherlv_15= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getFormRule());
             	        }
                     
-            otherlv_15=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForm2331); 
+            otherlv_15=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForm2460); 
 
             		newLeafNode(otherlv_15, grammarAccess.getFormAccess().getEntityEntityCrossReference_15_0()); 
             	
@@ -2422,7 +2577,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_16=(Token)match(input,16,FOLLOW_16_in_ruleForm2343); 
+            otherlv_16=(Token)match(input,16,FOLLOW_16_in_ruleForm2472); 
 
                 	newLeafNode(otherlv_16, grammarAccess.getFormAccess().getRightCurlyBracketKeyword_16());
                 
@@ -2447,7 +2602,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormNewEntityOnly"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1035:1: entryRuleFormNewEntityOnly returns [EObject current=null] : iv_ruleFormNewEntityOnly= ruleFormNewEntityOnly EOF ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1094:1: entryRuleFormNewEntityOnly returns [EObject current=null] : iv_ruleFormNewEntityOnly= ruleFormNewEntityOnly EOF ;
     public final EObject entryRuleFormNewEntityOnly() throws RecognitionException {
         EObject current = null;
 
@@ -2455,17 +2610,17 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1036:2: (iv_ruleFormNewEntityOnly= ruleFormNewEntityOnly EOF )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1037:2: iv_ruleFormNewEntityOnly= ruleFormNewEntityOnly EOF
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1095:2: (iv_ruleFormNewEntityOnly= ruleFormNewEntityOnly EOF )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1096:2: iv_ruleFormNewEntityOnly= ruleFormNewEntityOnly EOF
             {
              newCompositeNode(grammarAccess.getFormNewEntityOnlyRule()); 
-            pushFollow(FOLLOW_ruleFormNewEntityOnly_in_entryRuleFormNewEntityOnly2379);
+            pushFollow(FOLLOW_ruleFormNewEntityOnly_in_entryRuleFormNewEntityOnly2508);
             iv_ruleFormNewEntityOnly=ruleFormNewEntityOnly();
 
             state._fsp--;
 
              current =iv_ruleFormNewEntityOnly; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFormNewEntityOnly2389); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFormNewEntityOnly2518); 
 
             }
 
@@ -2483,7 +2638,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormNewEntityOnly"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1044:1: ruleFormNewEntityOnly returns [EObject current=null] : (otherlv_0= 'formNewEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (otherlv_3= RULE_ID ) ) otherlv_4= '}' ) ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1103:1: ruleFormNewEntityOnly returns [EObject current=null] : (otherlv_0= 'formNewEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (otherlv_3= RULE_ID ) ) otherlv_4= '}' ) ;
     public final EObject ruleFormNewEntityOnly() throws RecognitionException {
         EObject current = null;
 
@@ -2496,23 +2651,23 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1047:28: ( (otherlv_0= 'formNewEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (otherlv_3= RULE_ID ) ) otherlv_4= '}' ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1048:1: (otherlv_0= 'formNewEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (otherlv_3= RULE_ID ) ) otherlv_4= '}' )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1106:28: ( (otherlv_0= 'formNewEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (otherlv_3= RULE_ID ) ) otherlv_4= '}' ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1107:1: (otherlv_0= 'formNewEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (otherlv_3= RULE_ID ) ) otherlv_4= '}' )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1048:1: (otherlv_0= 'formNewEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (otherlv_3= RULE_ID ) ) otherlv_4= '}' )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1048:3: otherlv_0= 'formNewEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (otherlv_3= RULE_ID ) ) otherlv_4= '}'
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1107:1: (otherlv_0= 'formNewEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (otherlv_3= RULE_ID ) ) otherlv_4= '}' )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1107:3: otherlv_0= 'formNewEntity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (otherlv_3= RULE_ID ) ) otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,36,FOLLOW_36_in_ruleFormNewEntityOnly2426); 
+            otherlv_0=(Token)match(input,42,FOLLOW_42_in_ruleFormNewEntityOnly2555); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getFormNewEntityOnlyAccess().getFormNewEntityKeyword_0());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1052:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1053:1: (lv_name_1_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1111:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1112:1: (lv_name_1_0= RULE_ID )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1053:1: (lv_name_1_0= RULE_ID )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1054:3: lv_name_1_0= RULE_ID
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1112:1: (lv_name_1_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1113:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFormNewEntityOnly2443); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFormNewEntityOnly2572); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getFormNewEntityOnlyAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2532,22 +2687,22 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleFormNewEntityOnly2460); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleFormNewEntityOnly2589); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getFormNewEntityOnlyAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1074:1: ( (otherlv_3= RULE_ID ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1075:1: (otherlv_3= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1133:1: ( (otherlv_3= RULE_ID ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1134:1: (otherlv_3= RULE_ID )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1075:1: (otherlv_3= RULE_ID )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1076:3: otherlv_3= RULE_ID
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1134:1: (otherlv_3= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1135:3: otherlv_3= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getFormNewEntityOnlyRule());
             	        }
                     
-            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFormNewEntityOnly2480); 
+            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFormNewEntityOnly2609); 
 
             		newLeafNode(otherlv_3, grammarAccess.getFormNewEntityOnlyAccess().getEntityEntityCrossReference_3_0()); 
             	
@@ -2557,7 +2712,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,16,FOLLOW_16_in_ruleFormNewEntityOnly2492); 
+            otherlv_4=(Token)match(input,16,FOLLOW_16_in_ruleFormNewEntityOnly2621); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getFormNewEntityOnlyAccess().getRightCurlyBracketKeyword_4());
                 
@@ -2582,7 +2737,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormReport"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1099:1: entryRuleFormReport returns [EObject current=null] : iv_ruleFormReport= ruleFormReport EOF ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1158:1: entryRuleFormReport returns [EObject current=null] : iv_ruleFormReport= ruleFormReport EOF ;
     public final EObject entryRuleFormReport() throws RecognitionException {
         EObject current = null;
 
@@ -2590,17 +2745,17 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1100:2: (iv_ruleFormReport= ruleFormReport EOF )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1101:2: iv_ruleFormReport= ruleFormReport EOF
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1159:2: (iv_ruleFormReport= ruleFormReport EOF )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1160:2: iv_ruleFormReport= ruleFormReport EOF
             {
              newCompositeNode(grammarAccess.getFormReportRule()); 
-            pushFollow(FOLLOW_ruleFormReport_in_entryRuleFormReport2528);
+            pushFollow(FOLLOW_ruleFormReport_in_entryRuleFormReport2657);
             iv_ruleFormReport=ruleFormReport();
 
             state._fsp--;
 
              current =iv_ruleFormReport; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFormReport2538); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFormReport2667); 
 
             }
 
@@ -2618,7 +2773,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormReport"
-    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1108:1: ruleFormReport returns [EObject current=null] : (otherlv_0= 'formReport' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'filter' otherlv_4= ':' ( (lv_filter_5_0= ruleBoolean ) ) otherlv_6= 'order' otherlv_7= ':' ( (lv_order_8_0= ruleBoolean ) ) otherlv_9= 'pagination' otherlv_10= ':' ( (lv_pagination_11_0= ruleBoolean ) ) otherlv_12= '}' ) ;
+    // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1167:1: ruleFormReport returns [EObject current=null] : (otherlv_0= 'formReport' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'filter' otherlv_4= ':' ( (lv_filter_5_0= ruleBoolean ) ) otherlv_6= 'order' otherlv_7= ':' ( (lv_order_8_0= ruleBoolean ) ) otherlv_9= 'pagination' otherlv_10= ':' ( (lv_pagination_11_0= ruleBoolean ) ) otherlv_12= '}' ) ;
     public final EObject ruleFormReport() throws RecognitionException {
         EObject current = null;
 
@@ -2642,23 +2797,23 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1111:28: ( (otherlv_0= 'formReport' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'filter' otherlv_4= ':' ( (lv_filter_5_0= ruleBoolean ) ) otherlv_6= 'order' otherlv_7= ':' ( (lv_order_8_0= ruleBoolean ) ) otherlv_9= 'pagination' otherlv_10= ':' ( (lv_pagination_11_0= ruleBoolean ) ) otherlv_12= '}' ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1112:1: (otherlv_0= 'formReport' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'filter' otherlv_4= ':' ( (lv_filter_5_0= ruleBoolean ) ) otherlv_6= 'order' otherlv_7= ':' ( (lv_order_8_0= ruleBoolean ) ) otherlv_9= 'pagination' otherlv_10= ':' ( (lv_pagination_11_0= ruleBoolean ) ) otherlv_12= '}' )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1170:28: ( (otherlv_0= 'formReport' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'filter' otherlv_4= ':' ( (lv_filter_5_0= ruleBoolean ) ) otherlv_6= 'order' otherlv_7= ':' ( (lv_order_8_0= ruleBoolean ) ) otherlv_9= 'pagination' otherlv_10= ':' ( (lv_pagination_11_0= ruleBoolean ) ) otherlv_12= '}' ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1171:1: (otherlv_0= 'formReport' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'filter' otherlv_4= ':' ( (lv_filter_5_0= ruleBoolean ) ) otherlv_6= 'order' otherlv_7= ':' ( (lv_order_8_0= ruleBoolean ) ) otherlv_9= 'pagination' otherlv_10= ':' ( (lv_pagination_11_0= ruleBoolean ) ) otherlv_12= '}' )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1112:1: (otherlv_0= 'formReport' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'filter' otherlv_4= ':' ( (lv_filter_5_0= ruleBoolean ) ) otherlv_6= 'order' otherlv_7= ':' ( (lv_order_8_0= ruleBoolean ) ) otherlv_9= 'pagination' otherlv_10= ':' ( (lv_pagination_11_0= ruleBoolean ) ) otherlv_12= '}' )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1112:3: otherlv_0= 'formReport' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'filter' otherlv_4= ':' ( (lv_filter_5_0= ruleBoolean ) ) otherlv_6= 'order' otherlv_7= ':' ( (lv_order_8_0= ruleBoolean ) ) otherlv_9= 'pagination' otherlv_10= ':' ( (lv_pagination_11_0= ruleBoolean ) ) otherlv_12= '}'
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1171:1: (otherlv_0= 'formReport' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'filter' otherlv_4= ':' ( (lv_filter_5_0= ruleBoolean ) ) otherlv_6= 'order' otherlv_7= ':' ( (lv_order_8_0= ruleBoolean ) ) otherlv_9= 'pagination' otherlv_10= ':' ( (lv_pagination_11_0= ruleBoolean ) ) otherlv_12= '}' )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1171:3: otherlv_0= 'formReport' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'filter' otherlv_4= ':' ( (lv_filter_5_0= ruleBoolean ) ) otherlv_6= 'order' otherlv_7= ':' ( (lv_order_8_0= ruleBoolean ) ) otherlv_9= 'pagination' otherlv_10= ':' ( (lv_pagination_11_0= ruleBoolean ) ) otherlv_12= '}'
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleFormReport2575); 
+            otherlv_0=(Token)match(input,43,FOLLOW_43_in_ruleFormReport2704); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getFormReportAccess().getFormReportKeyword_0());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1116:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1117:1: (lv_name_1_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1175:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1176:1: (lv_name_1_0= RULE_ID )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1117:1: (lv_name_1_0= RULE_ID )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1118:3: lv_name_1_0= RULE_ID
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1176:1: (lv_name_1_0= RULE_ID )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1177:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFormReport2592); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFormReport2721); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getFormReportAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2678,28 +2833,28 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleFormReport2609); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleFormReport2738); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getFormReportAccess().getLeftCurlyBracketKeyword_2());
                 
-            otherlv_3=(Token)match(input,38,FOLLOW_38_in_ruleFormReport2621); 
+            otherlv_3=(Token)match(input,44,FOLLOW_44_in_ruleFormReport2750); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getFormReportAccess().getFilterKeyword_3());
                 
-            otherlv_4=(Token)match(input,24,FOLLOW_24_in_ruleFormReport2633); 
+            otherlv_4=(Token)match(input,30,FOLLOW_30_in_ruleFormReport2762); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getFormReportAccess().getColonKeyword_4());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1146:1: ( (lv_filter_5_0= ruleBoolean ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1147:1: (lv_filter_5_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1205:1: ( (lv_filter_5_0= ruleBoolean ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1206:1: (lv_filter_5_0= ruleBoolean )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1147:1: (lv_filter_5_0= ruleBoolean )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1148:3: lv_filter_5_0= ruleBoolean
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1206:1: (lv_filter_5_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1207:3: lv_filter_5_0= ruleBoolean
             {
              
             	        newCompositeNode(grammarAccess.getFormReportAccess().getFilterBooleanParserRuleCall_5_0()); 
             	    
-            pushFollow(FOLLOW_ruleBoolean_in_ruleFormReport2654);
+            pushFollow(FOLLOW_ruleBoolean_in_ruleFormReport2783);
             lv_filter_5_0=ruleBoolean();
 
             state._fsp--;
@@ -2721,24 +2876,24 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,39,FOLLOW_39_in_ruleFormReport2666); 
+            otherlv_6=(Token)match(input,45,FOLLOW_45_in_ruleFormReport2795); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getFormReportAccess().getOrderKeyword_6());
                 
-            otherlv_7=(Token)match(input,24,FOLLOW_24_in_ruleFormReport2678); 
+            otherlv_7=(Token)match(input,30,FOLLOW_30_in_ruleFormReport2807); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getFormReportAccess().getColonKeyword_7());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1172:1: ( (lv_order_8_0= ruleBoolean ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1173:1: (lv_order_8_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1231:1: ( (lv_order_8_0= ruleBoolean ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1232:1: (lv_order_8_0= ruleBoolean )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1173:1: (lv_order_8_0= ruleBoolean )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1174:3: lv_order_8_0= ruleBoolean
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1232:1: (lv_order_8_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1233:3: lv_order_8_0= ruleBoolean
             {
              
             	        newCompositeNode(grammarAccess.getFormReportAccess().getOrderBooleanParserRuleCall_8_0()); 
             	    
-            pushFollow(FOLLOW_ruleBoolean_in_ruleFormReport2699);
+            pushFollow(FOLLOW_ruleBoolean_in_ruleFormReport2828);
             lv_order_8_0=ruleBoolean();
 
             state._fsp--;
@@ -2760,24 +2915,24 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,40,FOLLOW_40_in_ruleFormReport2711); 
+            otherlv_9=(Token)match(input,46,FOLLOW_46_in_ruleFormReport2840); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getFormReportAccess().getPaginationKeyword_9());
                 
-            otherlv_10=(Token)match(input,24,FOLLOW_24_in_ruleFormReport2723); 
+            otherlv_10=(Token)match(input,30,FOLLOW_30_in_ruleFormReport2852); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getFormReportAccess().getColonKeyword_10());
                 
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1198:1: ( (lv_pagination_11_0= ruleBoolean ) )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1199:1: (lv_pagination_11_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1257:1: ( (lv_pagination_11_0= ruleBoolean ) )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1258:1: (lv_pagination_11_0= ruleBoolean )
             {
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1199:1: (lv_pagination_11_0= ruleBoolean )
-            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1200:3: lv_pagination_11_0= ruleBoolean
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1258:1: (lv_pagination_11_0= ruleBoolean )
+            // ../org.example.domainmodel.extended/src-gen/org/example/domainmodel/parser/antlr/internal/InternalExtended.g:1259:3: lv_pagination_11_0= ruleBoolean
             {
              
             	        newCompositeNode(grammarAccess.getFormReportAccess().getPaginationBooleanParserRuleCall_11_0()); 
             	    
-            pushFollow(FOLLOW_ruleBoolean_in_ruleFormReport2744);
+            pushFollow(FOLLOW_ruleBoolean_in_ruleFormReport2873);
             lv_pagination_11_0=ruleBoolean();
 
             state._fsp--;
@@ -2799,7 +2954,7 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,16,FOLLOW_16_in_ruleFormReport2756); 
+            otherlv_12=(Token)match(input,16,FOLLOW_16_in_ruleFormReport2885); 
 
                 	newLeafNode(otherlv_12, grammarAccess.getFormReportAccess().getRightCurlyBracketKeyword_12());
                 
@@ -2831,20 +2986,20 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleDomainmodel85 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_11_in_ruleDomainmodel122 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleDomainmodel139 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleDomainmodel156 = new BitSet(new long[]{0x0000003088346000L});
-    public static final BitSet FOLLOW_ruleAbstractElement_in_ruleDomainmodel177 = new BitSet(new long[]{0x0000003088346000L});
+    public static final BitSet FOLLOW_12_in_ruleDomainmodel156 = new BitSet(new long[]{0x00000C2208046000L});
+    public static final BitSet FOLLOW_ruleAbstractElement_in_ruleDomainmodel177 = new BitSet(new long[]{0x00000C2208046000L});
     public static final BitSet FOLLOW_13_in_ruleDomainmodel190 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePackageDeclaration_in_entryRulePackageDeclaration226 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePackageDeclaration236 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_14_in_rulePackageDeclaration273 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_rulePackageDeclaration294 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_rulePackageDeclaration306 = new BitSet(new long[]{0x0000003088354000L});
-    public static final BitSet FOLLOW_ruleAbstractElement_in_rulePackageDeclaration327 = new BitSet(new long[]{0x0000003088354000L});
+    public static final BitSet FOLLOW_15_in_rulePackageDeclaration306 = new BitSet(new long[]{0x00000C2208054000L});
+    public static final BitSet FOLLOW_ruleAbstractElement_in_rulePackageDeclaration327 = new BitSet(new long[]{0x00000C2208054000L});
     public static final BitSet FOLLOW_16_in_rulePackageDeclaration340 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAbstractElement_in_entryRuleAbstractElement376 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAbstractElement386 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePackageDeclaration_in_ruleAbstractElement433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_ruleAbstractElement460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntity_in_ruleAbstractElement460 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleImport_in_ruleAbstractElement487 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePage_in_ruleAbstractElement514 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFormTypes_in_ruleAbstractElement541 = new BitSet(new long[]{0x0000000000000002L});
@@ -2861,94 +3016,101 @@ public class InternalExtendedParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard825 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard872 = new BitSet(new long[]{0x0000000000080002L});
     public static final BitSet FOLLOW_19_in_ruleQualifiedNameWithWildcard891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_entryRuleType933 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleType943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataType_in_ruleType990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntity_in_ruleType1017 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataType_in_entryRuleDataType1052 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDataType1062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleDataType1099 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDataType1116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntity_in_entryRuleEntity1157 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEntity1167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleEntity1204 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity1221 = new BitSet(new long[]{0x0000000000408000L});
-    public static final BitSet FOLLOW_22_in_ruleEntity1239 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleEntity1262 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleEntity1276 = new BitSet(new long[]{0x0000000000810020L});
-    public static final BitSet FOLLOW_ruleFeature_in_ruleEntity1297 = new BitSet(new long[]{0x0000000000810020L});
-    public static final BitSet FOLLOW_16_in_ruleEntity1310 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeature_in_entryRuleFeature1346 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFeature1356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleFeature1399 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFeature1430 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleFeature1447 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleFeature1470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBoolean_in_entryRuleBoolean1507 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBoolean1518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleBoolean1556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleBoolean1575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePage_in_entryRulePage1615 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePage1625 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rulePage1662 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_rulePage1679 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_rulePage1696 = new BitSet(new long[]{0x0000000030000000L});
-    public static final BitSet FOLLOW_28_in_rulePage1709 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_rulePage1721 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rulePage1738 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_rulePage1757 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_rulePage1769 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_ruleBoolean_in_rulePage1790 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_rulePage1802 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_rulePage1814 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_ruleBoolean_in_rulePage1835 = new BitSet(new long[]{0x0000000000010020L});
-    public static final BitSet FOLLOW_RULE_ID_in_rulePage1855 = new BitSet(new long[]{0x0000000000010020L});
-    public static final BitSet FOLLOW_16_in_rulePage1868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFormTypes_in_entryRuleFormTypes1904 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFormTypes1914 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleForm_in_ruleFormTypes1961 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFormNewEntityOnly_in_ruleFormTypes1988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFormReport_in_ruleFormTypes2015 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleForm_in_entryRuleForm2050 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleForm2060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleForm2097 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleForm2114 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleForm2131 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleForm2143 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleForm2155 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_ruleBoolean_in_ruleForm2176 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleForm2188 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleForm2200 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_ruleBoolean_in_ruleForm2221 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleForm2233 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleForm2245 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_ruleBoolean_in_ruleForm2266 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleForm2278 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleForm2290 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_ruleBoolean_in_ruleForm2311 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleForm2331 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleForm2343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFormNewEntityOnly_in_entryRuleFormNewEntityOnly2379 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFormNewEntityOnly2389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleFormNewEntityOnly2426 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFormNewEntityOnly2443 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleFormNewEntityOnly2460 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFormNewEntityOnly2480 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleFormNewEntityOnly2492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFormReport_in_entryRuleFormReport2528 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFormReport2538 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleFormReport2575 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFormReport2592 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleFormReport2609 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleFormReport2621 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleFormReport2633 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_ruleBoolean_in_ruleFormReport2654 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_39_in_ruleFormReport2666 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleFormReport2678 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_ruleBoolean_in_ruleFormReport2699 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_ruleFormReport2711 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleFormReport2723 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_ruleBoolean_in_ruleFormReport2744 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleFormReport2756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractType_in_entryRuleAbstractType933 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractType943 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataType_in_ruleAbstractType994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntity_in_ruleAbstractType1022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataType_in_entryRuleDataType1058 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDataType1069 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleDataType1107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleDataType1126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleDataType1145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleDataType1164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleDataType1183 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleDataType1202 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleDataType1221 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntity_in_entryRuleEntity1261 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEntity1271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleEntity1308 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity1325 = new BitSet(new long[]{0x0000000010008000L});
+    public static final BitSet FOLLOW_28_in_ruleEntity1343 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleEntity1366 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleEntity1380 = new BitSet(new long[]{0x0000000000010060L});
+    public static final BitSet FOLLOW_ruleFeature_in_ruleEntity1401 = new BitSet(new long[]{0x0000000000010060L});
+    public static final BitSet FOLLOW_16_in_ruleEntity1414 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeature_in_entryRuleFeature1450 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFeature1460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleFeature1503 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleFeature1520 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleFeature1537 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFeature1561 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleFeature1578 = new BitSet(new long[]{0x000000000FF00000L});
+    public static final BitSet FOLLOW_ruleAbstractType_in_ruleFeature1599 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBoolean_in_entryRuleBoolean1636 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBoolean1647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleBoolean1685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleBoolean1704 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePage_in_entryRulePage1744 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePage1754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rulePage1791 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePage1808 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_rulePage1825 = new BitSet(new long[]{0x0000000C00000000L});
+    public static final BitSet FOLLOW_34_in_rulePage1838 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_rulePage1850 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rulePage1867 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_rulePage1886 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_rulePage1898 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleBoolean_in_rulePage1919 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_rulePage1931 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_rulePage1943 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleBoolean_in_rulePage1964 = new BitSet(new long[]{0x0000000000010020L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePage1984 = new BitSet(new long[]{0x0000000000010020L});
+    public static final BitSet FOLLOW_16_in_rulePage1997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFormTypes_in_entryRuleFormTypes2033 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFormTypes2043 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleForm_in_ruleFormTypes2090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFormNewEntityOnly_in_ruleFormTypes2117 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFormReport_in_ruleFormTypes2144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleForm_in_entryRuleForm2179 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleForm2189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleForm2226 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleForm2243 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleForm2260 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_ruleForm2272 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleForm2284 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleBoolean_in_ruleForm2305 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_39_in_ruleForm2317 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleForm2329 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleBoolean_in_ruleForm2350 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleForm2362 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleForm2374 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleBoolean_in_ruleForm2395 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_41_in_ruleForm2407 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleForm2419 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleBoolean_in_ruleForm2440 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleForm2460 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleForm2472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFormNewEntityOnly_in_entryRuleFormNewEntityOnly2508 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFormNewEntityOnly2518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleFormNewEntityOnly2555 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFormNewEntityOnly2572 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleFormNewEntityOnly2589 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFormNewEntityOnly2609 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleFormNewEntityOnly2621 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFormReport_in_entryRuleFormReport2657 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFormReport2667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleFormReport2704 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFormReport2721 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleFormReport2738 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_44_in_ruleFormReport2750 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleFormReport2762 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleBoolean_in_ruleFormReport2783 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_45_in_ruleFormReport2795 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleFormReport2807 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleBoolean_in_ruleFormReport2828 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_46_in_ruleFormReport2840 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleFormReport2852 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleBoolean_in_ruleFormReport2873 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleFormReport2885 = new BitSet(new long[]{0x0000000000000002L});
 
 }
