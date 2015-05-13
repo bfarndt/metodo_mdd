@@ -1,0 +1,15 @@
+<c:iterate select="/Domainmodel/Entity" var="e">
+CREATE TABLE <f:lc><c:get select="$e/@name" /></f:lc>
+(
+	id bigserial,
+	<c:iterate select="$e/Feature" var="currentFeature" delimiter=", "
+	><c:get select="$currentFeature/@name" /> <c:if test="($currentFeature/AbstractType/@name = 'string')"
+		>text</c:if><c:if test="($currentFeature/@type = 'int')"
+		>integer</c:if><c:if test="($currentFeature/@type = 'float')"
+		>real</c:if><c:if test="($currentFeature/@type = 'time')"
+		>time without time zone</c:if><c:if test="($currentFeature/@type = 'currency')"
+		>money</c:if><c:if test="($currentFeature/@type = 'date') or ($currentFeature/@type = 'boolean')"
+		><c:get select="$currentFeature/@type" /></c:if></c:iterate>,
+	CONSTRAINT <f:lc><c:get select="$e/@name" /></f:lc>_pkey PRIMARY KEY (id)
+);
+</c:iterate>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<extended:Domainmodel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:extended="http://www.example.org/domainmodel/Extended" nomeProj="proj3">
+  <elements xsi:type="extended:Page" name="index" title="Home" header="true" footer="true"/>
+  <elements xsi:type="extended:Entity" name="Bruno">
+    <features name="cpf">
+      <type/>
+    </features>
+    <features name="endereco">
+      <type/>
+    </features>
+    <features name="nascimento">
+      <type/>
+    </features>
+    <features name="mensalidade">
+      <type/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Form" name="formShowBruno" get="true" post="true" put="true" delete="true" entity="//@elements.1"/>
+  <elements xsi:type="extended:FormReport" name="formReportBruno" filter="true" order="true" pagination="true"/>
+  <elements xsi:type="extended:Page" name="bruno" title="Bruno" header="true" footer="true" forms="//@elements.2 //@elements.3"/>
+</extended:Domainmodel>

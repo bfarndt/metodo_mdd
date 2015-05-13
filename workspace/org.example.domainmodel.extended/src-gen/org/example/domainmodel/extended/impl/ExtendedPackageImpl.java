@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.example.domainmodel.extended.AbstractElement;
 import org.example.domainmodel.extended.AbstractType;
+import org.example.domainmodel.extended.DataType;
 import org.example.domainmodel.extended.Domainmodel;
 import org.example.domainmodel.extended.Entity;
 import org.example.domainmodel.extended.ExtendedFactory;
@@ -66,6 +67,13 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * @generated
    */
   private EClass abstractTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -284,6 +292,26 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getAbstractType_Name()
+  {
+    return (EAttribute)abstractTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDataType()
+  {
+    return dataTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getEntity()
   {
     return entityEClass;
@@ -294,19 +322,9 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEntity_Name()
-  {
-    return (EAttribute)entityEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getEntity_SuperType()
   {
-    return (EReference)entityEClass.getEStructuralFeatures().get(1);
+    return (EReference)entityEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -316,7 +334,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    */
   public EReference getEntity_Features()
   {
-    return (EReference)entityEClass.getEStructuralFeatures().get(2);
+    return (EReference)entityEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -613,9 +631,11 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
     createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
 
     abstractTypeEClass = createEClass(ABSTRACT_TYPE);
+    createEAttribute(abstractTypeEClass, ABSTRACT_TYPE__NAME);
+
+    dataTypeEClass = createEClass(DATA_TYPE);
 
     entityEClass = createEClass(ENTITY);
-    createEAttribute(entityEClass, ENTITY__NAME);
     createEReference(entityEClass, ENTITY__SUPER_TYPE);
     createEReference(entityEClass, ENTITY__FEATURES);
 
@@ -682,6 +702,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
     // Add supertypes to classes
     packageDeclarationEClass.getESuperTypes().add(this.getAbstractElement());
     importEClass.getESuperTypes().add(this.getAbstractElement());
+    dataTypeEClass.getESuperTypes().add(this.getAbstractType());
     entityEClass.getESuperTypes().add(this.getAbstractElement());
     entityEClass.getESuperTypes().add(this.getAbstractType());
     pageEClass.getESuperTypes().add(this.getAbstractElement());
@@ -705,9 +726,11 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
     initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractTypeEClass, AbstractType.class, "AbstractType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAbstractType_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntity_SuperType(), this.getEntity(), null, "superType", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntity_Features(), this.getFeature(), null, "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

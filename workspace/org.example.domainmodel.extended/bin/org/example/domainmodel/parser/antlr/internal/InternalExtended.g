@@ -407,28 +407,23 @@ ruleAbstractType returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getAbstractTypeAccess().getAbstractTypeAction_0_0(),
-            $current);
-    }
-)
+(
     { 
-        newCompositeNode(grammarAccess.getAbstractTypeAccess().getDataTypeParserRuleCall_0_1()); 
+        newCompositeNode(grammarAccess.getAbstractTypeAccess().getDataTypeParserRuleCall_0()); 
     }
-ruleDataType
+    this_DataType_0=ruleDataType
     { 
+        $current = $this_DataType_0.current; 
         afterParserOrEnumRuleCall();
     }
-)
+
     |
     { 
         newCompositeNode(grammarAccess.getAbstractTypeAccess().getEntityParserRuleCall_1()); 
     }
-    this_Entity_2=ruleEntity
+    this_Entity_1=ruleEntity
     { 
-        $current = $this_Entity_2.current; 
+        $current = $this_Entity_1.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -439,69 +434,111 @@ ruleDataType
 
 
 // Entry rule entryRuleDataType
-entryRuleDataType returns [String current=null] 
+entryRuleDataType returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getDataTypeRule()); } 
+	{ newCompositeNode(grammarAccess.getDataTypeRule()); }
 	 iv_ruleDataType=ruleDataType 
-	 { $current=$iv_ruleDataType.current.getText(); }  
+	 { $current=$iv_ruleDataType.current; } 
 	 EOF 
 ;
 
 // Rule DataType
-ruleDataType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+ruleDataType returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (
-	kw='string' 
+(
+(
+		lv_name_0_1=	'string' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDataTypeAccess().getStringKeyword_0()); 
+        newLeafNode(lv_name_0_1, grammarAccess.getDataTypeAccess().getNameStringKeyword_0_0());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataTypeRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_0_1, null);
+	    }
 
-    |
-	kw='int' 
+    |		lv_name_0_2=	'int' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDataTypeAccess().getIntKeyword_1()); 
+        newLeafNode(lv_name_0_2, grammarAccess.getDataTypeAccess().getNameIntKeyword_0_1());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataTypeRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_0_2, null);
+	    }
 
-    |
-	kw='float' 
+    |		lv_name_0_3=	'float' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDataTypeAccess().getFloatKeyword_2()); 
+        newLeafNode(lv_name_0_3, grammarAccess.getDataTypeAccess().getNameFloatKeyword_0_2());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataTypeRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_0_3, null);
+	    }
 
-    |
-	kw='currency' 
+    |		lv_name_0_4=	'currency' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDataTypeAccess().getCurrencyKeyword_3()); 
+        newLeafNode(lv_name_0_4, grammarAccess.getDataTypeAccess().getNameCurrencyKeyword_0_3());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataTypeRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_0_4, null);
+	    }
 
-    |
-	kw='date' 
+    |		lv_name_0_5=	'date' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDataTypeAccess().getDateKeyword_4()); 
+        newLeafNode(lv_name_0_5, grammarAccess.getDataTypeAccess().getNameDateKeyword_0_4());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataTypeRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_0_5, null);
+	    }
 
-    |
-	kw='time' 
+    |		lv_name_0_6=	'time' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDataTypeAccess().getTimeKeyword_5()); 
+        newLeafNode(lv_name_0_6, grammarAccess.getDataTypeAccess().getNameTimeKeyword_0_5());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataTypeRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_0_6, null);
+	    }
 
-    |
-	kw='boolean' 
+    |		lv_name_0_7=	'boolean' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDataTypeAccess().getBooleanKeyword_6()); 
+        newLeafNode(lv_name_0_7, grammarAccess.getDataTypeAccess().getNameBooleanKeyword_0_6());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataTypeRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_0_7, null);
+	    }
+
 )
-    ;
+
+)
+)
+;
 
 
 

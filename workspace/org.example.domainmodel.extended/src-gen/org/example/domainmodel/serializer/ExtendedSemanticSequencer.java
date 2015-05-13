@@ -13,7 +13,7 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEOb
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.example.domainmodel.extended.AbstractType;
+import org.example.domainmodel.extended.DataType;
 import org.example.domainmodel.extended.Domainmodel;
 import org.example.domainmodel.extended.Entity;
 import org.example.domainmodel.extended.ExtendedPackage;
@@ -34,9 +34,10 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ExtendedPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case ExtendedPackage.ABSTRACT_TYPE:
-				if(context == grammarAccess.getAbstractTypeRule()) {
-					sequence_AbstractType(context, (AbstractType) semanticObject); 
+			case ExtendedPackage.DATA_TYPE:
+				if(context == grammarAccess.getAbstractTypeRule() ||
+				   context == grammarAccess.getDataTypeRule()) {
+					sequence_DataType(context, (DataType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -111,9 +112,17 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     {AbstractType}
+	 *     (
+	 *         name='string' | 
+	 *         name='int' | 
+	 *         name='float' | 
+	 *         name='currency' | 
+	 *         name='date' | 
+	 *         name='time' | 
+	 *         name='boolean'
+	 *     )
 	 */
-	protected void sequence_AbstractType(EObject context, AbstractType semanticObject) {
+	protected void sequence_DataType(EObject context, DataType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

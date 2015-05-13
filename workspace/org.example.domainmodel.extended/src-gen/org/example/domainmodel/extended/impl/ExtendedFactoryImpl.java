@@ -69,6 +69,7 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
       case ExtendedPackage.ABSTRACT_ELEMENT: return createAbstractElement();
       case ExtendedPackage.IMPORT: return createImport();
       case ExtendedPackage.ABSTRACT_TYPE: return createAbstractType();
+      case ExtendedPackage.DATA_TYPE: return createDataType();
       case ExtendedPackage.ENTITY: return createEntity();
       case ExtendedPackage.FEATURE: return createFeature();
       case ExtendedPackage.PAGE: return createPage();
@@ -134,6 +135,17 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
   {
     AbstractTypeImpl abstractType = new AbstractTypeImpl();
     return abstractType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataType createDataType()
+  {
+    DataTypeImpl dataType = new DataTypeImpl();
+    return dataType;
   }
 
   /**

@@ -205,26 +205,18 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	public class AbstractTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cAbstractTypeAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final RuleCall cDataTypeParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final RuleCall cDataTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//AbstractType:
-		//	{AbstractType} DataType | Entity;
+		//	DataType | Entity;
 		public ParserRule getRule() { return rule; }
 
-		//{AbstractType} DataType | Entity
+		//DataType | Entity
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{AbstractType} DataType
-		public Group getGroup_0() { return cGroup_0; }
-
-		//{AbstractType}
-		public Action getAbstractTypeAction_0_0() { return cAbstractTypeAction_0_0; }
-
 		//DataType
-		public RuleCall getDataTypeParserRuleCall_0_1() { return cDataTypeParserRuleCall_0_1; }
+		public RuleCall getDataTypeParserRuleCall_0() { return cDataTypeParserRuleCall_0; }
 
 		//Entity
 		public RuleCall getEntityParserRuleCall_1() { return cEntityParserRuleCall_1; }
@@ -232,42 +224,46 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class DataTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cStringKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cIntKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cFloatKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cCurrencyKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cDateKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cTimeKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		private final Keyword cBooleanKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cNameAlternatives_0 = (Alternatives)cNameAssignment.eContents().get(0);
+		private final Keyword cNameStringKeyword_0_0 = (Keyword)cNameAlternatives_0.eContents().get(0);
+		private final Keyword cNameIntKeyword_0_1 = (Keyword)cNameAlternatives_0.eContents().get(1);
+		private final Keyword cNameFloatKeyword_0_2 = (Keyword)cNameAlternatives_0.eContents().get(2);
+		private final Keyword cNameCurrencyKeyword_0_3 = (Keyword)cNameAlternatives_0.eContents().get(3);
+		private final Keyword cNameDateKeyword_0_4 = (Keyword)cNameAlternatives_0.eContents().get(4);
+		private final Keyword cNameTimeKeyword_0_5 = (Keyword)cNameAlternatives_0.eContents().get(5);
+		private final Keyword cNameBooleanKeyword_0_6 = (Keyword)cNameAlternatives_0.eContents().get(6);
 		
 		//DataType:
-		//	"string" | "int" | "float" | "currency" | "date" | "time" | "boolean";
+		//	name=("string" | "int" | "float" | "currency" | "date" | "time" | "boolean");
 		public ParserRule getRule() { return rule; }
 
+		//name=("string" | "int" | "float" | "currency" | "date" | "time" | "boolean")
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
 		//"string" | "int" | "float" | "currency" | "date" | "time" | "boolean"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		public Alternatives getNameAlternatives_0() { return cNameAlternatives_0; }
 
 		//"string"
-		public Keyword getStringKeyword_0() { return cStringKeyword_0; }
+		public Keyword getNameStringKeyword_0_0() { return cNameStringKeyword_0_0; }
 
 		//"int"
-		public Keyword getIntKeyword_1() { return cIntKeyword_1; }
+		public Keyword getNameIntKeyword_0_1() { return cNameIntKeyword_0_1; }
 
 		//"float"
-		public Keyword getFloatKeyword_2() { return cFloatKeyword_2; }
+		public Keyword getNameFloatKeyword_0_2() { return cNameFloatKeyword_0_2; }
 
 		//"currency"
-		public Keyword getCurrencyKeyword_3() { return cCurrencyKeyword_3; }
+		public Keyword getNameCurrencyKeyword_0_3() { return cNameCurrencyKeyword_0_3; }
 
 		//"date"
-		public Keyword getDateKeyword_4() { return cDateKeyword_4; }
+		public Keyword getNameDateKeyword_0_4() { return cNameDateKeyword_0_4; }
 
 		//"time"
-		public Keyword getTimeKeyword_5() { return cTimeKeyword_5; }
+		public Keyword getNameTimeKeyword_0_5() { return cNameTimeKeyword_0_5; }
 
 		//"boolean"
-		public Keyword getBooleanKeyword_6() { return cBooleanKeyword_6; }
+		public Keyword getNameBooleanKeyword_0_6() { return cNameBooleanKeyword_0_6; }
 	}
 
 	public class EntityElements extends AbstractParserRuleElementFinder {
@@ -896,7 +892,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AbstractType:
-	//	{AbstractType} DataType | Entity;
+	//	DataType | Entity;
 	public AbstractTypeElements getAbstractTypeAccess() {
 		return pAbstractType;
 	}
@@ -906,7 +902,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DataType:
-	//	"string" | "int" | "float" | "currency" | "date" | "time" | "boolean";
+	//	name=("string" | "int" | "float" | "currency" | "date" | "time" | "boolean");
 	public DataTypeElements getDataTypeAccess() {
 		return pDataType;
 	}

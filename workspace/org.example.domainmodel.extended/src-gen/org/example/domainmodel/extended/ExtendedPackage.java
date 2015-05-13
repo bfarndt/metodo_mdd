@@ -188,13 +188,50 @@ public interface ExtendedPackage extends EPackage
   int ABSTRACT_TYPE = 4;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_TYPE__NAME = 0;
+
+  /**
    * The number of structural features of the '<em>Abstract Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_TYPE_FEATURE_COUNT = 0;
+  int ABSTRACT_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.example.domainmodel.extended.impl.DataTypeImpl <em>Data Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.domainmodel.extended.impl.DataTypeImpl
+   * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getDataType()
+   * @generated
+   */
+  int DATA_TYPE = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__NAME = ABSTRACT_TYPE__NAME;
+
+  /**
+   * The number of structural features of the '<em>Data Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE_FEATURE_COUNT = ABSTRACT_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.example.domainmodel.extended.impl.EntityImpl <em>Entity</em>}' class.
@@ -204,7 +241,7 @@ public interface ExtendedPackage extends EPackage
    * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 5;
+  int ENTITY = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -250,7 +287,7 @@ public interface ExtendedPackage extends EPackage
    * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 6;
+  int FEATURE = 7;
 
   /**
    * The feature id for the '<em><b>Min</b></em>' attribute.
@@ -305,7 +342,7 @@ public interface ExtendedPackage extends EPackage
    * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getPage()
    * @generated
    */
-  int PAGE = 7;
+  int PAGE = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -369,7 +406,7 @@ public interface ExtendedPackage extends EPackage
    * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getFormTypes()
    * @generated
    */
-  int FORM_TYPES = 8;
+  int FORM_TYPES = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -397,7 +434,7 @@ public interface ExtendedPackage extends EPackage
    * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getForm()
    * @generated
    */
-  int FORM = 9;
+  int FORM = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -470,7 +507,7 @@ public interface ExtendedPackage extends EPackage
    * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getFormNewEntityOnly()
    * @generated
    */
-  int FORM_NEW_ENTITY_ONLY = 10;
+  int FORM_NEW_ENTITY_ONLY = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -507,7 +544,7 @@ public interface ExtendedPackage extends EPackage
    * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getFormReport()
    * @generated
    */
-  int FORM_REPORT = 11;
+  int FORM_REPORT = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -661,6 +698,27 @@ public interface ExtendedPackage extends EPackage
   EClass getAbstractType();
 
   /**
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.AbstractType#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.example.domainmodel.extended.AbstractType#getName()
+   * @see #getAbstractType()
+   * @generated
+   */
+  EAttribute getAbstractType_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.example.domainmodel.extended.DataType <em>Data Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Type</em>'.
+   * @see org.example.domainmodel.extended.DataType
+   * @generated
+   */
+  EClass getDataType();
+
+  /**
    * Returns the meta object for class '{@link org.example.domainmodel.extended.Entity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -669,17 +727,6 @@ public interface ExtendedPackage extends EPackage
    * @generated
    */
   EClass getEntity();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.Entity#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.example.domainmodel.extended.Entity#getName()
-   * @see #getEntity()
-   * @generated
-   */
-  EAttribute getEntity_Name();
 
   /**
    * Returns the meta object for the reference '{@link org.example.domainmodel.extended.Entity#getSuperType <em>Super Type</em>}'.
@@ -1086,6 +1133,24 @@ public interface ExtendedPackage extends EPackage
     EClass ABSTRACT_TYPE = eINSTANCE.getAbstractType();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ABSTRACT_TYPE__NAME = eINSTANCE.getAbstractType_Name();
+
+    /**
+     * The meta object literal for the '{@link org.example.domainmodel.extended.impl.DataTypeImpl <em>Data Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.domainmodel.extended.impl.DataTypeImpl
+     * @see org.example.domainmodel.extended.impl.ExtendedPackageImpl#getDataType()
+     * @generated
+     */
+    EClass DATA_TYPE = eINSTANCE.getDataType();
+
+    /**
      * The meta object literal for the '{@link org.example.domainmodel.extended.impl.EntityImpl <em>Entity</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1094,14 +1159,6 @@ public interface ExtendedPackage extends EPackage
      * @generated
      */
     EClass ENTITY = eINSTANCE.getEntity();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
 
     /**
      * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.

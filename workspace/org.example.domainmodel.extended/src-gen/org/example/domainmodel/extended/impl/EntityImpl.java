@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.example.domainmodel.extended.AbstractType;
 import org.example.domainmodel.extended.Entity;
 import org.example.domainmodel.extended.ExtendedPackage;
 import org.example.domainmodel.extended.Feature;
@@ -282,6 +283,44 @@ public class EntityImpl extends AbstractElementImpl implements Entity
         return features != null && !features.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == AbstractType.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case ExtendedPackage.ENTITY__NAME: return ExtendedPackage.ABSTRACT_TYPE__NAME;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == AbstractType.class)
+    {
+      switch (baseFeatureID)
+      {
+        case ExtendedPackage.ABSTRACT_TYPE__NAME: return ExtendedPackage.ENTITY__NAME;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**

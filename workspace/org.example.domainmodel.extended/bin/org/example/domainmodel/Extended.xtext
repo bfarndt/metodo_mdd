@@ -35,11 +35,11 @@ QualifiedNameWithWildcard:
 ;
 
 AbstractType:
-	{AbstractType} DataType | Entity
+	DataType | Entity
 ;
 
 DataType:
-	'string' | 'int' | 'float' | 'currency' | 'date' | 'time' | 'boolean'
+	name = ('string' | 'int' | 'float' | 'currency' | 'date' | 'time' | 'boolean')
 ;
 
 Entity:
