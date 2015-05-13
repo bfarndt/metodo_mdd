@@ -131,3 +131,71 @@ Binding(CTRL+D,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-05-13 10:04:05.764
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generateJumpCode(JET2JavaGeneratorNew.java:686)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.access$1(JET2JavaGeneratorNew.java:674)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew$7.endVisit(JET2JavaGeneratorNew.java:586)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:101)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:98)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.JETCompilationUnit.accept0(JETCompilationUnit.java:133)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generate(JET2JavaGeneratorNew.java:362)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:50)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:55)
+	at org.eclipse.jet.internal.compiler.SimplifiedCompiler.compile(SimplifiedCompiler.java:373)
+	at org.eclipse.jet.internal.builder.WorkspaceCompiler.compile(WorkspaceCompiler.java:196)
+	at org.eclipse.jet.internal.builder.JET2Builder.incrementalBuild(JET2Builder.java:207)
+	at org.eclipse.jet.internal.builder.JET2Builder.build(JET2Builder.java:117)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-05-13 10:04:05.770
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jet 4 75 2015-05-13 10:04:05.770
+!MESSAGE Errors running builder 'JET Template Builder' on project 'gerador'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generateJumpCode(JET2JavaGeneratorNew.java:686)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.access$1(JET2JavaGeneratorNew.java:674)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew$7.endVisit(JET2JavaGeneratorNew.java:586)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:101)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:98)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.JETCompilationUnit.accept0(JETCompilationUnit.java:133)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generate(JET2JavaGeneratorNew.java:362)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:50)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:55)
+	at org.eclipse.jet.internal.compiler.SimplifiedCompiler.compile(SimplifiedCompiler.java:373)
+	at org.eclipse.jet.internal.builder.WorkspaceCompiler.compile(WorkspaceCompiler.java:196)
+	at org.eclipse.jet.internal.builder.JET2Builder.incrementalBuild(JET2Builder.java:207)
+	at org.eclipse.jet.internal.builder.JET2Builder.build(JET2Builder.java:117)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

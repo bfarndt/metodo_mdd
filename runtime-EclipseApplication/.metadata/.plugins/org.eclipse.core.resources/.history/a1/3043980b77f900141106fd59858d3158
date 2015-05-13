@@ -1,0 +1,68 @@
+<%@taglib prefix="ws" id="org.eclipse.jet.workspaceTags" %>
+<%-- Main entry point for my.jet.transformation --%>
+
+<%-- 
+  Let c:iterate tags set the XPath context object.
+  For 100% compatibility with JET 0.9.x or earlier, remove this statement
+ --%>
+<c:setVariable var="org.eclipse.jet.taglib.control.iterateSetsContext" select="true()"/>
+
+
+<%-- 
+TODO: traverse input model, performing calculations and storing 
+the results as model annotations via c:set tag 
+--%>
+
+
+<%--
+TODO: traverse annotated model, performing text generation actions 
+such as ws:file, ws:folder and ws:project 
+--%>
+   
+
+<%-- For debug purposes, dump the annotated input model in 
+   the root of the project containing the original input model.
+   
+   Note that model formatting may not be identical, and that in
+   the case of non-XML input models, the dump may look quite different.
+--%>
+<ws:project name="{/Domainmodel/@nomeProj}">
+	<ws:folder path="www">
+		<c:iterate select="/Domainmodel/Page" var="currentPage">
+			<ws:file template="templates/templateHtml.jet" path="{$currentPage/@name}.php" />
+		</c:iterate>
+
+		<ws:folder path="class">
+			<c:iterate select="/Domainmodel/Entity" var="e">
+				<c:set select="$e" name="className"><f:uc length="1"><c:get select="$e/@name" /></f:uc></c:set>
+				<ws:file template="templates/templateEntityClass.jet" path="{$e/@className}.class.php" />
+				<ws:file template="templates/templateEntityClassDB.jet" path="{$e/@className}DB.class.php" />
+			</c:iterate>
+		</ws:folder>
+
+		<c:iterate select="/Domainmodel/Entity" var="currentEntity">
+			<ws:folder path="{$currentEntity/@name}">
+				<ws:file template="templates/templateEntityActionSave.jet" path="save.php" />
+				<ws:file template="templates/templateEntityActionDelete.jet" path="delete.php" />
+			</ws:folder>
+		</c:iterate>
+
+		<ws:folder path="css">
+			<ws:file template="templates/CSS/templateBootstrap-datepicker.jet" path="bootstrap-datepicker.css" />
+			<ws:file template="templates/CSS/templateBootstrap-datepicker.standalone.jet" path="bootstrap-datepicker.standalone.css" />
+			<ws:file template="templates/CSS/templateBootstrap-datepicker3.jet" path="bootstrap-datepicker3.css" />
+			<ws:file template="templates/CSS/templateBootstrap-datepicker3.standalone.jet" path="bootstrap-datepicker.css" />
+		</ws:folder>
+
+		<ws:folder path="js">
+			<ws:file template="templates/JS/templateBootstrap-datepicker.jet" path="bootstrap-datepicker.js" />
+
+			<c:iterate select="/Domainmodel/Entity" var="currentEntity">
+				<ws:file template="templates/templateEntityJS.jet" path="{$currentEntity/@name}.js" />
+			</c:iterate>
+		</ws:folder>
+	</ws:folder>
+
+	<ws:file template="templates/templateSql.jet" path="db.sql"/>
+
+</ws:project>

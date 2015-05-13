@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;gerador/templates/JS/templateDatePicker.jet&apos; to &apos;templateBootstrap-datepicker.jet&apos;" description="Rename resource &apos;templateDatePicker.jet&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="templates/JS/templateDatePicker.jet" name="templateBootstrap-datepicker.jet" stamp="1431524911755" updateReferences="true"/>
+</session>
