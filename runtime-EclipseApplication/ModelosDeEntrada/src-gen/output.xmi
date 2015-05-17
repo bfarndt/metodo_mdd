@@ -3,16 +3,16 @@
   <elements xsi:type="extended:Page" name="index" title="Home" header="true" footer="true"/>
   <elements xsi:type="extended:Entity" name="Bruno">
     <features name="cpf">
-      <type/>
+      <type xsi:type="extended:DataType" name="string"/>
     </features>
     <features name="endereco">
-      <type/>
+      <type xsi:type="extended:DataType" name="string"/>
     </features>
     <features name="nascimento">
-      <type/>
+      <type xsi:type="extended:DataType" name="date"/>
     </features>
     <features name="mensalidade">
-      <type/>
+      <type xsi:type="extended:DataType" name="currency"/>
     </features>
   </elements>
   <elements xsi:type="extended:Form" name="formShowBruno" get="true" post="true" put="true" delete="true" entity="//@elements.1"/>
