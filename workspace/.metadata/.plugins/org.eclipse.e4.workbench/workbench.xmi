@@ -581,7 +581,7 @@
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_jCS-IPaxEeSrIcACAJwKJw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Extended.xtext" iconURI="platform:/plugin/org.eclipse.xtext.xtext.ui/icons/editor.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.xtext.Xtext&quot; name=&quot;Extended.xtext&quot; partName=&quot;Extended.xtext&quot; title=&quot;Extended.xtext&quot; tooltip=&quot;org.example.domainmodel.extended/src/org/example/domainmodel/Extended.xtext&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/org.example.domainmodel.extended/src/org/example/domainmodel/Extended.xtext&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;8&quot; selectionOffset=&quot;608&quot; selectionTopPixel=&quot;189&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.xtext.Xtext&quot; name=&quot;Extended.xtext&quot; partName=&quot;Extended.xtext&quot; title=&quot;Extended.xtext&quot; tooltip=&quot;org.example.domainmodel.extended/src/org/example/domainmodel/Extended.xtext&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/org.example.domainmodel.extended/src/org/example/domainmodel/Extended.xtext&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;700&quot; selectionTopPixel=&quot;189&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.xtext.Xtext</tags>
           <tags>removeOnHide</tags>
@@ -817,7 +817,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OJR6veeMEeScI-k3gDUs9A" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_gd358PlsEeSR6KMjHciKzQ" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_OJXbBueMEeScI-k3gDUs9A"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-UsqkPyfEeSaA-6YaY0dHw" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_OJXbBueMEeScI-k3gDUs9A"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OJR6yueMEeScI-k3gDUs9A" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -850,7 +850,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OJR7F-eMEeScI-k3gDUs9A" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_gd-AkPlsEeSR6KMjHciKzQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_OJWzwueMEeScI-k3gDUs9A"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-UyKIfyfEeSaA-6YaY0dHw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_OJWzwueMEeScI-k3gDUs9A"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OJR7KOeMEeScI-k3gDUs9A" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

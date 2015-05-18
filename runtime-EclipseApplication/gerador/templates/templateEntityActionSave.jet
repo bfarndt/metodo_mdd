@@ -4,16 +4,17 @@
 	
 	$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>();
 	$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB();
-	
-	if (isSet($_POST['id']) && $_POST['id'] > 0) {
-		$<c:get select="$currentEntity/@name" />->setId($_POST["id"]);
-	}
 
 	<c:iterate select="$currentEntity/Feature" var="currentFeature">
 		$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($_POST["<c:get select="$currentFeature/@name" />"]);
 	</c:iterate>
 	
-	$result = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->add($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
+	if (isSet($_POST['id']) && $_POST['id'] > 0) {
+		$<c:get select="$currentEntity/@name" />->setId($_POST["id"]);
+		$result = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->update($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
+	} else {
+		$result = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->add($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
+	}
 	
 	if ($result) {
 		die('<META http-equiv="refresh" content="1;URL=/' . $_POST["pageBack"] . '.php?success=1">');

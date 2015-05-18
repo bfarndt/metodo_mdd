@@ -1,0 +1,17 @@
+function deleteBruno(id, pageBack) {
+	window.location = "/Bruno/delete.php?id=" + id + "&pageBack=" + pageBack;
+}
+
+function updateBruno(id) {
+	$("#id").val(id);
+	
+		$("#cpf").val($("#Bruno_" + id + "_cpf").val());
+	
+		$("#endereco").val($("#Bruno_" + id + "_endereco").val());
+	
+		$("#nascimento").val($("#Bruno_" + id + "_nascimento").val());
+	
+		$("#mensalidade").val($("#Bruno_" + id + "_mensalidade").val());
+	
+	return true;
+}

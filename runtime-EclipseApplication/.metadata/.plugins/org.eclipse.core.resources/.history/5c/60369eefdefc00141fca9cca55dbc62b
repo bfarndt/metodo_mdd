@@ -1,0 +1,19 @@
+<?php
+	include_once "../class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>.class.php";
+	include_once "../class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB.class.php";
+	
+	$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>();
+	$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB();
+
+	<c:iterate select="$currentEntity/Feature" var="currentFeature">
+		$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($_POST["<c:get select="$currentFeature/@name" />"]);
+	</c:iterate>
+	
+	$result = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->add($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
+	
+	if ($result) {
+		die('<META http-equiv="refresh" content="1;URL=/' . $_POST["pageBack"] . '.php?success=1">');
+	} else {
+		die('<META http-equiv="refresh" content="1;URL=/' . $_POST["pageBack"] . '.php?error=1">');
+	}
+?>
