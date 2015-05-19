@@ -15,8 +15,8 @@
       <type xsi:type="extended:DataType" name="currency"/>
     </features>
   </elements>
-  <elements xsi:type="extended:Form" name="formShowBruno" entity="//@elements.1" get="true" post="true" put="true" delete="true"/>
-  <elements xsi:type="extended:FormReport" name="formReportBruno" entity="//@elements.1" filter="true" order="true" pagination="true"/>
+  <elements xsi:type="extended:Form" name="formShowBruno" get="true" post="true" put="true" delete="true" entity="//@elements.1"/>
+  <elements xsi:type="extended:FormReport" name="formReportBruno" filter="true" order="true" pagination="true"/>
   <elements xsi:type="extended:Page" name="bruno" title="Bruno" header="true" footer="true" forms="//@elements.2 //@elements.3"/>
   <elements xsi:type="extended:Entity" name="Daniel">
     <features name="cpf">

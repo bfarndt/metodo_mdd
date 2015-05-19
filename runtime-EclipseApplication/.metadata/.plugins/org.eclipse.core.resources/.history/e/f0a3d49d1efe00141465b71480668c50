@@ -27,7 +27,6 @@ formReport formReportBruno {
 	filter: true
 	order: true
 	pagination: true
-	Bruno
 }
 
 page bruno {
