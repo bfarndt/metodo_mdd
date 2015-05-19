@@ -1,3 +1,0 @@
-function deleteBruno(id, pageBack) {
-	window.location = "/Bruno/delete.php?id=" + id + "pageBack=" + pageBack;
-}

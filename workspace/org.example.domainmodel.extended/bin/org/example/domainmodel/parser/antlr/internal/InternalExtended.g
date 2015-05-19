@@ -1309,9 +1309,22 @@ ruleFormReport returns [EObject current=null]
 	    }
 
 )
-)	otherlv_12='}' 
+)(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getFormReportRule());
+	        }
+        }
+	otherlv_12=RULE_ID
+	{
+		newLeafNode(otherlv_12, grammarAccess.getFormReportAccess().getEntityEntityCrossReference_12_0()); 
+	}
+
+)
+)	otherlv_13='}' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getFormReportAccess().getRightCurlyBracketKeyword_12());
+    	newLeafNode(otherlv_13, grammarAccess.getFormReportAccess().getRightCurlyBracketKeyword_13());
     }
 )
 ;

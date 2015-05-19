@@ -472,6 +472,16 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getFormTypes_Entity()
+  {
+    return (EReference)formTypesEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getForm()
   {
     return formEClass;
@@ -522,29 +532,9 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForm_Entity()
-  {
-    return (EReference)formEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getFormNewEntityOnly()
   {
     return formNewEntityOnlyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormNewEntityOnly_Entity()
-  {
-    return (EReference)formNewEntityOnlyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -654,16 +644,15 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 
     formTypesEClass = createEClass(FORM_TYPES);
     createEAttribute(formTypesEClass, FORM_TYPES__NAME);
+    createEReference(formTypesEClass, FORM_TYPES__ENTITY);
 
     formEClass = createEClass(FORM);
     createEAttribute(formEClass, FORM__GET);
     createEAttribute(formEClass, FORM__POST);
     createEAttribute(formEClass, FORM__PUT);
     createEAttribute(formEClass, FORM__DELETE);
-    createEReference(formEClass, FORM__ENTITY);
 
     formNewEntityOnlyEClass = createEClass(FORM_NEW_ENTITY_ONLY);
-    createEReference(formNewEntityOnlyEClass, FORM_NEW_ENTITY_ONLY__ENTITY);
 
     formReportEClass = createEClass(FORM_REPORT);
     createEAttribute(formReportEClass, FORM_REPORT__FILTER);
@@ -749,16 +738,15 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 
     initEClass(formTypesEClass, FormTypes.class, "FormTypes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFormTypes_Name(), ecorePackage.getEString(), "name", null, 0, 1, FormTypes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFormTypes_Entity(), this.getEntity(), null, "entity", null, 0, 1, FormTypes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getForm_Get(), ecorePackage.getEString(), "get", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getForm_Post(), ecorePackage.getEString(), "post", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getForm_Put(), ecorePackage.getEString(), "put", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getForm_Delete(), ecorePackage.getEString(), "delete", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getForm_Entity(), this.getEntity(), null, "entity", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formNewEntityOnlyEClass, FormNewEntityOnly.class, "FormNewEntityOnly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFormNewEntityOnly_Entity(), this.getEntity(), null, "entity", null, 0, 1, FormNewEntityOnly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formReportEClass, FormReport.class, "FormReport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFormReport_Filter(), ecorePackage.getEString(), "filter", null, 0, 1, FormReport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

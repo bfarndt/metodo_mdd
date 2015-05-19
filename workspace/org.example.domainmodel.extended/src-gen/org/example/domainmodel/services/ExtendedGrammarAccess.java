@@ -697,14 +697,18 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Assignment cPaginationAssignment_11 = (Assignment)cGroup.eContents().get(11);
 		private final RuleCall cPaginationBooleanParserRuleCall_11_0 = (RuleCall)cPaginationAssignment_11.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cEntityAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final CrossReference cEntityEntityCrossReference_12_0 = (CrossReference)cEntityAssignment_12.eContents().get(0);
+		private final RuleCall cEntityEntityIDTerminalRuleCall_12_0_1 = (RuleCall)cEntityEntityCrossReference_12_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//FormReport:
 		//	"formReport" name=ID "{" "filter" ":" filter=Boolean "order" ":" order=Boolean "pagination" ":" pagination=Boolean
-		//	"}";
+		//	entity=[Entity] "}";
 		public ParserRule getRule() { return rule; }
 
-		//"formReport" name=ID "{" "filter" ":" filter=Boolean "order" ":" order=Boolean "pagination" ":" pagination=Boolean "}"
+		//"formReport" name=ID "{" "filter" ":" filter=Boolean "order" ":" order=Boolean "pagination" ":" pagination=Boolean
+		//entity=[Entity] "}"
 		public Group getGroup() { return cGroup; }
 
 		//"formReport"
@@ -755,8 +759,17 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		//Boolean
 		public RuleCall getPaginationBooleanParserRuleCall_11_0() { return cPaginationBooleanParserRuleCall_11_0; }
 
+		//entity=[Entity]
+		public Assignment getEntityAssignment_12() { return cEntityAssignment_12; }
+
+		//[Entity]
+		public CrossReference getEntityEntityCrossReference_12_0() { return cEntityEntityCrossReference_12_0; }
+
+		//ID
+		public RuleCall getEntityEntityIDTerminalRuleCall_12_0_1() { return cEntityEntityIDTerminalRuleCall_12_0_1; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
+		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
 	}
 	
 	
@@ -985,7 +998,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 
 	//FormReport:
 	//	"formReport" name=ID "{" "filter" ":" filter=Boolean "order" ":" order=Boolean "pagination" ":" pagination=Boolean
-	//	"}";
+	//	entity=[Entity] "}";
 	public FormReportElements getFormReportAccess() {
 		return pFormReport;
 	}

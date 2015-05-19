@@ -42,17 +42,15 @@
     </genClasses>
     <genClasses ecoreClass="Extended.ecore#//FormTypes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//FormTypes/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Extended.ecore#//FormTypes/entity"/>
     </genClasses>
     <genClasses ecoreClass="Extended.ecore#//Form">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Form/get"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Form/post"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Form/put"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Form/delete"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Extended.ecore#//Form/entity"/>
     </genClasses>
-    <genClasses ecoreClass="Extended.ecore#//FormNewEntityOnly">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Extended.ecore#//FormNewEntityOnly/entity"/>
-    </genClasses>
+    <genClasses ecoreClass="Extended.ecore#//FormNewEntityOnly"/>
     <genClasses ecoreClass="Extended.ecore#//FormReport">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//FormReport/filter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//FormReport/order"/>

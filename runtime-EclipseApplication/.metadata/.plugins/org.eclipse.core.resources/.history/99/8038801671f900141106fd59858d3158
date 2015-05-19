@@ -1,3 +1,0 @@
-function delete<c:get select="$currentEntity/@name" />(id, page) {
-	window.location = "/<c:get select="$currentEntity/@name" />/delete.php?id=" + id;
-}

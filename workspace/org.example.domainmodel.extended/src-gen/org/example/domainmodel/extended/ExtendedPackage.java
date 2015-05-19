@@ -418,13 +418,22 @@ public interface ExtendedPackage extends EPackage
   int FORM_TYPES__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_TYPES__ENTITY = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Form Types</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORM_TYPES_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int FORM_TYPES_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.example.domainmodel.extended.impl.FormImpl <em>Form</em>}' class.
@@ -444,6 +453,15 @@ public interface ExtendedPackage extends EPackage
    * @ordered
    */
   int FORM__NAME = FORM_TYPES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM__ENTITY = FORM_TYPES__ENTITY;
 
   /**
    * The feature id for the '<em><b>Get</b></em>' attribute.
@@ -482,22 +500,13 @@ public interface ExtendedPackage extends EPackage
   int FORM__DELETE = FORM_TYPES_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Entity</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORM__ENTITY = FORM_TYPES_FEATURE_COUNT + 4;
-
-  /**
    * The number of structural features of the '<em>Form</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORM_FEATURE_COUNT = FORM_TYPES_FEATURE_COUNT + 5;
+  int FORM_FEATURE_COUNT = FORM_TYPES_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.example.domainmodel.extended.impl.FormNewEntityOnlyImpl <em>Form New Entity Only</em>}' class.
@@ -525,7 +534,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM_NEW_ENTITY_ONLY__ENTITY = FORM_TYPES_FEATURE_COUNT + 0;
+  int FORM_NEW_ENTITY_ONLY__ENTITY = FORM_TYPES__ENTITY;
 
   /**
    * The number of structural features of the '<em>Form New Entity Only</em>' class.
@@ -534,7 +543,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM_NEW_ENTITY_ONLY_FEATURE_COUNT = FORM_TYPES_FEATURE_COUNT + 1;
+  int FORM_NEW_ENTITY_ONLY_FEATURE_COUNT = FORM_TYPES_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.example.domainmodel.extended.impl.FormReportImpl <em>Form Report</em>}' class.
@@ -554,6 +563,15 @@ public interface ExtendedPackage extends EPackage
    * @ordered
    */
   int FORM_REPORT__NAME = FORM_TYPES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_REPORT__ENTITY = FORM_TYPES__ENTITY;
 
   /**
    * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -891,6 +909,17 @@ public interface ExtendedPackage extends EPackage
   EAttribute getFormTypes_Name();
 
   /**
+   * Returns the meta object for the reference '{@link org.example.domainmodel.extended.FormTypes#getEntity <em>Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Entity</em>'.
+   * @see org.example.domainmodel.extended.FormTypes#getEntity()
+   * @see #getFormTypes()
+   * @generated
+   */
+  EReference getFormTypes_Entity();
+
+  /**
    * Returns the meta object for class '{@link org.example.domainmodel.extended.Form <em>Form</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -945,17 +974,6 @@ public interface ExtendedPackage extends EPackage
   EAttribute getForm_Delete();
 
   /**
-   * Returns the meta object for the reference '{@link org.example.domainmodel.extended.Form#getEntity <em>Entity</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Entity</em>'.
-   * @see org.example.domainmodel.extended.Form#getEntity()
-   * @see #getForm()
-   * @generated
-   */
-  EReference getForm_Entity();
-
-  /**
    * Returns the meta object for class '{@link org.example.domainmodel.extended.FormNewEntityOnly <em>Form New Entity Only</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -964,17 +982,6 @@ public interface ExtendedPackage extends EPackage
    * @generated
    */
   EClass getFormNewEntityOnly();
-
-  /**
-   * Returns the meta object for the reference '{@link org.example.domainmodel.extended.FormNewEntityOnly#getEntity <em>Entity</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Entity</em>'.
-   * @see org.example.domainmodel.extended.FormNewEntityOnly#getEntity()
-   * @see #getFormNewEntityOnly()
-   * @generated
-   */
-  EReference getFormNewEntityOnly_Entity();
 
   /**
    * Returns the meta object for class '{@link org.example.domainmodel.extended.FormReport <em>Form Report</em>}'.
@@ -1287,6 +1294,14 @@ public interface ExtendedPackage extends EPackage
     EAttribute FORM_TYPES__NAME = eINSTANCE.getFormTypes_Name();
 
     /**
+     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FORM_TYPES__ENTITY = eINSTANCE.getFormTypes_Entity();
+
+    /**
      * The meta object literal for the '{@link org.example.domainmodel.extended.impl.FormImpl <em>Form</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1329,14 +1344,6 @@ public interface ExtendedPackage extends EPackage
     EAttribute FORM__DELETE = eINSTANCE.getForm_Delete();
 
     /**
-     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORM__ENTITY = eINSTANCE.getForm_Entity();
-
-    /**
      * The meta object literal for the '{@link org.example.domainmodel.extended.impl.FormNewEntityOnlyImpl <em>Form New Entity Only</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1345,14 +1352,6 @@ public interface ExtendedPackage extends EPackage
      * @generated
      */
     EClass FORM_NEW_ENTITY_ONLY = eINSTANCE.getFormNewEntityOnly();
-
-    /**
-     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORM_NEW_ENTITY_ONLY__ENTITY = eINSTANCE.getFormNewEntityOnly_Entity();
 
     /**
      * The meta object literal for the '{@link org.example.domainmodel.extended.impl.FormReportImpl <em>Form Report</em>}' class.

@@ -15,7 +15,6 @@ package org.example.domainmodel.extended;
  *   <li>{@link org.example.domainmodel.extended.Form#getPost <em>Post</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.Form#getPut <em>Put</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.Form#getDelete <em>Delete</em>}</li>
- *   <li>{@link org.example.domainmodel.extended.Form#getEntity <em>Entity</em>}</li>
  * </ul>
  * </p>
  *
@@ -128,31 +127,5 @@ public interface Form extends FormTypes
    * @generated
    */
   void setDelete(String value);
-
-  /**
-   * Returns the value of the '<em><b>Entity</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Entity</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Entity</em>' reference.
-   * @see #setEntity(Entity)
-   * @see org.example.domainmodel.extended.ExtendedPackage#getForm_Entity()
-   * @model
-   * @generated
-   */
-  Entity getEntity();
-
-  /**
-   * Sets the value of the '{@link org.example.domainmodel.extended.Form#getEntity <em>Entity</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Entity</em>' reference.
-   * @see #getEntity()
-   * @generated
-   */
-  void setEntity(Entity value);
 
 } // Form

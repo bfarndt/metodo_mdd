@@ -30,7 +30,6 @@ INDEX VERSION 1.127+/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plug
 1438949057.index
 3369377545.index
 1601238587.index
-1775899009.index
 1744846922.index
 1071984352.index
 1884611788.index
@@ -38,7 +37,6 @@ INDEX VERSION 1.127+/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plug
 112876058.index
 1773887698.index
 3145555032.index
-3735363259.index
 3660435695.index
 3064197999.index
 3553236952.index
@@ -57,6 +55,7 @@ INDEX VERSION 1.127+/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plug
 1152342269.index
 420503563.index
 2128735584.index
+3142463734.index
 4261938591.index
 2725407919.index
 1322072463.index
@@ -74,7 +73,6 @@ INDEX VERSION 1.127+/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plug
 5777302.index
 2232381638.index
 3885010099.index
-2124189619.index
 2283938939.index
 3435635252.index
 3517672910.index
@@ -100,8 +98,8 @@ INDEX VERSION 1.127+/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plug
 1600157817.index
 2403587956.index
 1879161615.index
-3942658311.index
 913860571.index
+3942658311.index
 147389818.index
 3454939475.index
 448841649.index

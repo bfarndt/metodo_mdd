@@ -87,6 +87,7 @@ public class ExtendedParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFormReportAccess().getFilterAssignment_5(), "rule__FormReport__FilterAssignment_5");
 					put(grammarAccess.getFormReportAccess().getOrderAssignment_8(), "rule__FormReport__OrderAssignment_8");
 					put(grammarAccess.getFormReportAccess().getPaginationAssignment_11(), "rule__FormReport__PaginationAssignment_11");
+					put(grammarAccess.getFormReportAccess().getEntityAssignment_12(), "rule__FormReport__EntityAssignment_12");
 				}
 			};
 		}

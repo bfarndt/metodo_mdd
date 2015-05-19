@@ -8482,17 +8482,22 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormReport__Group__12"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3288:1: rule__FormReport__Group__12 : rule__FormReport__Group__12__Impl ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3288:1: rule__FormReport__Group__12 : rule__FormReport__Group__12__Impl rule__FormReport__Group__13 ;
     public final void rule__FormReport__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3292:1: ( rule__FormReport__Group__12__Impl )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3293:2: rule__FormReport__Group__12__Impl
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3292:1: ( rule__FormReport__Group__12__Impl rule__FormReport__Group__13 )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3293:2: rule__FormReport__Group__12__Impl rule__FormReport__Group__13
             {
             pushFollow(FOLLOW_rule__FormReport__Group__12__Impl_in_rule__FormReport__Group__126571);
             rule__FormReport__Group__12__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__FormReport__Group__13_in_rule__FormReport__Group__126574);
+            rule__FormReport__Group__13();
 
             state._fsp--;
 
@@ -8515,21 +8520,31 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormReport__Group__12__Impl"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3299:1: rule__FormReport__Group__12__Impl : ( '}' ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3300:1: rule__FormReport__Group__12__Impl : ( ( rule__FormReport__EntityAssignment_12 ) ) ;
     public final void rule__FormReport__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3303:1: ( ( '}' ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3304:1: ( '}' )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3304:1: ( ( ( rule__FormReport__EntityAssignment_12 ) ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3305:1: ( ( rule__FormReport__EntityAssignment_12 ) )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3304:1: ( '}' )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3305:1: '}'
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3305:1: ( ( rule__FormReport__EntityAssignment_12 ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3306:1: ( rule__FormReport__EntityAssignment_12 )
             {
-             before(grammarAccess.getFormReportAccess().getRightCurlyBracketKeyword_12()); 
-            match(input,25,FOLLOW_25_in_rule__FormReport__Group__12__Impl6599); 
-             after(grammarAccess.getFormReportAccess().getRightCurlyBracketKeyword_12()); 
+             before(grammarAccess.getFormReportAccess().getEntityAssignment_12()); 
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3307:1: ( rule__FormReport__EntityAssignment_12 )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3307:2: rule__FormReport__EntityAssignment_12
+            {
+            pushFollow(FOLLOW_rule__FormReport__EntityAssignment_12_in_rule__FormReport__Group__12__Impl6601);
+            rule__FormReport__EntityAssignment_12();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFormReportAccess().getEntityAssignment_12()); 
 
             }
 
@@ -8551,21 +8566,91 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__FormReport__Group__12__Impl"
 
 
+    // $ANTLR start "rule__FormReport__Group__13"
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3317:1: rule__FormReport__Group__13 : rule__FormReport__Group__13__Impl ;
+    public final void rule__FormReport__Group__13() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3321:1: ( rule__FormReport__Group__13__Impl )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3322:2: rule__FormReport__Group__13__Impl
+            {
+            pushFollow(FOLLOW_rule__FormReport__Group__13__Impl_in_rule__FormReport__Group__136631);
+            rule__FormReport__Group__13__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FormReport__Group__13"
+
+
+    // $ANTLR start "rule__FormReport__Group__13__Impl"
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3328:1: rule__FormReport__Group__13__Impl : ( '}' ) ;
+    public final void rule__FormReport__Group__13__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3332:1: ( ( '}' ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3333:1: ( '}' )
+            {
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3333:1: ( '}' )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3334:1: '}'
+            {
+             before(grammarAccess.getFormReportAccess().getRightCurlyBracketKeyword_13()); 
+            match(input,25,FOLLOW_25_in_rule__FormReport__Group__13__Impl6659); 
+             after(grammarAccess.getFormReportAccess().getRightCurlyBracketKeyword_13()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FormReport__Group__13__Impl"
+
+
     // $ANTLR start "rule__Domainmodel__NomeProjAssignment_1"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3345:1: rule__Domainmodel__NomeProjAssignment_1 : ( RULE_STRING ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3376:1: rule__Domainmodel__NomeProjAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Domainmodel__NomeProjAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3349:1: ( ( RULE_STRING ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3350:1: ( RULE_STRING )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3380:1: ( ( RULE_STRING ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3381:1: ( RULE_STRING )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3350:1: ( RULE_STRING )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3351:1: RULE_STRING
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3381:1: ( RULE_STRING )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3382:1: RULE_STRING
             {
              before(grammarAccess.getDomainmodelAccess().getNomeProjSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Domainmodel__NomeProjAssignment_16661); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Domainmodel__NomeProjAssignment_16723); 
              after(grammarAccess.getDomainmodelAccess().getNomeProjSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -8589,20 +8674,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Domainmodel__ElementsAssignment_3"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3360:1: rule__Domainmodel__ElementsAssignment_3 : ( ruleAbstractElement ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3391:1: rule__Domainmodel__ElementsAssignment_3 : ( ruleAbstractElement ) ;
     public final void rule__Domainmodel__ElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3364:1: ( ( ruleAbstractElement ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3365:1: ( ruleAbstractElement )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3395:1: ( ( ruleAbstractElement ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3396:1: ( ruleAbstractElement )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3365:1: ( ruleAbstractElement )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3366:1: ruleAbstractElement
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3396:1: ( ruleAbstractElement )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3397:1: ruleAbstractElement
             {
              before(grammarAccess.getDomainmodelAccess().getElementsAbstractElementParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleAbstractElement_in_rule__Domainmodel__ElementsAssignment_36692);
+            pushFollow(FOLLOW_ruleAbstractElement_in_rule__Domainmodel__ElementsAssignment_36754);
             ruleAbstractElement();
 
             state._fsp--;
@@ -8630,20 +8715,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PackageDeclaration__NameAssignment_1"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3375:1: rule__PackageDeclaration__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3406:1: rule__PackageDeclaration__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__PackageDeclaration__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3379:1: ( ( ruleQualifiedName ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3380:1: ( ruleQualifiedName )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3410:1: ( ( ruleQualifiedName ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3411:1: ( ruleQualifiedName )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3380:1: ( ruleQualifiedName )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3381:1: ruleQualifiedName
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3411:1: ( ruleQualifiedName )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3412:1: ruleQualifiedName
             {
              before(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__PackageDeclaration__NameAssignment_16723);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__PackageDeclaration__NameAssignment_16785);
             ruleQualifiedName();
 
             state._fsp--;
@@ -8671,20 +8756,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PackageDeclaration__ElementsAssignment_3"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3390:1: rule__PackageDeclaration__ElementsAssignment_3 : ( ruleAbstractElement ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3421:1: rule__PackageDeclaration__ElementsAssignment_3 : ( ruleAbstractElement ) ;
     public final void rule__PackageDeclaration__ElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3394:1: ( ( ruleAbstractElement ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3395:1: ( ruleAbstractElement )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3425:1: ( ( ruleAbstractElement ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3426:1: ( ruleAbstractElement )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3395:1: ( ruleAbstractElement )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3396:1: ruleAbstractElement
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3426:1: ( ruleAbstractElement )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3427:1: ruleAbstractElement
             {
              before(grammarAccess.getPackageDeclarationAccess().getElementsAbstractElementParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleAbstractElement_in_rule__PackageDeclaration__ElementsAssignment_36754);
+            pushFollow(FOLLOW_ruleAbstractElement_in_rule__PackageDeclaration__ElementsAssignment_36816);
             ruleAbstractElement();
 
             state._fsp--;
@@ -8712,20 +8797,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Import__ImportedNamespaceAssignment_1"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3405:1: rule__Import__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3436:1: rule__Import__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
     public final void rule__Import__ImportedNamespaceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3409:1: ( ( ruleQualifiedNameWithWildcard ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3410:1: ( ruleQualifiedNameWithWildcard )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3440:1: ( ( ruleQualifiedNameWithWildcard ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3441:1: ( ruleQualifiedNameWithWildcard )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3410:1: ( ruleQualifiedNameWithWildcard )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3411:1: ruleQualifiedNameWithWildcard
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3441:1: ( ruleQualifiedNameWithWildcard )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3442:1: ruleQualifiedNameWithWildcard
             {
              before(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_rule__Import__ImportedNamespaceAssignment_16785);
+            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_rule__Import__ImportedNamespaceAssignment_16847);
             ruleQualifiedNameWithWildcard();
 
             state._fsp--;
@@ -8753,23 +8838,23 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataType__NameAssignment"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3420:1: rule__DataType__NameAssignment : ( ( rule__DataType__NameAlternatives_0 ) ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3451:1: rule__DataType__NameAssignment : ( ( rule__DataType__NameAlternatives_0 ) ) ;
     public final void rule__DataType__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3424:1: ( ( ( rule__DataType__NameAlternatives_0 ) ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3425:1: ( ( rule__DataType__NameAlternatives_0 ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3455:1: ( ( ( rule__DataType__NameAlternatives_0 ) ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3456:1: ( ( rule__DataType__NameAlternatives_0 ) )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3425:1: ( ( rule__DataType__NameAlternatives_0 ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3426:1: ( rule__DataType__NameAlternatives_0 )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3456:1: ( ( rule__DataType__NameAlternatives_0 ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3457:1: ( rule__DataType__NameAlternatives_0 )
             {
              before(grammarAccess.getDataTypeAccess().getNameAlternatives_0()); 
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3427:1: ( rule__DataType__NameAlternatives_0 )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3427:2: rule__DataType__NameAlternatives_0
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3458:1: ( rule__DataType__NameAlternatives_0 )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3458:2: rule__DataType__NameAlternatives_0
             {
-            pushFollow(FOLLOW_rule__DataType__NameAlternatives_0_in_rule__DataType__NameAssignment6816);
+            pushFollow(FOLLOW_rule__DataType__NameAlternatives_0_in_rule__DataType__NameAssignment6878);
             rule__DataType__NameAlternatives_0();
 
             state._fsp--;
@@ -8800,20 +8885,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Entity__NameAssignment_1"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3436:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3467:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3440:1: ( ( RULE_ID ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3441:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3471:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3472:1: ( RULE_ID )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3441:1: ( RULE_ID )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3442:1: RULE_ID
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3472:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3473:1: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_16849); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_16911); 
              after(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -8837,24 +8922,24 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Entity__SuperTypeAssignment_2_1"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3451:1: rule__Entity__SuperTypeAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3482:1: rule__Entity__SuperTypeAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Entity__SuperTypeAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3455:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3456:1: ( ( ruleQualifiedName ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3486:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3487:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3456:1: ( ( ruleQualifiedName ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3457:1: ( ruleQualifiedName )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3487:1: ( ( ruleQualifiedName ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3488:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getEntityAccess().getSuperTypeEntityCrossReference_2_1_0()); 
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3458:1: ( ruleQualifiedName )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3459:1: ruleQualifiedName
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3489:1: ( ruleQualifiedName )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3490:1: ruleQualifiedName
             {
              before(grammarAccess.getEntityAccess().getSuperTypeEntityQualifiedNameParserRuleCall_2_1_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Entity__SuperTypeAssignment_2_16884);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Entity__SuperTypeAssignment_2_16946);
             ruleQualifiedName();
 
             state._fsp--;
@@ -8886,20 +8971,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Entity__FeaturesAssignment_4"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3470:1: rule__Entity__FeaturesAssignment_4 : ( ruleFeature ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3501:1: rule__Entity__FeaturesAssignment_4 : ( ruleFeature ) ;
     public final void rule__Entity__FeaturesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3474:1: ( ( ruleFeature ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3475:1: ( ruleFeature )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3505:1: ( ( ruleFeature ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3506:1: ( ruleFeature )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3475:1: ( ruleFeature )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3476:1: ruleFeature
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3506:1: ( ruleFeature )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3507:1: ruleFeature
             {
              before(grammarAccess.getEntityAccess().getFeaturesFeatureParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_46919);
+            pushFollow(FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_46981);
             ruleFeature();
 
             state._fsp--;
@@ -8927,20 +9012,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Feature__MinAssignment_0_0"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3485:1: rule__Feature__MinAssignment_0_0 : ( RULE_INT ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3516:1: rule__Feature__MinAssignment_0_0 : ( RULE_INT ) ;
     public final void rule__Feature__MinAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3489:1: ( ( RULE_INT ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3490:1: ( RULE_INT )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3520:1: ( ( RULE_INT ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3521:1: ( RULE_INT )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3490:1: ( RULE_INT )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3491:1: RULE_INT
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3521:1: ( RULE_INT )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3522:1: RULE_INT
             {
              before(grammarAccess.getFeatureAccess().getMinINTTerminalRuleCall_0_0_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Feature__MinAssignment_0_06950); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Feature__MinAssignment_0_07012); 
              after(grammarAccess.getFeatureAccess().getMinINTTerminalRuleCall_0_0_0()); 
 
             }
@@ -8964,20 +9049,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Feature__MaxAssignment_0_2"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3500:1: rule__Feature__MaxAssignment_0_2 : ( RULE_INT ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3531:1: rule__Feature__MaxAssignment_0_2 : ( RULE_INT ) ;
     public final void rule__Feature__MaxAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3504:1: ( ( RULE_INT ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3505:1: ( RULE_INT )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3535:1: ( ( RULE_INT ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3536:1: ( RULE_INT )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3505:1: ( RULE_INT )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3506:1: RULE_INT
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3536:1: ( RULE_INT )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3537:1: RULE_INT
             {
              before(grammarAccess.getFeatureAccess().getMaxINTTerminalRuleCall_0_2_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Feature__MaxAssignment_0_26981); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Feature__MaxAssignment_0_27043); 
              after(grammarAccess.getFeatureAccess().getMaxINTTerminalRuleCall_0_2_0()); 
 
             }
@@ -9001,20 +9086,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Feature__NameAssignment_1"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3515:1: rule__Feature__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3546:1: rule__Feature__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Feature__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3519:1: ( ( RULE_ID ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3520:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3550:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3551:1: ( RULE_ID )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3520:1: ( RULE_ID )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3521:1: RULE_ID
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3551:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3552:1: RULE_ID
             {
              before(grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_17012); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_17074); 
              after(grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -9038,20 +9123,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Feature__TypeAssignment_3"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3530:1: rule__Feature__TypeAssignment_3 : ( ruleAbstractType ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3561:1: rule__Feature__TypeAssignment_3 : ( ruleAbstractType ) ;
     public final void rule__Feature__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3534:1: ( ( ruleAbstractType ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3535:1: ( ruleAbstractType )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3565:1: ( ( ruleAbstractType ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3566:1: ( ruleAbstractType )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3535:1: ( ruleAbstractType )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3536:1: ruleAbstractType
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3566:1: ( ruleAbstractType )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3567:1: ruleAbstractType
             {
              before(grammarAccess.getFeatureAccess().getTypeAbstractTypeParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleAbstractType_in_rule__Feature__TypeAssignment_37043);
+            pushFollow(FOLLOW_ruleAbstractType_in_rule__Feature__TypeAssignment_37105);
             ruleAbstractType();
 
             state._fsp--;
@@ -9079,20 +9164,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Page__NameAssignment_1"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3545:1: rule__Page__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3576:1: rule__Page__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Page__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3549:1: ( ( RULE_ID ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3550:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3580:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3581:1: ( RULE_ID )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3550:1: ( RULE_ID )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3551:1: RULE_ID
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3581:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3582:1: RULE_ID
             {
              before(grammarAccess.getPageAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Page__NameAssignment_17074); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Page__NameAssignment_17136); 
              after(grammarAccess.getPageAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -9116,20 +9201,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Page__TitleAssignment_3_2"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3560:1: rule__Page__TitleAssignment_3_2 : ( RULE_STRING ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3591:1: rule__Page__TitleAssignment_3_2 : ( RULE_STRING ) ;
     public final void rule__Page__TitleAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3564:1: ( ( RULE_STRING ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3565:1: ( RULE_STRING )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3595:1: ( ( RULE_STRING ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3596:1: ( RULE_STRING )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3565:1: ( RULE_STRING )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3566:1: RULE_STRING
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3596:1: ( RULE_STRING )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3597:1: RULE_STRING
             {
              before(grammarAccess.getPageAccess().getTitleSTRINGTerminalRuleCall_3_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__TitleAssignment_3_27105); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__TitleAssignment_3_27167); 
              after(grammarAccess.getPageAccess().getTitleSTRINGTerminalRuleCall_3_2_0()); 
 
             }
@@ -9153,20 +9238,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Page__HeaderAssignment_6"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3575:1: rule__Page__HeaderAssignment_6 : ( ruleBoolean ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3606:1: rule__Page__HeaderAssignment_6 : ( ruleBoolean ) ;
     public final void rule__Page__HeaderAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3579:1: ( ( ruleBoolean ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3580:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3610:1: ( ( ruleBoolean ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3611:1: ( ruleBoolean )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3580:1: ( ruleBoolean )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3581:1: ruleBoolean
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3611:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3612:1: ruleBoolean
             {
              before(grammarAccess.getPageAccess().getHeaderBooleanParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleBoolean_in_rule__Page__HeaderAssignment_67136);
+            pushFollow(FOLLOW_ruleBoolean_in_rule__Page__HeaderAssignment_67198);
             ruleBoolean();
 
             state._fsp--;
@@ -9194,20 +9279,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Page__FooterAssignment_9"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3590:1: rule__Page__FooterAssignment_9 : ( ruleBoolean ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3621:1: rule__Page__FooterAssignment_9 : ( ruleBoolean ) ;
     public final void rule__Page__FooterAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3594:1: ( ( ruleBoolean ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3595:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3625:1: ( ( ruleBoolean ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3626:1: ( ruleBoolean )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3595:1: ( ruleBoolean )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3596:1: ruleBoolean
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3626:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3627:1: ruleBoolean
             {
              before(grammarAccess.getPageAccess().getFooterBooleanParserRuleCall_9_0()); 
-            pushFollow(FOLLOW_ruleBoolean_in_rule__Page__FooterAssignment_97167);
+            pushFollow(FOLLOW_ruleBoolean_in_rule__Page__FooterAssignment_97229);
             ruleBoolean();
 
             state._fsp--;
@@ -9235,24 +9320,24 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Page__FormsAssignment_10"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3605:1: rule__Page__FormsAssignment_10 : ( ( RULE_ID ) ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3636:1: rule__Page__FormsAssignment_10 : ( ( RULE_ID ) ) ;
     public final void rule__Page__FormsAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3609:1: ( ( ( RULE_ID ) ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3610:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3640:1: ( ( ( RULE_ID ) ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3641:1: ( ( RULE_ID ) )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3610:1: ( ( RULE_ID ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3611:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3641:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3642:1: ( RULE_ID )
             {
              before(grammarAccess.getPageAccess().getFormsFormTypesCrossReference_10_0()); 
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3612:1: ( RULE_ID )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3613:1: RULE_ID
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3643:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3644:1: RULE_ID
             {
              before(grammarAccess.getPageAccess().getFormsFormTypesIDTerminalRuleCall_10_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Page__FormsAssignment_107202); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Page__FormsAssignment_107264); 
              after(grammarAccess.getPageAccess().getFormsFormTypesIDTerminalRuleCall_10_0_1()); 
 
             }
@@ -9280,20 +9365,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Form__NameAssignment_1"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3624:1: rule__Form__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3655:1: rule__Form__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Form__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3628:1: ( ( RULE_ID ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3629:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3659:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3660:1: ( RULE_ID )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3629:1: ( RULE_ID )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3630:1: RULE_ID
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3660:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3661:1: RULE_ID
             {
              before(grammarAccess.getFormAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Form__NameAssignment_17237); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Form__NameAssignment_17299); 
              after(grammarAccess.getFormAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -9317,20 +9402,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Form__GetAssignment_5"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3639:1: rule__Form__GetAssignment_5 : ( ruleBoolean ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3670:1: rule__Form__GetAssignment_5 : ( ruleBoolean ) ;
     public final void rule__Form__GetAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3643:1: ( ( ruleBoolean ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3644:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3674:1: ( ( ruleBoolean ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3675:1: ( ruleBoolean )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3644:1: ( ruleBoolean )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3645:1: ruleBoolean
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3675:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3676:1: ruleBoolean
             {
              before(grammarAccess.getFormAccess().getGetBooleanParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleBoolean_in_rule__Form__GetAssignment_57268);
+            pushFollow(FOLLOW_ruleBoolean_in_rule__Form__GetAssignment_57330);
             ruleBoolean();
 
             state._fsp--;
@@ -9358,20 +9443,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Form__PostAssignment_8"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3654:1: rule__Form__PostAssignment_8 : ( ruleBoolean ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3685:1: rule__Form__PostAssignment_8 : ( ruleBoolean ) ;
     public final void rule__Form__PostAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3658:1: ( ( ruleBoolean ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3659:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3689:1: ( ( ruleBoolean ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3690:1: ( ruleBoolean )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3659:1: ( ruleBoolean )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3660:1: ruleBoolean
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3690:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3691:1: ruleBoolean
             {
              before(grammarAccess.getFormAccess().getPostBooleanParserRuleCall_8_0()); 
-            pushFollow(FOLLOW_ruleBoolean_in_rule__Form__PostAssignment_87299);
+            pushFollow(FOLLOW_ruleBoolean_in_rule__Form__PostAssignment_87361);
             ruleBoolean();
 
             state._fsp--;
@@ -9399,20 +9484,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Form__PutAssignment_11"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3669:1: rule__Form__PutAssignment_11 : ( ruleBoolean ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3700:1: rule__Form__PutAssignment_11 : ( ruleBoolean ) ;
     public final void rule__Form__PutAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3673:1: ( ( ruleBoolean ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3674:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3704:1: ( ( ruleBoolean ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3705:1: ( ruleBoolean )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3674:1: ( ruleBoolean )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3675:1: ruleBoolean
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3705:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3706:1: ruleBoolean
             {
              before(grammarAccess.getFormAccess().getPutBooleanParserRuleCall_11_0()); 
-            pushFollow(FOLLOW_ruleBoolean_in_rule__Form__PutAssignment_117330);
+            pushFollow(FOLLOW_ruleBoolean_in_rule__Form__PutAssignment_117392);
             ruleBoolean();
 
             state._fsp--;
@@ -9440,20 +9525,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Form__DeleteAssignment_14"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3684:1: rule__Form__DeleteAssignment_14 : ( ruleBoolean ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3715:1: rule__Form__DeleteAssignment_14 : ( ruleBoolean ) ;
     public final void rule__Form__DeleteAssignment_14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3688:1: ( ( ruleBoolean ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3689:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3719:1: ( ( ruleBoolean ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3720:1: ( ruleBoolean )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3689:1: ( ruleBoolean )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3690:1: ruleBoolean
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3720:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3721:1: ruleBoolean
             {
              before(grammarAccess.getFormAccess().getDeleteBooleanParserRuleCall_14_0()); 
-            pushFollow(FOLLOW_ruleBoolean_in_rule__Form__DeleteAssignment_147361);
+            pushFollow(FOLLOW_ruleBoolean_in_rule__Form__DeleteAssignment_147423);
             ruleBoolean();
 
             state._fsp--;
@@ -9481,24 +9566,24 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Form__EntityAssignment_15"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3699:1: rule__Form__EntityAssignment_15 : ( ( RULE_ID ) ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3730:1: rule__Form__EntityAssignment_15 : ( ( RULE_ID ) ) ;
     public final void rule__Form__EntityAssignment_15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3703:1: ( ( ( RULE_ID ) ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3704:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3734:1: ( ( ( RULE_ID ) ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3735:1: ( ( RULE_ID ) )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3704:1: ( ( RULE_ID ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3705:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3735:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3736:1: ( RULE_ID )
             {
              before(grammarAccess.getFormAccess().getEntityEntityCrossReference_15_0()); 
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3706:1: ( RULE_ID )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3707:1: RULE_ID
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3737:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3738:1: RULE_ID
             {
              before(grammarAccess.getFormAccess().getEntityEntityIDTerminalRuleCall_15_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Form__EntityAssignment_157396); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Form__EntityAssignment_157458); 
              after(grammarAccess.getFormAccess().getEntityEntityIDTerminalRuleCall_15_0_1()); 
 
             }
@@ -9526,20 +9611,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormNewEntityOnly__NameAssignment_1"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3718:1: rule__FormNewEntityOnly__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3749:1: rule__FormNewEntityOnly__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__FormNewEntityOnly__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3722:1: ( ( RULE_ID ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3723:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3753:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3754:1: ( RULE_ID )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3723:1: ( RULE_ID )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3724:1: RULE_ID
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3754:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3755:1: RULE_ID
             {
              before(grammarAccess.getFormNewEntityOnlyAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FormNewEntityOnly__NameAssignment_17431); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FormNewEntityOnly__NameAssignment_17493); 
              after(grammarAccess.getFormNewEntityOnlyAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -9563,24 +9648,24 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormNewEntityOnly__EntityAssignment_3"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3733:1: rule__FormNewEntityOnly__EntityAssignment_3 : ( ( RULE_ID ) ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3764:1: rule__FormNewEntityOnly__EntityAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__FormNewEntityOnly__EntityAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3737:1: ( ( ( RULE_ID ) ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3738:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3768:1: ( ( ( RULE_ID ) ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3769:1: ( ( RULE_ID ) )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3738:1: ( ( RULE_ID ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3739:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3769:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3770:1: ( RULE_ID )
             {
              before(grammarAccess.getFormNewEntityOnlyAccess().getEntityEntityCrossReference_3_0()); 
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3740:1: ( RULE_ID )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3741:1: RULE_ID
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3771:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3772:1: RULE_ID
             {
              before(grammarAccess.getFormNewEntityOnlyAccess().getEntityEntityIDTerminalRuleCall_3_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FormNewEntityOnly__EntityAssignment_37466); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FormNewEntityOnly__EntityAssignment_37528); 
              after(grammarAccess.getFormNewEntityOnlyAccess().getEntityEntityIDTerminalRuleCall_3_0_1()); 
 
             }
@@ -9608,20 +9693,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormReport__NameAssignment_1"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3752:1: rule__FormReport__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3783:1: rule__FormReport__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__FormReport__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3756:1: ( ( RULE_ID ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3757:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3787:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3788:1: ( RULE_ID )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3757:1: ( RULE_ID )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3758:1: RULE_ID
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3788:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3789:1: RULE_ID
             {
              before(grammarAccess.getFormReportAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FormReport__NameAssignment_17501); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FormReport__NameAssignment_17563); 
              after(grammarAccess.getFormReportAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -9645,20 +9730,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormReport__FilterAssignment_5"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3767:1: rule__FormReport__FilterAssignment_5 : ( ruleBoolean ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3798:1: rule__FormReport__FilterAssignment_5 : ( ruleBoolean ) ;
     public final void rule__FormReport__FilterAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3771:1: ( ( ruleBoolean ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3772:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3802:1: ( ( ruleBoolean ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3803:1: ( ruleBoolean )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3772:1: ( ruleBoolean )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3773:1: ruleBoolean
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3803:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3804:1: ruleBoolean
             {
              before(grammarAccess.getFormReportAccess().getFilterBooleanParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleBoolean_in_rule__FormReport__FilterAssignment_57532);
+            pushFollow(FOLLOW_ruleBoolean_in_rule__FormReport__FilterAssignment_57594);
             ruleBoolean();
 
             state._fsp--;
@@ -9686,20 +9771,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormReport__OrderAssignment_8"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3782:1: rule__FormReport__OrderAssignment_8 : ( ruleBoolean ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3813:1: rule__FormReport__OrderAssignment_8 : ( ruleBoolean ) ;
     public final void rule__FormReport__OrderAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3786:1: ( ( ruleBoolean ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3787:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3817:1: ( ( ruleBoolean ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3818:1: ( ruleBoolean )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3787:1: ( ruleBoolean )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3788:1: ruleBoolean
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3818:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3819:1: ruleBoolean
             {
              before(grammarAccess.getFormReportAccess().getOrderBooleanParserRuleCall_8_0()); 
-            pushFollow(FOLLOW_ruleBoolean_in_rule__FormReport__OrderAssignment_87563);
+            pushFollow(FOLLOW_ruleBoolean_in_rule__FormReport__OrderAssignment_87625);
             ruleBoolean();
 
             state._fsp--;
@@ -9727,20 +9812,20 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormReport__PaginationAssignment_11"
-    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3797:1: rule__FormReport__PaginationAssignment_11 : ( ruleBoolean ) ;
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3828:1: rule__FormReport__PaginationAssignment_11 : ( ruleBoolean ) ;
     public final void rule__FormReport__PaginationAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3801:1: ( ( ruleBoolean ) )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3802:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3832:1: ( ( ruleBoolean ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3833:1: ( ruleBoolean )
             {
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3802:1: ( ruleBoolean )
-            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3803:1: ruleBoolean
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3833:1: ( ruleBoolean )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3834:1: ruleBoolean
             {
              before(grammarAccess.getFormReportAccess().getPaginationBooleanParserRuleCall_11_0()); 
-            pushFollow(FOLLOW_ruleBoolean_in_rule__FormReport__PaginationAssignment_117594);
+            pushFollow(FOLLOW_ruleBoolean_in_rule__FormReport__PaginationAssignment_117656);
             ruleBoolean();
 
             state._fsp--;
@@ -9765,6 +9850,51 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
         return ;
     }
     // $ANTLR end "rule__FormReport__PaginationAssignment_11"
+
+
+    // $ANTLR start "rule__FormReport__EntityAssignment_12"
+    // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3843:1: rule__FormReport__EntityAssignment_12 : ( ( RULE_ID ) ) ;
+    public final void rule__FormReport__EntityAssignment_12() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3847:1: ( ( ( RULE_ID ) ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3848:1: ( ( RULE_ID ) )
+            {
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3848:1: ( ( RULE_ID ) )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3849:1: ( RULE_ID )
+            {
+             before(grammarAccess.getFormReportAccess().getEntityEntityCrossReference_12_0()); 
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3850:1: ( RULE_ID )
+            // ../org.example.domainmodel.extended.ui/src-gen/org/example/domainmodel/ui/contentassist/antlr/internal/InternalExtended.g:3851:1: RULE_ID
+            {
+             before(grammarAccess.getFormReportAccess().getEntityEntityIDTerminalRuleCall_12_0_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FormReport__EntityAssignment_127691); 
+             after(grammarAccess.getFormReportAccess().getEntityEntityIDTerminalRuleCall_12_0_1()); 
+
+            }
+
+             after(grammarAccess.getFormReportAccess().getEntityEntityCrossReference_12_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FormReport__EntityAssignment_12"
 
     // Delegated rules
 
@@ -10067,40 +10197,44 @@ public class InternalExtendedParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_rule__FormReport__Group__10__Impl_in_rule__FormReport__Group__106449 = new BitSet(new long[]{0x00000000000C0000L});
     public static final BitSet FOLLOW_rule__FormReport__Group__11_in_rule__FormReport__Group__106452 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_31_in_rule__FormReport__Group__10__Impl6480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FormReport__Group__11__Impl_in_rule__FormReport__Group__116511 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__FormReport__Group__11__Impl_in_rule__FormReport__Group__116511 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__FormReport__Group__12_in_rule__FormReport__Group__116514 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__FormReport__PaginationAssignment_11_in_rule__FormReport__Group__11__Impl6541 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FormReport__Group__12__Impl_in_rule__FormReport__Group__126571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__FormReport__Group__12__Impl6599 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Domainmodel__NomeProjAssignment_16661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractElement_in_rule__Domainmodel__ElementsAssignment_36692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__PackageDeclaration__NameAssignment_16723 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractElement_in_rule__PackageDeclaration__ElementsAssignment_36754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_rule__Import__ImportedNamespaceAssignment_16785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DataType__NameAlternatives_0_in_rule__DataType__NameAssignment6816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_16849 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Entity__SuperTypeAssignment_2_16884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_46919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Feature__MinAssignment_0_06950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Feature__MaxAssignment_0_26981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_17012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractType_in_rule__Feature__TypeAssignment_37043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Page__NameAssignment_17074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__TitleAssignment_3_27105 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBoolean_in_rule__Page__HeaderAssignment_67136 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBoolean_in_rule__Page__FooterAssignment_97167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Page__FormsAssignment_107202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Form__NameAssignment_17237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBoolean_in_rule__Form__GetAssignment_57268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBoolean_in_rule__Form__PostAssignment_87299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBoolean_in_rule__Form__PutAssignment_117330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBoolean_in_rule__Form__DeleteAssignment_147361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Form__EntityAssignment_157396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__FormNewEntityOnly__NameAssignment_17431 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__FormNewEntityOnly__EntityAssignment_37466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__FormReport__NameAssignment_17501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBoolean_in_rule__FormReport__FilterAssignment_57532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBoolean_in_rule__FormReport__OrderAssignment_87563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBoolean_in_rule__FormReport__PaginationAssignment_117594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FormReport__Group__12__Impl_in_rule__FormReport__Group__126571 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__FormReport__Group__13_in_rule__FormReport__Group__126574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FormReport__EntityAssignment_12_in_rule__FormReport__Group__12__Impl6601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FormReport__Group__13__Impl_in_rule__FormReport__Group__136631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__FormReport__Group__13__Impl6659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Domainmodel__NomeProjAssignment_16723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractElement_in_rule__Domainmodel__ElementsAssignment_36754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__PackageDeclaration__NameAssignment_16785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractElement_in_rule__PackageDeclaration__ElementsAssignment_36816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_rule__Import__ImportedNamespaceAssignment_16847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DataType__NameAlternatives_0_in_rule__DataType__NameAssignment6878 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_16911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Entity__SuperTypeAssignment_2_16946 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_46981 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Feature__MinAssignment_0_07012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Feature__MaxAssignment_0_27043 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Feature__NameAssignment_17074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractType_in_rule__Feature__TypeAssignment_37105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Page__NameAssignment_17136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__TitleAssignment_3_27167 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBoolean_in_rule__Page__HeaderAssignment_67198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBoolean_in_rule__Page__FooterAssignment_97229 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Page__FormsAssignment_107264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Form__NameAssignment_17299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBoolean_in_rule__Form__GetAssignment_57330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBoolean_in_rule__Form__PostAssignment_87361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBoolean_in_rule__Form__PutAssignment_117392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBoolean_in_rule__Form__DeleteAssignment_147423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Form__EntityAssignment_157458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FormNewEntityOnly__NameAssignment_17493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FormNewEntityOnly__EntityAssignment_37528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FormReport__NameAssignment_17563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBoolean_in_rule__FormReport__FilterAssignment_57594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBoolean_in_rule__FormReport__OrderAssignment_87625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBoolean_in_rule__FormReport__PaginationAssignment_117656 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FormReport__EntityAssignment_127691 = new BitSet(new long[]{0x0000000000000002L});
 
 }

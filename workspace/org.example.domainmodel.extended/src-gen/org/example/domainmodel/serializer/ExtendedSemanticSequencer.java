@@ -162,8 +162,8 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME));
-			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_NEW_ENTITY_ONLY__ENTITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_NEW_ENTITY_ONLY__ENTITY));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_TYPES__ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_TYPES__ENTITY));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -175,12 +175,14 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (name=ID filter=Boolean order=Boolean pagination=Boolean)
+	 *     (name=ID filter=Boolean order=Boolean pagination=Boolean entity=[Entity|ID])
 	 */
 	protected void sequence_FormReport(EObject context, FormReport semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_TYPES__ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_TYPES__ENTITY));
 			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_REPORT__FILTER) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_REPORT__FILTER));
 			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_REPORT__ORDER) == ValueTransient.YES)
@@ -194,6 +196,7 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		feeder.accept(grammarAccess.getFormReportAccess().getFilterBooleanParserRuleCall_5_0(), semanticObject.getFilter());
 		feeder.accept(grammarAccess.getFormReportAccess().getOrderBooleanParserRuleCall_8_0(), semanticObject.getOrder());
 		feeder.accept(grammarAccess.getFormReportAccess().getPaginationBooleanParserRuleCall_11_0(), semanticObject.getPagination());
+		feeder.accept(grammarAccess.getFormReportAccess().getEntityEntityIDTerminalRuleCall_12_0_1(), semanticObject.getEntity());
 		feeder.finish();
 	}
 	
@@ -213,6 +216,8 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_TYPES__NAME));
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM_TYPES__ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM_TYPES__ENTITY));
 			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM__GET) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM__GET));
 			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM__POST) == ValueTransient.YES)
@@ -221,8 +226,6 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM__PUT));
 			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM__DELETE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM__DELETE));
-			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.FORM__ENTITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.FORM__ENTITY));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);

@@ -95,5 +95,6 @@ FormReport:
 		'filter' ':' filter = Boolean
 		'order' ':' order = Boolean
 		'pagination' ':' pagination = Boolean
+		entity = [Entity]
 	'}'
 ;

@@ -1,7 +1,0 @@
-
-CREATE TABLE bruno
-(
-	id bigserial,
-	cpf text, endereco text, nascimento date, mensalidade money,
-	CONSTRAINT bruno_pkey PRIMARY KEY (id)
-);
