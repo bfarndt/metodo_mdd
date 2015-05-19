@@ -74,6 +74,23 @@
 	            <c:if test="not($currentPage/@title != '')"><c:get select="$currentPage /@name" /></c:if>
 			</h1>
 		</div>
+		<?php
+			if (isSet($_GET['success'])) {
+			?>
+				<div class="alert alert-success alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<strong>Sucesso!</strong> A a&ccedil;&atilde;o foi realizada com sucesso!
+				</div>
+			<?php
+			} elseif (isSet($_GET['error'])) {
+			?>
+				<div class="alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<strong>Erro!</strong> N&atilde;o foi poss&iacute;vel realizar a a&ccedil;&atilde;o solicitada!
+				</div>
+			<?php
+			}
+		?>
 		<c:iterate select="$currentPage/forms" var="currentForm">
 			<c:if test="(emf.eClass($currentForm)/@name = 'Form')">
 				<c:include template="templates/templateForm.jet" />

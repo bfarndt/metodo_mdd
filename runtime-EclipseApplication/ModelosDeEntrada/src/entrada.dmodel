@@ -37,4 +37,19 @@ page bruno {
 	formReportBruno
 }
 
+entity Daniel {
+	cpf: string
+	endereco: string
+}
+
+formNewEntity formNewEntityDaniel {
+	Daniel
+}
+
+page Daniel {
+	header: true
+	footer: true
+	formNewEntityDaniel
+}
+
 end
