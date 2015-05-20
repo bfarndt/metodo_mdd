@@ -70,13 +70,13 @@ class <f:uc length="1"><c:get select="$e/@name" /></f:uc>DB
 		
 	<c:iterate select="$e/Feature" var="f">
 		if (strlen($<c:get select="$e/@name" />->get<f:uc length="1"><c:get select="$f/@name" /></f:uc>()) > 0) {
-			if (srlen($where) > 0) {
+			if (strlen($where) > 0) {
 				$where .= " AND ";
 			} else {
 				$where = "WHERE ";
 			}
 			
-			$where .= "<c:get select="$f/@name" />' = " . $<c:get select="$e/@name" />->get<f:uc length="1"><c:get select="$f/@name" /></f:uc>() . "'";
+			$where .= "<c:get select="$f/@name" /> = '" . $<c:get select="$e/@name" />->get<f:uc length="1"><c:get select="$f/@name" /></f:uc>() . "'";
 		}
 	</c:iterate>
 		$query = pg_query("SELECT * FROM <f:lc><c:get select="$e/@name" /></f:lc> " . $where);

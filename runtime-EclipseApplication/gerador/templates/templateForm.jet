@@ -3,8 +3,18 @@
 		include_once "class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>.class.php";
 		include_once "class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB.class.php";
 		
+		$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>();
+		
+		<c:iterate select="$currentEntity/Feature" var="currentFeature">
+			$<c:get select="$currentFeature/@name" /> = "";
+			if (isSet($_GET['<c:get select="$currentFeature/@name" />'])) {
+				$<c:get select="$currentFeature/@name" /> = $_GET["<c:get select="$currentFeature/@name" />"];
+				$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($<c:get select="$currentFeature/@name" />);
+			}
+		</c:iterate>
+		
 		$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB();
-		$rows = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->getAll();
+		$rows = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->get($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
 	?>
 	<div class="panel panel-default">
 		<div class="panel-heading">Filtro</div>
@@ -14,15 +24,15 @@
 					<div class="input-group">
 						<c:if test="($currentFeature/DataType/@name = 'string') or ($currentFeature/DataType/@name = 'int') or ($currentFeature/DataType/@name = 'float') or ($currentFeature/DataType/@name = 'time')">
 							<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
-							<input type="text" name="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1">
+							<input type="text" name="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1" value="<?php echo $<c:get select="$currentFeature/@name" />; ?>">
 						</c:if>
 						<c:if test="($currentFeature/DataType/@name = 'currency')">
 							<span class="input-group-addon"><c:get select="$currentFeature/@name" /> (R$)</span>
-							<input type="text" name="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1">
+							<input type="text" name="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1" value="<?php echo $<c:get select="$currentFeature/@name" />; ?>">
 						</c:if>
 						<c:if test="($currentFeature/DataType/@name = 'date')">
 							<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
-							<input type="text" name="<c:get select="$currentFeature/@name" />" class="form-control datepicker" placeholder="" aria-describedby="basic-addon1">
+							<input type="text" name="<c:get select="$currentFeature/@name" />" class="form-control datepicker" placeholder="" aria-describedby="basic-addon1" value="<?php echo $<c:get select="$currentFeature/@name" />; ?>">
 						</c:if>
 						<c:if test="($currentFeature/DataType/@name = 'boolean')">
 							<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
@@ -32,7 +42,7 @@
 					<br>
 				</c:iterate>
 				<div class="btn-group btn-group" role="group" aria-label="...">
-					<button type="button" class="btn btn-primary">Filtrar</button>
+					<button type="submit" class="btn btn-primary">Filtrar</button>
 					<c:if test="($currentForm/@post = 'true')">
 						<button type="button" class="btn btn-success" onclick="javascript: add<c:get select="$currentEntity/@name" />();">Adicionar</button>
 					</c:if>
