@@ -1,0 +1,2154 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Name: %pluginName
+Bundle-ActivationPolicy: lazy
+Bundle-SymbolicName: org.eclipse.jet;singleton:=true
+Require-Bundle: org.eclipse.ant.core;bundle-version="[3.1.100,4.0.0)",
+ org.eclipse.core.resources;bundle-version="[3.2.0,4.0.0)",
+ org.eclipse.core.runtime;bundle-version="[3.2.0,4.0.0)",
+ org.eclipse.debug.core;bundle-version="[3.2.0,4.0.0)",
+ org.eclipse.emf.common;bundle-version="[2.2.0,3.0.0)";visibility:=reexport,
+ org.eclipse.emf.codegen;bundle-version="[2.2.0,3.0.0)",
+ org.eclipse.emf.ecore;bundle-version="[2.2.0,3.0.0)",
+ org.eclipse.emf.ecore.xmi;bundle-version="[2.2.0,3.0.0)",
+ org.eclipse.text;bundle-version="[3.2.0,4.0.0)";visibility:=reexport,
+ org.eclipse.core.expressions;bundle-version="[3.2.0,4.0.0)",
+ org.eclipse.core.filebuffers;bundle-version="[3.2.0,4.0.0)",
+ org.eclipse.jdt.core;bundle-version="[3.2.0,4.0.0)",
+ org.apache.ant;bundle-version="[1.6.5,2.0.0)",
+ org.eclipse.ui;bundle-version="[3.2.0,4.0.0)";resolution:=optional,
+ org.eclipse.jet.core;bundle-version="[1.0.0,2.0.0)";visibility:=reexport,
+ br.ufscar.jetmapping;bundle-version="1.0.0",
+ br.ufscar.dc.splitJETEditor;bundle-version="1.0.0"
+Bundle-Activator: org.eclipse.jet.internal.InternalJET2Platform
+Bundle-Version: 1.1.1.v201101311015
+Export-Package: org.eclipse.jet,
+ org.eclipse.jet.compiler,
+ org.eclipse.jet.internal;x-friends:="org.eclipse.jet.tests,org.eclipse.jet.ui",
+ org.eclipse.jet.internal.builder;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.compiler;x-friends:="org.eclipse.jet.tests,org.eclipse.jet.editor",
+ org.eclipse.jet.internal.compiler.templates;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.exceptions;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.extensionpoints;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.l10n;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.launch;x-friends:="org.eclipse.jet.tests,org.eclipse.jet.ui",
+ org.eclipse.jet.internal.parser;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.parser.resources;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.runtime;x-friends:="org.eclipse.jet.tests,org.eclipse.jet.ui",
+ org.eclipse.jet.internal.runtime.model;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.taglib;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.taglib.control;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.taglib.format;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.taglib.java;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.taglib.workspace;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.xpath;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.xpath.ast;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.xpath.functions;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.xpath.functions.extras;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.xpath.inspectors;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.internal.xpath.parser;x-friends:="org.eclipse.jet.tests",
+ org.eclipse.jet.runtime.model,
+ org.eclipse.jet.taglib,
+ org.eclipse.jet.taglib.java,
+ org.eclipse.jet.taglib.workspace,
+ org.eclipse.jet.transform,
+ org.eclipse.jet.xpath,
+ org.eclipse.jet.xpath.inspector
+Bundle-ManifestVersion: 2
+
+Name: org/eclipse/jet/internal/taglib/workspace/ProjectTag.class
+SHA1-Digest: UmCp7+hUWL03OLe4vD+rdtJ35Q8=
+
+Name: org/eclipse/jet/internal/xpath/ast/UnionExpr.class
+SHA1-Digest: Ra4SEcDBU8+OLSkUmLmJsAl8f/4=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/EMFEAttrAsElementWrapp
+ erInspector.class
+SHA1-Digest: EeF4Nf9Fft/loxzNGEcN/8FWWoI=
+
+Name: org/eclipse/jet/internal/xpath/ast/BinaryOp$Multiply.class
+SHA1-Digest: WNerrUx1CuczvhwAdkCSkDVcel4=
+
+Name: org/eclipse/jet/internal/xpath/functions/LocalNameFunction.class
+SHA1-Digest: YO93eSQhbh3NcNHmIo6dsXAvEYU=
+
+Name: org/eclipse/jet/internal/taglib/control/ReplaceStringsTag.class
+SHA1-Digest: 1eaTiJF9oHd+bbJU3iWJl83e404=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$2.class
+SHA1-Digest: v17NbRySZ32Z/OYsQkEMa7VUNzY=
+
+Name: org/eclipse/jet/JET1TemplateManager$ITemplateRunner.class
+SHA1-Digest: gAKqA0rix9G04x8YSA24IEg//Ig=
+
+Name: org/eclipse/jet/internal/taglib/control/IDeepIterateStrategy.cla
+ ss
+SHA1-Digest: zDStbsXbiCHdQTtvkaB/FYxJjJE=
+
+Name: org/eclipse/jet/internal/xpath/parser/XPathParser.class
+SHA1-Digest: kIBfxM0ymYklnOwJkFF/xsikvtg=
+
+Name: org/eclipse/jet/internal/taglib/format/Messages.class
+SHA1-Digest: JC2wAe81DTYZJph+PVLdU6LB5FI=
+
+Name: org/eclipse/jet/compiler/XMLElement.class
+SHA1-Digest: Ab7KNPlGtvpQ/8d5g0zg+XCZrJk=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/EObjectInspector$Eleme
+ ntNameTester.class
+SHA1-Digest: 0+x8F2eC89k+wi7EHvIlmVz3znc=
+
+Name: org/eclipse/jet/internal/parser/resources/ResourceTemplateResolv
+ erHelper.class
+SHA1-Digest: 8YE4gTzLbA5WRKPyMjLbzKXLctY=
+
+Name: org/eclipse/jet/BodyContentWriter$LazyLineTracker.class
+SHA1-Digest: foerfKPNit5aU0B1ACHEWuupcu0=
+
+Name: org/eclipse/jet/internal/runtime/JETBundleManager.class
+SHA1-Digest: hJ9qC8AUox5Xr055UdR+FRAN4yM=
+
+Name: org/eclipse/jet/internal/taglib/control/LoadContentTag.class
+SHA1-Digest: fCz3qc/X5pmuZ7OqKPRALa1nmEQ=
+
+Name: org/eclipse/jet/internal/xpath/ast/BooleanExpr.class
+SHA1-Digest: 5a5RO/gMRaWo32wiZbWMOomcW10=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$FollowingAxis.class
+SHA1-Digest: /FDUcZ8C8QZBIasgpDM8Fs7ogro=
+
+Name: org/eclipse/jet/runtime/model/IModelLoader.class
+SHA1-Digest: cRbqH3Yr7wER36dqfUHxEATPUPI=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$Lt.class
+SHA1-Digest: RtCWEDF38EEm5xCL4o+a2RPlu0U=
+
+Name: org/eclipse/jet/internal/taglib/control/DeepContentTag.class
+SHA1-Digest: o6cdFHxyDcyVLdKn2Pszl+6gAz8=
+
+Name: org/eclipse/jet/internal/taglib/control/messages.properties
+SHA1-Digest: dzNHmvKXBLQ8Kko60LyaSHcLdAM=
+
+Name: org/eclipse/jet/internal/runtime/ProjectJETBundleProvider$1.clas
+ s
+SHA1-Digest: eLgdLUhbw3avLw1lv2QdpvGFyAE=
+
+Name: org/eclipse/jet/internal/compiler/TagUsageVisitor.class
+SHA1-Digest: CxRVKUiXlAh+xidbjW5koS2kmZM=
+
+Name: org/eclipse/jet/internal/xpath/functions/CeilingFunction.class
+SHA1-Digest: A5ZXXA+PSghz+l8TwaWA6LL+IV0=
+
+Name: org/eclipse/jet/taglib/EmptyTag.class
+SHA1-Digest: UfQ7BZQy7361PYHP/2tfUGp1HRs=
+
+Name: org/eclipse/jet/internal/taglib/control/SetVariableTag.class
+SHA1-Digest: F30o/eQCyA/IlVgE3OML0LBb+p4=
+
+Name: org/eclipse/jet/devaspects/URLConstruction.aj
+SHA1-Digest: SQknLunxsr1GObELCAXY71V+jto=
+
+Name: org/eclipse/jet/taglib/CustomTag.class
+SHA1-Digest: gFpQwhvpVro08zzj6Yvs87GWusw=
+
+Name: org/eclipse/jet/internal/InternalJET2Platform.class
+SHA1-Digest: d0qj7RKLM2A3vOSZDpxlTl09bNA=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/jdt/NonDescriptorAttri
+ bute$NodeType.class
+SHA1-Digest: IPbRsplTAsw9LX54sGSdDqgeFGg=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$LinkedAttribute.class
+SHA1-Digest: eg1hwMys8LGiWVSncQMinycfY68=
+
+Name: org/eclipse/jet/internal/taglib/workspace/CopyFileTag.class
+SHA1-Digest: tD3Yj9lpiz+kUEFdd8hf3Uj3tdU=
+
+Name: org/eclipse/jet/xpath/DefaultXPathFunctionResolver.class
+SHA1-Digest: DcUQDtrlrd/aqw5alLCwT1ivD6A=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/EscapeJavaWhites
+ paceFunction.class
+SHA1-Digest: kT31UxHPlthIl8gdt1g5svUu7L4=
+
+Name: org/eclipse/jet/internal/taglib/control/ChooseTag.class
+SHA1-Digest: eSbZOb9XvaL18pKVmuAsfx653A8=
+
+Name: org/eclipse/jet/internal/runtime/DoNothingRuntimeTagElement.clas
+ s
+SHA1-Digest: zH8EbZ5RbWeRWXU/1R7SZM+B7+w=
+
+Name: org/eclipse/jet/internal/runtime/model/EntityResolverFactory$WST
+ EntityResolver.class
+SHA1-Digest: 5ArZ9a+XJ+baDR6jGRsGSyPHVYU=
+
+Name: org/eclipse/jet/xpath/inspector/CopyElementException.class
+SHA1-Digest: SycENfkJKTmeF0coJUvOQkWx/Ho=
+
+Name: org/eclipse/jet/internal/xpath/functions/NotFunction.class
+SHA1-Digest: Scp4i9IjMb4shyo5wRnYEbq6AP4=
+
+Name: org/eclipse/jet/internal/taglib/control/VisitTag.class
+SHA1-Digest: yEzkADtXF074jCiS46KKLFaDCLs=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$Eq.class
+SHA1-Digest: v1eLx7xbVTfFsXL+ZznasFmQSa0=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/jdt/InspectNonDescript
+ orAttribute.class
+SHA1-Digest: Do6Tcr8DoS5DSGNL08xCAZR0VyI=
+
+Name: org/eclipse/jet/internal/taglib/java/AbstractJavaFileTag.class
+SHA1-Digest: Y96VaLyWlMgDYd+4Z7tdeG9zPNQ=
+
+Name: org/eclipse/jet/taglib/workspace/WorkspaceContextExtender$Contex
+ tData.class
+SHA1-Digest: SQgSDLJUEJ6Cwqp/j2Aja3TCbm8=
+
+Name: org/eclipse/jet/internal/runtime/DirectoryBundleProvider$1.class
+SHA1-Digest: sn+L29BMvVyh4j3/vBXwpxNIg5I=
+
+Name: org/eclipse/jet/xpath/XPathUtil$NodeSetAdapter.class
+SHA1-Digest: tLBrpFHp6TmCT8FIF9JeWH6U0Zk=
+
+Name: org/eclipse/jet/internal/taglib/format/ResourceBundleUtil.class
+SHA1-Digest: IGMghYG30jGYvqTUX5VkIdHWUuA=
+
+Name: org/eclipse/jet/internal/taglib/format/MessageTag.class
+SHA1-Digest: S+aa+Gk9pv1JbEncWTVuebTwdyY=
+
+Name: org/eclipse/jet/internal/xpath/functions/BooleanFunction.class
+SHA1-Digest: VzFZMQuZxwZgChaYS0sLGKRssac=
+
+Name: org/eclipse/jet/internal/taglib/control/DeepIterateEntry.class
+SHA1-Digest: QZ5ffdapP9IG0Yhi7m/GY5EgEIQ=
+
+Name: org/eclipse/jet/internal/taglib/DocumentHelper$InsertAfterEmptyP
+ osition.class
+SHA1-Digest: rLAiQ6CHCrdIpazNKTqN5bYeDzo=
+
+Name: org/eclipse/jet/internal/extensionpoints/messages.properties
+SHA1-Digest: v+yU5mo8OXjhhvV/WYlUcADcaCw=
+
+Name: org/eclipse/jet/internal/extensionpoints/XPathFunctionsManager.c
+ lass
+SHA1-Digest: haqS3fPE2h7AKYifHnwNqxE1e3E=
+
+Name: org/eclipse/jet/internal/compiler/JETCompilerState.class
+SHA1-Digest: nnsszfJ+q93e4BoCEzWvAGJV+7c=
+
+Name: org/eclipse/jet/internal/taglib/control/IteratingTagStatus.class
+SHA1-Digest: UVz3MvAUQyFx23uhIea3XdUCBUA=
+
+Name: org/eclipse/jet/internal/xpath/XPathImpl.class
+SHA1-Digest: mDnxs9FRwo5/AHrDOA4FniA+eqo=
+
+Name: org/eclipse/jet/internal/xpath/AnnotationManagerImpl.class
+SHA1-Digest: s+WeFcShENagKiIMrdX1FdBEUgY=
+
+Name: org/eclipse/jet/internal/runtime/SafeContainerRuntimeTag$2.class
+SHA1-Digest: KPeKssrTkZv2jqt9I068i1PfHBE=
+
+Name: org/eclipse/jet/compiler/JET2CompilationUnit.class
+SHA1-Digest: rf8m8zs9XdgYNfLIVGV0R3c/AnA=
+
+Name: org/eclipse/jet/internal/taglib/java/JavaPackageAction.class
+SHA1-Digest: nKcDCyYncNynKJzAM0Iwpz2wdyI=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$SelfAxis.class
+SHA1-Digest: 2YVwwARDRevrWUN/gujiOkdHmdc=
+
+Name: org/eclipse/jet/internal/xpath/ast/BinaryOp$Mod.class
+SHA1-Digest: qVt0HlA4pLIKIZqFU/2JEO/AU0A=
+
+Name: org/eclipse/jet/WriterPositionException.class
+SHA1-Digest: zUBZbQy23eojnoXRP3pVakEXE5c=
+
+Name: org/eclipse/jet/internal/extensionpoints/WorkspaceTagLibraryMana
+ ger.class
+SHA1-Digest: 1Oi6OXKicPrArlzZlniDK4gwiJY=
+
+Name: org/eclipse/jet/internal/runtime/SafeEmptyRuntimeTag$1.class
+SHA1-Digest: HsplW8+Dc01O8LW2YD6718Ml/E0=
+
+Name: org/eclipse/jet/internal/parser/resources/ResourceTemplateInput.
+ class
+SHA1-Digest: 4jjX0sllZxqBMTU1BnJXjXP+Lik=
+
+Name: org/eclipse/jet/internal/taglib/control/AbstrateDeepIterateStrat
+ egy.class
+SHA1-Digest: m+8uSJ/NmCSQfy3lWdCuKm3a1nM=
+
+Name: org/eclipse/jet/transform/TransformContextExtender.class
+SHA1-Digest: QIXP33axaFb8tJZMv0z9AKZtD1A=
+
+Name: org/eclipse/jet/internal/compiler/templates/WriteJavaExpressionT
+ emplate.class
+SHA1-Digest: er2RFRWK632GhJuXQ0GTzrPUh74=
+
+Name: org/eclipse/jet/internal/compiler/templates/JET2TransformGenerat
+ or.class
+SHA1-Digest: O0+Q6ARSz0stSLUH8Xd4hkSUeXU=
+
+Name: org/eclipse/jet/taglib/IteratingTag.class
+SHA1-Digest: V623l9C+/K4mZATJkeO183ogvXY=
+
+Name: org/eclipse/jet/internal/runtime/CustomTagFactory.class
+SHA1-Digest: ZTaY8udbdxZdXBnR+g4Zu1o7llA=
+
+Name: .deprecations/DEPRECATE_org.eclipse.jet.JET2Platform.execute(jav
+ a.lang.String_java.lang.Object_org.eclipse.core.runtime.IProgressMoni
+ tor).xml
+SHA1-Digest: ds/AcsN9Z3gtIvHS/eH2bH1QjFI=
+
+Name: org/eclipse/jet/XPathContextExtender.class
+SHA1-Digest: dhL5EvLxL+swFGVK1nc+sOKKWLQ=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/Lower_caseFuncti
+ on.class
+SHA1-Digest: gKpzh3RLzCYcexdyU9odqsEhFoM=
+
+Name: org/eclipse/jet/internal/runtime/model/EMFModelLoader.class
+SHA1-Digest: 9pjnD9j8JvNye/hB71Y85bvAgDw=
+
+Name: org/eclipse/jet/internal/extensionpoints/XPathFunctionNotImpleme
+ ntedWrapper.class
+SHA1-Digest: kvl4P2gnZPWSmyUE/xQabZoMZK0=
+
+Name: org/eclipse/jet/JET2Platform$5.class
+SHA1-Digest: 1LwiOKcOgzMpwYR34Re4OR/ZqnM=
+
+Name: org/eclipse/jet/internal/taglib/control/AbstractChooseAlternativ
+ e.class
+SHA1-Digest: fE/FuR+a4H9EMh3VwR4apMPW06k=
+
+Name: org/eclipse/jet/internal/xpath/EmbeddedXPath$3.class
+SHA1-Digest: EqcCBrg51LJME8FcbS8O/KobC4U=
+
+Name: org/eclipse/jet/internal/parser/LineInfo.class
+SHA1-Digest: Hk3uyCAH/gOP3dPss0dKeAtcF0A=
+
+Name: org/eclipse/jet/internal/taglib/format/TagFactory.class
+SHA1-Digest: YrSeyo40PUWEaotAF8Nu1IqEGTQ=
+
+Name: org/eclipse/jet/internal/l10n/JET2Messages.properties
+SHA1-Digest: P4V1vjYxuUKpzzD7VRgBJ5TdwA8=
+
+Name: org/eclipse/jet/internal/runtime/ProjectJETBundleDescriptor.clas
+ s
+SHA1-Digest: hYeJM0vpaJ4QobwjgytjDolTPhA=
+
+Name: org/eclipse/jet/internal/compiler/TemplateRunner.class
+SHA1-Digest: kPT7iS68XlqKp7cZhihfpPp7XRU=
+
+Name: org/eclipse/jet/internal/runtime/InstalledJETBundleProvider.clas
+ s
+SHA1-Digest: kS0srLBKqlFjcYOMFHDl5wczK1E=
+
+Name: org/eclipse/jet/internal/taglib/control/NodeAttributesTag.class
+SHA1-Digest: TgSAu6+J/Mel4qtRqhKbIcIj69E=
+
+Name: org/eclipse/jet/taglib/TagInstanceFactory.class
+SHA1-Digest: Oy8Bdk6n6THg2mImrweaImJ3jfs=
+
+Name: org/eclipse/jet/internal/runtime/model/EclipseExtensionLoaderFac
+ tory.class
+SHA1-Digest: r0NBphE8BSB+iDQxr13hALn3BoQ=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$DescendantAxis.class
+SHA1-Digest: 9HInkrAT+L0CV8+/gS4QQhlSxAE=
+
+Name: org/eclipse/jet/internal/runtime/model/WorkspaceLoadContext.clas
+ s
+SHA1-Digest: +gkvxvajQAPfStLibo0fCL9iiNI=
+
+Name: org/eclipse/jet/internal/xpath/functions/StartsWithFunction.clas
+ s
+SHA1-Digest: QE2l28WpR+f6JhjTu+RjMZ/Ob0Y=
+
+Name: org/eclipse/jet/JET2TemplateManager$ITemplateRunner.class
+SHA1-Digest: 9abTS8yruLZFSEbFu9HNvHggDUY=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$AnnotationAction.class
+SHA1-Digest: tnXVLGujJMs/zJf71RJ1zzDFqJg=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeTestKind$5.class
+SHA1-Digest: hLOxdHb+VCo2fPvzfqvuoVt2LoQ=
+
+Name: org/eclipse/jet/internal/taglib/control/DeepIterateTag$LoopStatu
+ s.class
+SHA1-Digest: a00YUWzfK+q2qrpEKCvArpQCoxo=
+
+Name: org/eclipse/jet/internal/compiler/MethodBodyCreator.class
+SHA1-Digest: l7v4au+KbfY6o02NJUQONk1PvlM=
+
+Name: org/eclipse/jet/internal/taglib/control/BreadthFirstStrategy.cla
+ ss
+SHA1-Digest: 3+PfIbRbm/3kVKWcFWNqZLQecmg=
+
+Name: org/eclipse/jet/internal/compiler/templates/WriteTextElementTemp
+ late.class
+SHA1-Digest: Gs717JR2nd+wK5gOFKL6ga97kYA=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/EClassFunction.c
+ lass
+SHA1-Digest: xKRZcNG7GJ6/LDAl1BQ2A84oC20=
+
+Name: org/eclipse/jet/internal/extensionpoints/PluginProjectMonitor.cl
+ ass
+SHA1-Digest: iNDP/jWqASraPCByH540dRyD9xQ=
+
+Name: org/eclipse/jet/internal/compiler/templates/v2/JET2JavaGenerator
+ New$2.class
+SHA1-Digest: Oaol79UpkLe0Z9ImqjqZM2xyv8A=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$AncestorAxis.class
+SHA1-Digest: qWcoBVEEl5I8RS5Onz66wHdE6mY=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/EvalFunction.cla
+ ss
+SHA1-Digest: 8hGWSbVpAFUkw3ZYgZWuejwJLs0=
+
+Name: org/eclipse/jet/internal/taglib/format/IndentTag.class
+SHA1-Digest: /rTyJrSbzT0e8IsvlZZ64SaiE3s=
+
+Name: org/eclipse/jet/internal/parser/resources/WorkspaceTemplateResol
+ verBuilder.class
+SHA1-Digest: CVdRfpIkcmp50z6wlZgzIgjrAaY=
+
+Name: org/eclipse/jet/JET2TemplateManager$ITemplateOperation.class
+SHA1-Digest: KnVw5rXGmeEck2tUvkZKYzLKRAU=
+
+Name: org/eclipse/jet/internal/xpath/functions/NamespaceUriFunction.cl
+ ass
+SHA1-Digest: mNGHIHXxsklCg3k3+DBNSl2Ex+o=
+
+Name: org/eclipse/jet/internal/taglib/format/FormatNowTag.class
+SHA1-Digest: azTNhsVw10Y+DgXvFm4rxLEe5b0=
+
+Name: org/eclipse/jet/internal/taglib/workspace/WsCopyBinaryFileAction
+ .class
+SHA1-Digest: cVlARdSK75pkFe14OE0Ozq2Q/xA=
+
+Name: org/eclipse/jet/xpath/XPathFunction.class
+SHA1-Digest: U/Hl29HvuVoMtTClydI8afps7HM=
+
+Name: org/eclipse/jet/internal/taglib/java/ImportsLocationTag$ImportsP
+ osition.class
+SHA1-Digest: f7YYvs0+Unm6P09Qal42Oaz3ur8=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$1.class
+SHA1-Digest: AM+185HkGf58UD4+/Tiyq1la5K8=
+
+Name: org/eclipse/jet/xpath/Context$1.class
+SHA1-Digest: U/gxydvn4hpjihW4BFy61q4Dpc4=
+
+Name: org/eclipse/jet/xpath/XPath.class
+SHA1-Digest: b7PEzC49Pa7mP4bruFxWm3Pokyk=
+
+Name: org/eclipse/jet/internal/compiler/templates/v1/JET1JavaGenerator
+ .class
+SHA1-Digest: kLRFfRYpHOek2wUog95/sab4i3M=
+
+Name: org/eclipse/jet/compiler/JET2AST.class
+SHA1-Digest: 1AYnk3L35nvQlU/ZFBb0xyUXLgA=
+
+Name: org/eclipse/jet/internal/taglib/java/ImportTag.class
+SHA1-Digest: m8EP+tgCvon06fGEmtMdnQsbnxw=
+
+Name: org/eclipse/jet/internal/core/equinox/EquinoxContextLogEntryFact
+ ory.class
+SHA1-Digest: eOIRQM6G0S/F/79RjPuBSRKkY1g=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$Gte.class
+SHA1-Digest: gIkqlXQyS3R+n5DE6Wl0DNgANwI=
+
+Name: org/eclipse/jet/xpath/inspector/InspectorManager$UnknownObjectIn
+ spector.class
+SHA1-Digest: FK2acv1VajUns2u43hxgYYW2Oe0=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$ReadOnlyAttribute.class
+SHA1-Digest: oKe0GMy2fCsrLMf5lI5aBOiCH5k=
+
+Name: org/eclipse/jet/internal/taglib/control/PreorderStrategy.class
+SHA1-Digest: b1/JKzFW6bMannAM4qhmjQb7ZBQ=
+
+Name: org/eclipse/jet/compiler/JET2Directive.class
+SHA1-Digest: s6YejWzanrwtwY5u0hfBgMo2bZU=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeTestKind.class
+SHA1-Digest: yjlYzjDJ0YuFacbOvCC/TBLwQ4Y=
+
+Name: jetant.jar
+SHA1-Digest: vikOm0cWYgndOVUJjfm+PRJUDWI=
+
+Name: org/eclipse/jet/internal/runtime/model/EntityResolverFactory$URI
+ ResolverPluginClassProxy.class
+SHA1-Digest: F9Uoi4RJruCcUcN+sSXlxY6H4h8=
+
+Name: org/eclipse/jet/internal/runtime/RuntimeLoggerContextExtender$Mu
+ ltipleListenerState.class
+SHA1-Digest: V/7nqW6a1CteXescgMOV0AY5jhk=
+
+Name: org/eclipse/jet/internal/parser/resources/WorkspaceTemplateResol
+ verHelperFactory.class
+SHA1-Digest: hOdzh0w8VLKnRVNc4tsI4qZ40rY=
+
+Name: org/eclipse/jet/compiler/JET2Expression.class
+SHA1-Digest: TgHvk8auaJrOX7JQ3tVqiUoKYbY=
+
+Name: org/eclipse/jet/internal/core/equinox/ContextLogEntryAdapterFact
+ ory.class
+SHA1-Digest: ktwHTElrtwVRclaPY2mpP8nO+MQ=
+
+Name: org/eclipse/jet/internal/extensionpoints/XPathFunctionLazyLoadWr
+ apper.class
+SHA1-Digest: 8Tx0U/udtikwQ3HQJL1iQoVieUM=
+
+Name: org/eclipse/jet/internal/xpath/ast/StringNode.class
+SHA1-Digest: 0MpEV84JeStZt5FhWN6q0f3pyxc=
+
+Name: org/eclipse/jet/internal/xpath/ast/Variable.class
+SHA1-Digest: IyO1+Jyz/V8uMQqUisjdMIhEBn4=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeSetExpr.class
+SHA1-Digest: ZW6PCNZ6xqIzm4lnp1l5eSPbR3Q=
+
+Name: org/eclipse/jet/internal/xpath/ast/BinaryOp$Subtract.class
+SHA1-Digest: LFcgTC7IEq6eeaGO1Tchn8dq1fY=
+
+Name: org/eclipse/jet/internal/compiler/templates/v2/JET2JavaGenerator
+ New$7.class
+SHA1-Digest: 2bbAiDCQi0gwYxreEW0oQtITsbY=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/jdt/NonDescriptorAttri
+ bute$StartPosition.class
+SHA1-Digest: 8hvQdni9tJ1IMXQ9noiq2tRvxgs=
+
+Name: org/eclipse/jet/internal/extensionpoints/PluginProjectMonitor$1.
+ class
+SHA1-Digest: mFLuNpv/P2b8NpmI4BlFL6un48Q=
+
+Name: org/eclipse/jet/XPathContextExtender$ContextData.class
+SHA1-Digest: +7QyGlydyooX90bwj1frHP0+WNk=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/jdt/SimplePropertyDesc
+ riptorAttribute.class
+SHA1-Digest: EfDuTHy8j6GTgW77Mw71huSc2s4=
+
+Name: org/eclipse/jet/internal/taglib/java/messages.properties
+SHA1-Digest: VvAFI9jQdGYDrplJ1LEQD+vRYG4=
+
+Name: org/eclipse/jet/internal/launch/JET2TransformationDelegate.class
+SHA1-Digest: 2MSTWjg+cahFjrMJgKQN29EBctQ=
+
+Name: org/eclipse/jet/internal/taglib/DocumentHelper$OverrideablePosit
+ ionUpdater.class
+SHA1-Digest: Y1298GNulm7RGjqYhkczZkzS5n8=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/jdt/NonDescriptorAttri
+ bute$Length.class
+SHA1-Digest: 3oj/eQ2uRt5XKwmEo/Iu3Sa+s+s=
+
+Name: org/eclipse/jet/internal/taglib/ExtensionTagLibraryImpl.class
+SHA1-Digest: mUcAXQuMHVzF+zr+uov4YMi2Hko=
+
+Name: org/eclipse/jet/internal/taglib/workspace/RebuildWorkspaceAction
+ .class
+SHA1-Digest: nkvNzSEMLr6mRgmFhMD6if9V/wM=
+
+Name: org/eclipse/jet/internal/runtime/DeployedJETBundleProvider.class
+SHA1-Digest: 4hJ7WHl4wjDxUfrofifb/tVyQtI=
+
+Name: org/eclipse/jet/internal/taglib/format/AbstractCaseShiftTag.clas
+ s
+SHA1-Digest: /AQShnfPLMYzfEBYOk4JJtHKFAk=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$FileExtensionAttribute.class
+SHA1-Digest: QQovAXLBdE4fdAJukVKLlr2q5Ys=
+
+Name: org/eclipse/jet/internal/taglib/java/ImportsLocationTag.class
+SHA1-Digest: p2qR6xglUbFx3AXPeA2Kr7mxYJo=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$RelativeTest.class
+SHA1-Digest: jprkgDzSfPI214RgS3CzGLaSUII=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceInspector.clas
+ s
+SHA1-Digest: GrHpacdef1gm7CPy7yT7bRKSEJc=
+
+Name: org/eclipse/jet/internal/compiler/PreferenceValueUtil.class
+SHA1-Digest: 9vhwttiI+k690uMYlbWpytToSgU=
+
+Name: org/eclipse/jet/internal/launch/JETStreamMonitor.class
+SHA1-Digest: iGtJaQZEFkCV8Mxk3SNh7IUHdME=
+
+Name: org/eclipse/jet/internal/parser/LineInfo$1.class
+SHA1-Digest: EigswjYyHXHUsCNIMnaButMjwps=
+
+Name: org/eclipse/jet/internal/SavedStateManager.class
+SHA1-Digest: pGkoveqo2o6LWDzUpS+qaTYwDDg=
+
+Name: org/eclipse/jet/internal/runtime/SafeIteratingRuntimeTag$2.class
+SHA1-Digest: r0jEVIQu3tDhThawkwXe52dLk1o=
+
+Name: org/eclipse/jet/internal/xpath/parser/XPathTokenScanner$NumberRu
+ le.class
+SHA1-Digest: Wdm70/1CrTpVjK75fNEN8wz31bE=
+
+Name: org/eclipse/jet/JET2TemplateManager$TemplateRunnerImpl.class
+SHA1-Digest: 0WAj8URM/yCAFbIl39KTT8gpzgg=
+
+Name: org/eclipse/jet/internal/taglib/workspace/WsProjectAction.class
+SHA1-Digest: DV/eNKoT0mGkvmr9Yon3aB1wuf0=
+
+Name: org/eclipse/jet/runtime/model/IModelLoaderDescription.class
+SHA1-Digest: lnjU0+sHjfoxegb5EnqA3mP26Q0=
+
+Name: org/eclipse/jet/internal/xpath/parser/XPathTokenScanner$StringLi
+ teralRule.class
+SHA1-Digest: EqdwpvxLqGT076d0mIzuV0Er6WI=
+
+Name: org/eclipse/jet/internal/runtime/SafeContainerRuntimeTag$1.class
+SHA1-Digest: cGWAboX/IDYqU9qnJSXYUpE7/rE=
+
+Name: org/eclipse/jet/internal/taglib/control/StringTokensTag$StringTo
+ ken.class
+SHA1-Digest: l13TO1dXg1dSMo1t/88ERoAgiz0=
+
+Name: org/eclipse/jet/internal/xpath/ast/UnaryMinus.class
+SHA1-Digest: zFder+GYEiegSnScJMGP2KRawu8=
+
+Name: ModelingFeature.png
+SHA1-Digest: ADlLWFV0eQ74YnLvHnPFkYLeLrs=
+
+Name: org/eclipse/jet/compiler/JET2Scriptlet.class
+SHA1-Digest: 6ifwAtcpp6iO+pt9a2+Ly87ycF0=
+
+Name: org/eclipse/jet/internal/runtime/TagFactoryImpl.class
+SHA1-Digest: opyJ3gHgvid3D6vMshxoc8pXPTE=
+
+Name: org/eclipse/jet/internal/taglib/java/MergeTag$MergePosition.clas
+ s
+SHA1-Digest: WTKeb6SkHI6DTVu7u7P+/9gkJvM=
+
+Name: org/eclipse/jet/internal/xpath/ast/Step.class
+SHA1-Digest: SB9DMpfFQPF6kZv41JLic/1fz4c=
+
+Name: org/eclipse/jet/internal/xpath/ast/FilterExpr.class
+SHA1-Digest: HpLs1wAzlF81/ONvx6HRhM1T1cE=
+
+Name: org/eclipse/jet/internal/runtime/SafeOtherRuntimeTag$4.class
+SHA1-Digest: YNNuCa5Eq2NBLjiJKUztqrM7k14=
+
+Name: org/eclipse/jet/internal/builder/WorkspaceCompiler.class
+SHA1-Digest: 9TjyAylZ1ArxJcstq4XI2Erb1+I=
+
+Name: org/eclipse/jet/internal/xpath/functions/CountFunction.class
+SHA1-Digest: gGelTMZnHnpMpSKQQcrmtxtPSPk=
+
+Name: org/eclipse/jet/internal/xpath/EmbeddedXPath.class
+SHA1-Digest: Umr/NSRR9xao1qQVFnxJTgOSaU8=
+
+Name: org/eclipse/jet/internal/taglib/control/DeepIterateTag.class
+SHA1-Digest: B9pRb1a8B2qH9a98QVjmG2VqJcA=
+
+Name: org/eclipse/jet/internal/taglib/control/VisitorTag.class
+SHA1-Digest: cl38Kv4smEVbJSrbg0Bnjfcr7yo=
+
+Name: org/eclipse/jet/internal/runtime/model/EMFXMLModelLoader$MyExten
+ dedMetaData.class
+SHA1-Digest: 9tQ907SOUIHAST76DCePnp8TsVE=
+
+Name: schema/xpathFunctions.exsd
+SHA1-Digest: U4WrofOrZlUG7r7UbT3g0+1vS5A=
+
+Name: org/eclipse/jet/taglib/AbstractIteratingTag.class
+SHA1-Digest: 7eWBNZx6Fk03FsYpgSIHPZO/MOE=
+
+Name: org/eclipse/jet/internal/xpath/ast/Function.class
+SHA1-Digest: 88Luqnq3x8Dfb2PVzIGliw3TuSc=
+
+Name: org/eclipse/jet/internal/runtime/SafeCustomRuntimeTag$TagSafeRun
+ nable.class
+SHA1-Digest: RiWt2l3puTtD8ltOf/GJSKo70Tg=
+
+Name: org/eclipse/jet/internal/xpath/parser/XPathTokens.class
+SHA1-Digest: mN7sqNDoNpX2GxC+LKilo/2PoUY=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/Upper_caseFuncti
+ on.class
+SHA1-Digest: P2vex7BK+SfZja4FOhSipQ1y1Cc=
+
+Name: org/eclipse/jet/internal/taglib/DocumentHelper$IPositionUpdaterO
+ verride.class
+SHA1-Digest: 9RijJKRDtmE2bEGw1aT4wzUWdXU=
+
+Name: org/eclipse/jet/taglib/MarkerHelper$MarkerPosition.class
+SHA1-Digest: QN7xmJQCPtNcqWhcQPxWe/UQmpk=
+
+Name: org/eclipse/jet/internal/xpath/parser/Token.class
+SHA1-Digest: ei9SlDjQe0JOGkTjM2Y5QdrtYcA=
+
+Name: org/eclipse/jet/JET2Platform$4.class
+SHA1-Digest: Ej3bU3SIUmi4KqgF0h9MVl7ffKo=
+
+Name: org/eclipse/jet/internal/builder/JET2Builder.class
+SHA1-Digest: I/kVb7dtzYiSHZQaS/VClpGL/yU=
+
+Name: org/eclipse/jet/internal/xpath/EmbeddedXPath$2.class
+SHA1-Digest: /yOV5ZPl8S6OLSFubfn+T6dQfWY=
+
+Name: org/eclipse/jet/taglib/UserRegionHelper.class
+SHA1-Digest: 7yoO66wD4SLD6gSJn7lksbSdKwI=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/CardinalityFunct
+ ion.class
+SHA1-Digest: ywsA8mdF9a37nymW4Hn2EN5N5Kc=
+
+Name: org/eclipse/jet/internal/compiler/templates/XMLStartGenerator.cl
+ ass
+SHA1-Digest: QFMeAGYuSoTOEg+ocZtNI8phQlI=
+
+Name: org/eclipse/jet/transform/IJETBundleDescriptor.class
+SHA1-Digest: cavieiDBSrqFOQHj8so6oGtB8kc=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$FollowingSiblingAxis.cla
+ ss
+SHA1-Digest: 9oNWa9QivEIEpRpeNyyQ8BOO/1U=
+
+Name: org/eclipse/jet/internal/taglib/control/RemoveElementTag.class
+SHA1-Digest: R30OWGDtzxpnt9wbMJsEQJWwc2Y=
+
+Name: org/eclipse/jet/internal/xpath/functions/PositionFunction.class
+SHA1-Digest: b4FOUq8id1gB+oJBU7GVUZR1hPE=
+
+Name: org/eclipse/jet/internal/compiler/SafeJETASTVisitor.class
+SHA1-Digest: s76kK5gYQT33z0XCYcXqd09RtBE=
+
+Name: org/eclipse/jet/internal/InternalJET2Platform$MethodTimer.class
+SHA1-Digest: fyucRqt5wN2e1MgZEmOytc+5OAE=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$ProjectAttribute.class
+SHA1-Digest: WqoVN93Icb2oXe4ovfFWnkRH45c=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$PrecedingSiblingAxis.cla
+ ss
+SHA1-Digest: GvLHk/ghrGZ6amkuHmJPuFig2/g=
+
+Name: org/eclipse/jet/internal/xpath/functions/TrueFalseFunction.class
+SHA1-Digest: 1rGKL/4aw3ldpc/X3GStSLPVqmY=
+
+Name: org/eclipse/jet/CoreJETException.class
+SHA1-Digest: YjuAf/b2ZY++ArU7+ra/Kx0jkGI=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeTestKind$4.class
+SHA1-Digest: phB5kQxSSHcSL0dPiyb+f2PE7rQ=
+
+Name: org/eclipse/jet/internal/taglib/control/OverrideTag.class
+SHA1-Digest: 0CItvA8iHnHPq6C/1rxZ0H28Hvc=
+
+Name: org/eclipse/jet/xpath/NodeSetUtil$NodeSetAdaptor.class
+SHA1-Digest: km69MBxkVKa+DBGqRAkQ/ngM8lI=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeTest$SimpleKindNodeTest.c
+ lass
+SHA1-Digest: j0TDSbgt8gvAHRHuq6q9wBPcKE4=
+
+Name: about.html
+SHA1-Digest: pDSgFSJT6fRI+zo3RLgV+9RIAuw=
+
+Name: org/eclipse/jet/taglib/AbstractFunctionTag.class
+SHA1-Digest: CaJjOXBwtpX/nITWbPKPgrYTPCE=
+
+Name: org/eclipse/jet/internal/taglib/java/PackageTag.class
+SHA1-Digest: NZ/JdqEsE6M1O11DwUP1oGbWY6k=
+
+Name: org/eclipse/jet/internal/SavedStateManager$1.class
+SHA1-Digest: q5Jt3ksRX0C/8iuPMgB8+Js2ZGE=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/AnyAttributeSetting.cl
+ ass
+SHA1-Digest: kToWz63Yeqsm5LfHPAVN2MmnCsY=
+
+Name: org/eclipse/jet/internal/JETPreferences.class
+SHA1-Digest: 2OGppeuPhcOxuHJpX5bOb+gU5Rs=
+
+Name: org/eclipse/jet/internal/extensionpoints/TagLibraryDataFactory.c
+ lass
+SHA1-Digest: t1etHo8GSjC9cuPHSqzPMXl8Onk=
+
+Name: org/eclipse/jet/taglib/workspace/ActionsUtil.class
+SHA1-Digest: AMaoO3EiAriJ4g4gsXs3PpDehGQ=
+
+Name: org/eclipse/jet/internal/runtime/JETBundleManifest.class
+SHA1-Digest: 73OD/Zm1O/Z2y2WNdVLCi5hhUGU=
+
+Name: org/eclipse/jet/internal/compiler/CompilationHelper.class
+SHA1-Digest: WdsGPKux9H1jaWU+92FziAwTpgs=
+
+Name: org/eclipse/jet/internal/compiler/templates/v2/JET2JavaGenerator
+ New$1.class
+SHA1-Digest: dOkgK4SFZW8Vw8NhMDO5yDpzzAE=
+
+Name: org/eclipse/jet/internal/runtime/RuntimeLoggerContextExtender$On
+ eListenerState.class
+SHA1-Digest: RsXOEkbI/dSfMu74ZJGYNSyp1Ko=
+
+Name: org/eclipse/jet/internal/exceptions/NoMatchingNodeException.clas
+ s
+SHA1-Digest: KJOrKo8HpYiLQTabhs4yZ9E8jtU=
+
+Name: .deprecations/DEPRECATE_org.eclipse.jet.JET2Platform.execute(jav
+ a.lang.String_java.lang.String_org.eclipse.core.runtime.IProgressMoni
+ tor).xml
+SHA1-Digest: ds/AcsN9Z3gtIvHS/eH2bH1QjFI=
+
+Name: org/eclipse/jet/internal/taglib/control/IfTag.class
+SHA1-Digest: P8fsWNUa7gZZXzXFTInkO9oRv3Y=
+
+Name: org/eclipse/jet/internal/taglib/control/MarkerTag.class
+SHA1-Digest: CqBieQu2XasTMBiecGXpLwCog0g=
+
+Name: org/eclipse/jet/internal/taglib/control/OtherwiseTag.class
+SHA1-Digest: n9XuGGQ9sN40/jCVFzWAspf1jL8=
+
+Name: org/eclipse/jet/taglib/workspace/AbstractWorkspaceAction.class
+SHA1-Digest: OBHjdHLd6gQbNi+7EQF91DVz5Vs=
+
+Name: org/eclipse/jet/runtime/model/ILoaderFactory.class
+SHA1-Digest: g0AwVaw548IbtMq4tZbMrrUAX0s=
+
+Name: org/eclipse/jet/compiler/JET2CompilationUnit$1.class
+SHA1-Digest: pPp6TyIbVcVhzdB1hskHpCZVg0g=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$DerivedAttributed.class
+SHA1-Digest: H4wesJyO6Um7Mc7aNoL+42qPWm8=
+
+Name: org/eclipse/jet/internal/xpath/functions/FloorFunction.class
+SHA1-Digest: CZeIl472PN2WjQYxgpMGZjX55js=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/XMLTypeUtil2.class
+SHA1-Digest: 8qYWxDVX2IZ+VqZTfwbbHKRJ2JA=
+
+Name: org/eclipse/jet/internal/taglib/control/Messages.class
+SHA1-Digest: coHBB5tQPXyPA6MBCiI7RUYlOn0=
+
+Name: org/eclipse/jet/internal/runtime/DirectoryBundleProvider.class
+SHA1-Digest: twK66vPc94NGhn0QYz3GVJpIDAY=
+
+Name: org/eclipse/jet/internal/taglib/control/CopyElementTag.class
+SHA1-Digest: 4KUK6PCVV5TlvkyUFYN05z1IU34=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$NameAttribute.class
+SHA1-Digest: SYuySQ/UOahr/6BCIhPi6YTdiLc=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$ProjectRelativePathAttribute.class
+SHA1-Digest: MOJflO3VJL6uMwD9HJg/MZRZ5MY=
+
+Name: org/eclipse/jet/internal/taglib/control/StringTokensTag.class
+SHA1-Digest: JwWg1QdIkKYp4PUXHeRvWbSjJd4=
+
+Name: schema/modelLoaders.exsd
+SHA1-Digest: Z7AmzJKVRavTRtB1JGkcQPtAAL4=
+
+Name: org/eclipse/jet/internal/taglib/java/JavaFileAction.class
+SHA1-Digest: HI+Om3bohYlNYiQ348Z0gTIAZiA=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$ParentAxis.class
+SHA1-Digest: 8artOcCPobQJAbVjlML9APRkQOA=
+
+Name: org/eclipse/jet/internal/launch/JETProcess.class
+SHA1-Digest: VsRzgieDJc7Lfc0p6a5JzUrfwqE=
+
+Name: org/eclipse/jet/xpath/XPathSyntaxException.class
+SHA1-Digest: gPgp3N7b9YH4n+bVjxsNY23jySg=
+
+Name: org/eclipse/jet/internal/extensionpoints/TransformDataFactory.cl
+ ass
+SHA1-Digest: QjrKXvcUQjPSbmw1kOFaWHpqTa8=
+
+Name: org/eclipse/jet/compiler/XMLBodyElement.class
+SHA1-Digest: IK/734ZsRbT64lfSKi95D4+v3go=
+
+Name: org/eclipse/jet/transform/IJETBundleManager.class
+SHA1-Digest: Xly7Hct9gLypIAerWb+CGMdT9sY=
+
+Name: org/eclipse/jet/BodyContentWriter$StringBufferDocument.class
+SHA1-Digest: Vcse/TMYlGi+4O12a4frWZrstJ0=
+
+Name: org/eclipse/jet/internal/parser/ParseProblemSeverity.class
+SHA1-Digest: rWEa7GWerjU9UcdF0zXK3aMNyCc=
+
+Name: org/eclipse/jet/internal/compiler/templates/v1/JET1JavaGenerator
+ $3.class
+SHA1-Digest: K5feZeR8btW+Hgt6Rnf1zWazmf8=
+
+Name: org/eclipse/jet/JET2TemplateManager.class
+SHA1-Digest: RRqHEV3vXcDTbjxf1+pTitgckBA=
+
+Name: org/eclipse/jet/internal/taglib/control/InvokeTransformTag.class
+SHA1-Digest: y1s7NBH904h/5schb1ETfVGrtV0=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/jdt/ASTNodeDocumentRoo
+ t.class
+SHA1-Digest: i4urAxliUC6870bEnJoJGwW6rVM=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$FullPathAttribute.class
+SHA1-Digest: ObzCF493v8fehAW2/8NLOVzMvFY=
+
+Name: org/eclipse/jet/internal/taglib/format/BundleTag.class
+SHA1-Digest: 7HcSIL8vKm5/ef/7Gn5WaYVL8Xg=
+
+Name: transforms/plugins/org.eclipse.jet.transforms.newproject_1.0.0.j
+ ar
+SHA1-Digest: 08OcMMsEH3W+50nCwrk7Me1quOY=
+
+Name: org/eclipse/jet/internal/extensionpoints/ModelInspectorsManager.
+ class
+SHA1-Digest: vPzQiKAgI9+BLfGuTv82R5YpZdw=
+
+Name: org/eclipse/jet/compiler/JET2Compiler.class
+SHA1-Digest: /Cwp/kuKbOUrYrSltrMZMbbToW0=
+
+Name: org/eclipse/jet/compiler/XMLEmptyElement.class
+SHA1-Digest: BSNlq+Guiwn6HiFAYD5df7hNT4o=
+
+Name: org/eclipse/jet/internal/taglib/java/ImpliedImportTag.class
+SHA1-Digest: wKL/8QIeuYkBWwMj/uZGhFt2wJg=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/SortFunction$XPa
+ thComparator.class
+SHA1-Digest: TiXUYztXGDT61gGYeYnP3Bx5LXQ=
+
+Name: org/eclipse/jet/internal/taglib/control/LogTag.class
+SHA1-Digest: IGkpWIbwxha+wOuY63pwYe9gE0o=
+
+Name: org/eclipse/jet/taglib/workspace/WorkspaceContextExtender$3.clas
+ s
+SHA1-Digest: TxDjroLfrgq/eCywnqbOusgPT1Q=
+
+Name: org/eclipse/jet/internal/xpath/NodeSetImpl.class
+SHA1-Digest: 4h0hWWx4cgW49AZbAQxZ/foLWmo=
+
+Name: org/eclipse/jet/taglib/UserRegionHelper$PositionWithUnmodifiedMa
+ rker.class
+SHA1-Digest: E7Ju5ufewOOH0Vs893FCMNYNSoY=
+
+Name: org/eclipse/jet/xpath/inspector/InspectorManager.class
+SHA1-Digest: 3iEDmM8gQnPVPbZzew2iffiGBOY=
+
+Name: schema/transform.exsd
+SHA1-Digest: 1x+rQmAIGpiknj+2043A4zQ+4Bo=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/messages.propert
+ ies
+SHA1-Digest: I/qqWEQGWrOgD4407Ow6MEkaqLw=
+
+Name: org/eclipse/jet/internal/runtime/model/JETTemplateModelLoader.cl
+ ass
+SHA1-Digest: s46wz4QxvqelPB3Lgigsboe2tHw=
+
+Name: org/eclipse/jet/internal/compiler/templates/v2/JET2JavaGenerator
+ New$6.class
+SHA1-Digest: oNYz7aRtcyWN6IzFaH/WYZH5Ipo=
+
+Name: org/eclipse/jet/internal/xpath/functions/SumFunction.class
+SHA1-Digest: qvI7Agr/C4/JBrcxuWm8nJYnflA=
+
+Name: org/eclipse/jet/internal/xpath/ast/LogicalOp$And.class
+SHA1-Digest: BKy18PCkCtZujDqctcOEmEEZRxI=
+
+Name: org/eclipse/jet/internal/taglib/workspace/WsFolderAction.class
+SHA1-Digest: bp9Adz/QTtTouLg7P1XszrB+ZdI=
+
+Name: org/eclipse/jet/JET1TemplateManager$ITemplateOperation.class
+SHA1-Digest: u/JJiR2Ratc2HDAApS7k4PXGQfo=
+
+Name: org/eclipse/jet/internal/compiler/CompilationHelper$1.class
+SHA1-Digest: jkUB0SpIrKN38SCrSq0rgdjmzbA=
+
+Name: org/eclipse/jet/internal/taglib/workspace/FolderTag.class
+SHA1-Digest: ndQAaO7HPmFyPtRjnDgK85R5teM=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/EMFEAttrAsElementWrapp
+ er.class
+SHA1-Digest: tUu2ujHKqt+81hFhVs36XydzOiA=
+
+Name: org/eclipse/jet/internal/compiler/UnicodeEscapeUtil.class
+SHA1-Digest: ltICN1EG8b7klCpR6kG5O7hVXFs=
+
+Name: org/eclipse/jet/internal/runtime/model/MyGenericXMLResourceFacto
+ ryImpl$3.class
+SHA1-Digest: P93wh095AHqOqMPgHYABiqUvk4U=
+
+Name: org/eclipse/jet/internal/taglib/control/DumpTag.class
+SHA1-Digest: VIQ4S/H5KMXkLKF9ub5cLEo/eyw=
+
+Name: org/eclipse/jet/compiler/JET2Declaration.class
+SHA1-Digest: Ouao4LIf+Rkxd0UdzPT4lm6vGD8=
+
+Name: schema/tagLibraries.exsd
+SHA1-Digest: iTCi48hFzhpzLAK8dKST8teWR4o=
+
+Name: org/eclipse/jet/taglib/OtherTag.class
+SHA1-Digest: xMfnGdS5CHOTu5RDszzxvQI3KNU=
+
+Name: org/eclipse/jet/internal/runtime/model/ModelLoaderDescription.cl
+ ass
+SHA1-Digest: 3z7ywRGPuPh1QwyHyGOZarxDXqU=
+
+Name: org/eclipse/jet/internal/taglib/control/VisitorTag$1.class
+SHA1-Digest: qaaQ91QCKv6jzD9pMIqaZMkm2Bs=
+
+Name: org/eclipse/jet/compiler/TextElement.class
+SHA1-Digest: 5/p6+I+G280WM+oazkhikI47PbA=
+
+Name: org/eclipse/jet/internal/extensionpoints/IPluginChangeListener.c
+ lass
+SHA1-Digest: 7pMIsl5O24f1vxF6zMf4MawMY9E=
+
+Name: org/eclipse/jet/internal/taglib/format/ParamTag.class
+SHA1-Digest: nn3OwMxvbihekRhGZSyllAzHm/E=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/DOMInspector.class
+SHA1-Digest: s38Sl8kOAXGBylYOJE7Io80gwIg=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$NotEq.class
+SHA1-Digest: D7pmNVTiOfE5c9Xn7xpXoYoHHNw=
+
+Name: schema/modelInspectors.exsd
+SHA1-Digest: L6U1mTCbh5y7svaE5mGZnw4fNpo=
+
+Name: org/eclipse/jet/internal/taglib/control/GetTag.class
+SHA1-Digest: HEkk/Ug6+ondvwGRgHIWmdv2J/k=
+
+Name: org/eclipse/jet/compiler/TagLibraryUsageManager.class
+SHA1-Digest: 5BPNJydoSEzjiCBmxhgL6NXYO6s=
+
+Name: org/eclipse/jet/internal/runtime/model/LoaderManager.class
+SHA1-Digest: f4LdhjYl+5fvXO/UKt3HOy857ro=
+
+Name: org/eclipse/jet/taglib/workspace/WorkspaceContextExtender.class
+SHA1-Digest: J/NMVfCKSkO8pASpRZo23MSlf4Y=
+
+Name: org/eclipse/jet/runtime/model/ILoaderManager.class
+SHA1-Digest: lwRhinKprgYy4xEcI5de3juY75Y=
+
+Name: org/eclipse/jet/transform/IJETRunnable.class
+SHA1-Digest: nswYWe3NIGlALnafR8h4QD6csfg=
+
+Name: org/eclipse/jet/internal/runtime/SafeIteratingRuntimeTag$1.class
+SHA1-Digest: YqjEUY06J4DU65nDdRHuxlDZiCE=
+
+Name: org/eclipse/jet/internal/xpath/ast/LogicalOp.class
+SHA1-Digest: 2sf5Wr9fuWeAK9cZvbtD4X/AnM0=
+
+Name: org/eclipse/jet/xpath/inspector/SimpleElementRequiresValueExcept
+ ion.class
+SHA1-Digest: jSJyUJWPjmBYdIf5Tgptvs2/zJg=
+
+Name: org/eclipse/jet/internal/runtime/SafeOtherRuntimeTag.class
+SHA1-Digest: t70j+R0b9b8uZp65ZqmlUoheCQY=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/Messages.class
+SHA1-Digest: lGqRv96SIx0Z+Y4+5TAOKGZ+ZAA=
+
+Name: org/eclipse/jet/taglib/AbstractEmptyTag.class
+SHA1-Digest: /N8sgwuvyn5qHZrPpSmueqPnPz0=
+
+Name: org/eclipse/jet/internal/compiler/GenXMLElement.class
+SHA1-Digest: zFCWk5gZa+sBqrU73mnmts2qSEo=
+
+Name: org/eclipse/jet/xpath/NamespaceContext.class
+SHA1-Digest: izLOMrgrCqT37hKCbzNpgN3oc5s=
+
+Name: org/eclipse/jet/taglib/ContainerTag.class
+SHA1-Digest: 65DL8dz4mSHCbkr5vMGlIIne8V8=
+
+Name: org/eclipse/jet/JET1TemplateManager$JET1TemplateRunnerImpl.class
+SHA1-Digest: S27lHK1A3cWjboK7nNeYwHl6SzE=
+
+Name: org/eclipse/jet/internal/runtime/SafeOtherRuntimeTag$3.class
+SHA1-Digest: Mr4qwuf9tDkqkkR0NWlKlZk5AEQ=
+
+Name: org/eclipse/jet/JET2Platform.class
+SHA1-Digest: PUFQzOJQvhgy6WuMekh/cEJHJdE=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/RemoveWhitespace
+ Function.class
+SHA1-Digest: umw85Zu58IhNSmJ1AGYNREP8uVM=
+
+Name: org/eclipse/jet/internal/xpath/functions/StringFunction.class
+SHA1-Digest: 0U5vQQ4CA7hCwViSnl/5QsqsR6I=
+
+Name: org/eclipse/jet/internal/taglib/java/JavaResourceTag.class
+SHA1-Digest: khzZoKdr1u0Mhy0sZj38PwoJ8ps=
+
+Name: about.ini
+SHA1-Digest: 8Aa63vzNTio2orhmAbCPDLKMIWg=
+
+Name: org/eclipse/jet/xpath/inspector/INodeInspector$NodeKind.class
+SHA1-Digest: gq+G+ooEOqlEFx4rZGIS/Bs0DTU=
+
+Name: org/eclipse/jet/internal/taglib/control/TagFactory.class
+SHA1-Digest: yjHkqVWyLNpevXVShv5lR283zZQ=
+
+Name: org/eclipse/jet/compiler/DefaultJET2ASTVisitor.class
+SHA1-Digest: hak+bs6vjikiwSu7BvSV3zIbF6g=
+
+Name: .deprecations/DEPRECATE_org.eclipse.jet.taglib.java.JavaImportsU
+ til.getImportManager(org.eclipse.jet.JET2Writer).xml
+SHA1-Digest: 2Fy6mjY05BqQUWIUsVurgV55PL0=
+
+Name: org/eclipse/jet/internal/taglib/TagDefinitionImpl$1.class
+SHA1-Digest: kve4FEf6ug/Eqvx84d6md8C3TA0=
+
+Name: org/eclipse/jet/xpath/XPathVariableResolver.class
+SHA1-Digest: g8wTUlXaIsrNvAUaw7OjPINEXt0=
+
+Name: org/eclipse/jet/JET2Platform$3.class
+SHA1-Digest: 0EgB7FIrQ/vMIvISbi2lnGU0TI4=
+
+Name: org/eclipse/jet/internal/xpath/EmbeddedXPath$1.class
+SHA1-Digest: wSzXmFE6nI6qhqXtEcGBK4KXRPg=
+
+Name: org/eclipse/jet/internal/runtime/SafeIteratingRuntimeTag.class
+SHA1-Digest: J/ZMx6N9dPWI9L3DR/44iyjNpY0=
+
+Name: org/eclipse/jet/internal/taglib/control/DeepIterateTag$DeepConte
+ ntPositionTracker.class
+SHA1-Digest: M5RRXnuY9ShmVnxQWGSOxcrywVE=
+
+Name: org/eclipse/jet/internal/xpath/ast/Predicate.class
+SHA1-Digest: aumR02zu1XA6rSJe2yygw76fuaE=
+
+Name: org/eclipse/jet/internal/runtime/AdditionalBundleLocationProvide
+ r.class
+SHA1-Digest: gn3brDdPAt5HQCRsiGR5EO8G15s=
+
+Name: org/eclipse/jet/internal/runtime/model/jdt/JavaLoader.class
+SHA1-Digest: qcta4yUJOK/MDDPYBV63t2ofVxg=
+
+Name: org/eclipse/jet/xpath/inspector/INodeInspectorExtension1.class
+SHA1-Digest: 3twpCReID7pS1ArTC79VEJa9cjQ=
+
+Name: org/eclipse/jet/internal/runtime/ProjectJETBundleProvider.class
+SHA1-Digest: cp96q5taplDDVgOocgPhnBptuBQ=
+
+Name: org/eclipse/jet/internal/builder/JET2Builder$2.class
+SHA1-Digest: 3jhZ9JbPfbwtXVpoEcSjbbr+fT8=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/EObjectInspector$IXMLE
+ lementTester.class
+SHA1-Digest: ot/cRNwZOHmBxBcBYNnS91XWJ6M=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/LowercaseFirstFu
+ nction.class
+SHA1-Digest: RxSydyLm4cNrThjC9yzmJbjIBWg=
+
+Name: org/eclipse/jet/internal/exceptions/MissingRequiredAttributeExce
+ ption.class
+SHA1-Digest: wMthzKUUhFabnSHQe0YbQB78lno=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$2.class
+SHA1-Digest: +LZMOKnB1/Biz7ii16fFK0ul8wY=
+
+Name: org/eclipse/jet/internal/xpath/EmbeddedXPath$XPathScanner$State.
+ class
+SHA1-Digest: yMVsS1L7KtznOXv8mi3MI0u33VQ=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeTest.class
+SHA1-Digest: EFOPeuMGp/qaZSwuL6tzEsKqhHw=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/IsVariableDefine
+ dFunction.class
+SHA1-Digest: +1eQx3H2tXXijQcCMkn49wU9Phk=
+
+Name: org/eclipse/jet/internal/compiler/templates/v2/JET2JavaGenerator
+ New.class
+SHA1-Digest: YON+Lcmxd1bQhF6hMo7PAz3i1EM=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeTestKind$3.class
+SHA1-Digest: 9EE+49u7ZoQdIChsg+HPz5/8SgU=
+
+Name: org/eclipse/jet/internal/runtime/NotABundleException.class
+SHA1-Digest: oWRkl1O0nsqGi038nKyUjVNyaBk=
+
+Name: org/eclipse/jet/xpath/inspector/AddElementException.class
+SHA1-Digest: 2byAUhEHE+svPfwc9vFVDY2HE7o=
+
+Name: org/eclipse/jet/internal/runtime/SafeEmptyRuntimeTag.class
+SHA1-Digest: Pteqy2zA3JljPAXl3++J0n+sm5U=
+
+Name: org/eclipse/jet/transform/TransformContextListener.class
+SHA1-Digest: wWvlmxl+bbJtCejYglMZKtJXneQ=
+
+Name: about.properties
+SHA1-Digest: u6v70jSbpNly7zif24FmimKw/Hc=
+
+Name: org/eclipse/jet/internal/runtime/DynamicJETBundleDescriptor.clas
+ s
+SHA1-Digest: wRNbLIqNzIwGdkwczojaaJDDI3Q=
+
+Name: schema/deployedTransforms.exsd
+SHA1-Digest: vZ5Ap2gpfv6a3zdv2DncbETYFiA=
+
+Name: org/eclipse/jet/xpath/XPathFunctionWithContext.class
+SHA1-Digest: rLC/6eRPivRQlIaWRQ2z9gRv7eM=
+
+Name: org/eclipse/jet/internal/runtime/RuntimeTagLogger.class
+SHA1-Digest: vrNz4JY9r63lMGsJRVrgVBWn/GM=
+
+Name: org/eclipse/jet/internal/compiler/templates/XMLEndGenerator.clas
+ s
+SHA1-Digest: gO+VcO789PXPPGXzC+zXOps1UUk=
+
+Name: org/eclipse/jet/internal/taglib/control/AddElementTag.class
+SHA1-Digest: rciTyL1dSgX+ncouOJ90D8HhLrk=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/SortFunction.cla
+ ss
+SHA1-Digest: HYDm0PTmpt+Eg3nrMkQnXTZhloU=
+
+Name: org/eclipse/jet/internal/taglib/format/SetBundleTag.class
+SHA1-Digest: 1osp0qS9Id2X6sPzR2MM72E+zmU=
+
+Name: org/eclipse/jet/internal/taglib/java/MergeTag.class
+SHA1-Digest: zSX49vBKOniakyYD2bzzYhxRzU4=
+
+Name: org/eclipse/jet/internal/JETPreferenceInitializer.class
+SHA1-Digest: MhYdkjMsfFj6xHBtIfQHhy0voCk=
+
+Name: org/eclipse/jet/internal/xpath/parser/TokenInstance.class
+SHA1-Digest: ilyAKqHb0QYAE0pClej7MCkBE/U=
+
+Name: org/eclipse/jet/internal/runtime/model/EntityResolverFactory.cla
+ ss
+SHA1-Digest: KrjQJ3IilvhTHnREbF1VrIqY3ig=
+
+Name: org/eclipse/jet/internal/xpath/ast/NumberLiteral.class
+SHA1-Digest: mxmkVP8c0rkrtV39bAlByGsXrTA=
+
+Name: org/eclipse/jet/internal/taglib/control/IncludeTag.class
+SHA1-Digest: DezLvadReY2DtRvx0k+1ZU+APbo=
+
+Name: org/eclipse/jet/internal/taglib/java/ImportsLocationTag$WriterEv
+ entListener.class
+SHA1-Digest: OqNQMPJS3cJVqGQJOTEe5ZPd9wk=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$LocalTimeStampAttribute.class
+SHA1-Digest: VXQV+l/oR78astLnxvKMkl7ODVU=
+
+Name: org/eclipse/jet/internal/runtime/RuntimeLoggerContextExtender$Co
+ ntextData.class
+SHA1-Digest: 23yja410QWv0Q2sVcKXuTU2x6OE=
+
+Name: .deprecations/DEPRECATE_org.eclipse.jet.JET2Platform.execute(jav
+ a.lang.String_org.eclipse.core.resources.IResource_org.eclipse.core.r
+ untime.IProgressMonitor).xml
+SHA1-Digest: ds/AcsN9Z3gtIvHS/eH2bH1QjFI=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/SortFunction$Cha
+ inedComparator.class
+SHA1-Digest: Me/nP9JESYU0mOXPZEQKW+BftkU=
+
+Name: org/eclipse/jet/internal/taglib/control/SetTag.class
+SHA1-Digest: dWC2irQnrjRNvZu5FNKue++jToU=
+
+Name: org/eclipse/jet/internal/l10n/JET2Messages.class
+SHA1-Digest: EFwMWSVTPs+GiiP8ZUcf4ZksoKs=
+
+Name: org/eclipse/jet/internal/xpath/XPathFactoryImpl.class
+SHA1-Digest: cWCXOyuGQnS4+Zn/weUbOpug4H0=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis.class
+SHA1-Digest: qEKjMPq0JCKgOPZTRmgSBhIW+Ks=
+
+Name: org/eclipse/jet/internal/xpath/EmbeddedXPath$6.class
+SHA1-Digest: WqFjen3ChdEoqOtMp14r+lQ35kM=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/EObjectInspector$Shall
+ owCopier.class
+SHA1-Digest: ha0cpn1tpXzpvWE5fCtf+/w6uWs=
+
+Name: org/eclipse/jet/internal/runtime/SafeCustomRuntimeTag$1.class
+SHA1-Digest: EDb6Y2V8w/NoMzLnu8NZYgaa4pA=
+
+Name: org/eclipse/jet/internal/compiler/templates/v1/JET1JavaGenerator
+ $2.class
+SHA1-Digest: JhEVTfjrlu7MYKCJbcV244fKX2w=
+
+Name: org/eclipse/jet/internal/compiler/SimplifiedCompiler$ITemplateMa
+ tcher.class
+SHA1-Digest: z4a+dZgUVn5fgTpZTgMaJJBU0to=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/EMFXMLNodeWrapperInspe
+ ctor.class
+SHA1-Digest: h2IrC9pMhf4peSr8BMkzlkSEnjM=
+
+Name: org/eclipse/jet/internal/xpath/functions/SubstringBeforeFunction
+ .class
+SHA1-Digest: qSUWsiPhjCuymfMI5o+kU/3cDaU=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/PropertiesInspector$2.
+ class
+SHA1-Digest: 7hrpn4+h7L8+IgX6aF8no01Cy8U=
+
+Name: org/eclipse/jet/internal/runtime/model/EMFXMLModelLoader.class
+SHA1-Digest: FLUsRF53AqgxRq/nR4NuzAa8RYM=
+
+Name: org/eclipse/jet/xpath/inspector/INodeInspector.class
+SHA1-Digest: VzoDVvpAkUydAnBcSKW3HiRClt4=
+
+Name: org/eclipse/jet/xpath/XPathFunctionResolver.class
+SHA1-Digest: NQsJ4LemnJ2t82WqyuMB8bQpSnc=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$AttributeAxis.class
+SHA1-Digest: Jf1nQufRVI23ibbgojkkrI5yeUU=
+
+Name: org/eclipse/jet/internal/SavedStateManager$IStateSaver.class
+SHA1-Digest: NN3qs9idK2Ihy3vQSsLtLUEUr7E=
+
+Name: org/eclipse/jet/xpath/XPathUtil.class
+SHA1-Digest: AUdtd3N/KeRCunx84rydUH6tbx0=
+
+Name: org/eclipse/jet/taglib/workspace/WorkspaceContextExtender$2.clas
+ s
+SHA1-Digest: 1xRdGTbeuLYCZniIcLQrytI6duQ=
+
+Name: org/eclipse/jet/internal/runtime/model/messages.properties
+SHA1-Digest: 2g/O3nW2L+v1IZzTTf5oQpS/5XY=
+
+Name: org/eclipse/jet/taglib/FunctionTag.class
+SHA1-Digest: FYtc+8SrWi5x0XOqnW7w+ZUpXn8=
+
+Name: org/eclipse/jet/internal/runtime/BundleJarInfo.class
+SHA1-Digest: j8XwDcfwPyNKVSoFE8myE3eqH4A=
+
+Name: org/eclipse/jet/xpath/XPathFactory.class
+SHA1-Digest: S2gryUd6iw7/tgYR0Mj4YqLoUBA=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/WrappedAttributeInspec
+ tor.class
+SHA1-Digest: 3JrnNyAiHy7c/N/buMYz68/cfY4=
+
+Name: org/eclipse/jet/internal/compiler/SimplifiedCompiler$1.class
+SHA1-Digest: nybb0oQwBnp550YwFRZOtKWLThc=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/PackageNameFunct
+ ion.class
+SHA1-Digest: OMZS22qPSBB9ure2gctRLAaid0U=
+
+Name: org/eclipse/jet/xpath/XPathException.class
+SHA1-Digest: RAbHNgcVymmyXJqtnk9vgTp3m/s=
+
+Name: org/eclipse/jet/internal/runtime/JETBundleInstaller.class
+SHA1-Digest: GbZAtUKXN6CJ7ahUyreAn8yjvOw=
+
+Name: org/eclipse/jet/internal/compiler/templates/v2/JET2JavaGenerator
+ New$5.class
+SHA1-Digest: O02aR4aujaQc/o3wdwG9Xf+S/s8=
+
+Name: .deprecations/DEPRECATE_org.eclipse.jet.taglib.workspace.Actions
+ Util.checkpointWorkspace(boolean).xml
+SHA1-Digest: rY/iRqcgopNhKlWbGx1ZhNcdGCE=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/jdt/NonDescriptorAttri
+ bute$Source.class
+SHA1-Digest: 9b6RdaPHn4wmXdoPliR7yjf68Mw=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp.class
+SHA1-Digest: apDSYP57vfdskG5sAB3cttkTtiw=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/AbstractResourceAttrib
+ ute.class
+SHA1-Digest: 5YO7ewBttqOiJVa60Snjg1dSsJE=
+
+Name: org/eclipse/jet/internal/xpath/ast/StringLiteral.class
+SHA1-Digest: lMw8m+PM8mdkFwRbnONbdPElRBM=
+
+Name: org/eclipse/jet/internal/runtime/model/MyGenericXMLResourceFacto
+ ryImpl$2.class
+SHA1-Digest: m8PSLO36DvlEm3IXUBREcWw9x9E=
+
+Name: org/eclipse/jet/internal/compiler/SimplifiedCompiler$JET2Templat
+ eMatcher.class
+SHA1-Digest: eo4EBb1pSzuHnutM1D520bYRszQ=
+
+Name: org/eclipse/jet/internal/xpath/functions/SubstringFunction.class
+SHA1-Digest: t8s/8G6jCgJCow1kKzeF4I3ESXA=
+
+Name: org/eclipse/jet/taglib/java/JavaImportsUtil.class
+SHA1-Digest: 1OySAGHQowNfSxVWfIDjxFHppAI=
+
+Name: org/eclipse/jet/internal/xpath/functions/StringLengthFunction.cl
+ ass
+SHA1-Digest: h667VRMlfPDemaP+9buC5FyxvjI=
+
+Name: org/eclipse/jet/internal/InternalJET2Platform$1.class
+SHA1-Digest: 8MFMyc2vv5vgrJugUQ3eIPvKQcI=
+
+Name: org/eclipse/jet/BodyContentWriter$StringBufferTextStore.class
+SHA1-Digest: 8dQ6jxfiVykbea5tIloURwaBBpY=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$4.class
+SHA1-Digest: qPAEpUkge470Ae7h1Npl5Vvqic4=
+
+Name: org/eclipse/jet/internal/taglib/format/UpperCaseTag.class
+SHA1-Digest: 3QJbBNURdVG7WelUUO1rLZ1+rN0=
+
+Name: org/eclipse/jet/internal/taglib/format/LowerCaseTag.class
+SHA1-Digest: WVLvhxaNy4puOKOdMkM0STxZ8v4=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$ITest.class
+SHA1-Digest: NeDflXluBdwmInrhbjpv8PHU868=
+
+Name: .deprecations/DEPRECATE_org.eclipse.jet.taglib.workspace.Actions
+ Util.ensureProjectIsBuilt(org.eclipse.core.runtime.IProgressMonitor).
+ xml
+SHA1-Digest: J2x+j0C4IDH1O09wsmi5/r8WSOs=
+
+Name: org/eclipse/jet/internal/runtime/model/LoaderManager$LoaderData.
+ class
+SHA1-Digest: Mx+/nKJ6eBU/6qsddPoPWAVf1Uc=
+
+Name: org/eclipse/jet/internal/compiler/HasNewlinesUtil.class
+SHA1-Digest: FsSN19yMbUfF3hZMaj5oYH6BBu8=
+
+Name: org/eclipse/jet/internal/compiler/SafeJETASTVisitor$IndentingWri
+ ter.class
+SHA1-Digest: m2ro8CDImfO2w8e4X3DTLZBppN8=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: KyT9FF7C7t86NoBoa2kZT3ZJBfw=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/jdt/InspectASTNodeDocu
+ mentRoot.class
+SHA1-Digest: sDQBhLDswQmw0HKGShMcVLCRTjY=
+
+Name: org/eclipse/jet/internal/xpath/XPathExpressionImpl.class
+SHA1-Digest: emZrprylY/j45ahG4NRT5BpwIgU=
+
+Name: about.mappings
+SHA1-Digest: hw7dcIRLtu0JoujiJxnNWtsNAAU=
+
+Name: org/eclipse/jet/internal/runtime/model/TransformLoadContext.clas
+ s
+SHA1-Digest: xuKk16OZ+Jnf8PLCim6/qAtepq0=
+
+Name: org/eclipse/jet/internal/runtime/model/XMLDOMLoader.class
+SHA1-Digest: PuICXl4ZMlmQj+lcX0pKJnFx/wI=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeTest$NameTest.class
+SHA1-Digest: onsvrwYIoyVOagB+FW95BjBqu7k=
+
+Name: .options
+SHA1-Digest: nR53xq6JoxGBJ9VR6IYloxS9En4=
+
+Name: org/eclipse/jet/internal/runtime/SafeFunctionRuntimeTag.class
+SHA1-Digest: MA1RBDqkmuTiU2MnNBjen9MgcrI=
+
+Name: org/eclipse/jet/internal/compiler/templates/JET2JavaGenerator$2.
+ class
+SHA1-Digest: jTHY9vspK7PO3gp+1p06p6pdfyM=
+
+Name: org/eclipse/jet/internal/compiler/SimplifiedCompiler$SaveStateMe
+ mento.class
+SHA1-Digest: SfvZ849eo8Fxug8Fjx96PGmtHFA=
+
+Name: org/eclipse/jet/taglib/AbstractCustomTag.class
+SHA1-Digest: BkiHiS9atJW9tNoV5uJMRULkdIQ=
+
+Name: org/eclipse/jet/internal/taglib/control/IterateTag.class
+SHA1-Digest: x3CGDNvHknWNxrSRl2C8ajvKkHY=
+
+Name: org/eclipse/jet/transform/JETLaunchConstants.class
+SHA1-Digest: D9S60aLKZbcDO0jGDwRw7f7usSA=
+
+Name: org/eclipse/jet/xpath/IAnnotationManager.class
+SHA1-Digest: RYba//sF09DXq0+hz8en858Uv+U=
+
+Name: org/eclipse/jet/internal/taglib/format/ReplaceAllTag.class
+SHA1-Digest: DCEbT/YoeVV8N6sVFykWd7r47wU=
+
+Name: org/eclipse/jet/compiler/XMLBodyElementEnd.class
+SHA1-Digest: P3Gy/XFJnY/KVr0CsalUSciN5yA=
+
+Name: org/eclipse/jet/internal/xpath/functions/NameFunction.class
+SHA1-Digest: JQvYJAJvzu921Z8/VO1gDmUT5Oo=
+
+Name: org/eclipse/jet/internal/runtime/SafeOtherRuntimeTag$2.class
+SHA1-Digest: 6bacwwXy9gTRTBMSwdt2sNb4tgc=
+
+Name: org/eclipse/jet/internal/compiler/SimplifiedCompiler$Builder.cla
+ ss
+SHA1-Digest: goL8+BTp3SPDvw1nMV4hBja1Q6U=
+
+Name: org/eclipse/jet/taglib/AbstractContainerTag.class
+SHA1-Digest: BfaUK2gOH1Kk0Zs2TnBEz5qdmCc=
+
+Name: org/eclipse/jet/internal/taglib/java/JavaClassTag.class
+SHA1-Digest: KWi/epNo3l0pQOgx1FpUeXbUPcU=
+
+Name: org/eclipse/jet/internal/xpath/functions/TranslateFunction.class
+SHA1-Digest: c2ad3cOGxbiC/I1jC+iOB4MWX2g=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeSetCast.class
+SHA1-Digest: 2CqXXGZ03WaxZVfHAx8pvKa6iBg=
+
+Name: org/eclipse/jet/internal/xpath/ast/BinaryOp$Div.class
+SHA1-Digest: hOdVsvKFft2tFhXbnE/bhQ7AkOU=
+
+Name: org/eclipse/jet/taglib/workspace/IWorkspaceAction2.class
+SHA1-Digest: VQ+zxGlRliaLOD6UZ7sklA1cEnI=
+
+Name: org/eclipse/jet/internal/runtime/JETBundleManager$BundleWrapper.
+ class
+SHA1-Digest: y90uAILPwRwugbmSv0tJX+qDCag=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/EObjectInspector$Schem
+ aElementTester.class
+SHA1-Digest: ogwQVYTmZFbwd7yLbhLBHcANyRM=
+
+Name: org/eclipse/jet/internal/runtime/IJETBundleProvider.class
+SHA1-Digest: HZQo5xMHXTHhRdtQg7wdGApc/Ag=
+
+Name: org/eclipse/jet/JET2Platform$2.class
+SHA1-Digest: O4DdNxfjL3XjeCWRKSUCMZZ+e00=
+
+Name: plugin.properties
+SHA1-Digest: P6RanNB8ZSIgEhcZilHTBGng19s=
+
+Name: org/eclipse/jet/internal/xpath/ast/LogicalOp$Or.class
+SHA1-Digest: l2KhVhRQzuLyg4bSnOTdG7EJvU0=
+
+Name: org/eclipse/jet/internal/xpath/ast/BinaryOp$Add.class
+SHA1-Digest: 8dihIaa7CfAoWWfqjm0BrzLLOIY=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/SortFunction$Des
+ cendingXPathComparator.class
+SHA1-Digest: C0XzXAIf7npQin39Gjyx6oARJuA=
+
+Name: org/eclipse/jet/internal/xpath/ast/Root.class
+SHA1-Digest: sCqs7W6VpYdcUqjHV3BJSVjYsYY=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/EObjectInspector.class
+SHA1-Digest: GklyWmShXtdNz1ucEYx8QRi18bY=
+
+Name: org/eclipse/jet/compiler/JET2ASTVisitor.class
+SHA1-Digest: 0n0PAW7WjNWNnpR6bxZwQYTQrc8=
+
+Name: org/eclipse/jet/internal/InternalJET2Platform$IMethodTimer.class
+SHA1-Digest: RUSgfCQTW0e0KL/H0luNN1xwsVI=
+
+Name: org/eclipse/jet/internal/xpath/EmbeddedXPath$XPathScanner.class
+SHA1-Digest: YbbndSn+QXgx0tsK7haV8f5OsqY=
+
+Name: org/eclipse/jet/internal/JETActivatorWrapper.class
+SHA1-Digest: XU+TVArTX48FSyJv1IMp90g/qic=
+
+Name: org/eclipse/jet/taglib/ConditionalTag.class
+SHA1-Digest: BbvJ1Vw4iVzxRbMs6cNBLnaCXXo=
+
+Name: org/eclipse/jet/internal/taglib/java/ImportTag$1.class
+SHA1-Digest: FfSuDioW1Ol7mwfThsT2bx35ktg=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/AbstractWrappedAttribu
+ te.class
+SHA1-Digest: /pc6sKtzgVoSNzHrAVSmk0L/mn0=
+
+Name: plugin.xml
+SHA1-Digest: 24yBkK/GIRGLelGpeIp0i5w91mM=
+
+Name: org/eclipse/jet/internal/builder/JET2Builder$1.class
+SHA1-Digest: GmHMrf+EJp8yl1NYUdqWWrpm9K8=
+
+Name: org/eclipse/jet/internal/runtime/model/Messages.class
+SHA1-Digest: 9vUyFH+zIBbcN/ptf7gMbVg8HAg=
+
+Name: org/eclipse/jet/internal/xpath/parser/XPathTokenScanner$NCNameRu
+ le.class
+SHA1-Digest: UBz5hnz7bWrVmP1I1EBAMhHkEj0=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/TrimWhitespaceFu
+ nction.class
+SHA1-Digest: +pV7ENqUMXnsVUP/vYi9/FUPmxU=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$1.class
+SHA1-Digest: 8SBWmtUX651oayjv0iUs8B8rla8=
+
+Name: org/eclipse/jet/xpath/inspector/ExpandedName.class
+SHA1-Digest: WoKEUqbYVFqDPWwCDDWFPqSj6ck=
+
+Name: org/eclipse/jet/taglib/workspace/IWorkspaceAction.class
+SHA1-Digest: 4mHA3lZ+W+w3ILXrGsOlDWAlBFY=
+
+Name: org/eclipse/jet/internal/extensionpoints/TagLibraryImpl.class
+SHA1-Digest: RfGSx2dnxp/Q59iZ9kyCUUzJA0o=
+
+Name: org/eclipse/jet/compiler/JET2ASTElement.class
+SHA1-Digest: uFpJApHKfkxW9AkuJWwsjzAzgzk=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeTestKind$2.class
+SHA1-Digest: A3qo9ijqjM0MZZn8WvP0oaE5D3Y=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$PhantomAttribute.class
+SHA1-Digest: Kn+m6Od37Bft/P/Dw/vfSBOWVss=
+
+Name: org/eclipse/jet/internal/xpath/functions/NormalizeSpaceFunction.
+ class
+SHA1-Digest: XTF0FngQiLzCwFVfbUu6dcg5lCY=
+
+Name: org/eclipse/jet/internal/launch/JETStreamsProxy.class
+SHA1-Digest: 4jMaCUsiCdcPBKREff6DyTcPo2I=
+
+Name: org/eclipse/jet/internal/extensionpoints/Messages.class
+SHA1-Digest: YuzDdRknGHbsh3Inj27W1FuAOCc=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/EMFResourceInspector.c
+ lass
+SHA1-Digest: 6PoE72s73szWXk4ikj6tUz16S9g=
+
+Name: org/eclipse/jet/internal/taglib/DocumentHelper.class
+SHA1-Digest: m0T3AbRi5ZjNqJ/BDqO79ijXlTY=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeTest$SpecificPINodeTest.c
+ lass
+SHA1-Digest: 2kDTlnvrZpQ3unRxCxkTtudxhrE=
+
+Name: org/eclipse/jet/xpath/XPathFunctionMetaData.class
+SHA1-Digest: HG80+OFTOElWAUdl+tz1j+OlI9I=
+
+Name: org/eclipse/jet/internal/runtime/model/MyGenericXMLResourceFacto
+ ryImpl.class
+SHA1-Digest: R2XXC0xLB8iy8prU992KTr0+VUo=
+
+Name: org/eclipse/jet/transform/TransformContextExtender$ContextData.c
+ lass
+SHA1-Digest: gg+Cmt4nPgG3f+7JLJnrCt0tewI=
+
+Name: org/eclipse/jet/internal/xpath/parser/XPathTokenScanner$Symbolic
+ TokenRule.class
+SHA1-Digest: 3A5+YhiQp2PSU2pDqiJwzRiRjto=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$TeamPrivateMemberAttribute.class
+SHA1-Digest: RTSBvwX+yzTdct4v1XgzIL7Dxis=
+
+Name: org/eclipse/jet/internal/runtime/BundleManifest.class
+SHA1-Digest: 8t8inYktS+CMNbCmnA3MQ8rLuh0=
+
+Name: org/eclipse/jet/JET1TemplateManager.class
+SHA1-Digest: IQTtQRCvuKu1PM6Sr2m/Y/TXdmI=
+
+Name: org/eclipse/jet/compiler/JavaElement.class
+SHA1-Digest: k+JlPgV8UF/z8EvX02nO41PB+Zs=
+
+Name: org/eclipse/jet/xpath/Context.class
+SHA1-Digest: CxhfbUSufj63iC7gpnI4EYH/mLw=
+
+Name: org/eclipse/jet/xpath/XPathRuntimeException.class
+SHA1-Digest: 6j6ur+P9kWJ8Laex/Ao5tBSu0zc=
+
+Name: org/eclipse/jet/xpath/XPathExpression.class
+SHA1-Digest: pmWYr/wNDHn+qhh1eM2GReh0e1U=
+
+Name: org/eclipse/jet/internal/xpath/parser/XPathTokenScanner$TokenRul
+ e.class
+SHA1-Digest: HJ51Xe9Jq02Ff394mOFu8l8Drv0=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/PropertiesEncode
+ Function.class
+SHA1-Digest: mxmWXw9MkyjjVBSdwGAdNgFuPGs=
+
+Name: org/eclipse/jet/internal/taglib/control/DeepIteratorStrategyBuil
+ der.class
+SHA1-Digest: IYRt9lnC/hHWRnvO4pqESdkCuLY=
+
+Name: org/eclipse/jet/internal/taglib/java/TagFactory.class
+SHA1-Digest: XGvCvxnMrdqfxLu0cacso+di9Wg=
+
+Name: org/eclipse/jet/internal/taglib/workspace/TagFactory.class
+SHA1-Digest: 0Q4J+HkyWNXrPyb9pU4NvnvIV3A=
+
+Name: org/eclipse/jet/internal/runtime/model/ResourceLoader.class
+SHA1-Digest: NK56fqXRob99GmI8bn6PZDoOPcw=
+
+Name: org/eclipse/jet/internal/taglib/control/LoadTag.class
+SHA1-Digest: zQMBHM1DjZmqEYa8n4LMTxRRyOs=
+
+Name: org/eclipse/jet/internal/xpath/EmbeddedXPath$5.class
+SHA1-Digest: wy09M8AM0HHlDFVok9FkymmfCtU=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/jdt/NonDescriptorAttri
+ bute.class
+SHA1-Digest: mXC/SdViDjVe349iReIUJWihtUs=
+
+Name: org/eclipse/jet/internal/JavaUtil.class
+SHA1-Digest: gE8+E7X5PDh7v+k9UI9eMDRGmNo=
+
+Name: org/eclipse/jet/internal/compiler/templates/v1/JET1JavaGenerator
+ $1.class
+SHA1-Digest: vuMgigNUqiqAaSgUfUQeJTq+1u8=
+
+Name: org/eclipse/jet/taglib/AbstractConditionalTag.class
+SHA1-Digest: 2wXy0iHx+c2OpxxBf8KC5/qDOig=
+
+Name: .jetproperties
+SHA1-Digest: 57KzHfM0hCQCuz3j8Cl55SoeKxc=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$LocationAttribute.class
+SHA1-Digest: S7s7Bc5taztjkXWgadf+agS49kY=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/PropertiesInspector$1.
+ class
+SHA1-Digest: HHGo7YkgoQT/9i+Z+FMVjY+3pfk=
+
+Name: org/eclipse/jet/internal/runtime/SafeConditionalRuntimeTag.class
+SHA1-Digest: 1l4vMHP4n3ostgJXHIf0nmzFOOM=
+
+Name: org/eclipse/jet/internal/runtime/RuntimeLoggerContextExtender$1.
+ class
+SHA1-Digest: qKrQDTk2Aw0NAsfw80GsvaHv3zQ=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/jdt/InspectASTNode.cla
+ ss
+SHA1-Digest: YTj4ajuOiwKhFxiDmLAfAzHGHAI=
+
+Name: org/eclipse/jet/internal/compiler/SimplifiedCompiler.class
+SHA1-Digest: u1C43/sSyDjowId+WmRroK0tW5A=
+
+Name: org/eclipse/jet/internal/taglib/workspace/WsFileFromWriterAction
+ .class
+SHA1-Digest: 2GKNXzLECTyL5ytUX+7QClpy2BA=
+
+Name: org/eclipse/jet/taglib/workspace/WorkspaceContextExtender$1.clas
+ s
+SHA1-Digest: QW9zSunkdd5R4mNE7RtNnC1O88w=
+
+Name: org/eclipse/jet/internal/runtime/RuntimeLoggerContextExtender$Lo
+ gState.class
+SHA1-Digest: FygKPGIBXzRZ7g3veXcTSjsNPsw=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$ModificationStampAttribute.class
+SHA1-Digest: ugaUlIQyfv2P0GRIqe+6ToAf5kQ=
+
+Name: org/eclipse/jet/internal/taglib/control/WithTag.class
+SHA1-Digest: gF2bzUpj3gKtP7BAIwNZtGh7sWw=
+
+Name: org/eclipse/jet/internal/runtime/SafeConditionalRuntimeTag$1.cla
+ ss
+SHA1-Digest: KFahQn4gOjEndgtjKPTVq6M5GVw=
+
+Name: org/eclipse/jet/internal/taglib/workspace/FileTag.class
+SHA1-Digest: /L7qe28I/uBrJmIwhIErYGl7kag=
+
+Name: org/eclipse/jet/internal/xpath/ast/ContextNode.class
+SHA1-Digest: OyI097CvjledDUbXlSwNo2IZeGo=
+
+Name: org/eclipse/jet/internal/taglib/workspace/RebuildWorkspaceTag.cl
+ ass
+SHA1-Digest: PZCZ5aRL/08WY4T9fqst5R7VO3Q=
+
+Name: org/eclipse/jet/internal/taglib/format/UniqueTag.class
+SHA1-Digest: j1Wadc83yD4QBVE6MVWxqP5iQOQ=
+
+Name: org/eclipse/jet/internal/xpath/parser/XPathTokenScanner.class
+SHA1-Digest: 9J8KHCz4eoMFo8vQt1SUWaeb+LE=
+
+Name: org/eclipse/jet/internal/compiler/templates/v2/JET2JavaGenerator
+ New$4.class
+SHA1-Digest: cl69z02lGmrqWWy0NxaZ2LgczNU=
+
+Name: org/eclipse/jet/internal/compiler/V2CodeGenVisitor.class
+SHA1-Digest: YXKeKX7r3Jkd1cBQp+tZUh2ZQdc=
+
+Name: org/eclipse/jet/internal/taglib/control/UserRegionTag.class
+SHA1-Digest: 4TOgLSAGmpsz1Av22GaFabYvsQo=
+
+Name: org/eclipse/jet/internal/taglib/java/JavaFormatTag.class
+SHA1-Digest: dF/PGOx/L7ee3iXUSU8/4Xm+kGA=
+
+Name: org/eclipse/jet/internal/xpath/functions/NumberFunction.class
+SHA1-Digest: PnqywxhIBmp5cfDpnooUBYCP9hQ=
+
+Name: org/eclipse/jet/taglib/TagLibraryManager.class
+SHA1-Digest: 2HnQBj7/fOhHJWTP18lB86RNbWk=
+
+Name: org/eclipse/jet/internal/extensionpoints/ModelLoaderExtManager.c
+ lass
+SHA1-Digest: xnO5UzgpNeTbKFtE5/bRRqyuR6U=
+
+Name: org/eclipse/jet/internal/taglib/control/WhenTag.class
+SHA1-Digest: qP1yTtb+sGor862itUHY8wD5xCY=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$LocationURIAttribute.class
+SHA1-Digest: 3q2YUP6ijxHiFMv2A3HXncI7hP4=
+
+Name: org/eclipse/jet/internal/taglib/control/InitialCodeTag.class
+SHA1-Digest: 2fDrs+uN2az7lcBWHWf/oCx4Zug=
+
+Name: org/eclipse/jet/internal/runtime/model/MyGenericXMLResourceFacto
+ ryImpl$1.class
+SHA1-Digest: ZZZVO5RAA/lPeXWQSD9DwDq6WoE=
+
+Name: org/eclipse/jet/internal/taglib/java/SrcFolderTag.class
+SHA1-Digest: B7nWstJGFLo69rmW2HIqI9GqSDs=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/EMFXMLNodeWrapper.clas
+ s
+SHA1-Digest: IebSpHtAMmhwhoK7Zdo6j6tYrr8=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$3.class
+SHA1-Digest: 5Q8t7FnhYFHcqghv2+E0yVIgCkQ=
+
+Name: org/eclipse/jet/internal/extensionpoints/StaleXPathFunctionWrapp
+ er.class
+SHA1-Digest: 348jkx+6MzcYBKbIU70PlIXPsys=
+
+Name: org/eclipse/jet/BodyContentWriter.class
+SHA1-Digest: kbhmGiu/NyCX57AFwgefxfnQhC4=
+
+Name: org/eclipse/jet/internal/taglib/format/FormatContextExtender.cla
+ ss
+SHA1-Digest: ftrAcCTSl/FnN4bn5WifK1LAn0k=
+
+Name: org/eclipse/jet/internal/taglib/format/UuidTag.class
+SHA1-Digest: IzKbb8Q7rT2FNYC+q2m24ue4EK0=
+
+Name: org/eclipse/jet/internal/runtime/JET2TemplateLoaderImpl$JET1Temp
+ lateWrapper.class
+SHA1-Digest: 7ZZgMl3w97Lj9FOEsVVXs6G67jM=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/XmlEncodeFunctio
+ n.class
+SHA1-Digest: aW43WlMHNPOwSnPGnbdQHcUUx90=
+
+Name: org/eclipse/jet/compiler/TemplatePathUtil.class
+SHA1-Digest: FKbWUYLiaw5Hb+3YFTUE6D+bOGo=
+
+Name: org/eclipse/jet/taglib/java/JavaActionsUtil.class
+SHA1-Digest: otYQ1mmTHszgrayL8+47aZeZ3XQ=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/PropertiesInspector.cl
+ ass
+SHA1-Digest: 80TfjE6PFln3CBmfazMAk3siqWI=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/UppercaseFirstFu
+ nction.class
+SHA1-Digest: pO87m853PbWAngM96jjHh1pg21c=
+
+Name: org/eclipse/jet/xpath/inspector/InvalidChildException.class
+SHA1-Digest: HIvACbm4duGS6He0yEqss0vb5S0=
+
+Name: org/eclipse/jet/internal/compiler/templates/JET2JavaGenerator.cl
+ ass
+SHA1-Digest: b4Rq7MfzUnihZ1KbTXoQFpLEcAE=
+
+Name: org/eclipse/jet/compiler/IJETCompilerState.class
+SHA1-Digest: 2+S4Ph86UDn9wa7XzDObGGSozsc=
+
+Name: org/eclipse/jet/internal/taglib/format/SetLocaleTag.class
+SHA1-Digest: kkqlO3bSpAMI7Y8F6f/QJoImvCE=
+
+Name: org/eclipse/jet/internal/compiler/LoaderGenerationParameters.cla
+ ss
+SHA1-Digest: n9OaRnC/M585MkU5LpbqwKbmou0=
+
+Name: org/eclipse/jet/internal/taglib/format/ResourceBundleUtil$1.clas
+ s
+SHA1-Digest: 3vlSHgiuFfODSgi62n9vlIE/ECA=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$RawLocationURIAttribute.class
+SHA1-Digest: 0D4FLu9i7q6EilbmOQ3wGgWJk44=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$AncestorOrSelfAxis.class
+SHA1-Digest: o0n7x2pbW7qyDFsf58O8SESp3TY=
+
+Name: org/eclipse/jet/internal/runtime/model/EntityResolverFactory$Def
+ aultEntityResolver.class
+SHA1-Digest: /3WinlD7xAJxf82r9KWGqrjLwJs=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$ChildAxis.class
+SHA1-Digest: ja4t/c19gaxry6/CY/ndeJetamY=
+
+Name: org/eclipse/jet/internal/runtime/model/EntityResolverFactory$URI
+ ResolverProxy.class
+SHA1-Digest: pprOP56CDAdU6h5CI6YpMM2G7Ok=
+
+Name: org/eclipse/jet/internal/taglib/workspace/WsCopyTextFileAction.c
+ lass
+SHA1-Digest: o+Q/jCLnZQIct0rrNJBzd/g28AE=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/IWrappedAttribute.clas
+ s
+SHA1-Digest: Zx7HeGYkacOwxf9PN6Mju7lD9AM=
+
+Name: org/eclipse/jet/internal/compiler/templates/JET2JavaGenerator$1.
+ class
+SHA1-Digest: POKLi+VQfasIvVqE6X3GZfZo298=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeTest$AllNodesTest.class
+SHA1-Digest: w9fUuQNJiMGKRmXipABFpX2raoo=
+
+Name: org/eclipse/jet/internal/xpath/functions/SubstringAfterFunction.
+ class
+SHA1-Digest: AvpHZ1yGDsQL2lMSOjk2O1yq2zc=
+
+Name: org/eclipse/jet/internal/runtime/SafeOtherRuntimeTag$1.class
+SHA1-Digest: O63rhcrpTJjhHp7CaMyUUdyAs5c=
+
+Name: org/eclipse/jet/internal/compiler/templates/CodeGenTemplateLoade
+ r.class
+SHA1-Digest: cqa15qbRv9M3XBmmYfBki+oUJXI=
+
+Name: org/eclipse/jet/internal/xpath/functions/RoundFunction.class
+SHA1-Digest: snwfB+Kq8HrL4h+oUyy0zGHvGEw=
+
+Name: org/eclipse/jet/compiler/CompileOptionsManager.class
+SHA1-Digest: fzbbIj3GZgC/wbi4iLST6MKoTa8=
+
+Name: transforms/plugins/org.eclipse.jet.transforms.taglibdoc_1.0.0.ja
+ r
+SHA1-Digest: o3wuBuITzfUuV7T4HDFrcwdggLY=
+
+Name: org/eclipse/jet/internal/xpath/functions/LastFunction.class
+SHA1-Digest: D8wjJZmtTSClh26cpPukxXxXXUM=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/jdt/InspectSimplePrope
+ rtyDescriptorAttribute.class
+SHA1-Digest: 4HYZyS5Ydxv64S62K8DQV9byz/0=
+
+Name: org/eclipse/jet/internal/taglib/control/AddTextElementTag.class
+SHA1-Digest: 5+Y5gISITU0Vx8WWxspMrTh2zfI=
+
+Name: org/eclipse/jet/internal/runtime/SafeCustomRuntimeTag.class
+SHA1-Digest: 5s5yOjBG3BnDYxHToG5CBjNjXng=
+
+Name: org/eclipse/jet/taglib/TagUtil.class
+SHA1-Digest: H6ruEs9phkaJGlta3j3R4chcEp8=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/CamelCaseFunctio
+ n.class
+SHA1-Digest: mKMuYleYGQmthcpo0gYLG6qGIiM=
+
+Name: org/eclipse/jet/JET2Platform$1.class
+SHA1-Digest: 9d3aIvfY8Hlc+X4nhuVORvLlndg=
+
+Name: org/eclipse/jet/internal/compiler/templates/DummyMain.class
+SHA1-Digest: 8/1JWN/2smF6IZ0a9XtZxZxhT2Q=
+
+Name: org/eclipse/jet/xpath/NodeSet.class
+SHA1-Digest: y7UDksOPu97VGdPI+UiU+ZxsjZA=
+
+Name: org/eclipse/jet/taglib/AbstractOtherTag.class
+SHA1-Digest: 3KC4AVVBeHYaP6oiUzatZDa9a2o=
+
+Name: org/eclipse/jet/internal/core/equinox/emf/ContextLogEntryAdapter
+ Factory.class
+SHA1-Digest: biYeXZ2Z/dDv0xv6rXNjZOXDviU=
+
+Name: org/eclipse/jet/internal/builder/JET2ProjectNature.class
+SHA1-Digest: PzqE0j3MLpQRFwKpqJ1lQoV8Fkc=
+
+Name: org/eclipse/jet/internal/runtime/DirectoryBundleProvider$2.class
+SHA1-Digest: z91WFvIR/OZ8Zlt0gDksjLpcTVI=
+
+Name: org/eclipse/jet/internal/taglib/format/messages.properties
+SHA1-Digest: Hj1SugmV/5LDYSbPFMpxI5lS870=
+
+Name: org/eclipse/jet/internal/xpath/ast/BooleanLiteral.class
+SHA1-Digest: H3eDbePMOVO5rIi6GoG/AfPGr9Q=
+
+Name: org/eclipse/jet/internal/taglib/TagAttributeDefinitionImpl.class
+SHA1-Digest: 6Oc2U+FF8n38oOEge2PWnuI86Yw=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/EStructuralFeatureSett
+ ingInspector.class
+SHA1-Digest: 8HLd+NHftvo1VfRnfloyIVfv2Zo=
+
+Name: org/eclipse/jet/compiler/Comment.class
+SHA1-Digest: cNxByteP0CfccZkeBSTb2SZTegA=
+
+Name: org/eclipse/jet/internal/taglib/format/XPathTag.class
+SHA1-Digest: aj33u8OHw2cSFi1UZla9brSQnI0=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeTestKind$1.class
+SHA1-Digest: WbgPJma84KeuSjHjcdEO4CQXq/M=
+
+Name: org/eclipse/jet/internal/taglib/format/StripTag.class
+SHA1-Digest: 3iUtm8aZmWUioX8USkyS5tBwU9U=
+
+Name: org/eclipse/jet/compiler/TagLibraryUsageManager$1.class
+SHA1-Digest: lka8E9A+TkLevzmZZZxuOjrkeh8=
+
+Name: org/eclipse/jet/internal/runtime/SafeContainerRuntimeTag$3.class
+SHA1-Digest: aZ3T2bG0RM8uGWwlAswRNzE+Qaw=
+
+Name: org/eclipse/jet/runtime/model/ILoadContext.class
+SHA1-Digest: dNHW0y9qjUlQCPUyN97l4zdmU7o=
+
+Name: org/eclipse/jet/xpath/NodeSetUtil.class
+SHA1-Digest: 6MHOeHyTBWOh+FwWsq28pTFZtiI=
+
+Name: org/eclipse/jet/internal/extensionpoints/UnableToLoadXPathFuncti
+ onWrapper.class
+SHA1-Digest: qz/3SZo/KEuEUlEt2ku+fPmKyaY=
+
+Name: org/eclipse/jet/internal/xpath/ast/BinaryOp.class
+SHA1-Digest: Vd97mCZ9O0BllYf4vnU5NkbVZG0=
+
+Name: .deprecations/DEPRECATE_org.eclipse.jet.JET2Platform.execute(jav
+ a.lang.String_java.lang.String_java.lang.String_org.eclipse.core.runt
+ ime.IProgressMonitor).xml
+SHA1-Digest: ds/AcsN9Z3gtIvHS/eH2bH1QjFI=
+
+Name: org/eclipse/jet/internal/compiler/templates/JETTemplateMapGenera
+ tor.class
+SHA1-Digest: m7zitzi1dItbFsO0rI74XdNWBxY=
+
+Name: org/eclipse/jet/internal/taglib/TagDefinitionImpl.class
+SHA1-Digest: cDEKI0fmTq7UL4RWd0wwFmKnVTo=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry.class
+SHA1-Digest: E/Wl1xOw/hZXHFoQCSyoukew6iY=
+
+Name: org/eclipse/jet/internal/runtime/SafeFunctionRuntimeTag$1.class
+SHA1-Digest: zzYFynA3+rbYvviwoyjjyQnRW3U=
+
+Name: org/eclipse/jet/internal/taglib/java/MergeTag$JMergeProcessor.cl
+ ass
+SHA1-Digest: gytfYBGUpsNGcvW1GuYX7F4Phgo=
+
+Name: org/eclipse/jet/internal/xpath/ast/NodeSetLiteral.class
+SHA1-Digest: 0hDWw9lp6BZrAzv+p/BLzRUnE8g=
+
+Name: org/eclipse/jet/internal/xpath/functions/ConcatFunction.class
+SHA1-Digest: Ay/lABadAxlWqbCK6Dx2sP+ICgg=
+
+Name: org/eclipse/jet/taglib/workspace/AbstractWorkspaceAction2.class
+SHA1-Digest: hvj5W3HY1BCTCjw0BDNEEpSbjbI=
+
+Name: org/eclipse/jet/internal/taglib/java/Messages.class
+SHA1-Digest: AINugO3IcvWAj+nOWgS8j/SB+yw=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$Gt.class
+SHA1-Digest: SDiZ5mZdSQHRT71UKxXN7OHwxjk=
+
+Name: org/eclipse/jet/internal/xpath/ast/ExprNode.class
+SHA1-Digest: rJgDYx3VznxeczZvfJGldx1ODK8=
+
+Name: org/eclipse/jet/internal/xpath/functions/ContainsFunction.class
+SHA1-Digest: 3TdbbVMKG8BNsOJ70u8K0BE+CR4=
+
+Name: org/eclipse/jet/internal/xpath/ast/NumberExpr.class
+SHA1-Digest: U3qjXbjjHykhwlmMZ0Df3C1rt0c=
+
+Name: org/eclipse/jet/internal/xpath/EmbeddedXPath$4.class
+SHA1-Digest: HpVmZGVJJtnfUQM8wEIF2syXPkU=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$DescendantOrSelfAxis.cla
+ ss
+SHA1-Digest: robjSeSF5VMmVPfHTga8PcyExjQ=
+
+Name: org/eclipse/jet/internal/taglib/ExtensionTagDefinitionImpl.class
+SHA1-Digest: OgsuGxxYNIT7phUs7LWTyJMjNxs=
+
+Name: org/eclipse/jet/internal/xpath/ast/Axis$PrecedingAxis.class
+SHA1-Digest: YZ4lNhbXeI5xhDMXNDSzJXadsMM=
+
+Name: org/eclipse/jet/internal/taglib/InternalTagLibManager.class
+SHA1-Digest: 5/yKKgmB7uXYVM27/EQxZ4wRCBk=
+
+Name: org/eclipse/jet/internal/xpath/ast/RelOp$Lte.class
+SHA1-Digest: yN8AXhY/oEGgSuwdHttrUvAsSs4=
+
+Name: org/eclipse/jet/internal/taglib/format/MillisecondsTag.class
+SHA1-Digest: 5oEHvtWWdTnKYEjlCZiXVOXrDqs=
+
+Name: org/eclipse/jet/internal/runtime/RuntimeLoggerContextExtender.cl
+ ass
+SHA1-Digest: XSewryVfVegI1hvTqQt3NvyhMIM=
+
+Name: org/eclipse/jet/internal/xpath/parser/XPathTokenScanner$Whitespa
+ ceRule.class
+SHA1-Digest: 8Pu4eeVRwhmmwsoaeVeAAoknk2w=
+
+Name: org/eclipse/jet/xpath/inspector/IElementInspector.class
+SHA1-Digest: CrbiQtL93XGQ1Rf4KtmrSeoLwjk=
+
+Name: org/eclipse/jet/internal/runtime/SafeContainerRuntimeTag.class
+SHA1-Digest: CtJJ8IYu4Q23jCGfPFAToJA0x3s=
+
+Name: org/eclipse/jet/compiler/Problem.class
+SHA1-Digest: ZGigjMfq1FpKchIcIpyYY9tzOaE=
+
+Name: org/eclipse/jet/internal/compiler/SimplifiedCompiler$JET1Templat
+ eMatcher.class
+SHA1-Digest: G7COuD+xGac9WHqcYnbZHqgrugw=
+
+Name: org/eclipse/jet/internal/xpath/functions/extras/ClassNameFunctio
+ n.class
+SHA1-Digest: AkF2Fbd+KW3zRBdazpAhUz1wro4=
+
+Name: org/eclipse/jet/internal/extensionpoints/TransformData.class
+SHA1-Digest: W5tzrc0xuuBDRdkHuwULpbEB3Ug=
+
+Name: org/eclipse/jet/internal/xpath/parser/XPathTokenScanner$QNameRul
+ e.class
+SHA1-Digest: eSuJt9O1g4xFz80aCNPra0DjTCY=
+
+Name: org/eclipse/jet/internal/compiler/templates/TagDataDeclGenerator
+ .class
+SHA1-Digest: hq02X6qV2obXiBRC5kxvS4AnaTU=
+
+Name: org/eclipse/jet/taglib/MarkerHelper.class
+SHA1-Digest: UQRtli1Ln566tPwjVCoQyP2lczU=
+
+Name: org/eclipse/jet/internal/runtime/JET2TemplateLoaderImpl.class
+SHA1-Digest: cs97E1ZCmAkZJhhdRgvhN7+0Yco=
+
+Name: org/eclipse/jet/internal/xpath/functions/BuiltinXPathFunctionRes
+ olver.class
+SHA1-Digest: XdXIcNFuhUDodkBo1K9M2wX2LLY=
+
+Name: org/eclipse/jet/taglib/workspace/IWorkspaceActionExtension.class
+SHA1-Digest: j27/4Jy+9wT8rmex6y2N0Plf9fI=
+
+Name: org/eclipse/jet/internal/runtime/JETBundleDescriptor.class
+SHA1-Digest: YVb5CnCl9v0cpLVdKrG2OHTFt3w=
+
+Name: org/eclipse/jet/xpath/XPathLexicalException.class
+SHA1-Digest: f/6SAjuBIVXaniQW4/M+ZaSDnuI=
+
+Name: org/eclipse/jet/internal/compiler/templates/v2/JET2JavaGenerator
+ New$3.class
+SHA1-Digest: idNcUAdhW7qprqnNBQ9lanQUiFQ=
+
+Name: org/eclipse/jet/internal/compiler/SimplifiedCompiler$NullTemplat
+ eResolver.class
+SHA1-Digest: BecjBpMyOOHIUFWt6D2b8hzHt+8=
+
+Name: org/eclipse/jet/internal/xpath/inspectors/ResourceAttributeFacto
+ ry$RawLocationAttribute.class
+SHA1-Digest: Mgm3oPr144/CqTf5goalIR5fEUE=
+Bundle-ClassPath: .
+

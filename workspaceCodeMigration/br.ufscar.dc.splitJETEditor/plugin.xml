@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Split JET Editor"
+            id="br.ufscar.dc.splitJETEditor">
+      </category>
+      <view
+            name="Split JET Editor"
+            icon="icons/sample.gif"
+            category="br.ufscar.dc.splitJETEditor"
+            class="br.ufscar.dc.splitjeteditor.views.SplitJETEditorView"
+            id="br.ufscar.dc.splitjeteditor.views.SplitJETEditorView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="br.ufscar.dc.splitjeteditor.views.SplitJETEditorView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+</plugin>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="br.ufscar.jetmapping.Range"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.graphics.Color"/>
+<fullyQualifiedTypeName name="br.ufscar.dc.splitjeteditor.views.ColorConstants"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.events.PaintListener"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="org.eclipse.ui.operations.UndoActionHandler"/>
+<fullyQualifiedTypeName name="org.eclipse.text.undo.DocumentUndoManager"/>
+<fullyQualifiedTypeName name="org.eclipse.text.undo.IDocumentUndoListener"/>
+<fullyQualifiedTypeName name="org.eclipse.ui.views.navigator.RefactorActionGroup"/>
+<fullyQualifiedTypeName name="org.eclipse.text.undo.DocumentUndoManagerRegistry"/>
+<fullyQualifiedTypeName name="org.eclipse.text.undo.DocumentUndoEvent"/>
+<fullyQualifiedTypeName name="org.eclipse.core.commands.ExecutionException"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="br.ufscar.jetmapping.MapEntry"/>
+<fullyQualifiedTypeName name="br.ufscar.dc.splitjeteditor.views.ChangeOperationType"/>
+<fullyQualifiedTypeName name="br.ufscar.dc.splitjeteditor.views.ChangeOperation"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.events.SelectionListener"/>
+<fullyQualifiedTypeName name="br.ufscar.jetmapping.RetrievalPolicy"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.custom.ExtendedModifyListener"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.events.KeyListener"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.events.VerifyListener"/>
+<fullyQualifiedTypeName name="br.ufscar.dc.splitjeteditor.views.HighlightMode"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.widgets.Display"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="org.eclipse.jface.dialogs.MessageDialog"/>
+<fullyQualifiedTypeName name="br.ufscar.dc.Dialogs"/>
+<fullyQualifiedTypeName name="org.eclipse.core.runtime.IStatus"/>
+</qualifiedTypeNameHistroy>
