@@ -52,10 +52,14 @@ such as ws:file, ws:folder and ws:project
 			<ws:file template="templates/CSS/templateBootstrap-datepicker.standalone.jet" path="bootstrap-datepicker.standalone.css" />
 			<ws:file template="templates/CSS/templateBootstrap-datepicker3.jet" path="bootstrap-datepicker3.css" />
 			<ws:file template="templates/CSS/templateBootstrap-datepicker3.standalone.jet" path="bootstrap-datepicker3.standalone.css" />
+			
+			<ws:file template="templates/CSS/templateBootstrap-table.jet" path="bootstrap-table.css" />
 		</ws:folder>
 
 		<ws:folder path="js">
 			<ws:file template="templates/JS/templateBootstrap-datepicker.jet" path="bootstrap-datepicker.js" />
+			
+			<ws:file template="templates/JS/templateBootstrap-table.jet" path="bootstrap-table.js" />
 
 			<c:iterate select="/Domainmodel/Entity" var="currentEntity">
 				<ws:file template="templates/templateEntityJS.jet" path="{$currentEntity/@name}.js" />

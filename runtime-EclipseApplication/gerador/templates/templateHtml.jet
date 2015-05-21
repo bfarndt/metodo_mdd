@@ -10,9 +10,6 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>Theme Template for Bootstrap</title>
-    
-    <!-- Datepicker -->
-	<link href="css/bootstrap-datepicker.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +23,12 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
+    
+    <!-- Datepicker -->
+	<link href="css/bootstrap-datepicker.css" rel="stylesheet">
+    
+    <!-- Table plugin -->
+    <link href="css/bootstrap-table.css" rel="stylesheet">
     
 	<!-- Entitys JS -->
 <c:iterate select="$currentPage/forms/entity" var="currentEntity">
@@ -129,5 +132,8 @@
 			});
 		});
     </script>
+    
+    <!-- Table - Retirado de: http://bootstrap-table.wenzhixin.net.cn/ -->
+    <script src="js/bootstrap-table.js"></script>
   </body>
 </html>
