@@ -1,0 +1,100 @@
+<c:iterate select="$currentForm/entity" var="currentEntity">
+	<?php
+		include_once "class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>.class.php";
+		include_once "class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB.class.php";
+		
+		$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>();
+		
+		<c:iterate select="$currentEntity/Feature" var="currentFeature">
+			$<c:get select="$currentFeature/@name" /> = "";
+			if (isSet($_GET['<c:get select="$currentFeature/@name" />'])) {
+				$<c:get select="$currentFeature/@name" /> = $_GET["<c:get select="$currentFeature/@name" />"];
+				$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($<c:get select="$currentFeature/@name" />);
+			}
+		</c:iterate>
+		
+		$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB();
+		$rows = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->get($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
+	?>
+
+	<c:if test="($currentForm/@filter = 'true')">
+		<div class="panel panel-default">
+			<div class="panel-heading">Novo <c:get select="$currentEntity/@name" /></div>
+			<div class="panel-body">
+				<form class="bs-example bs-example-form" data-example-id="simple-input-groups" action="/<c:get select="$currentEntity/@name" />/save.php" method="post">
+					<input type="hidden" name="pageBack" value="<c:get select="$currentPage/@name" />">
+					<c:iterate select="$currentEntity/Feature" var="currentFeature">
+						<div class="input-group">
+							<c:if test="($currentFeature/DataType/@name = 'string') or ($currentFeature/DataType/@name = 'int') or ($currentFeature/DataType/@name = 'float') or ($currentFeature/DataType/@name = 'time')">
+								<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
+								<input type="text" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1">
+							</c:if>
+							<c:if test="($currentFeature/DataType/@name = 'currency')">
+								<span class="input-group-addon"><c:get select="$currentFeature/@name" /> (R$)</span>
+								<input type="text" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1">
+							</c:if>
+							<c:if test="($currentFeature/DataType/@name = 'date')">
+								<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
+								<input type="text" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control datepicker" placeholder="" aria-describedby="basic-addon1">
+							</c:if>
+							<c:if test="($currentFeature/DataType/@name = 'boolean')">
+								<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
+								<input type="checkbox" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1">
+							</c:if>
+						</div>
+						<br>
+					</c:iterate>
+					<div class="btn-group btn-group" role="group" aria-label="...">
+						<button type="reset" class="btn btn-default">Limpar</button>
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</c:if>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<table class="table table-striped" <c:if test="($currentForm/@filter = 'true')">data-sort-name="id" data-sort-order="inc"></c:if>>
+				<thead>
+					<tr>
+						<th <c:if test="($currentForm/@filter = 'true')">data-sort-name="id" data-sort-order="inc"></c:if>>ID</th>
+						<c:iterate select="$currentEntity/Feature" var="currentFeature">
+							<th><c:get select="$currentFeature/@name" /></th>
+						</c:iterate>
+						<c:if test="($currentForm/@put = 'true') or ($currentForm/@delete = 'true')">
+							<th width="100px">&nbsp;</th>
+						</c:if>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						foreach ($rows as $row) {
+							?>
+							<tr>
+								<td><?php echo $row->getId(); ?></td>
+								<c:iterate select="$currentEntity/Feature" var="currentFeature">
+									<td><?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>(); ?></td>
+									<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>(); ?>">
+								</c:iterate>
+								<c:if test="($currentForm/@put = 'true') or ($currentForm/@delete = 'true')">
+									<td>
+										<c:if test="($currentForm/@put = 'true')">
+											<button type="button" class="btn btn-default" aria-label="Editar" onclick="javascript: update<c:get select="$currentEntity/@name" />(<?php echo $row->getId(); ?>);">
+												<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+											</button>
+										</c:if>
+										<c:if test="($currentForm/@delete = 'true')">
+											<button type="button" class="btn btn-default" aria-label="Apagar" onclick="javascript: delete<c:get select="$currentEntity/@name" />(<?php echo $row->getId(); ?>, '<c:get select="$currentPage/@name" />');">
+												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+											</button>
+										</c:if>
+									</td>
+								</c:if>
+							</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</c:iterate>

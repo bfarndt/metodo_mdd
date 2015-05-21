@@ -23,6 +23,13 @@ form formShowBruno {
 		Bruno
 	}
 
+page bruno {
+	title: 'Bruno'
+	header: true
+	footer: true
+	formShowBruno
+}
+
 formReport formReportBruno {
 	filter: true
 	order: true
@@ -30,11 +37,10 @@ formReport formReportBruno {
 	Bruno
 }
 
-page bruno {
-	title: 'Bruno'
+page brunoReport {
+	title: 'Relatório Bruno'
 	header: true
-	footer: true
-	formShowBruno
+	footer: false
 	formReportBruno
 }
 

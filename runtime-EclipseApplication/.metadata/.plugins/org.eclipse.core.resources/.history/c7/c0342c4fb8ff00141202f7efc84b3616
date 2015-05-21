@@ -1,0 +1,62 @@
+project "proj3"
+
+begin
+
+page index {
+	title: 'Home'
+	header: true
+	footer: true
+}
+
+entity Bruno {
+	cpf: string
+	endereco: string
+	nascimento: date
+	mensalidade: currency
+}
+
+form formShowBruno {
+		get: true
+		post: true
+		put: true
+		delete: true
+		Bruno
+	}
+
+page bruno {
+	title: 'Bruno'
+	header: true
+	footer: true
+	formShowBruno
+}
+
+formReport formReportBruno {
+	filter: false
+	order: false
+	pagination: true
+	Bruno
+}
+
+page brunoReport {
+	title: 'Relatório Bruno'
+	header: true
+	footer: false
+	formReportBruno
+}
+
+entity Daniel {
+	cpf: string
+	endereco: string
+}
+
+formNewEntity formNewEntityDaniel {
+	Daniel
+}
+
+page Daniel {
+	header: true
+	footer: true
+	formNewEntityDaniel
+}
+
+end
