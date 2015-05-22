@@ -70,6 +70,7 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
       case ExtendedPackage.IMPORT: return createImport();
       case ExtendedPackage.ABSTRACT_TYPE: return createAbstractType();
       case ExtendedPackage.DATA_TYPE: return createDataType();
+      case ExtendedPackage.ENTITY_TYPE: return createEntityType();
       case ExtendedPackage.ENTITY: return createEntity();
       case ExtendedPackage.FEATURE: return createFeature();
       case ExtendedPackage.PAGE: return createPage();
@@ -146,6 +147,17 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
   {
     DataTypeImpl dataType = new DataTypeImpl();
     return dataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EntityType createEntityType()
+  {
+    EntityTypeImpl entityType = new EntityTypeImpl();
+    return entityType;
   }
 
   /**

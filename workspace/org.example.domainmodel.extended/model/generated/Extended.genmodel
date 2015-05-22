@@ -19,11 +19,15 @@
     <genClasses ecoreClass="Extended.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Import/importedNamespace"/>
     </genClasses>
-    <genClasses ecoreClass="Extended.ecore#//AbstractType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//AbstractType/name"/>
+    <genClasses ecoreClass="Extended.ecore#//AbstractType"/>
+    <genClasses ecoreClass="Extended.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//DataType/name"/>
     </genClasses>
-    <genClasses ecoreClass="Extended.ecore#//DataType"/>
+    <genClasses ecoreClass="Extended.ecore#//EntityType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Extended.ecore#//EntityType/entity"/>
+    </genClasses>
     <genClasses ecoreClass="Extended.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Entity/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Extended.ecore#//Entity/superType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Extended.ecore#//Entity/features"/>
     </genClasses>

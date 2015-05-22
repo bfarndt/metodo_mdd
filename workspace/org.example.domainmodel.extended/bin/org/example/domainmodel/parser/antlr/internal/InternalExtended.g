@@ -419,11 +419,11 @@ ruleAbstractType returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractTypeAccess().getEntityParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getAbstractTypeAccess().getEntityTypeParserRuleCall_1()); 
     }
-    this_Entity_1=ruleEntity
+    this_EntityType_1=ruleEntityType
     { 
-        $current = $this_Entity_1.current; 
+        $current = $this_EntityType_1.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -535,6 +535,40 @@ ruleDataType returns [EObject current=null]
 	    }
 
 )
+
+)
+)
+;
+
+
+
+
+
+// Entry rule entryRuleEntityType
+entryRuleEntityType returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEntityTypeRule()); }
+	 iv_ruleEntityType=ruleEntityType 
+	 { $current=$iv_ruleEntityType.current; } 
+	 EOF 
+;
+
+// Rule EntityType
+ruleEntityType returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEntityTypeRule());
+	        }
+        }
+	otherlv_0=RULE_ID
+	{
+		newLeafNode(otherlv_0, grammarAccess.getEntityTypeAccess().getEntityEntityCrossReference_0()); 
+	}
 
 )
 )

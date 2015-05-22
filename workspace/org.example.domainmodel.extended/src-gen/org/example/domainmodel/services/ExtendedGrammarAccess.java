@@ -206,20 +206,20 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDataTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEntityTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//AbstractType:
-		//	DataType | Entity;
+		//	DataType | EntityType;
 		public ParserRule getRule() { return rule; }
 
-		//DataType | Entity
+		//DataType | EntityType
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//DataType
 		public RuleCall getDataTypeParserRuleCall_0() { return cDataTypeParserRuleCall_0; }
 
-		//Entity
-		public RuleCall getEntityParserRuleCall_1() { return cEntityParserRuleCall_1; }
+		//EntityType
+		public RuleCall getEntityTypeParserRuleCall_1() { return cEntityTypeParserRuleCall_1; }
 	}
 
 	public class DataTypeElements extends AbstractParserRuleElementFinder {
@@ -264,6 +264,26 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"boolean"
 		public Keyword getNameBooleanKeyword_0_6() { return cNameBooleanKeyword_0_6; }
+	}
+
+	public class EntityTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EntityType");
+		private final Assignment cEntityAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cEntityEntityCrossReference_0 = (CrossReference)cEntityAssignment.eContents().get(0);
+		private final RuleCall cEntityEntityIDTerminalRuleCall_0_1 = (RuleCall)cEntityEntityCrossReference_0.eContents().get(1);
+		
+		//EntityType:
+		//	entity=[Entity];
+		public ParserRule getRule() { return rule; }
+
+		//entity=[Entity]
+		public Assignment getEntityAssignment() { return cEntityAssignment; }
+
+		//[Entity]
+		public CrossReference getEntityEntityCrossReference_0() { return cEntityEntityCrossReference_0; }
+
+		//ID
+		public RuleCall getEntityEntityIDTerminalRuleCall_0_1() { return cEntityEntityIDTerminalRuleCall_0_1; }
 	}
 
 	public class EntityElements extends AbstractParserRuleElementFinder {
@@ -781,6 +801,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
 	private final AbstractTypeElements pAbstractType;
 	private final DataTypeElements pDataType;
+	private final EntityTypeElements pEntityType;
 	private final EntityElements pEntity;
 	private final FeatureElements pFeature;
 	private final BooleanElements pBoolean;
@@ -807,6 +828,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
 		this.pAbstractType = new AbstractTypeElements();
 		this.pDataType = new DataTypeElements();
+		this.pEntityType = new EntityTypeElements();
 		this.pEntity = new EntityElements();
 		this.pFeature = new FeatureElements();
 		this.pBoolean = new BooleanElements();
@@ -905,7 +927,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AbstractType:
-	//	DataType | Entity;
+	//	DataType | EntityType;
 	public AbstractTypeElements getAbstractTypeAccess() {
 		return pAbstractType;
 	}
@@ -922,6 +944,16 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getDataTypeRule() {
 		return getDataTypeAccess().getRule();
+	}
+
+	//EntityType:
+	//	entity=[Entity];
+	public EntityTypeElements getEntityTypeAccess() {
+		return pEntityType;
+	}
+	
+	public ParserRule getEntityTypeRule() {
+		return getEntityTypeAccess().getRule();
 	}
 
 	//Entity:

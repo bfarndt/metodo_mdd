@@ -77,6 +77,15 @@ public interface ExtendedFactory extends EFactory
   DataType createDataType();
 
   /**
+   * Returns a new object of class '<em>Entity Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entity Type</em>'.
+   * @generated
+   */
+  EntityType createEntityType();
+
+  /**
    * Returns a new object of class '<em>Entity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

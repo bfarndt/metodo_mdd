@@ -16,6 +16,7 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.example.domainmodel.extended.DataType;
 import org.example.domainmodel.extended.Domainmodel;
 import org.example.domainmodel.extended.Entity;
+import org.example.domainmodel.extended.EntityType;
 import org.example.domainmodel.extended.ExtendedPackage;
 import org.example.domainmodel.extended.Feature;
 import org.example.domainmodel.extended.Form;
@@ -49,9 +50,15 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				else break;
 			case ExtendedPackage.ENTITY:
 				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getAbstractTypeRule() ||
 				   context == grammarAccess.getEntityRule()) {
 					sequence_Entity(context, (Entity) semanticObject); 
+					return; 
+				}
+				else break;
+			case ExtendedPackage.ENTITY_TYPE:
+				if(context == grammarAccess.getAbstractTypeRule() ||
+				   context == grammarAccess.getEntityTypeRule()) {
+					sequence_EntityType(context, (EntityType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -133,6 +140,22 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_Domainmodel(EObject context, Domainmodel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     entity=[Entity|ID]
+	 */
+	protected void sequence_EntityType(EObject context, EntityType semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ExtendedPackage.Literals.ENTITY_TYPE__ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedPackage.Literals.ENTITY_TYPE__ENTITY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getEntityTypeAccess().getEntityEntityIDTerminalRuleCall_0_1(), semanticObject.getEntity());
+		feeder.finish();
 	}
 	
 	

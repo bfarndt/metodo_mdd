@@ -117,12 +117,19 @@ public class ExtendedSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ExtendedPackage.ENTITY_TYPE:
+      {
+        EntityType entityType = (EntityType)theEObject;
+        T result = caseEntityType(entityType);
+        if (result == null) result = caseAbstractType(entityType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ExtendedPackage.ENTITY:
       {
         Entity entity = (Entity)theEObject;
         T result = caseEntity(entity);
         if (result == null) result = caseAbstractElement(entity);
-        if (result == null) result = caseAbstractType(entity);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -272,6 +279,22 @@ public class ExtendedSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDataType(DataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Entity Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Entity Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEntityType(EntityType object)
   {
     return null;
   }
