@@ -1,10 +1,10 @@
 <?php
 
-class <f:uc length="1"><c:get select="$e/@name" /></f:uc>
+class <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>
 {
 	private $id;
-	<c:iterate select="$e/Feature" var="f"
-		>private $<c:get select="$f/@name" /> = "";
+	<c:iterate select="$currentEntity/Feature" var="currentFeature"
+		>private $<c:get select="$currentFeature/@name" /> = "";
 	</c:iterate>
 	
 	public function getId()
@@ -17,15 +17,15 @@ class <f:uc length="1"><c:get select="$e/@name" /></f:uc>
 		$this->id = $id;
 	}
 	
-<c:iterate select="$e/Feature" var="f">
-	public function get<f:uc length="1"><c:get select="$f/@name" /></f:uc>()
+<c:iterate select="$currentEntity/Feature" var="currentFeature">
+	public function get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>()
 	{
-		return $this-><c:get select="$f/@name" />;
+		return $this-><c:get select="$currentFeature/@name" />;
 	}
 	
-	public function set<f:uc length="1"><c:get select="$f/@name" /></f:uc>($<c:get select="$f/@name" />)
+	public function set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($<c:get select="$currentFeature/@name" />)
 	{
-		$this-><c:get select="$f/@name" /> = $<c:get select="$f/@name" />;
+		$this-><c:get select="$currentFeature/@name" /> = $<c:get select="$currentFeature/@name" />;
 	}
 </c:iterate>
 }

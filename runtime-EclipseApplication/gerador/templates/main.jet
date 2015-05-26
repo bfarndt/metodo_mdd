@@ -33,10 +33,10 @@ such as ws:file, ws:folder and ws:project
 		</c:iterate>
 
 		<ws:folder path="class">
-			<c:iterate select="/Domainmodel/Entity" var="e">
-				<c:set select="$e" name="className"><f:uc length="1"><c:get select="$e/@name" /></f:uc></c:set>
-				<ws:file template="templates/templateEntityClass.jet" path="{$e/@className}.class.php" />
-				<ws:file template="templates/templateEntityClassDB.jet" path="{$e/@className}DB.class.php" />
+			<c:iterate select="/Domainmodel/Entity" var="currentEntity">
+				<c:set select="$currentEntity" name="className"><f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc></c:set>
+				<ws:file template="templates/templateEntityClass.jet" path="{$currentEntity/@className}.class.php" />
+				<ws:file template="templates/templateEntityClassDB.jet" path="{$currentEntity/@className}DB.class.php" />
 			</c:iterate>
 		</ws:folder>
 
