@@ -1,0 +1,14 @@
+
+CREATE TABLE daniel
+(
+	id bigserial,
+	cpf text, endereco text,
+	CONSTRAINT daniel_pkey PRIMARY KEY (id)
+);
+
+CREATE TABLE bruno
+(
+	id bigserial,
+	cpf text, endereco text, nascimento date, mensalidade money, orientador long,
+	CONSTRAINT bruno_pkey PRIMARY KEY (id)
+);

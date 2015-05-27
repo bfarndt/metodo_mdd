@@ -1,0 +1,38 @@
+<?php
+	include_once "../class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>.class.php";
+	include_once "../class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB.class.php";
+	
+	$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>();
+	$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB();
+
+	<c:iterate select="$currentEntity/Feature" var="currentFeature"
+	><c:if test="($currentFeature/EntityType/entity/@name != '')"
+	>$<c:get select="$currentFeature/@name" /> = array();
+		if (isSet($_POST['txt<c:get select="$currentFeature/EntityType/entity/@name" />'])) {
+			$json = json_decode($_POST['txt<c:get select="$currentFeature/EntityType/entity/@name" />'], true);
+			if (is_array($json)) {
+				foreach ($json as $entity) {
+					$<f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>();
+					$<f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>->setId($entity["id"]);
+					$<c:get select="$currentFeature/@name" />[] = $<f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>;
+				}
+			}
+			$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($<c:get select="$currentFeature/@name" />);
+		}
+	</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+		>$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($_POST["<c:get select="$currentFeature/@name" />"]);
+	</c:if></c:iterate>
+	var_dump($<c:get select="$currentEntity/@name" />); die();
+	if (isSet($_POST['id']) && $_POST['id'] > 0) {
+		$<c:get select="$currentEntity/@name" />->setId($_POST["id"]);
+		$result = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->update($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
+	} else {
+		$result = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->add($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
+	}
+	
+	if ($result) {
+		die('<META http-equiv="refresh" content="1;URL=/' . $_POST["pageBack"] . '.php?success=1">');
+	} else {
+		die('<META http-equiv="refresh" content="1;URL=/' . $_POST["pageBack"] . '.php?error=1">');
+	}
+?>

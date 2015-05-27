@@ -1,0 +1,56 @@
+<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#select<c:get select="$currentEntityRelationship/@name" />">Escolher</button>
+<input type="hidden" name="txt<c:get select="$currentEntityRelationship/@name" />" id="txt<c:get select="$currentEntityRelationship/@name" />" value="">
+
+<div class="modal fade" id="select<c:get select="$currentEntityRelationship/@name" /><c:get select="$currentFormType/@name" />" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="myModalLabel"><c:get select="$currentFeature/@name" /></h4>
+			</div>
+			<div class="modal-body">
+				<table id="table<c:get select="$currentEntityRelationship/@name" />" class="table table-striped" data-toggle="table" data-sort-name="id" data-sort-order="inc" data-pagination="true" data-page-size="10" data-click-to-select="true">
+					<thead>
+						<tr>
+							<th data-field="selecao" data-checkbox="true"></th>
+							<th data-field="id" data-sortable="true">ID</th>
+							<c:iterate select="$currentEntityRelationship/Feature" var="currentFeature">
+								<th data-field="<c:get select="$currentFeature/@name" />" data-sortable="true"><c:get select="$currentFeature/@name" /></th>
+							</c:iterate>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+							include_once "class/<f:uc length="1"><c:get select="$currentEntityRelationship/@name" /></f:uc>DB.class.php";
+
+							$<f:uc length="1"><c:get select="$currentEntityRelationship/@name" /></f:uc>DB = new <f:uc length="1"><c:get select="$currentEntityRelationship/@name" />DB()</f:uc>;
+							$rows<c:get select="$currentEntityRelationship/@name" /> = $<f:uc length="1"><c:get select="$currentEntityRelationship/@name" /></f:uc>DB->getAll();
+							foreach ($rows<c:get select="$currentEntityRelationship/@name" /> as $row<c:get select="$currentEntityRelationship/@name" />) {
+								?>
+								<tr>
+									<td></td>
+									<td><?php echo $row<c:get select="$currentEntityRelationship/@name" />->getId(); ?></td>
+									<c:iterate select="$currentEntityRelationship/Feature" var="currentFeature">
+										<td><?php echo $row<c:get select="$currentEntityRelationship/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>(); ?></td>
+									</c:iterate>
+								</tr>
+						<?php } ?>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+				<button type="button" id="button<c:get select="$currentEntityRelationship/@name" />" class="btn btn-primary">Salvar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function() {
+		$("#button<c:get select="$currentEntityRelationship/@name" />").click(function() {
+			$("#txt<c:get select="$currentEntityRelationship/@name" />").val(JSON.stringify($("#table<c:get select="$currentEntityRelationship/@name" />").bootstrapTable('getSelections')));
+			$("#select<c:get select="$currentEntityRelationship/@name" />").modal('hide');
+		});
+	});
+</script>

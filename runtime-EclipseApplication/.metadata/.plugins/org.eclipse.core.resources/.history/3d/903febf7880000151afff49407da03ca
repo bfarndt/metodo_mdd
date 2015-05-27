@@ -1,0 +1,2 @@
+<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
+<button type="button" class="btn btn-primary" onclick="javascript: add<c:get select="$currentEntity/@name" />();">Escolher</button>

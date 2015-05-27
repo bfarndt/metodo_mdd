@@ -1,0 +1,132 @@
+<?php
+
+include_once "Daniel.class.php";
+
+
+class DanielDB
+{
+	private $dbconn;
+	private $host = "localhost";
+	private $port = "5432";
+	private $dbname = "jet";
+	private $user = "postgres";
+	private $password = "teste";
+	
+	public function __construct()
+	{
+		$this->dbconn = pg_connect("host= " . $this->host . " port=" . $this->port . " dbname=" . $this->dbname . " user=" . $this->user . " password=" . $this->password);
+	}
+	
+	public function add($Daniel)
+	{
+		$query = pg_query("INSERT INTO daniel(
+				cpf, 
+				endereco
+			) VALUES(
+				'" . $Daniel->getCpf() . "', 
+				'" . $Daniel->getEndereco() . "'
+			)
+		");
+		
+		return (pg_affected_rows($query) > 0);
+	}
+	
+	public function update($Daniel)
+	{
+		$query = pg_query("UPDATE daniel SET
+			cpf = '" . $Daniel->getCpf() . "', 
+			endereco = '" . $Daniel->getEndereco() . "'
+			WHERE id = " . $Daniel->getId());
+		
+		return (pg_affected_rows($query) > 0);
+	}
+	
+	public function destroy($Daniel)
+	{
+		$query = pg_query("DELETE FROM daniel WHERE id = " . $Daniel->getId());
+		
+		return (pg_affected_rows($query) > 0);
+	}
+	
+	public function getAll()
+	{
+		$result = array();
+		
+		$query = pg_query("SELECT
+			daniel.id AS daniel_id,
+			daniel.cpf AS daniel_cpf, daniel.endereco AS daniel_endereco
+			FROM daniel
+			
+		");
+		
+		if ($query) {
+			while ($row = pg_fetch_assoc($query)) {
+				$Daniel = new Daniel();
+
+				$Daniel->setId($row["id"]);
+			
+				$Daniel->setCpf($row["cpf"]);
+			
+				$Daniel->setEndereco($row["endereco"]);
+			
+				$result[] = $Daniel;
+			}
+		}
+		
+		return $result;
+	}
+	
+	public function get($Daniel)
+	{
+		$result = array();
+		
+		$where = "";
+		
+	
+		if (strlen($Daniel->getCpf()) > 0) {
+			if (strlen($where) > 0) {
+				$where .= " AND ";
+			} else {
+				$where = "WHERE ";
+			}
+			
+			$where .= "daniel.cpf = '" . $Daniel->getCpf() . "'";
+			
+		}
+	
+		if (strlen($Daniel->getEndereco()) > 0) {
+			if (strlen($where) > 0) {
+				$where .= " AND ";
+			} else {
+				$where = "WHERE ";
+			}
+			
+			$where .= "daniel.endereco = '" . $Daniel->getEndereco() . "'";
+			
+		}
+	
+		$query = pg_query("SELECT
+			daniel.id AS daniel_id,daniel.cpf AS daniel_cpf, daniel.endereco AS daniel_endereco
+			FROM daniel
+			
+		" . $where);
+		
+		if ($query) {
+			while ($row = pg_fetch_assoc($query)) {
+				$Daniel = new Daniel();
+
+				$Daniel->setId($row["_id"]);
+			
+				$Daniel->setCpf($row["_"]);
+			
+				$Daniel->setEndereco($row["_"]);
+			
+				$result[] = $Daniel;
+			}
+		}
+		
+		return $result;
+	}
+}
+
+?>

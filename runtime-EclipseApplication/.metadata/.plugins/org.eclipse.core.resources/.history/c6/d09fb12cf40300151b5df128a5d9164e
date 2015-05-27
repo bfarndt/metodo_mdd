@@ -1,0 +1,170 @@
+<?php
+
+include_once "<c:get select="$currentEntity/@name" />.class.php";
+<c:iterate select="$currentEntity/Feature" var="currentFeature"><c:if test="($currentFeature/EntityType/entity/@name != '')"
+		>include_once "<f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>.class.php";</c:if></c:iterate>
+
+class <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB
+{
+	private $dbconn;
+	private $host = "localhost";
+	private $port = "5432";
+	private $dbname = "jet";
+	private $user = "postgres";
+	private $password = "teste";
+	
+	public function __construct()
+	{
+		$this->dbconn = pg_connect("host= " . $this->host . " port=" . $this->port . " dbname=" . $this->dbname . " user=" . $this->user . " password=" . $this->password);
+	}
+	
+	public function add($<c:get select="$currentEntity/@name" />)
+	{
+		$query = pg_query("INSERT INTO <f:lc><c:get select="$currentEntity/@name" /></f:lc>(<c:iterate select="$currentEntity/Feature" var="currentFeature" delimiter=", ">
+				<c:get select="$currentFeature/@name" /></c:iterate>
+			) VALUES(<c:iterate select="$currentEntity/Feature" var="currentFeature" delimiter=", ">
+				<c:if test="($currentFeature/EntityType/entity/@name != '')"
+					>" . $<c:get select="$currentEntity/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>()->getId() . "
+				</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+					>'" . $<c:get select="$currentEntity/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>() . "'</c:if></c:iterate>
+			)
+		");
+		
+		return (pg_affected_rows($query) > 0);
+	}
+	
+	public function update($<c:get select="$currentEntity/@name" />)
+	{
+		$query = pg_query("UPDATE <f:lc><c:get select="$currentEntity/@name" /></f:lc> SET<c:iterate select="$currentEntity/Feature" var="currentFeature" delimiter=", ">
+			<c:if test="($currentFeature/EntityType/entity/@name != '')"
+				><c:get select="$currentFeature/@name" /> = " . $<c:get select="$currentEntity/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>()->getId() . "
+			</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+				><c:get select="$currentFeature/@name" /> = '" . $<c:get select="$currentEntity/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>() . "'</c:if></c:iterate>
+			WHERE id = " . $<c:get select="$currentEntity/@name" />->getId());
+		
+		return (pg_affected_rows($query) > 0);
+	}
+	
+	public function destroy($<c:get select="$currentEntity/@name" />)
+	{
+		$query = pg_query("DELETE FROM <f:lc><c:get select="$currentEntity/@name" /></f:lc> WHERE id = " . $<c:get select="$currentEntity/@name" />->getId());
+		
+		return (pg_affected_rows($query) > 0);
+	}
+	
+	public function getAll()
+	{
+		$result = array();
+		
+		$query = pg_query("SELECT
+			<f:lc><c:get select="$currentEntity/@name" /></f:lc>.id AS <f:lc><c:get select="$currentEntity/@name" /></f:lc>_id,
+			<c:iterate select="$currentEntity/Feature" var="currentFeature"  delimiter=", "
+			><c:if test="($currentFeature/EntityType/entity/@name != '')">
+				<f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>.id AS <f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>_id,<c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature" delimiter=", "
+				><f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>.<c:get select="$currentEntityRelationshipFeature/@name" /> AS <f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>_<c:get select="$currentEntityRelationshipFeature/@name" /></c:iterate>
+			</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+				><f:lc><c:get select="$currentEntity/@name" /></f:lc>.<c:get select="$currentFeature/@name" /> AS <f:lc><c:get select="$currentEntity/@name" /></f:lc>_<c:get select="$currentFeature/@name" /></c:if></c:iterate>
+			FROM <f:lc><c:get select="$currentEntity/@name" /></f:lc>
+			<c:iterate select="$currentEntity/Feature" var="currentFeature"><c:if test="($currentFeature/EntityType/entity/@name != '')"
+			>INNER JOIN <f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc> ON <f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>.id = <f:lc><c:get select="$currentEntity/@name" /></f:lc>.<c:get select="$currentFeature/@name" /></c:if></c:iterate>
+		");
+		
+		if ($query) {
+			while ($row = pg_fetch_assoc($query)) {
+				$<c:get select="$currentEntity/@name" /> = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>();
+
+				$<c:get select="$currentEntity/@name" />->setId($row["<f:lc><c:get select="$currentEntity/@name" /></f:lc>_id"]);
+			<c:iterate select="$currentEntity/Feature" var="currentFeature"
+			><c:if test="($currentFeature/EntityType/entity/@name != '')">
+				$<c:get select="$currentFeature/EntityType/entity/@name" /> = new <f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>();
+				$<c:get select="$currentFeature/EntityType/entity/@name" />->setId($row["<f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>_id"]);
+				<c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature"
+				>$<c:get select="$currentFeature/EntityType/entity/@name" />->set<f:uc length="1"><c:get select="$currentEntityRelationshipFeature/@name" /></f:uc>($row["<f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>_<c:get select="$currentEntityRelationshipFeature/@name" />"]);
+				</c:iterate>
+				$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($<c:get select="$currentFeature/EntityType/entity/@name" />);
+			</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')">
+				$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($row["<f:lc><c:get select="$currentEntity/@name" /></f:lc>_<c:get select="$currentFeature/@name" />"]);
+			</c:if></c:iterate>
+				$result[] = $<c:get select="$currentEntity/@name" />;
+			}
+		}
+		
+		return $result;
+	}
+	
+	public function get($<c:get select="$currentEntity/@name" />)
+	{
+		$result = array();
+		
+		$where = "";
+		
+	<c:iterate select="$currentEntity/Feature" var="currentFeature">
+		if (<c:if test="($currentFeature/EntityType/entity/@name != '')">
+			is_array($<c:get select="$currentEntity/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>())
+			|| is_object($<c:get select="$currentEntity/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>())
+		</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+			>strlen($<c:get select="$currentEntity/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>()) > 0</c:if>) {
+			if (strlen($where) > 0) {
+				$where .= " AND ";
+			} else {
+				$where = "WHERE ";
+			}
+			
+			<c:if test="($currentFeature/EntityType/entity/@name != '')"
+				>if (is_array($<c:get select="$currentEntity/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>())) {
+					$first = true;
+					$where .= "(";
+					foreach ($<c:get select="$currentEntity/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>() as $<c:get select="$currentFeature/@name" />) {
+						if ( ! $first) {
+							$where .= " OR ";
+						}
+
+						$where .= "<f:lc><c:get select="$currentEntity/@name" /></f:lc>.<c:get select="$currentFeature/@name" /> = " . $<c:get select="$currentFeature/@name" />->getId();
+						$first = false;
+					}
+					$where .= ")";
+				} else {
+					$where .= "<f:lc><c:get select="$currentEntity/@name" /></f:lc>.<c:get select="$currentFeature/@name" /> = " . $<c:get select="$currentEntity/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>()->getId();
+				}
+			</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+				>$where .= "<f:lc><c:get select="$currentEntity/@name" /></f:lc>.<c:get select="$currentFeature/@name" /> = '" . $<c:get select="$currentEntity/@name" />->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>() . "'";
+			</c:if>
+		}
+	</c:iterate>
+		$query = pg_query("SELECT
+			<f:lc><c:get select="$currentEntity/@name" /></f:lc>.id AS <f:lc><c:get select="$currentEntity/@name" /></f:lc>_id,<c:iterate select="$currentEntity/Feature" var="currentFeature"  delimiter=", "
+			><c:if test="($currentFeature/EntityType/entity/@name != '')">
+				<f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>.id AS <f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>_id,<c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature" delimiter=", "
+				><f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>.<c:get select="$currentEntityRelationshipFeature/@name" /> AS <f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>_<c:get select="$currentEntityRelationshipFeature/@name" /></c:iterate>
+			</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+				><f:lc><c:get select="$currentEntity/@name" /></f:lc>.<c:get select="$currentFeature/@name" /> AS <f:lc><c:get select="$currentEntity/@name" /></f:lc>_<c:get select="$currentFeature/@name" /></c:if></c:iterate>
+			FROM <f:lc><c:get select="$currentEntity/@name" /></f:lc>
+			<c:iterate select="$currentEntity/Feature" var="currentFeature"><c:if test="($currentFeature/EntityType/entity/@name != '')"
+			>INNER JOIN <f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc> ON <f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>.id = <f:lc><c:get select="$currentEntity/@name" /></f:lc>.<c:get select="$currentFeature/@name" /></c:if></c:iterate>
+		" . $where);
+		
+		if ($query) {
+			while ($row = pg_fetch_assoc($query)) {
+				$<c:get select="$currentEntity/@name" /> = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>();
+
+				$<c:get select="$currentEntity/@name" />->setId($row["<f:lc><c:get select="$currentEntity/@name" /></f:lc>_id"]);
+			<c:iterate select="$currentEntity/Feature" var="currentFeature"
+			><c:if test="($currentFeature/EntityType/entity/@name != '')">
+				$<c:get select="$currentFeature/EntityType/entity/@name" /> = new <f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>();
+				$<c:get select="$currentFeature/EntityType/entity/@name" />->setId($row["<f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>_id"]);
+				<c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature"
+				>$<c:get select="$currentFeature/EntityType/entity/@name" />->set<f:uc length="1"><c:get select="$currentEntityRelationshipFeature/@name" /></f:uc>($row["<f:lc><c:get select="$currentFeature/EntityType/entity/@name" /></f:lc>_<c:get select="$currentEntityRelationshipFeature/@name" />"]);
+				</c:iterate>
+				$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($<c:get select="$currentFeature/EntityType/entity/@name" />);
+			</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')">
+				$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($row["<f:lc><c:get select="$currentEntity/@name" /></f:lc>_<c:get select="$currentFeature/@name" />"]);
+			</c:if></c:iterate>
+				$result[] = $<c:get select="$currentEntity/@name" />;
+			}
+		}
+		
+		return $result;
+	}
+}
+
+?>
