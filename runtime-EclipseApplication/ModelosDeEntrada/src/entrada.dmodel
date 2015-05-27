@@ -8,11 +8,27 @@ page index {
 	footer: true
 }
 
+entity Daniel {
+	cpf: string
+	endereco: string
+}
+
+formNewEntity formNewEntityDaniel {
+	Daniel
+}
+
+page pageDaniel {
+	header: true
+	footer: true
+	formNewEntityDaniel
+}
+
 entity Bruno {
 	cpf: string
 	endereco: string
 	nascimento: date
 	mensalidade: currency
+	orientador: Daniel
 }
 
 form formShowBruno {
@@ -42,21 +58,6 @@ page brunoReport {
 	header: true
 	footer: false
 	formReportBruno
-}
-
-entity Daniel {
-	cpf: string
-	endereco: string
-}
-
-formNewEntity formNewEntityDaniel {
-	Daniel
-}
-
-page Daniel {
-	header: true
-	footer: true
-	formNewEntityDaniel
 }
 
 end
