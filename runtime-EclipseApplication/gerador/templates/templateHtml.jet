@@ -30,6 +30,9 @@
     <!-- Table plugin -->
     <link href="css/bootstrap-table.css" rel="stylesheet">
     
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
 	<!-- Entitys JS -->
 <c:iterate select="$currentPage/forms/entity" var="currentEntity">
 	<script src="js/<c:get select="$currentEntity/@name" />.js"></script>
@@ -116,8 +119,7 @@
 	</c:if>
     
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
     
     <!-- Datepicker - Retirado de: http://websocialdev.com/calendario-input-date-com-datepicker-bootstrap/ -->
 	<script src="js/bootstrap-datepicker.js"></script>

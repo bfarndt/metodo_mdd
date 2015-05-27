@@ -5,13 +5,29 @@
 		
 		$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>();
 		
-		<c:iterate select="$currentEntity/Feature" var="currentFeature">
+	<c:iterate select="$currentEntity/Feature" var="currentFeature">
+		<c:if test="($currentFeature/EntityType/entity/@name != '')">
+			$<c:get select="$currentFeature/@name" /> = array();
+			if (isSet($_GET['txt<c:get select="$currentFeature/EntityType/entity/@name" />'])) {
+				$json = json_decode($_GET['txt<c:get select="$currentFeature/EntityType/entity/@name" />'], true);
+				if (is_array($json)) {
+					foreach ($json as $entity) {
+						$<f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>();
+						$<f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>->setId($entity["id"]);
+						$<c:get select="$currentFeature/@name" />[] = $<f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>;
+					}
+				}
+				$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($<c:get select="$currentFeature/@name" />);
+			}
+		</c:if>
+		<c:if test="not($currentFeature/EntityType/entity/@name != '')">
 			$<c:get select="$currentFeature/@name" /> = "";
 			if (isSet($_GET['<c:get select="$currentFeature/@name" />'])) {
 				$<c:get select="$currentFeature/@name" /> = $_GET["<c:get select="$currentFeature/@name" />"];
 				$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($<c:get select="$currentFeature/@name" />);
 			}
-		</c:iterate>
+		</c:if>
+	</c:iterate>
 		
 		$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB();
 		$rows = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->get($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
@@ -38,6 +54,11 @@
 							<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
 							<input type="checkbox" name="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1">
 						</c:if>
+						<c:if test="($currentFeature/EntityType/entity/@name != '')">
+							<c:setVariable select="$currentFeature/EntityType/entity" var="currentEntityRelationship" />
+							<c:set select="$currentForm" name="currentFormType">formSearch</c:set>
+							<c:include template="templates/templateEntityRelationship.jet" />
+						</c:if>
 					</div>
 					<br>
 				</c:iterate>
@@ -58,7 +79,15 @@
 					<tr>
 						<th>#</th>
 						<c:iterate select="$currentEntity/Feature" var="currentFeature">
-							<th><c:get select="$currentFeature/@name" /></th>
+							<c:if test="($currentFeature/EntityType/entity/@name != '')">
+								<c:setVariable select="$currentFeature/EntityType/entity" var="currentEntityRelationship" />
+								<c:iterate select="$currentEntityRelationship/Feature" var="currentEntityRelationshipFeature">
+									<th><c:get select="$currentEntityRelationship/@name" /> - <c:get select="$currentEntityRelationshipFeature/@name" /></th>
+								</c:iterate>
+							</c:if>
+							<c:if test="not($currentFeature/EntityType/entity/@name != '')">
+								<th><c:get select="$currentFeature/@name" /></th>
+							</c:if>
 						</c:iterate>
 						<c:if test="($currentForm/@put = 'true') or ($currentForm/@delete = 'true')">
 							<th width="100px">&nbsp;</th>
@@ -72,8 +101,17 @@
 							<tr>
 								<td><?php echo $row->getId(); ?></td>
 								<c:iterate select="$currentEntity/Feature" var="currentFeature">
-									<td><?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>(); ?></td>
-									<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>(); ?>">
+									<c:if test="($currentFeature/EntityType/entity/@name != '')">
+										<c:setVariable select="$currentFeature/EntityType/entity" var="currentEntityRelationship" />
+										<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>()->getId(); ?>">
+										<c:iterate select="$currentEntityRelationship/Feature" var="currentEntityRelationshipFeature">
+											<td><?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>()->get<f:uc length="1"><c:get select="$currentEntityRelationshipFeature/@name" /></f:uc>(); ?></td>
+										</c:iterate>
+									</c:if>
+									<c:if test="not($currentFeature/EntityType/entity/@name != '')">
+										<td><?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>(); ?></td>
+										<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>(); ?>">
+									</c:if>
 								</c:iterate>
 								<c:if test="($currentForm/@put = 'true') or ($currentForm/@delete = 'true')">
 									<td>
@@ -124,6 +162,11 @@
 									<c:if test="($currentFeature/DataType/@name = 'boolean')">
 										<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
 										<input type="checkbox" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1">
+									</c:if>
+									<c:if test="($currentFeature/EntityType/entity/@name != '')">
+										<c:setVariable select="$currentFeature/EntityType/entity" var="currentEntityRelationship" />
+										<c:set select="$currentForm" name="currentFormType">formAdd</c:set>
+										<c:include template="templates/templateEntityRelationship.jet" />
 									</c:if>
 								</div>
 								<br>

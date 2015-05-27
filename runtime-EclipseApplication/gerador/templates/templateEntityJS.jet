@@ -4,9 +4,14 @@ function delete<c:get select="$currentEntity/@name" />(id, pageBack) {
 
 function update<c:get select="$currentEntity/@name" />(id) {
 	$("#id").val(id);
-	<c:iterate select="$currentEntity/Feature" var="currentFeature">
-		$("#<c:get select="$currentFeature/@name" />").val($("#<c:get select="$currentEntity/@name" />_" + id + "_<c:get select="$currentFeature/@name" />").val());
-	</c:iterate>
+	<c:iterate select="$currentEntity/Feature" var="currentFeature"
+	><c:if test="($currentFeature/EntityType/entity/@name != '')">
+		$("#table<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").bootstrapTable('uncheckAll');
+		$("#table<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").bootstrapTable('checkBy', {field:'id', values:[$("#<c:get select="$currentEntity/@name" />_" + id + "_<c:get select="$currentFeature/@name" />").val()]});
+		$("#txt<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").val($("#table<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").bootstrapTable('getSelections'));
+	</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+		>$("#<c:get select="$currentFeature/@name" />").val($("#<c:get select="$currentEntity/@name" />_" + id + "_<c:get select="$currentFeature/@name" />").val());
+	</c:if></c:iterate>
 	
 	$("#formAdd<c:get select="$currentEntity/@name" />").modal();
 
@@ -15,9 +20,13 @@ function update<c:get select="$currentEntity/@name" />(id) {
 
 function add<c:get select="$currentEntity/@name" />() {
 	$("#id").val("");
-	<c:iterate select="$currentEntity/Feature" var="currentFeature">
-		$("#<c:get select="$currentFeature/@name" />").val("");
-	</c:iterate>
+	<c:iterate select="$currentEntity/Feature" var="currentFeature"
+	><c:if test="($currentFeature/EntityType/entity/@name != '')"
+		>$("#table<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").bootstrapTable('uncheckAll');
+		$("#txt<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").val("");
+	</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+		>$("#<c:get select="$currentFeature/@name" />").val("");
+	</c:if></c:iterate>
 	
 	$("#formAdd<c:get select="$currentEntity/@name" />").modal();
 
