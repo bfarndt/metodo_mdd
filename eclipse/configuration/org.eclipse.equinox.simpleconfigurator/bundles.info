@@ -8,11 +8,11 @@ WebDomainFeaturesModeler,1.0.0.201411060938,plugins/WebDomainFeaturesModeler_1.0
 WebDomainFeaturesModeler.edit,1.0.0.201411060938,plugins/WebDomainFeaturesModeler.edit_1.0.0.201411060938.jar,4,false
 WebDomainFeaturesModeler.editor,1.0.0.201411060938,plugins/WebDomainFeaturesModeler.editor_1.0.0.201411060938.jar,4,false
 WebDomainFeaturesModeler.tests,1.0.0.201411060938,plugins/WebDomainFeaturesModeler.tests_1.0.0.201411060938.jar,4,false
-br.ufscar.dc.splitJETEditor,1.0.0.201411060945,plugins/br.ufscar.dc.splitJETEditor_1.0.0.201411060945.jar,4,false
+br.ufscar.dc.splitJETEditor,1.0.0.201505271417,plugins/br.ufscar.dc.splitJETEditor_1.0.0.201505271417.jar,4,false
 br.ufscar.dc.webnav,1.0.0.201411060938,plugins/br.ufscar.dc.webnav_1.0.0.201411060938.jar,4,false
 br.ufscar.dc.webnav.tests,1.0.0.201411060938,plugins/br.ufscar.dc.webnav.tests_1.0.0.201411060938.jar,4,false
 br.ufscar.dc.webnav.ui,1.0.0.201411060938,plugins/br.ufscar.dc.webnav.ui_1.0.0.201411060938.jar,4,false
-br.ufscar.jetmapping,1.0.0.201411060945,plugins/br.ufscar.jetmapping_1.0.0.201411060945.jar,4,false
+br.ufscar.jetmapping,1.0.0.201505271418,plugins/br.ufscar.jetmapping_1.0.0.201505271418.jar,4,false
 com.google.guava,15.0.0.v201403281430,plugins/com.google.guava_15.0.0.v201403281430.jar,4,false
 com.google.inject,3.0.0.v201312141243,plugins/com.google.inject_3.0.0.v201312141243.jar,4,false
 com.ibm.icu,52.1.0.v201404241930,plugins/com.ibm.icu_52.1.0.v201404241930.jar,4,false

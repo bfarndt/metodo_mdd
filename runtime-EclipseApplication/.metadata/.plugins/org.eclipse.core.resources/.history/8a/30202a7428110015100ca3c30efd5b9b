@@ -1,0 +1,2 @@
+<c:iterate select="$currentEntity/Feature" var="currentFeature">
+</c:iterate>

@@ -9,11 +9,11 @@ WebDomainFeaturesModeler,1.0.0.201411060938,file:/var/www/html/pacoteExperimento
 WebDomainFeaturesModeler.edit,1.0.0.201411060938,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/WebDomainFeaturesModeler.edit_1.0.0.201411060938.jar,4,false
 WebDomainFeaturesModeler.editor,1.0.0.201411060938,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/WebDomainFeaturesModeler.editor_1.0.0.201411060938.jar,4,false
 WebDomainFeaturesModeler.tests,1.0.0.201411060938,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/WebDomainFeaturesModeler.tests_1.0.0.201411060938.jar,4,false
-br.ufscar.dc.splitJETEditor,1.0.0.201411060945,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.splitJETEditor_1.0.0.201411060945.jar,4,false
+br.ufscar.dc.splitJETEditor,1.0.0.201505271417,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.splitJETEditor_1.0.0.201505271417.jar,4,false
 br.ufscar.dc.webnav,1.0.0.201411060938,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.webnav_1.0.0.201411060938.jar,4,false
 br.ufscar.dc.webnav.tests,1.0.0.201411060938,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.webnav.tests_1.0.0.201411060938.jar,4,false
 br.ufscar.dc.webnav.ui,1.0.0.201411060938,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/br.ufscar.dc.webnav.ui_1.0.0.201411060938.jar,4,false
-br.ufscar.jetmapping,1.0.0.201411060945,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/br.ufscar.jetmapping_1.0.0.201411060945.jar,4,false
+br.ufscar.jetmapping,1.0.0.201505271418,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/br.ufscar.jetmapping_1.0.0.201505271418.jar,4,false
 com.google.guava,15.0.0.v201403281430,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/com.google.guava_15.0.0.v201403281430.jar,4,false
 com.google.inject,3.0.0.v201312141243,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/com.google.inject_3.0.0.v201312141243.jar,4,false
 com.ibm.icu,52.1.0.v201404241930,file:/var/www/html/pacoteExperimento.v3/eclipse/plugins/com.ibm.icu_52.1.0.v201404241930.jar,4,false

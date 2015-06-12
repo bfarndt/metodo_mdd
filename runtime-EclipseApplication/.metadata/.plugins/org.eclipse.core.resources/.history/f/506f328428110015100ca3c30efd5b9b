@@ -1,0 +1,4 @@
+<c:set select="$currentEntity" name="className"><f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc></c:set>
+
+<c:iterate select="$currentEntity/Feature" var="currentFeature">
+</c:iterate>

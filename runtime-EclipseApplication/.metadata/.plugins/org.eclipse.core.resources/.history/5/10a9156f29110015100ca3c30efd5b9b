@@ -1,0 +1,20 @@
+<?php
+	include_once "../class/<c:get select="$currentEntity/@className" />.class.php";
+	include_once "../class/<c:get select="$currentEntity/@className" />DB.class.php";
+	
+	$<c:get select="$currentEntity/@className" /> = new <c:get select="$currentEntity/@className" />();
+	$<c:get select="$currentEntity/@className" />DB = new <c:get select="$currentEntity/@className" />DB();
+	
+	$result = false;
+	
+	if (isSet($_GET['id']) && $_GET['id'] > 0) {
+		$<c:get select="$currentEntity/@name" />->setId($_GET["id"]);
+		$result = $<f:uc length="1"><c:get select="$currentEntity/@className" /></f:uc>DB->destroy($<f:uc length="1"><c:get select="$currentEntity/@className" /></f:uc>);
+	}
+	
+	if ($result) {
+		die('<META http-equiv="refresh" content="1;URL=/' . $_GET["pageBack"] . '.php?success=1">');
+	} else {
+		die('<META http-equiv="refresh" content="1;URL=/' . $_GET["pageBack"] . '.php?error=1">');
+	}
+?>
