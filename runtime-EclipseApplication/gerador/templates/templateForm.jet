@@ -1,10 +1,10 @@
 <c:iterate select="$currentForm/entity" var="currentEntity">
 	<?php
-		include_once "class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>.class.php";
-		include_once "class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB.class.php";
-		
-		$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>();
-		
+		include_once "class/<c:get select="$currentEntity/@className" />.class.php";
+		include_once "class/<c:get select="$currentEntity/@className" />DB.class.php";
+
+		$<c:get select="$currentEntity/@className" /> = new <c:get select="$currentEntity/@className" />();
+
 	<c:iterate select="$currentEntity/Feature" var="currentFeature">
 		<c:if test="($currentFeature/EntityType/entity/@name != '')">
 			$<c:get select="$currentFeature/@name" /> = array();
@@ -12,25 +12,25 @@
 				$json = json_decode($_GET['txt<c:get select="$currentFeature/EntityType/entity/@name" />'], true);
 				if (is_array($json)) {
 					foreach ($json as $entity) {
-						$<f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>();
-						$<f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>->setId($entity["id"]);
-						$<c:get select="$currentFeature/@name" />[] = $<f:uc length="1"><c:get select="$currentFeature/EntityType/entity/@name" /></f:uc>;
+						$<c:get select="$currentFeature/EntityType/entity/@className" /> = new <c:get select="$currentFeature/EntityType/entity/@className" />();
+						$<c:get select="$currentFeature/EntityType/entity/@className" />->setId($entity["id"]);
+						$<c:get select="$currentFeature/@name" />[] = $<c:get select="$currentFeature/EntityType/entity/@className" />;
 					}
 				}
-				$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($<c:get select="$currentFeature/@name" />);
+				$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />);
 			}
 		</c:if>
 		<c:if test="not($currentFeature/EntityType/entity/@name != '')">
 			$<c:get select="$currentFeature/@name" /> = "";
 			if (isSet($_GET['<c:get select="$currentFeature/@name" />'])) {
 				$<c:get select="$currentFeature/@name" /> = $_GET["<c:get select="$currentFeature/@name" />"];
-				$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($<c:get select="$currentFeature/@name" />);
+				$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />);
 			}
 		</c:if>
 	</c:iterate>
-		
-		$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB();
-		$rows = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->get($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
+
+		$<c:get select="$currentEntity/@className" />DB = new <c:get select="$currentEntity/@className" />DB();
+		$rows = $<c:get select="$currentEntity/@className" />DB->get($<c:get select="$currentEntity/@className" />);
 	?>
 	<div class="panel panel-default">
 		<div class="panel-heading">Filtro</div>
@@ -71,7 +71,7 @@
 			</form>
 		</div>
 	</div>
-	
+
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<table class="table table-striped">
@@ -103,14 +103,14 @@
 								<c:iterate select="$currentEntity/Feature" var="currentFeature">
 									<c:if test="($currentFeature/EntityType/entity/@name != '')">
 										<c:setVariable select="$currentFeature/EntityType/entity" var="currentEntityRelationship" />
-										<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>()->getId(); ?>">
+										<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<c:get select="$currentFeature/@methodName" />()->getId(); ?>">
 										<c:iterate select="$currentEntityRelationship/Feature" var="currentEntityRelationshipFeature">
-											<td><?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>()->get<f:uc length="1"><c:get select="$currentEntityRelationshipFeature/@name" /></f:uc>(); ?></td>
+											<td><?php echo $row->get<c:get select="$currentFeature/@methodName" />()->get<c:get select="$currentEntityRelationshipFeature/@methodName" />(); ?></td>
 										</c:iterate>
 									</c:if>
 									<c:if test="not($currentFeature/EntityType/entity/@name != '')">
-										<td><?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>(); ?></td>
-										<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>(); ?>">
+										<td><?php echo $row->get<c:get select="$currentFeature/@methodName" />(); ?></td>
+										<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<c:get select="$currentFeature/@methodName" />(); ?>">
 									</c:if>
 								</c:iterate>
 								<c:if test="($currentForm/@put = 'true') or ($currentForm/@delete = 'true')">

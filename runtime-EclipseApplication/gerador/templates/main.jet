@@ -26,6 +26,8 @@ such as ws:file, ws:folder and ws:project
    Note that model formatting may not be identical, and that in
    the case of non-XML input models, the dump may look quite different.
 --%>
+<c:include template="templates/settings.jet" />
+
 <ws:project name="{/Domainmodel/@nomeProj}">
 	<ws:folder path="www">
 		<c:iterate select="/Domainmodel/Page" var="currentPage">
@@ -34,7 +36,6 @@ such as ws:file, ws:folder and ws:project
 
 		<ws:folder path="class">
 			<c:iterate select="/Domainmodel/Entity" var="currentEntity">
-				<c:set select="$currentEntity" name="className"><f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc></c:set>
 				<ws:file template="templates/templateEntityClass.jet" path="{$currentEntity/@className}.class.php" />
 				<ws:file template="templates/templateEntityClassDB.jet" path="{$currentEntity/@className}DB.class.php" />
 			</c:iterate>

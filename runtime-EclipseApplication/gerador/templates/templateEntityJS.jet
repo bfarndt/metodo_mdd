@@ -8,7 +8,7 @@ function update<c:get select="$currentEntity/@name" />(id) {
 	><c:if test="($currentFeature/EntityType/entity/@name != '')">
 		$("#table<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").bootstrapTable('uncheckAll');
 		$("#table<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").bootstrapTable('checkBy', {field:'id', values:[$("#<c:get select="$currentEntity/@name" />_" + id + "_<c:get select="$currentFeature/@name" />").val()]});
-		$("#txt<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").val($("#table<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").bootstrapTable('getSelections'));
+		$("#txt<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").val(JSON.stringify($("#table<c:get select="$currentFeature/EntityType/entity/@name" />formAdd").bootstrapTable('getSelections')));
 	</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
 		>$("#<c:get select="$currentFeature/@name" />").val($("#<c:get select="$currentEntity/@name" />_" + id + "_<c:get select="$currentFeature/@name" />").val());
 	</c:if></c:iterate>

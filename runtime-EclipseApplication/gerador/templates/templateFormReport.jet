@@ -1,20 +1,20 @@
 <c:iterate select="$currentForm/entity" var="currentEntity">
 	<?php
-		include_once "class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>.class.php";
-		include_once "class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB.class.php";
-		
-		$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>();
-		
+		include_once "class/<c:get select="$currentEntity/@className" />.class.php";
+		include_once "class/<c:get select="$currentEntity/@className" />DB.class.php";
+
+		$<c:get select="$currentEntity/@className" /> = new <c:get select="$currentEntity/@className" />();
+
 		<c:iterate select="$currentEntity/Feature" var="currentFeature">
 			$<c:get select="$currentFeature/@name" /> = "";
 			if (isSet($_GET['<c:get select="$currentFeature/@name" />'])) {
 				$<c:get select="$currentFeature/@name" /> = $_GET["<c:get select="$currentFeature/@name" />"];
-				$<c:get select="$currentEntity/@name" />->set<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>($<c:get select="$currentFeature/@name" />);
+				$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />);
 			}
 		</c:iterate>
-		
-		$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB();
-		$rows = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->get($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
+
+		$<c:get select="$currentEntity/@className" />DB = new <c:get select="$currentEntity/@className" />DB();
+		$rows = $<c:get select="$currentEntity/@className" />DB->get($<c:get select="$currentEntity/@className" />);
 	?>
 
 	<c:if test="($currentForm/@filter = 'true')">
@@ -74,8 +74,8 @@
 							<tr>
 								<td><?php echo $row->getId(); ?></td>
 								<c:iterate select="$currentEntity/Feature" var="currentFeature">
-									<td><?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>(); ?></td>
-									<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc>(); ?>">
+									<td><?php echo $row->get<c:get select="$currentFeature/@methodName" />(); ?></td>
+									<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<c:get select="$currentFeature/@methodName" />(); ?>">
 								</c:iterate>
 								<c:if test="($currentForm/@put = 'true') or ($currentForm/@delete = 'true')">
 									<td>

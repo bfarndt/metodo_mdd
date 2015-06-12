@@ -9,7 +9,6 @@ import org.eclipse.jet.taglib.TagInfo;
 public class _jet_main implements JET2Template {
     private final String templateFile;
     private static final String _jetns_c = "org.eclipse.jet.controlTags"; //$NON-NLS-1$
-    private static final String _jetns_f = "org.eclipse.jet.formatTags"; //$NON-NLS-1$
     private static final String _jetns_ws = "org.eclipse.jet.workspaceTags"; //$NON-NLS-1$
 
     public _jet_main(String templateFile) {
@@ -29,24 +28,32 @@ public class _jet_main implements JET2Template {
                 "org.eclipse.jet.taglib.control.iterateSetsContext", //$NON-NLS-1$
                 "true()", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_project_29_1 = new TagInfo("ws:project", //$NON-NLS-1$
+    private static final TagInfo _td_c_include_29_1 = new TagInfo("c:include", //$NON-NLS-1$
             29, 1,
+            new String[] {
+                "template", //$NON-NLS-1$
+            },
+            new String[] {
+                "templates/settings.jet", //$NON-NLS-1$
+            } );
+    private static final TagInfo _td_ws_project_31_1 = new TagInfo("ws:project", //$NON-NLS-1$
+            31, 1,
             new String[] {
                 "name", //$NON-NLS-1$
             },
             new String[] {
                 "{/Domainmodel/@nomeProj}", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_folder_30_2 = new TagInfo("ws:folder", //$NON-NLS-1$
-            30, 2,
+    private static final TagInfo _td_ws_folder_32_2 = new TagInfo("ws:folder", //$NON-NLS-1$
+            32, 2,
             new String[] {
                 "path", //$NON-NLS-1$
             },
             new String[] {
                 "www", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_c_iterate_31_3 = new TagInfo("c:iterate", //$NON-NLS-1$
-            31, 3,
+    private static final TagInfo _td_c_iterate_33_3 = new TagInfo("c:iterate", //$NON-NLS-1$
+            33, 3,
             new String[] {
                 "select", //$NON-NLS-1$
                 "var", //$NON-NLS-1$
@@ -55,8 +62,8 @@ public class _jet_main implements JET2Template {
                 "/Domainmodel/Page", //$NON-NLS-1$
                 "currentPage", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_file_32_4 = new TagInfo("ws:file", //$NON-NLS-1$
-            32, 4,
+    private static final TagInfo _td_ws_file_34_4 = new TagInfo("ws:file", //$NON-NLS-1$
+            34, 4,
             new String[] {
                 "template", //$NON-NLS-1$
                 "path", //$NON-NLS-1$
@@ -65,16 +72,16 @@ public class _jet_main implements JET2Template {
                 "templates/templateHtml.jet", //$NON-NLS-1$
                 "{$currentPage/@name}.php", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_folder_35_3 = new TagInfo("ws:folder", //$NON-NLS-1$
-            35, 3,
+    private static final TagInfo _td_ws_folder_37_3 = new TagInfo("ws:folder", //$NON-NLS-1$
+            37, 3,
             new String[] {
                 "path", //$NON-NLS-1$
             },
             new String[] {
                 "class", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_c_iterate_36_4 = new TagInfo("c:iterate", //$NON-NLS-1$
-            36, 4,
+    private static final TagInfo _td_c_iterate_38_4 = new TagInfo("c:iterate", //$NON-NLS-1$
+            38, 4,
             new String[] {
                 "select", //$NON-NLS-1$
                 "var", //$NON-NLS-1$
@@ -82,42 +89,6 @@ public class _jet_main implements JET2Template {
             new String[] {
                 "/Domainmodel/Entity", //$NON-NLS-1$
                 "currentEntity", //$NON-NLS-1$
-            } );
-    private static final TagInfo _td_c_set_37_5 = new TagInfo("c:set", //$NON-NLS-1$
-            37, 5,
-            new String[] {
-                "select", //$NON-NLS-1$
-                "name", //$NON-NLS-1$
-            },
-            new String[] {
-                "$currentEntity", //$NON-NLS-1$
-                "className", //$NON-NLS-1$
-            } );
-    private static final TagInfo _td_f_uc_37_53 = new TagInfo("f:uc", //$NON-NLS-1$
-            37, 53,
-            new String[] {
-                "length", //$NON-NLS-1$
-            },
-            new String[] {
-                "1", //$NON-NLS-1$
-            } );
-    private static final TagInfo _td_c_get_37_70 = new TagInfo("c:get", //$NON-NLS-1$
-            37, 70,
-            new String[] {
-                "select", //$NON-NLS-1$
-            },
-            new String[] {
-                "$currentEntity/@name", //$NON-NLS-1$
-            } );
-    private static final TagInfo _td_ws_file_38_5 = new TagInfo("ws:file", //$NON-NLS-1$
-            38, 5,
-            new String[] {
-                "template", //$NON-NLS-1$
-                "path", //$NON-NLS-1$
-            },
-            new String[] {
-                "templates/templateEntityClass.jet", //$NON-NLS-1$
-                "{$currentEntity/@className}.class.php", //$NON-NLS-1$
             } );
     private static final TagInfo _td_ws_file_39_5 = new TagInfo("ws:file", //$NON-NLS-1$
             39, 5,
@@ -126,11 +97,21 @@ public class _jet_main implements JET2Template {
                 "path", //$NON-NLS-1$
             },
             new String[] {
+                "templates/templateEntityClass.jet", //$NON-NLS-1$
+                "{$currentEntity/@className}.class.php", //$NON-NLS-1$
+            } );
+    private static final TagInfo _td_ws_file_40_5 = new TagInfo("ws:file", //$NON-NLS-1$
+            40, 5,
+            new String[] {
+                "template", //$NON-NLS-1$
+                "path", //$NON-NLS-1$
+            },
+            new String[] {
                 "templates/templateEntityClassDB.jet", //$NON-NLS-1$
                 "{$currentEntity/@className}DB.class.php", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_c_iterate_43_3 = new TagInfo("c:iterate", //$NON-NLS-1$
-            43, 3,
+    private static final TagInfo _td_c_iterate_44_3 = new TagInfo("c:iterate", //$NON-NLS-1$
+            44, 3,
             new String[] {
                 "select", //$NON-NLS-1$
                 "var", //$NON-NLS-1$
@@ -139,23 +120,13 @@ public class _jet_main implements JET2Template {
                 "/Domainmodel/Entity", //$NON-NLS-1$
                 "currentEntity", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_folder_44_4 = new TagInfo("ws:folder", //$NON-NLS-1$
-            44, 4,
+    private static final TagInfo _td_ws_folder_45_4 = new TagInfo("ws:folder", //$NON-NLS-1$
+            45, 4,
             new String[] {
                 "path", //$NON-NLS-1$
             },
             new String[] {
                 "{$currentEntity/@name}", //$NON-NLS-1$
-            } );
-    private static final TagInfo _td_ws_file_45_5 = new TagInfo("ws:file", //$NON-NLS-1$
-            45, 5,
-            new String[] {
-                "template", //$NON-NLS-1$
-                "path", //$NON-NLS-1$
-            },
-            new String[] {
-                "templates/templateEntityActionSave.jet", //$NON-NLS-1$
-                "save.php", //$NON-NLS-1$
             } );
     private static final TagInfo _td_ws_file_46_5 = new TagInfo("ws:file", //$NON-NLS-1$
             46, 5,
@@ -164,26 +135,26 @@ public class _jet_main implements JET2Template {
                 "path", //$NON-NLS-1$
             },
             new String[] {
-                "templates/templateEntityActionDelete.jet", //$NON-NLS-1$
-                "delete.php", //$NON-NLS-1$
+                "templates/templateEntityActionSave.jet", //$NON-NLS-1$
+                "save.php", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_folder_50_3 = new TagInfo("ws:folder", //$NON-NLS-1$
-            50, 3,
-            new String[] {
-                "path", //$NON-NLS-1$
-            },
-            new String[] {
-                "css", //$NON-NLS-1$
-            } );
-    private static final TagInfo _td_ws_file_51_4 = new TagInfo("ws:file", //$NON-NLS-1$
-            51, 4,
+    private static final TagInfo _td_ws_file_47_5 = new TagInfo("ws:file", //$NON-NLS-1$
+            47, 5,
             new String[] {
                 "template", //$NON-NLS-1$
                 "path", //$NON-NLS-1$
             },
             new String[] {
-                "templates/CSS/templateBootstrap-datepicker.jet", //$NON-NLS-1$
-                "bootstrap-datepicker.css", //$NON-NLS-1$
+                "templates/templateEntityActionDelete.jet", //$NON-NLS-1$
+                "delete.php", //$NON-NLS-1$
+            } );
+    private static final TagInfo _td_ws_folder_51_3 = new TagInfo("ws:folder", //$NON-NLS-1$
+            51, 3,
+            new String[] {
+                "path", //$NON-NLS-1$
+            },
+            new String[] {
+                "css", //$NON-NLS-1$
             } );
     private static final TagInfo _td_ws_file_52_4 = new TagInfo("ws:file", //$NON-NLS-1$
             52, 4,
@@ -192,8 +163,8 @@ public class _jet_main implements JET2Template {
                 "path", //$NON-NLS-1$
             },
             new String[] {
-                "templates/CSS/templateBootstrap-datepicker.standalone.jet", //$NON-NLS-1$
-                "bootstrap-datepicker.standalone.css", //$NON-NLS-1$
+                "templates/CSS/templateBootstrap-datepicker.jet", //$NON-NLS-1$
+                "bootstrap-datepicker.css", //$NON-NLS-1$
             } );
     private static final TagInfo _td_ws_file_53_4 = new TagInfo("ws:file", //$NON-NLS-1$
             53, 4,
@@ -202,8 +173,8 @@ public class _jet_main implements JET2Template {
                 "path", //$NON-NLS-1$
             },
             new String[] {
-                "templates/CSS/templateBootstrap-datepicker3.jet", //$NON-NLS-1$
-                "bootstrap-datepicker3.css", //$NON-NLS-1$
+                "templates/CSS/templateBootstrap-datepicker.standalone.jet", //$NON-NLS-1$
+                "bootstrap-datepicker.standalone.css", //$NON-NLS-1$
             } );
     private static final TagInfo _td_ws_file_54_4 = new TagInfo("ws:file", //$NON-NLS-1$
             54, 4,
@@ -212,11 +183,21 @@ public class _jet_main implements JET2Template {
                 "path", //$NON-NLS-1$
             },
             new String[] {
+                "templates/CSS/templateBootstrap-datepicker3.jet", //$NON-NLS-1$
+                "bootstrap-datepicker3.css", //$NON-NLS-1$
+            } );
+    private static final TagInfo _td_ws_file_55_4 = new TagInfo("ws:file", //$NON-NLS-1$
+            55, 4,
+            new String[] {
+                "template", //$NON-NLS-1$
+                "path", //$NON-NLS-1$
+            },
+            new String[] {
                 "templates/CSS/templateBootstrap-datepicker3.standalone.jet", //$NON-NLS-1$
                 "bootstrap-datepicker3.standalone.css", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_file_56_4 = new TagInfo("ws:file", //$NON-NLS-1$
-            56, 4,
+    private static final TagInfo _td_ws_file_57_4 = new TagInfo("ws:file", //$NON-NLS-1$
+            57, 4,
             new String[] {
                 "template", //$NON-NLS-1$
                 "path", //$NON-NLS-1$
@@ -225,16 +206,16 @@ public class _jet_main implements JET2Template {
                 "templates/CSS/templateBootstrap-table.jet", //$NON-NLS-1$
                 "bootstrap-table.css", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_folder_59_3 = new TagInfo("ws:folder", //$NON-NLS-1$
-            59, 3,
+    private static final TagInfo _td_ws_folder_60_3 = new TagInfo("ws:folder", //$NON-NLS-1$
+            60, 3,
             new String[] {
                 "path", //$NON-NLS-1$
             },
             new String[] {
                 "js", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_file_60_4 = new TagInfo("ws:file", //$NON-NLS-1$
-            60, 4,
+    private static final TagInfo _td_ws_file_61_4 = new TagInfo("ws:file", //$NON-NLS-1$
+            61, 4,
             new String[] {
                 "template", //$NON-NLS-1$
                 "path", //$NON-NLS-1$
@@ -243,8 +224,8 @@ public class _jet_main implements JET2Template {
                 "templates/JS/templateBootstrap-datepicker.jet", //$NON-NLS-1$
                 "bootstrap-datepicker.js", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_file_62_4 = new TagInfo("ws:file", //$NON-NLS-1$
-            62, 4,
+    private static final TagInfo _td_ws_file_63_4 = new TagInfo("ws:file", //$NON-NLS-1$
+            63, 4,
             new String[] {
                 "template", //$NON-NLS-1$
                 "path", //$NON-NLS-1$
@@ -253,8 +234,8 @@ public class _jet_main implements JET2Template {
                 "templates/JS/templateBootstrap-table.jet", //$NON-NLS-1$
                 "bootstrap-table.js", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_c_iterate_64_4 = new TagInfo("c:iterate", //$NON-NLS-1$
-            64, 4,
+    private static final TagInfo _td_c_iterate_65_4 = new TagInfo("c:iterate", //$NON-NLS-1$
+            65, 4,
             new String[] {
                 "select", //$NON-NLS-1$
                 "var", //$NON-NLS-1$
@@ -263,8 +244,8 @@ public class _jet_main implements JET2Template {
                 "/Domainmodel/Entity", //$NON-NLS-1$
                 "currentEntity", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_file_65_5 = new TagInfo("ws:file", //$NON-NLS-1$
-            65, 5,
+    private static final TagInfo _td_ws_file_66_5 = new TagInfo("ws:file", //$NON-NLS-1$
+            66, 5,
             new String[] {
                 "template", //$NON-NLS-1$
                 "path", //$NON-NLS-1$
@@ -273,8 +254,8 @@ public class _jet_main implements JET2Template {
                 "templates/templateEntityJS.jet", //$NON-NLS-1$
                 "{$currentEntity/@name}.js", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_ws_file_70_2 = new TagInfo("ws:file", //$NON-NLS-1$
-            70, 2,
+    private static final TagInfo _td_ws_file_71_2 = new TagInfo("ws:file", //$NON-NLS-1$
+            71, 2,
             new String[] {
                 "template", //$NON-NLS-1$
                 "path", //$NON-NLS-1$
@@ -339,59 +320,71 @@ out.jump(120);
 // elemento tipo Comment4(org.eclipse.jet.core.parser.ast.Comment)
 out.jump(268);
         out.write(NL);         
+        out.setTag("include",863,910);
+// elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
+out.jump(47);
+        out.includeStart();
+        RuntimeTagElement _jettag_c_include_29_1 = context.getTagFactory().createRuntimeTag(_jetns_c, "include", "c:include", _td_c_include_29_1); //$NON-NLS-1$ //$NON-NLS-2$
+        _jettag_c_include_29_1.setRuntimeParent(null);
+        _jettag_c_include_29_1.setTagInfo(_td_c_include_29_1);
+        _jettag_c_include_29_1.doStart(context, out);
+        _jettag_c_include_29_1.doEnd();
+        out.setTag(null,-1,-1);
+        out.write(NL);         
+        out.write(NL);         
 // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
 out.jump(44);
-        out.setTag("project",863,907);
-        RuntimeTagElement _jettag_ws_project_29_1 = context.getTagFactory().createRuntimeTag(_jetns_ws, "project", "ws:project", _td_ws_project_29_1); //$NON-NLS-1$ //$NON-NLS-2$
-        _jettag_ws_project_29_1.setRuntimeParent(null);
-        _jettag_ws_project_29_1.setTagInfo(_td_ws_project_29_1);
-        _jettag_ws_project_29_1.doStart(context, out);
+        out.setTag("project",912,956);
+        RuntimeTagElement _jettag_ws_project_31_1 = context.getTagFactory().createRuntimeTag(_jetns_ws, "project", "ws:project", _td_ws_project_31_1); //$NON-NLS-1$ //$NON-NLS-2$
+        _jettag_ws_project_31_1.setRuntimeParent(null);
+        _jettag_ws_project_31_1.setTagInfo(_td_ws_project_31_1);
+        _jettag_ws_project_31_1.doStart(context, out);
         out.setTag(null,-1,-1);
-        while (_jettag_ws_project_29_1.okToProcessBody()) {
+        while (_jettag_ws_project_31_1.okToProcessBody()) {
             out.write(NL);         
             out.write("\t");  //$NON-NLS-1$        
     // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
     out.jump(22);
-            out.setTag("folder",909,931);
-            RuntimeTagElement _jettag_ws_folder_30_2 = context.getTagFactory().createRuntimeTag(_jetns_ws, "folder", "ws:folder", _td_ws_folder_30_2); //$NON-NLS-1$ //$NON-NLS-2$
-            _jettag_ws_folder_30_2.setRuntimeParent(_jettag_ws_project_29_1);
-            _jettag_ws_folder_30_2.setTagInfo(_td_ws_folder_30_2);
-            _jettag_ws_folder_30_2.doStart(context, out);
+            out.setTag("folder",958,980);
+            RuntimeTagElement _jettag_ws_folder_32_2 = context.getTagFactory().createRuntimeTag(_jetns_ws, "folder", "ws:folder", _td_ws_folder_32_2); //$NON-NLS-1$ //$NON-NLS-2$
+            _jettag_ws_folder_32_2.setRuntimeParent(_jettag_ws_project_31_1);
+            _jettag_ws_folder_32_2.setTagInfo(_td_ws_folder_32_2);
+            _jettag_ws_folder_32_2.doStart(context, out);
             out.setTag(null,-1,-1);
-            while (_jettag_ws_folder_30_2.okToProcessBody()) {
+            while (_jettag_ws_folder_32_2.okToProcessBody()) {
                 out.write(NL);         
                 out.write("\t\t");  //$NON-NLS-1$        
         // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
         out.jump(56);
-                out.setTag("iterate",934,990);
-                RuntimeTagElement _jettag_c_iterate_31_3 = context.getTagFactory().createRuntimeTag(_jetns_c, "iterate", "c:iterate", _td_c_iterate_31_3); //$NON-NLS-1$ //$NON-NLS-2$
-                _jettag_c_iterate_31_3.setRuntimeParent(_jettag_ws_folder_30_2);
-                _jettag_c_iterate_31_3.setTagInfo(_td_c_iterate_31_3);
-                _jettag_c_iterate_31_3.doStart(context, out);
+                out.setTag("iterate",983,1039);
+                RuntimeTagElement _jettag_c_iterate_33_3 = context.getTagFactory().createRuntimeTag(_jetns_c, "iterate", "c:iterate", _td_c_iterate_33_3); //$NON-NLS-1$ //$NON-NLS-2$
+                _jettag_c_iterate_33_3.setRuntimeParent(_jettag_ws_folder_32_2);
+                _jettag_c_iterate_33_3.setTagInfo(_td_c_iterate_33_3);
+                _jettag_c_iterate_33_3.doStart(context, out);
                 out.loopStart();
                 out.setTag(null,-1,-1);
-                while (_jettag_c_iterate_31_3.okToProcessBody()) {
+                while (_jettag_c_iterate_33_3.okToProcessBody()) {
         out.bodyContentEnd();
-        out.handleDelimiter(_jettag_c_iterate_31_3.getTagInfo().getAttribute("delimiter"),934,990);
+        out.handleDelimiter(_jettag_c_iterate_33_3.getTagInfo().getAttribute("delimiter"),983,1039);
                     out.loopIterate();
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
-                    out.setTag("file",994,1075);
+                    out.setTag("file",1043,1124);
             // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
             out.jump(81);
-                    RuntimeTagElement _jettag_ws_file_32_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_32_4); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_ws_file_32_4.setRuntimeParent(_jettag_c_iterate_31_3);
-                    _jettag_ws_file_32_4.setTagInfo(_td_ws_file_32_4);
-                    _jettag_ws_file_32_4.doStart(context, out);
-                    _jettag_ws_file_32_4.doEnd();
+                    RuntimeTagElement _jettag_ws_file_34_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_34_4); //$NON-NLS-1$ //$NON-NLS-2$
+                    _jettag_ws_file_34_4.setRuntimeParent(_jettag_c_iterate_33_3);
+                    _jettag_ws_file_34_4.setTagInfo(_td_ws_file_34_4);
+                    _jettag_ws_file_34_4.doStart(context, out);
+                    _jettag_ws_file_34_4.doEnd();
                     out.setTag(null,-1,-1);
                     out.write(NL);         
                     out.write("\t\t");  //$NON-NLS-1$        
         out.bodyContentStart();
-                    _jettag_c_iterate_31_3.handleBodyContent(out);
+                    _jettag_c_iterate_33_3.handleBodyContent(out);
                 }
         out.bodyContentEnd();
-                _jettag_c_iterate_31_3.doEnd();
+                _jettag_c_iterate_33_3.doEnd();
                 out.loopEnd();
                 out.endTag("iterate",88);
         // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
@@ -401,120 +394,69 @@ out.jump(44);
                 out.write("\t\t");  //$NON-NLS-1$        
         // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
         out.jump(24);
-                out.setTag("folder",1094,1118);
-                RuntimeTagElement _jettag_ws_folder_35_3 = context.getTagFactory().createRuntimeTag(_jetns_ws, "folder", "ws:folder", _td_ws_folder_35_3); //$NON-NLS-1$ //$NON-NLS-2$
-                _jettag_ws_folder_35_3.setRuntimeParent(_jettag_ws_folder_30_2);
-                _jettag_ws_folder_35_3.setTagInfo(_td_ws_folder_35_3);
-                _jettag_ws_folder_35_3.doStart(context, out);
+                out.setTag("folder",1143,1167);
+                RuntimeTagElement _jettag_ws_folder_37_3 = context.getTagFactory().createRuntimeTag(_jetns_ws, "folder", "ws:folder", _td_ws_folder_37_3); //$NON-NLS-1$ //$NON-NLS-2$
+                _jettag_ws_folder_37_3.setRuntimeParent(_jettag_ws_folder_32_2);
+                _jettag_ws_folder_37_3.setTagInfo(_td_ws_folder_37_3);
+                _jettag_ws_folder_37_3.doStart(context, out);
                 out.setTag(null,-1,-1);
-                while (_jettag_ws_folder_35_3.okToProcessBody()) {
+                while (_jettag_ws_folder_37_3.okToProcessBody()) {
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
             // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
             out.jump(60);
-                    out.setTag("iterate",1122,1182);
-                    RuntimeTagElement _jettag_c_iterate_36_4 = context.getTagFactory().createRuntimeTag(_jetns_c, "iterate", "c:iterate", _td_c_iterate_36_4); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_c_iterate_36_4.setRuntimeParent(_jettag_ws_folder_35_3);
-                    _jettag_c_iterate_36_4.setTagInfo(_td_c_iterate_36_4);
-                    _jettag_c_iterate_36_4.doStart(context, out);
+                    out.setTag("iterate",1171,1231);
+                    RuntimeTagElement _jettag_c_iterate_38_4 = context.getTagFactory().createRuntimeTag(_jetns_c, "iterate", "c:iterate", _td_c_iterate_38_4); //$NON-NLS-1$ //$NON-NLS-2$
+                    _jettag_c_iterate_38_4.setRuntimeParent(_jettag_ws_folder_37_3);
+                    _jettag_c_iterate_38_4.setTagInfo(_td_c_iterate_38_4);
+                    _jettag_c_iterate_38_4.doStart(context, out);
                     out.loopStart();
                     out.setTag(null,-1,-1);
-                    while (_jettag_c_iterate_36_4.okToProcessBody()) {
+                    while (_jettag_c_iterate_38_4.okToProcessBody()) {
             out.bodyContentEnd();
-            out.handleDelimiter(_jettag_c_iterate_36_4.getTagInfo().getAttribute("delimiter"),1122,1182);
+            out.handleDelimiter(_jettag_c_iterate_38_4.getTagInfo().getAttribute("delimiter"),1171,1231);
                         out.loopIterate();
                         out.write(NL);         
                         out.write("\t\t\t\t");  //$NON-NLS-1$        
-                // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
-                out.jump(48);
-                        out.setTag("set",1187,1235);
-                        RuntimeTagElement _jettag_c_set_37_5 = context.getTagFactory().createRuntimeTag(_jetns_c, "set", "c:set", _td_c_set_37_5); //$NON-NLS-1$ //$NON-NLS-2$
-                        _jettag_c_set_37_5.setRuntimeParent(_jettag_c_iterate_36_4);
-                        _jettag_c_set_37_5.setTagInfo(_td_c_set_37_5);
-                        _jettag_c_set_37_5.doStart(context, out);
-                        JET2Writer _jettag_c_set_37_5_saved_out = out;
-                        out.setTag(null,-1,-1);
-                        while (_jettag_c_set_37_5.okToProcessBody()) {
-                            out = out.newNestedContentWriter();
-                    // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
-                    out.jump(17);
-                            out.setTag("uc",1235,1252);
-                            RuntimeTagElement _jettag_f_uc_37_53 = context.getTagFactory().createRuntimeTag(_jetns_f, "uc", "f:uc", _td_f_uc_37_53); //$NON-NLS-1$ //$NON-NLS-2$
-                            _jettag_f_uc_37_53.setRuntimeParent(_jettag_c_set_37_5);
-                            _jettag_f_uc_37_53.setTagInfo(_td_f_uc_37_53);
-                            _jettag_f_uc_37_53.doStart(context, out);
-                            JET2Writer _jettag_f_uc_37_53_saved_out = out;
-                            out.setTag(null,-1,-1);
-                            while (_jettag_f_uc_37_53.okToProcessBody()) {
-                                out = out.newNestedContentWriter();
-                                out.setTag("get",1252,1291);
-                        // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
-                        out.jump(39);
-                                RuntimeTagElement _jettag_c_get_37_70 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_37_70); //$NON-NLS-1$ //$NON-NLS-2$
-                                _jettag_c_get_37_70.setRuntimeParent(_jettag_f_uc_37_53);
-                                _jettag_c_get_37_70.setTagInfo(_td_c_get_37_70);
-                                _jettag_c_get_37_70.doStart(context, out);
-                                _jettag_c_get_37_70.doEnd();
-                                out.setTag(null,-1,-1);
-                    out.bodyContentStart();
-                                _jettag_f_uc_37_53.handleBodyContent(out);
-                            }
-                            out = _jettag_f_uc_37_53_saved_out;
-                    out.bodyContentEnd();
-                            _jettag_f_uc_37_53.doEnd();
-                            out.endTag("uc",39);
-                    // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
-                    out.jump(7);
-                out.bodyContentStart();
-                            _jettag_c_set_37_5.handleBodyContent(out);
-                        }
-                        out = _jettag_c_set_37_5_saved_out;
-                out.bodyContentEnd();
-                        _jettag_c_set_37_5.doEnd();
-                        out.endTag("set",63);
-                // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
-                out.jump(8);
-                        out.write(NL);         
-                        out.write("\t\t\t\t");  //$NON-NLS-1$        
-                        out.setTag("file",1311,1412);
+                        out.setTag("file",1236,1337);
                 // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
                 out.jump(101);
-                        RuntimeTagElement _jettag_ws_file_38_5 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_38_5); //$NON-NLS-1$ //$NON-NLS-2$
-                        _jettag_ws_file_38_5.setRuntimeParent(_jettag_c_iterate_36_4);
-                        _jettag_ws_file_38_5.setTagInfo(_td_ws_file_38_5);
-                        _jettag_ws_file_38_5.doStart(context, out);
-                        _jettag_ws_file_38_5.doEnd();
-                        out.setTag(null,-1,-1);
-                        out.write(NL);         
-                        out.write("\t\t\t\t");  //$NON-NLS-1$        
-                        out.setTag("file",1417,1522);
-                // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
-                out.jump(105);
                         RuntimeTagElement _jettag_ws_file_39_5 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_39_5); //$NON-NLS-1$ //$NON-NLS-2$
-                        _jettag_ws_file_39_5.setRuntimeParent(_jettag_c_iterate_36_4);
+                        _jettag_ws_file_39_5.setRuntimeParent(_jettag_c_iterate_38_4);
                         _jettag_ws_file_39_5.setTagInfo(_td_ws_file_39_5);
                         _jettag_ws_file_39_5.doStart(context, out);
                         _jettag_ws_file_39_5.doEnd();
                         out.setTag(null,-1,-1);
                         out.write(NL);         
+                        out.write("\t\t\t\t");  //$NON-NLS-1$        
+                        out.setTag("file",1342,1447);
+                // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
+                out.jump(105);
+                        RuntimeTagElement _jettag_ws_file_40_5 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_40_5); //$NON-NLS-1$ //$NON-NLS-2$
+                        _jettag_ws_file_40_5.setRuntimeParent(_jettag_c_iterate_38_4);
+                        _jettag_ws_file_40_5.setTagInfo(_td_ws_file_40_5);
+                        _jettag_ws_file_40_5.doStart(context, out);
+                        _jettag_ws_file_40_5.doEnd();
+                        out.setTag(null,-1,-1);
+                        out.write(NL);         
                         out.write("\t\t\t");  //$NON-NLS-1$        
             out.bodyContentStart();
-                        _jettag_c_iterate_36_4.handleBodyContent(out);
+                        _jettag_c_iterate_38_4.handleBodyContent(out);
                     }
             out.bodyContentEnd();
-                    _jettag_c_iterate_36_4.doEnd();
+                    _jettag_c_iterate_38_4.doEnd();
                     out.loopEnd();
-                    out.endTag("iterate",344);
+                    out.endTag("iterate",220);
             // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
             out.jump(12);
                     out.write(NL);         
                     out.write("\t\t");  //$NON-NLS-1$        
         out.bodyContentStart();
-                    _jettag_ws_folder_35_3.handleBodyContent(out);
+                    _jettag_ws_folder_37_3.handleBodyContent(out);
                 }
         out.bodyContentEnd();
-                _jettag_ws_folder_35_3.doEnd();
-                out.endTag("folder",423);
+                _jettag_ws_folder_37_3.doEnd();
+                out.endTag("folder",299);
         // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
         out.jump(12);
                 out.write(NL);         
@@ -522,67 +464,67 @@ out.jump(44);
                 out.write("\t\t");  //$NON-NLS-1$        
         // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
         out.jump(60);
-                out.setTag("iterate",1557,1617);
-                RuntimeTagElement _jettag_c_iterate_43_3 = context.getTagFactory().createRuntimeTag(_jetns_c, "iterate", "c:iterate", _td_c_iterate_43_3); //$NON-NLS-1$ //$NON-NLS-2$
-                _jettag_c_iterate_43_3.setRuntimeParent(_jettag_ws_folder_30_2);
-                _jettag_c_iterate_43_3.setTagInfo(_td_c_iterate_43_3);
-                _jettag_c_iterate_43_3.doStart(context, out);
+                out.setTag("iterate",1482,1542);
+                RuntimeTagElement _jettag_c_iterate_44_3 = context.getTagFactory().createRuntimeTag(_jetns_c, "iterate", "c:iterate", _td_c_iterate_44_3); //$NON-NLS-1$ //$NON-NLS-2$
+                _jettag_c_iterate_44_3.setRuntimeParent(_jettag_ws_folder_32_2);
+                _jettag_c_iterate_44_3.setTagInfo(_td_c_iterate_44_3);
+                _jettag_c_iterate_44_3.doStart(context, out);
                 out.loopStart();
                 out.setTag(null,-1,-1);
-                while (_jettag_c_iterate_43_3.okToProcessBody()) {
+                while (_jettag_c_iterate_44_3.okToProcessBody()) {
         out.bodyContentEnd();
-        out.handleDelimiter(_jettag_c_iterate_43_3.getTagInfo().getAttribute("delimiter"),1557,1617);
+        out.handleDelimiter(_jettag_c_iterate_44_3.getTagInfo().getAttribute("delimiter"),1482,1542);
                     out.loopIterate();
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
             // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
             out.jump(41);
-                    out.setTag("folder",1621,1662);
-                    RuntimeTagElement _jettag_ws_folder_44_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "folder", "ws:folder", _td_ws_folder_44_4); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_ws_folder_44_4.setRuntimeParent(_jettag_c_iterate_43_3);
-                    _jettag_ws_folder_44_4.setTagInfo(_td_ws_folder_44_4);
-                    _jettag_ws_folder_44_4.doStart(context, out);
+                    out.setTag("folder",1546,1587);
+                    RuntimeTagElement _jettag_ws_folder_45_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "folder", "ws:folder", _td_ws_folder_45_4); //$NON-NLS-1$ //$NON-NLS-2$
+                    _jettag_ws_folder_45_4.setRuntimeParent(_jettag_c_iterate_44_3);
+                    _jettag_ws_folder_45_4.setTagInfo(_td_ws_folder_45_4);
+                    _jettag_ws_folder_45_4.doStart(context, out);
                     out.setTag(null,-1,-1);
-                    while (_jettag_ws_folder_44_4.okToProcessBody()) {
+                    while (_jettag_ws_folder_45_4.okToProcessBody()) {
                         out.write(NL);         
                         out.write("\t\t\t\t");  //$NON-NLS-1$        
-                        out.setTag("file",1667,1744);
+                        out.setTag("file",1592,1669);
                 // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
                 out.jump(77);
-                        RuntimeTagElement _jettag_ws_file_45_5 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_45_5); //$NON-NLS-1$ //$NON-NLS-2$
-                        _jettag_ws_file_45_5.setRuntimeParent(_jettag_ws_folder_44_4);
-                        _jettag_ws_file_45_5.setTagInfo(_td_ws_file_45_5);
-                        _jettag_ws_file_45_5.doStart(context, out);
-                        _jettag_ws_file_45_5.doEnd();
-                        out.setTag(null,-1,-1);
-                        out.write(NL);         
-                        out.write("\t\t\t\t");  //$NON-NLS-1$        
-                        out.setTag("file",1749,1830);
-                // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
-                out.jump(81);
                         RuntimeTagElement _jettag_ws_file_46_5 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_46_5); //$NON-NLS-1$ //$NON-NLS-2$
-                        _jettag_ws_file_46_5.setRuntimeParent(_jettag_ws_folder_44_4);
+                        _jettag_ws_file_46_5.setRuntimeParent(_jettag_ws_folder_45_4);
                         _jettag_ws_file_46_5.setTagInfo(_td_ws_file_46_5);
                         _jettag_ws_file_46_5.doStart(context, out);
                         _jettag_ws_file_46_5.doEnd();
                         out.setTag(null,-1,-1);
                         out.write(NL);         
+                        out.write("\t\t\t\t");  //$NON-NLS-1$        
+                        out.setTag("file",1674,1755);
+                // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
+                out.jump(81);
+                        RuntimeTagElement _jettag_ws_file_47_5 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_47_5); //$NON-NLS-1$ //$NON-NLS-2$
+                        _jettag_ws_file_47_5.setRuntimeParent(_jettag_ws_folder_45_4);
+                        _jettag_ws_file_47_5.setTagInfo(_td_ws_file_47_5);
+                        _jettag_ws_file_47_5.doStart(context, out);
+                        _jettag_ws_file_47_5.doEnd();
+                        out.setTag(null,-1,-1);
+                        out.write(NL);         
                         out.write("\t\t\t");  //$NON-NLS-1$        
             out.bodyContentStart();
-                        _jettag_ws_folder_44_4.handleBodyContent(out);
+                        _jettag_ws_folder_45_4.handleBodyContent(out);
                     }
             out.bodyContentEnd();
-                    _jettag_ws_folder_44_4.doEnd();
+                    _jettag_ws_folder_45_4.doEnd();
                     out.endTag("folder",172);
             // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
             out.jump(12);
                     out.write(NL);         
                     out.write("\t\t");  //$NON-NLS-1$        
         out.bodyContentStart();
-                    _jettag_c_iterate_43_3.handleBodyContent(out);
+                    _jettag_c_iterate_44_3.handleBodyContent(out);
                 }
         out.bodyContentEnd();
-                _jettag_c_iterate_43_3.doEnd();
+                _jettag_c_iterate_44_3.doEnd();
                 out.loopEnd();
                 out.endTag("iterate",232);
         // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
@@ -592,77 +534,77 @@ out.jump(44);
                 out.write("\t\t");  //$NON-NLS-1$        
         // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
         out.jump(22);
-                out.setTag("folder",1865,1887);
-                RuntimeTagElement _jettag_ws_folder_50_3 = context.getTagFactory().createRuntimeTag(_jetns_ws, "folder", "ws:folder", _td_ws_folder_50_3); //$NON-NLS-1$ //$NON-NLS-2$
-                _jettag_ws_folder_50_3.setRuntimeParent(_jettag_ws_folder_30_2);
-                _jettag_ws_folder_50_3.setTagInfo(_td_ws_folder_50_3);
-                _jettag_ws_folder_50_3.doStart(context, out);
+                out.setTag("folder",1790,1812);
+                RuntimeTagElement _jettag_ws_folder_51_3 = context.getTagFactory().createRuntimeTag(_jetns_ws, "folder", "ws:folder", _td_ws_folder_51_3); //$NON-NLS-1$ //$NON-NLS-2$
+                _jettag_ws_folder_51_3.setRuntimeParent(_jettag_ws_folder_32_2);
+                _jettag_ws_folder_51_3.setTagInfo(_td_ws_folder_51_3);
+                _jettag_ws_folder_51_3.doStart(context, out);
                 out.setTag(null,-1,-1);
-                while (_jettag_ws_folder_50_3.okToProcessBody()) {
+                while (_jettag_ws_folder_51_3.okToProcessBody()) {
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
-                    out.setTag("file",1891,1992);
+                    out.setTag("file",1816,1917);
             // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
             out.jump(101);
-                    RuntimeTagElement _jettag_ws_file_51_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_51_4); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_ws_file_51_4.setRuntimeParent(_jettag_ws_folder_50_3);
-                    _jettag_ws_file_51_4.setTagInfo(_td_ws_file_51_4);
-                    _jettag_ws_file_51_4.doStart(context, out);
-                    _jettag_ws_file_51_4.doEnd();
-                    out.setTag(null,-1,-1);
-                    out.write(NL);         
-                    out.write("\t\t\t");  //$NON-NLS-1$        
-                    out.setTag("file",1996,2119);
-            // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
-            out.jump(123);
                     RuntimeTagElement _jettag_ws_file_52_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_52_4); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_ws_file_52_4.setRuntimeParent(_jettag_ws_folder_50_3);
+                    _jettag_ws_file_52_4.setRuntimeParent(_jettag_ws_folder_51_3);
                     _jettag_ws_file_52_4.setTagInfo(_td_ws_file_52_4);
                     _jettag_ws_file_52_4.doStart(context, out);
                     _jettag_ws_file_52_4.doEnd();
                     out.setTag(null,-1,-1);
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
-                    out.setTag("file",2123,2226);
+                    out.setTag("file",1921,2044);
             // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
-            out.jump(103);
+            out.jump(123);
                     RuntimeTagElement _jettag_ws_file_53_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_53_4); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_ws_file_53_4.setRuntimeParent(_jettag_ws_folder_50_3);
+                    _jettag_ws_file_53_4.setRuntimeParent(_jettag_ws_folder_51_3);
                     _jettag_ws_file_53_4.setTagInfo(_td_ws_file_53_4);
                     _jettag_ws_file_53_4.doStart(context, out);
                     _jettag_ws_file_53_4.doEnd();
                     out.setTag(null,-1,-1);
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
-                    out.setTag("file",2230,2355);
+                    out.setTag("file",2048,2151);
             // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
-            out.jump(125);
+            out.jump(103);
                     RuntimeTagElement _jettag_ws_file_54_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_54_4); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_ws_file_54_4.setRuntimeParent(_jettag_ws_folder_50_3);
+                    _jettag_ws_file_54_4.setRuntimeParent(_jettag_ws_folder_51_3);
                     _jettag_ws_file_54_4.setTagInfo(_td_ws_file_54_4);
                     _jettag_ws_file_54_4.doStart(context, out);
                     _jettag_ws_file_54_4.doEnd();
                     out.setTag(null,-1,-1);
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
+                    out.setTag("file",2155,2280);
+            // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
+            out.jump(125);
+                    RuntimeTagElement _jettag_ws_file_55_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_55_4); //$NON-NLS-1$ //$NON-NLS-2$
+                    _jettag_ws_file_55_4.setRuntimeParent(_jettag_ws_folder_51_3);
+                    _jettag_ws_file_55_4.setTagInfo(_td_ws_file_55_4);
+                    _jettag_ws_file_55_4.doStart(context, out);
+                    _jettag_ws_file_55_4.doEnd();
+                    out.setTag(null,-1,-1);
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
-                    out.setTag("file",2363,2454);
+                    out.write(NL);         
+                    out.write("\t\t\t");  //$NON-NLS-1$        
+                    out.setTag("file",2288,2379);
             // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
             out.jump(91);
-                    RuntimeTagElement _jettag_ws_file_56_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_56_4); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_ws_file_56_4.setRuntimeParent(_jettag_ws_folder_50_3);
-                    _jettag_ws_file_56_4.setTagInfo(_td_ws_file_56_4);
-                    _jettag_ws_file_56_4.doStart(context, out);
-                    _jettag_ws_file_56_4.doEnd();
+                    RuntimeTagElement _jettag_ws_file_57_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_57_4); //$NON-NLS-1$ //$NON-NLS-2$
+                    _jettag_ws_file_57_4.setRuntimeParent(_jettag_ws_folder_51_3);
+                    _jettag_ws_file_57_4.setTagInfo(_td_ws_file_57_4);
+                    _jettag_ws_file_57_4.doStart(context, out);
+                    _jettag_ws_file_57_4.doEnd();
                     out.setTag(null,-1,-1);
                     out.write(NL);         
                     out.write("\t\t");  //$NON-NLS-1$        
         out.bodyContentStart();
-                    _jettag_ws_folder_50_3.handleBodyContent(out);
+                    _jettag_ws_folder_51_3.handleBodyContent(out);
                 }
         out.bodyContentEnd();
-                _jettag_ws_folder_50_3.doEnd();
+                _jettag_ws_folder_51_3.doEnd();
                 out.endTag("folder",570);
         // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
         out.jump(12);
@@ -671,71 +613,71 @@ out.jump(44);
                 out.write("\t\t");  //$NON-NLS-1$        
         // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
         out.jump(21);
-                out.setTag("folder",2473,2494);
-                RuntimeTagElement _jettag_ws_folder_59_3 = context.getTagFactory().createRuntimeTag(_jetns_ws, "folder", "ws:folder", _td_ws_folder_59_3); //$NON-NLS-1$ //$NON-NLS-2$
-                _jettag_ws_folder_59_3.setRuntimeParent(_jettag_ws_folder_30_2);
-                _jettag_ws_folder_59_3.setTagInfo(_td_ws_folder_59_3);
-                _jettag_ws_folder_59_3.doStart(context, out);
+                out.setTag("folder",2398,2419);
+                RuntimeTagElement _jettag_ws_folder_60_3 = context.getTagFactory().createRuntimeTag(_jetns_ws, "folder", "ws:folder", _td_ws_folder_60_3); //$NON-NLS-1$ //$NON-NLS-2$
+                _jettag_ws_folder_60_3.setRuntimeParent(_jettag_ws_folder_32_2);
+                _jettag_ws_folder_60_3.setTagInfo(_td_ws_folder_60_3);
+                _jettag_ws_folder_60_3.doStart(context, out);
                 out.setTag(null,-1,-1);
-                while (_jettag_ws_folder_59_3.okToProcessBody()) {
+                while (_jettag_ws_folder_60_3.okToProcessBody()) {
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
-                    out.setTag("file",2498,2597);
+                    out.setTag("file",2423,2522);
             // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
             out.jump(99);
-                    RuntimeTagElement _jettag_ws_file_60_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_60_4); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_ws_file_60_4.setRuntimeParent(_jettag_ws_folder_59_3);
-                    _jettag_ws_file_60_4.setTagInfo(_td_ws_file_60_4);
-                    _jettag_ws_file_60_4.doStart(context, out);
-                    _jettag_ws_file_60_4.doEnd();
+                    RuntimeTagElement _jettag_ws_file_61_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_61_4); //$NON-NLS-1$ //$NON-NLS-2$
+                    _jettag_ws_file_61_4.setRuntimeParent(_jettag_ws_folder_60_3);
+                    _jettag_ws_file_61_4.setTagInfo(_td_ws_file_61_4);
+                    _jettag_ws_file_61_4.doStart(context, out);
+                    _jettag_ws_file_61_4.doEnd();
                     out.setTag(null,-1,-1);
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
-                    out.setTag("file",2605,2694);
+                    out.setTag("file",2530,2619);
             // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
             out.jump(89);
-                    RuntimeTagElement _jettag_ws_file_62_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_62_4); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_ws_file_62_4.setRuntimeParent(_jettag_ws_folder_59_3);
-                    _jettag_ws_file_62_4.setTagInfo(_td_ws_file_62_4);
-                    _jettag_ws_file_62_4.doStart(context, out);
-                    _jettag_ws_file_62_4.doEnd();
+                    RuntimeTagElement _jettag_ws_file_63_4 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_63_4); //$NON-NLS-1$ //$NON-NLS-2$
+                    _jettag_ws_file_63_4.setRuntimeParent(_jettag_ws_folder_60_3);
+                    _jettag_ws_file_63_4.setTagInfo(_td_ws_file_63_4);
+                    _jettag_ws_file_63_4.doStart(context, out);
+                    _jettag_ws_file_63_4.doEnd();
                     out.setTag(null,-1,-1);
                     out.write(NL);         
                     out.write(NL);         
                     out.write("\t\t\t");  //$NON-NLS-1$        
             // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
             out.jump(60);
-                    out.setTag("iterate",2699,2759);
-                    RuntimeTagElement _jettag_c_iterate_64_4 = context.getTagFactory().createRuntimeTag(_jetns_c, "iterate", "c:iterate", _td_c_iterate_64_4); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_c_iterate_64_4.setRuntimeParent(_jettag_ws_folder_59_3);
-                    _jettag_c_iterate_64_4.setTagInfo(_td_c_iterate_64_4);
-                    _jettag_c_iterate_64_4.doStart(context, out);
+                    out.setTag("iterate",2624,2684);
+                    RuntimeTagElement _jettag_c_iterate_65_4 = context.getTagFactory().createRuntimeTag(_jetns_c, "iterate", "c:iterate", _td_c_iterate_65_4); //$NON-NLS-1$ //$NON-NLS-2$
+                    _jettag_c_iterate_65_4.setRuntimeParent(_jettag_ws_folder_60_3);
+                    _jettag_c_iterate_65_4.setTagInfo(_td_c_iterate_65_4);
+                    _jettag_c_iterate_65_4.doStart(context, out);
                     out.loopStart();
                     out.setTag(null,-1,-1);
-                    while (_jettag_c_iterate_64_4.okToProcessBody()) {
+                    while (_jettag_c_iterate_65_4.okToProcessBody()) {
             out.bodyContentEnd();
-            out.handleDelimiter(_jettag_c_iterate_64_4.getTagInfo().getAttribute("delimiter"),2699,2759);
+            out.handleDelimiter(_jettag_c_iterate_65_4.getTagInfo().getAttribute("delimiter"),2624,2684);
                         out.loopIterate();
                         out.write(NL);         
                         out.write("\t\t\t\t");  //$NON-NLS-1$        
-                        out.setTag("file",2764,2850);
+                        out.setTag("file",2689,2775);
                 // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
                 out.jump(86);
-                        RuntimeTagElement _jettag_ws_file_65_5 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_65_5); //$NON-NLS-1$ //$NON-NLS-2$
-                        _jettag_ws_file_65_5.setRuntimeParent(_jettag_c_iterate_64_4);
-                        _jettag_ws_file_65_5.setTagInfo(_td_ws_file_65_5);
-                        _jettag_ws_file_65_5.doStart(context, out);
-                        _jettag_ws_file_65_5.doEnd();
+                        RuntimeTagElement _jettag_ws_file_66_5 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_66_5); //$NON-NLS-1$ //$NON-NLS-2$
+                        _jettag_ws_file_66_5.setRuntimeParent(_jettag_c_iterate_65_4);
+                        _jettag_ws_file_66_5.setTagInfo(_td_ws_file_66_5);
+                        _jettag_ws_file_66_5.doStart(context, out);
+                        _jettag_ws_file_66_5.doEnd();
                         out.setTag(null,-1,-1);
                         out.write(NL);         
                         out.write("\t\t\t");  //$NON-NLS-1$        
             out.bodyContentStart();
-                        _jettag_c_iterate_64_4.handleBodyContent(out);
+                        _jettag_c_iterate_65_4.handleBodyContent(out);
                     }
             out.bodyContentEnd();
-                    _jettag_c_iterate_64_4.doEnd();
+                    _jettag_c_iterate_65_4.doEnd();
                     out.loopEnd();
                     out.endTag("iterate",95);
             // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
@@ -743,43 +685,43 @@ out.jump(44);
                     out.write(NL);         
                     out.write("\t\t");  //$NON-NLS-1$        
         out.bodyContentStart();
-                    _jettag_ws_folder_59_3.handleBodyContent(out);
+                    _jettag_ws_folder_60_3.handleBodyContent(out);
                 }
         out.bodyContentEnd();
-                _jettag_ws_folder_59_3.doEnd();
+                _jettag_ws_folder_60_3.doEnd();
                 out.endTag("folder",375);
         // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
         out.jump(12);
                 out.write(NL);         
                 out.write("\t");  //$NON-NLS-1$        
     out.bodyContentStart();
-                _jettag_ws_folder_30_2.handleBodyContent(out);
+                _jettag_ws_folder_32_2.handleBodyContent(out);
             }
     out.bodyContentEnd();
-            _jettag_ws_folder_30_2.doEnd();
-            out.endTag("folder",1952);
+            _jettag_ws_folder_32_2.doEnd();
+            out.endTag("folder",1828);
     // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
     out.jump(12);
             out.write(NL);         
             out.write(NL);         
             out.write("\t");  //$NON-NLS-1$        
-            out.setTag("file",2898,2959);
+            out.setTag("file",2823,2884);
     // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
     out.jump(61);
-            RuntimeTagElement _jettag_ws_file_70_2 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_70_2); //$NON-NLS-1$ //$NON-NLS-2$
-            _jettag_ws_file_70_2.setRuntimeParent(_jettag_ws_project_29_1);
-            _jettag_ws_file_70_2.setTagInfo(_td_ws_file_70_2);
-            _jettag_ws_file_70_2.doStart(context, out);
-            _jettag_ws_file_70_2.doEnd();
+            RuntimeTagElement _jettag_ws_file_71_2 = context.getTagFactory().createRuntimeTag(_jetns_ws, "file", "ws:file", _td_ws_file_71_2); //$NON-NLS-1$ //$NON-NLS-2$
+            _jettag_ws_file_71_2.setRuntimeParent(_jettag_ws_project_31_1);
+            _jettag_ws_file_71_2.setTagInfo(_td_ws_file_71_2);
+            _jettag_ws_file_71_2.doStart(context, out);
+            _jettag_ws_file_71_2.doEnd();
             out.setTag(null,-1,-1);
             out.write(NL);         
             out.write(NL);         
 out.bodyContentStart();
-            _jettag_ws_project_29_1.handleBodyContent(out);
+            _jettag_ws_project_31_1.handleBodyContent(out);
         }
 out.bodyContentEnd();
-        _jettag_ws_project_29_1.doEnd();
-        out.endTag("project",2054);
+        _jettag_ws_project_31_1.doEnd();
+        out.endTag("project",1930);
 // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
 out.jump(13);
         out.popTemplateFile();

@@ -1,15 +1,15 @@
 <?php
-	include_once "../class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>.class.php";
-	include_once "../class/<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB.class.php";
+	include_once "../class/<c:get select="$currentEntity/@className" />.class.php";
+	include_once "../class/<c:get select="$currentEntity/@className" />DB.class.php";
 	
-	$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc> = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>();
-	$<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB = new <f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB();
+	$<c:get select="$currentEntity/@className" /> = new <c:get select="$currentEntity/@className" />();
+	$<c:get select="$currentEntity/@className" />DB = new <c:get select="$currentEntity/@className" />DB();
 	
 	$result = false;
 	
 	if (isSet($_GET['id']) && $_GET['id'] > 0) {
 		$<c:get select="$currentEntity/@name" />->setId($_GET["id"]);
-		$result = $<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>DB->destroy($<f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc>);
+		$result = $<c:get select="$currentEntity/@className" />DB->destroy($<c:get select="$currentEntity/@className" />);
 	}
 	
 	if ($result) {

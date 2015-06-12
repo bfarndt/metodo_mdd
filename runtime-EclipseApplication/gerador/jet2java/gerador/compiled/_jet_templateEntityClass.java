@@ -9,7 +9,6 @@ import org.eclipse.jet.taglib.TagInfo;
 public class _jet_templateEntityClass implements JET2Template {
     private final String templateFile;
     private static final String _jetns_c = "org.eclipse.jet.controlTags"; //$NON-NLS-1$
-    private static final String _jetns_f = "org.eclipse.jet.formatTags"; //$NON-NLS-1$
 
     public _jet_templateEntityClass(String templateFile) {
         super();
@@ -36,37 +35,21 @@ public class _jet_templateEntityClass implements JET2Template {
             new String[] {
                 "($currentFeature/EntityType/entity/@name != '')", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_f_uc_3_18 = new TagInfo("f:uc", //$NON-NLS-1$
+    private static final TagInfo _td_c_get_3_18 = new TagInfo("c:get", //$NON-NLS-1$
             3, 18,
             new String[] {
-                "length", //$NON-NLS-1$
-            },
-            new String[] {
-                "1", //$NON-NLS-1$
-            } );
-    private static final TagInfo _td_c_get_3_35 = new TagInfo("c:get", //$NON-NLS-1$
-            3, 35,
-            new String[] {
                 "select", //$NON-NLS-1$
             },
             new String[] {
-                "$currentFeature/EntityType/entity/@name", //$NON-NLS-1$
+                "$currentFeature/EntityType/entity/@className", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_f_uc_5_8 = new TagInfo("f:uc", //$NON-NLS-1$
+    private static final TagInfo _td_c_get_5_8 = new TagInfo("c:get", //$NON-NLS-1$
             5, 8,
             new String[] {
-                "length", //$NON-NLS-1$
-            },
-            new String[] {
-                "1", //$NON-NLS-1$
-            } );
-    private static final TagInfo _td_c_get_5_25 = new TagInfo("c:get", //$NON-NLS-1$
-            5, 25,
-            new String[] {
                 "select", //$NON-NLS-1$
             },
             new String[] {
-                "$currentEntity/@name", //$NON-NLS-1$
+                "$currentEntity/@className", //$NON-NLS-1$
             } );
     private static final TagInfo _td_c_iterate_8_3 = new TagInfo("c:iterate", //$NON-NLS-1$
             8, 3,
@@ -112,24 +95,16 @@ public class _jet_templateEntityClass implements JET2Template {
             new String[] {
                 "($currentFeature/EntityType/entity/@name != '')", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_f_uc_16_11 = new TagInfo("f:uc", //$NON-NLS-1$
+    private static final TagInfo _td_c_get_16_11 = new TagInfo("c:get", //$NON-NLS-1$
             16, 11,
-            new String[] {
-                "length", //$NON-NLS-1$
-            },
-            new String[] {
-                "1", //$NON-NLS-1$
-            } );
-    private static final TagInfo _td_c_get_16_28 = new TagInfo("c:get", //$NON-NLS-1$
-            16, 28,
             new String[] {
                 "select", //$NON-NLS-1$
             },
             new String[] {
-                "$currentFeature/EntityType/entity/@name", //$NON-NLS-1$
+                "$currentFeature/EntityType/entity/@className", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_c_if_16_102 = new TagInfo("c:if", //$NON-NLS-1$
-            16, 102,
+    private static final TagInfo _td_c_if_16_83 = new TagInfo("c:if", //$NON-NLS-1$
+            16, 83,
             new String[] {
                 "test", //$NON-NLS-1$
             },
@@ -146,21 +121,13 @@ public class _jet_templateEntityClass implements JET2Template {
                 "$currentEntity/Feature", //$NON-NLS-1$
                 "currentFeature", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_f_uc_32_22 = new TagInfo("f:uc", //$NON-NLS-1$
+    private static final TagInfo _td_c_get_32_22 = new TagInfo("c:get", //$NON-NLS-1$
             32, 22,
-            new String[] {
-                "length", //$NON-NLS-1$
-            },
-            new String[] {
-                "1", //$NON-NLS-1$
-            } );
-    private static final TagInfo _td_c_get_32_39 = new TagInfo("c:get", //$NON-NLS-1$
-            32, 39,
             new String[] {
                 "select", //$NON-NLS-1$
             },
             new String[] {
-                "$currentFeature/@name", //$NON-NLS-1$
+                "$currentFeature/@methodName", //$NON-NLS-1$
             } );
     private static final TagInfo _td_c_get_34_18 = new TagInfo("c:get", //$NON-NLS-1$
             34, 18,
@@ -170,24 +137,16 @@ public class _jet_templateEntityClass implements JET2Template {
             new String[] {
                 "$currentFeature/@name", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_f_uc_37_22 = new TagInfo("f:uc", //$NON-NLS-1$
+    private static final TagInfo _td_c_get_37_22 = new TagInfo("c:get", //$NON-NLS-1$
             37, 22,
-            new String[] {
-                "length", //$NON-NLS-1$
-            },
-            new String[] {
-                "1", //$NON-NLS-1$
-            } );
-    private static final TagInfo _td_c_get_37_39 = new TagInfo("c:get", //$NON-NLS-1$
-            37, 39,
             new String[] {
                 "select", //$NON-NLS-1$
             },
             new String[] {
-                "$currentFeature/@name", //$NON-NLS-1$
+                "$currentFeature/@methodName", //$NON-NLS-1$
             } );
-    private static final TagInfo _td_c_get_37_88 = new TagInfo("c:get", //$NON-NLS-1$
-            37, 88,
+    private static final TagInfo _td_c_get_37_70 = new TagInfo("c:get", //$NON-NLS-1$
+            37, 70,
             new String[] {
                 "select", //$NON-NLS-1$
             },
@@ -240,42 +199,22 @@ out.handleDelimiter(_jettag_c_iterate_2_2.getTagInfo().getAttribute("delimiter")
             out.setTag(null,-1,-1);
             while (_jettag_c_if_2_66.okToProcessBody()) {
                 out.write("include_once \"");  //$NON-NLS-1$        
-        // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
-        out.jump(17);
-                out.setTag("uc",149,166);
-                RuntimeTagElement _jettag_f_uc_3_18 = context.getTagFactory().createRuntimeTag(_jetns_f, "uc", "f:uc", _td_f_uc_3_18); //$NON-NLS-1$ //$NON-NLS-2$
-                _jettag_f_uc_3_18.setRuntimeParent(_jettag_c_if_2_66);
-                _jettag_f_uc_3_18.setTagInfo(_td_f_uc_3_18);
-                _jettag_f_uc_3_18.doStart(context, out);
-                JET2Writer _jettag_f_uc_3_18_saved_out = out;
+                out.setTag("get",149,212);
+        // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
+        out.jump(63);
+                RuntimeTagElement _jettag_c_get_3_18 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_3_18); //$NON-NLS-1$ //$NON-NLS-2$
+                _jettag_c_get_3_18.setRuntimeParent(_jettag_c_if_2_66);
+                _jettag_c_get_3_18.setTagInfo(_td_c_get_3_18);
+                _jettag_c_get_3_18.doStart(context, out);
+                _jettag_c_get_3_18.doEnd();
                 out.setTag(null,-1,-1);
-                while (_jettag_f_uc_3_18.okToProcessBody()) {
-                    out = out.newNestedContentWriter();
-                    out.setTag("get",166,224);
-            // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
-            out.jump(58);
-                    RuntimeTagElement _jettag_c_get_3_35 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_3_35); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_c_get_3_35.setRuntimeParent(_jettag_f_uc_3_18);
-                    _jettag_c_get_3_35.setTagInfo(_td_c_get_3_35);
-                    _jettag_c_get_3_35.doStart(context, out);
-                    _jettag_c_get_3_35.doEnd();
-                    out.setTag(null,-1,-1);
-        out.bodyContentStart();
-                    _jettag_f_uc_3_18.handleBodyContent(out);
-                }
-                out = _jettag_f_uc_3_18_saved_out;
-        out.bodyContentEnd();
-                _jettag_f_uc_3_18.doEnd();
-                out.endTag("uc",58);
-        // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
-        out.jump(7);
                 out.write(".class.php\";");  //$NON-NLS-1$        
     out.bodyContentStart();
                 _jettag_c_if_2_66.handleBodyContent(out);
             }
     out.bodyContentEnd();
             _jettag_c_if_2_66.doEnd();
-            out.endTag("if",108);
+            out.endTag("if",89);
     // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
     out.jump(7);
 out.bodyContentStart();
@@ -284,41 +223,21 @@ out.bodyContentStart();
 out.bodyContentEnd();
         _jettag_c_iterate_2_2.doEnd();
         out.loopEnd();
-        out.endTag("iterate",179);
+        out.endTag("iterate",160);
 // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
 out.jump(12);
         out.write(NL);         
         out.write(NL);         
         out.write("\tclass ");  //$NON-NLS-1$        
-// elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
-out.jump(17);
-        out.setTag("uc",271,288);
-        RuntimeTagElement _jettag_f_uc_5_8 = context.getTagFactory().createRuntimeTag(_jetns_f, "uc", "f:uc", _td_f_uc_5_8); //$NON-NLS-1$ //$NON-NLS-2$
-        _jettag_f_uc_5_8.setRuntimeParent(null);
-        _jettag_f_uc_5_8.setTagInfo(_td_f_uc_5_8);
-        _jettag_f_uc_5_8.doStart(context, out);
-        JET2Writer _jettag_f_uc_5_8_saved_out = out;
+        out.setTag("get",252,296);
+// elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
+out.jump(44);
+        RuntimeTagElement _jettag_c_get_5_8 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_5_8); //$NON-NLS-1$ //$NON-NLS-2$
+        _jettag_c_get_5_8.setRuntimeParent(null);
+        _jettag_c_get_5_8.setTagInfo(_td_c_get_5_8);
+        _jettag_c_get_5_8.doStart(context, out);
+        _jettag_c_get_5_8.doEnd();
         out.setTag(null,-1,-1);
-        while (_jettag_f_uc_5_8.okToProcessBody()) {
-            out = out.newNestedContentWriter();
-            out.setTag("get",288,327);
-    // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
-    out.jump(39);
-            RuntimeTagElement _jettag_c_get_5_25 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_5_25); //$NON-NLS-1$ //$NON-NLS-2$
-            _jettag_c_get_5_25.setRuntimeParent(_jettag_f_uc_5_8);
-            _jettag_c_get_5_25.setTagInfo(_td_c_get_5_25);
-            _jettag_c_get_5_25.doStart(context, out);
-            _jettag_c_get_5_25.doEnd();
-            out.setTag(null,-1,-1);
-out.bodyContentStart();
-            _jettag_f_uc_5_8.handleBodyContent(out);
-        }
-        out = _jettag_f_uc_5_8_saved_out;
-out.bodyContentEnd();
-        _jettag_f_uc_5_8.doEnd();
-        out.endTag("uc",39);
-// elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
-out.jump(7);
         out.write(NL);         
         out.write("\t{");  //$NON-NLS-1$        
         out.write(NL);         
@@ -327,7 +246,7 @@ out.jump(7);
         out.write("\t\t");  //$NON-NLS-1$        
 // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
 out.jump(68);
-        out.setTag("iterate",355,423);
+        out.setTag("iterate",317,385);
         RuntimeTagElement _jettag_c_iterate_8_3 = context.getTagFactory().createRuntimeTag(_jetns_c, "iterate", "c:iterate", _td_c_iterate_8_3); //$NON-NLS-1$ //$NON-NLS-2$
         _jettag_c_iterate_8_3.setRuntimeParent(null);
         _jettag_c_iterate_8_3.setTagInfo(_td_c_iterate_8_3);
@@ -336,10 +255,10 @@ out.jump(68);
         out.setTag(null,-1,-1);
         while (_jettag_c_iterate_8_3.okToProcessBody()) {
 out.bodyContentEnd();
-out.handleDelimiter(_jettag_c_iterate_8_3.getTagInfo().getAttribute("delimiter"),355,423);
+out.handleDelimiter(_jettag_c_iterate_8_3.getTagInfo().getAttribute("delimiter"),317,385);
             out.loopIterate();
             out.write("private $");  //$NON-NLS-1$        
-            out.setTag("get",432,472);
+            out.setTag("get",394,434);
     // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
     out.jump(40);
             RuntimeTagElement _jettag_c_get_9_14 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_9_14); //$NON-NLS-1$ //$NON-NLS-2$
@@ -361,7 +280,6 @@ out.bodyContentEnd();
 // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
 out.jump(12);
         out.write(NL);         
-        out.write("\t\t");  //$NON-NLS-1$        
         out.write(NL);         
         out.write("\t\tpublic function __construct()");  //$NON-NLS-1$        
         out.write(NL);         
@@ -370,7 +288,7 @@ out.jump(12);
         out.write("\t\t\t");  //$NON-NLS-1$        
 // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
 out.jump(69);
-        out.setTag("iterate",531,600);
+        out.setTag("iterate",491,560);
         RuntimeTagElement _jettag_c_iterate_14_4 = context.getTagFactory().createRuntimeTag(_jetns_c, "iterate", "c:iterate", _td_c_iterate_14_4); //$NON-NLS-1$ //$NON-NLS-2$
         _jettag_c_iterate_14_4.setRuntimeParent(null);
         _jettag_c_iterate_14_4.setTagInfo(_td_c_iterate_14_4);
@@ -379,10 +297,10 @@ out.jump(69);
         out.setTag(null,-1,-1);
         while (_jettag_c_iterate_14_4.okToProcessBody()) {
 out.bodyContentEnd();
-out.handleDelimiter(_jettag_c_iterate_14_4.getTagInfo().getAttribute("delimiter"),531,600);
+out.handleDelimiter(_jettag_c_iterate_14_4.getTagInfo().getAttribute("delimiter"),491,560);
             out.loopIterate();
             out.write("$this->");  //$NON-NLS-1$        
-            out.setTag("get",607,647);
+            out.setTag("get",567,607);
     // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
     out.jump(40);
             RuntimeTagElement _jettag_c_get_15_13 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_15_13); //$NON-NLS-1$ //$NON-NLS-2$
@@ -394,7 +312,7 @@ out.handleDelimiter(_jettag_c_iterate_14_4.getTagInfo().getAttribute("delimiter"
             out.write(" = ");  //$NON-NLS-1$        
     // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
     out.jump(67);
-            out.setTag("if",650,717);
+            out.setTag("if",610,677);
             RuntimeTagElement _jettag_c_if_15_56 = context.getTagFactory().createRuntimeTag(_jetns_c, "if", "c:if", _td_c_if_15_56); //$NON-NLS-1$ //$NON-NLS-2$
             _jettag_c_if_15_56.setRuntimeParent(_jettag_c_iterate_14_4);
             _jettag_c_if_15_56.setTagInfo(_td_c_if_15_56);
@@ -402,59 +320,39 @@ out.handleDelimiter(_jettag_c_iterate_14_4.getTagInfo().getAttribute("delimiter"
             out.setTag(null,-1,-1);
             while (_jettag_c_if_15_56.okToProcessBody()) {
                 out.write("new ");  //$NON-NLS-1$        
-        // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
-        out.jump(17);
-                out.setTag("uc",721,738);
-                RuntimeTagElement _jettag_f_uc_16_11 = context.getTagFactory().createRuntimeTag(_jetns_f, "uc", "f:uc", _td_f_uc_16_11); //$NON-NLS-1$ //$NON-NLS-2$
-                _jettag_f_uc_16_11.setRuntimeParent(_jettag_c_if_15_56);
-                _jettag_f_uc_16_11.setTagInfo(_td_f_uc_16_11);
-                _jettag_f_uc_16_11.doStart(context, out);
-                JET2Writer _jettag_f_uc_16_11_saved_out = out;
+                out.setTag("get",681,744);
+        // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
+        out.jump(63);
+                RuntimeTagElement _jettag_c_get_16_11 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_16_11); //$NON-NLS-1$ //$NON-NLS-2$
+                _jettag_c_get_16_11.setRuntimeParent(_jettag_c_if_15_56);
+                _jettag_c_get_16_11.setTagInfo(_td_c_get_16_11);
+                _jettag_c_get_16_11.doStart(context, out);
+                _jettag_c_get_16_11.doEnd();
                 out.setTag(null,-1,-1);
-                while (_jettag_f_uc_16_11.okToProcessBody()) {
-                    out = out.newNestedContentWriter();
-                    out.setTag("get",738,796);
-            // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
-            out.jump(58);
-                    RuntimeTagElement _jettag_c_get_16_28 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_16_28); //$NON-NLS-1$ //$NON-NLS-2$
-                    _jettag_c_get_16_28.setRuntimeParent(_jettag_f_uc_16_11);
-                    _jettag_c_get_16_28.setTagInfo(_td_c_get_16_28);
-                    _jettag_c_get_16_28.doStart(context, out);
-                    _jettag_c_get_16_28.doEnd();
-                    out.setTag(null,-1,-1);
-        out.bodyContentStart();
-                    _jettag_f_uc_16_11.handleBodyContent(out);
-                }
-                out = _jettag_f_uc_16_11_saved_out;
-        out.bodyContentEnd();
-                _jettag_f_uc_16_11.doEnd();
-                out.endTag("uc",58);
-        // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
-        out.jump(7);
                 out.write("()");  //$NON-NLS-1$        
     out.bodyContentStart();
                 _jettag_c_if_15_56.handleBodyContent(out);
             }
     out.bodyContentEnd();
             _jettag_c_if_15_56.doEnd();
-            out.endTag("if",88);
+            out.endTag("if",69);
     // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
     out.jump(7);
     // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
     out.jump(70);
-            out.setTag("if",812,882);
-            RuntimeTagElement _jettag_c_if_16_102 = context.getTagFactory().createRuntimeTag(_jetns_c, "if", "c:if", _td_c_if_16_102); //$NON-NLS-1$ //$NON-NLS-2$
-            _jettag_c_if_16_102.setRuntimeParent(_jettag_c_iterate_14_4);
-            _jettag_c_if_16_102.setTagInfo(_td_c_if_16_102);
-            _jettag_c_if_16_102.doStart(context, out);
+            out.setTag("if",753,823);
+            RuntimeTagElement _jettag_c_if_16_83 = context.getTagFactory().createRuntimeTag(_jetns_c, "if", "c:if", _td_c_if_16_83); //$NON-NLS-1$ //$NON-NLS-2$
+            _jettag_c_if_16_83.setRuntimeParent(_jettag_c_iterate_14_4);
+            _jettag_c_if_16_83.setTagInfo(_td_c_if_16_83);
+            _jettag_c_if_16_83.doStart(context, out);
             out.setTag(null,-1,-1);
-            while (_jettag_c_if_16_102.okToProcessBody()) {
+            while (_jettag_c_if_16_83.okToProcessBody()) {
                 out.write("\"\"");  //$NON-NLS-1$        
     out.bodyContentStart();
-                _jettag_c_if_16_102.handleBodyContent(out);
+                _jettag_c_if_16_83.handleBodyContent(out);
             }
     out.bodyContentEnd();
-            _jettag_c_if_16_102.doEnd();
+            _jettag_c_if_16_83.doEnd();
             out.endTag("if",2);
     // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
     out.jump(7);
@@ -467,13 +365,12 @@ out.bodyContentStart();
 out.bodyContentEnd();
         _jettag_c_iterate_14_4.doEnd();
         out.loopEnd();
-        out.endTag("iterate",296);
+        out.endTag("iterate",277);
 // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
 out.jump(12);
         out.write(NL);         
         out.write("\t\t}");  //$NON-NLS-1$        
         out.write(NL);         
-        out.write("\t\t");  //$NON-NLS-1$        
         out.write(NL);         
         out.write("\t\tpublic function getId()");  //$NON-NLS-1$        
         out.write(NL);         
@@ -483,7 +380,6 @@ out.jump(12);
         out.write(NL);         
         out.write("\t\t}");  //$NON-NLS-1$        
         out.write(NL);         
-        out.write("\t\t");  //$NON-NLS-1$        
         out.write(NL);         
         out.write("\t\tpublic function setId($id)");  //$NON-NLS-1$        
         out.write(NL);         
@@ -493,12 +389,11 @@ out.jump(12);
         out.write(NL);         
         out.write("\t\t}");  //$NON-NLS-1$        
         out.write(NL);         
-        out.write("\t\t");  //$NON-NLS-1$        
         out.write(NL);         
         out.write("\t");  //$NON-NLS-1$        
 // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
 out.jump(64);
-        out.setTag("iterate",1035,1099);
+        out.setTag("iterate",970,1034);
         RuntimeTagElement _jettag_c_iterate_31_2 = context.getTagFactory().createRuntimeTag(_jetns_c, "iterate", "c:iterate", _td_c_iterate_31_2); //$NON-NLS-1$ //$NON-NLS-2$
         _jettag_c_iterate_31_2.setRuntimeParent(null);
         _jettag_c_iterate_31_2.setTagInfo(_td_c_iterate_31_2);
@@ -507,45 +402,25 @@ out.jump(64);
         out.setTag(null,-1,-1);
         while (_jettag_c_iterate_31_2.okToProcessBody()) {
 out.bodyContentEnd();
-out.handleDelimiter(_jettag_c_iterate_31_2.getTagInfo().getAttribute("delimiter"),1035,1099);
+out.handleDelimiter(_jettag_c_iterate_31_2.getTagInfo().getAttribute("delimiter"),970,1034);
             out.loopIterate();
             out.write(NL);         
             out.write("\t\tpublic function get");  //$NON-NLS-1$        
-    // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
-    out.jump(17);
-            out.setTag("uc",1121,1138);
-            RuntimeTagElement _jettag_f_uc_32_22 = context.getTagFactory().createRuntimeTag(_jetns_f, "uc", "f:uc", _td_f_uc_32_22); //$NON-NLS-1$ //$NON-NLS-2$
-            _jettag_f_uc_32_22.setRuntimeParent(_jettag_c_iterate_31_2);
-            _jettag_f_uc_32_22.setTagInfo(_td_f_uc_32_22);
-            _jettag_f_uc_32_22.doStart(context, out);
-            JET2Writer _jettag_f_uc_32_22_saved_out = out;
+            out.setTag("get",1056,1102);
+    // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
+    out.jump(46);
+            RuntimeTagElement _jettag_c_get_32_22 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_32_22); //$NON-NLS-1$ //$NON-NLS-2$
+            _jettag_c_get_32_22.setRuntimeParent(_jettag_c_iterate_31_2);
+            _jettag_c_get_32_22.setTagInfo(_td_c_get_32_22);
+            _jettag_c_get_32_22.doStart(context, out);
+            _jettag_c_get_32_22.doEnd();
             out.setTag(null,-1,-1);
-            while (_jettag_f_uc_32_22.okToProcessBody()) {
-                out = out.newNestedContentWriter();
-                out.setTag("get",1138,1178);
-        // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
-        out.jump(40);
-                RuntimeTagElement _jettag_c_get_32_39 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_32_39); //$NON-NLS-1$ //$NON-NLS-2$
-                _jettag_c_get_32_39.setRuntimeParent(_jettag_f_uc_32_22);
-                _jettag_c_get_32_39.setTagInfo(_td_c_get_32_39);
-                _jettag_c_get_32_39.doStart(context, out);
-                _jettag_c_get_32_39.doEnd();
-                out.setTag(null,-1,-1);
-    out.bodyContentStart();
-                _jettag_f_uc_32_22.handleBodyContent(out);
-            }
-            out = _jettag_f_uc_32_22_saved_out;
-    out.bodyContentEnd();
-            _jettag_f_uc_32_22.doEnd();
-            out.endTag("uc",40);
-    // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
-    out.jump(7);
             out.write("()");  //$NON-NLS-1$        
             out.write(NL);         
             out.write("\t\t{");  //$NON-NLS-1$        
             out.write(NL);         
             out.write("\t\t\treturn $this->");  //$NON-NLS-1$        
-            out.setTag("get",1209,1249);
+            out.setTag("get",1126,1166);
     // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
     out.jump(40);
             RuntimeTagElement _jettag_c_get_34_18 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_34_18); //$NON-NLS-1$ //$NON-NLS-2$
@@ -558,54 +433,33 @@ out.handleDelimiter(_jettag_c_iterate_31_2.getTagInfo().getAttribute("delimiter"
             out.write(NL);         
             out.write("\t\t}");  //$NON-NLS-1$        
             out.write(NL);         
-            out.write("\t\t");  //$NON-NLS-1$        
             out.write(NL);         
             out.write("\t\tpublic function set");  //$NON-NLS-1$        
-    // elemento tipo XMLBodyElement3(org.eclipse.jet.core.parser.ast.XMLBodyElement)
-    out.jump(17);
-            out.setTag("uc",1279,1296);
-            RuntimeTagElement _jettag_f_uc_37_22 = context.getTagFactory().createRuntimeTag(_jetns_f, "uc", "f:uc", _td_f_uc_37_22); //$NON-NLS-1$ //$NON-NLS-2$
-            _jettag_f_uc_37_22.setRuntimeParent(_jettag_c_iterate_31_2);
-            _jettag_f_uc_37_22.setTagInfo(_td_f_uc_37_22);
-            _jettag_f_uc_37_22.doStart(context, out);
-            JET2Writer _jettag_f_uc_37_22_saved_out = out;
+            out.setTag("get",1194,1240);
+    // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
+    out.jump(46);
+            RuntimeTagElement _jettag_c_get_37_22 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_37_22); //$NON-NLS-1$ //$NON-NLS-2$
+            _jettag_c_get_37_22.setRuntimeParent(_jettag_c_iterate_31_2);
+            _jettag_c_get_37_22.setTagInfo(_td_c_get_37_22);
+            _jettag_c_get_37_22.doStart(context, out);
+            _jettag_c_get_37_22.doEnd();
             out.setTag(null,-1,-1);
-            while (_jettag_f_uc_37_22.okToProcessBody()) {
-                out = out.newNestedContentWriter();
-                out.setTag("get",1296,1336);
-        // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
-        out.jump(40);
-                RuntimeTagElement _jettag_c_get_37_39 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_37_39); //$NON-NLS-1$ //$NON-NLS-2$
-                _jettag_c_get_37_39.setRuntimeParent(_jettag_f_uc_37_22);
-                _jettag_c_get_37_39.setTagInfo(_td_c_get_37_39);
-                _jettag_c_get_37_39.doStart(context, out);
-                _jettag_c_get_37_39.doEnd();
-                out.setTag(null,-1,-1);
-    out.bodyContentStart();
-                _jettag_f_uc_37_22.handleBodyContent(out);
-            }
-            out = _jettag_f_uc_37_22_saved_out;
-    out.bodyContentEnd();
-            _jettag_f_uc_37_22.doEnd();
-            out.endTag("uc",40);
-    // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
-    out.jump(7);
             out.write("($");  //$NON-NLS-1$        
-            out.setTag("get",1345,1385);
+            out.setTag("get",1242,1282);
     // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
     out.jump(40);
-            RuntimeTagElement _jettag_c_get_37_88 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_37_88); //$NON-NLS-1$ //$NON-NLS-2$
-            _jettag_c_get_37_88.setRuntimeParent(_jettag_c_iterate_31_2);
-            _jettag_c_get_37_88.setTagInfo(_td_c_get_37_88);
-            _jettag_c_get_37_88.doStart(context, out);
-            _jettag_c_get_37_88.doEnd();
+            RuntimeTagElement _jettag_c_get_37_70 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_37_70); //$NON-NLS-1$ //$NON-NLS-2$
+            _jettag_c_get_37_70.setRuntimeParent(_jettag_c_iterate_31_2);
+            _jettag_c_get_37_70.setTagInfo(_td_c_get_37_70);
+            _jettag_c_get_37_70.doStart(context, out);
+            _jettag_c_get_37_70.doEnd();
             out.setTag(null,-1,-1);
             out.write(")");  //$NON-NLS-1$        
             out.write(NL);         
             out.write("\t\t{");  //$NON-NLS-1$        
             out.write(NL);         
             out.write("\t\t\t$this->");  //$NON-NLS-1$        
-            out.setTag("get",1401,1441);
+            out.setTag("get",1298,1338);
     // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
     out.jump(40);
             RuntimeTagElement _jettag_c_get_39_11 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_39_11); //$NON-NLS-1$ //$NON-NLS-2$
@@ -615,7 +469,7 @@ out.handleDelimiter(_jettag_c_iterate_31_2.getTagInfo().getAttribute("delimiter"
             _jettag_c_get_39_11.doEnd();
             out.setTag(null,-1,-1);
             out.write(" = $");  //$NON-NLS-1$        
-            out.setTag("get",1445,1485);
+            out.setTag("get",1342,1382);
     // elemento tipo XMLEmptyElement3(org.eclipse.jet.core.parser.ast.XMLEmptyElement)
     out.jump(40);
             RuntimeTagElement _jettag_c_get_39_55 = context.getTagFactory().createRuntimeTag(_jetns_c, "get", "c:get", _td_c_get_39_55); //$NON-NLS-1$ //$NON-NLS-2$
@@ -635,7 +489,7 @@ out.bodyContentStart();
 out.bodyContentEnd();
         _jettag_c_iterate_31_2.doEnd();
         out.loopEnd();
-        out.endTag("iterate",393);
+        out.endTag("iterate",355);
 // elemento tipo XMLBodyElement4(org.eclipse.jet.core.parser.ast.XMLBodyElementEnd)
 out.jump(12);
         out.write(NL);         
