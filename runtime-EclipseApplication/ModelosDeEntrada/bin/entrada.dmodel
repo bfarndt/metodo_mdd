@@ -28,7 +28,7 @@ entity Bruno {
 	endereco: string
 	nascimento: date
 	mensalidade: currency
-	orientador: Daniel
+	1..2 orientador: Daniel
 }
 
 form formShowBruno {

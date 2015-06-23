@@ -24,7 +24,7 @@
     <features name="mensalidade">
       <type xsi:type="extended:DataType" name="currency"/>
     </features>
-    <features name="orientador">
+    <features min="1" max="2" name="orientador">
       <type xsi:type="extended:EntityType" entity="//@elements.1"/>
     </features>
   </elements>
