@@ -1,0 +1,31 @@
+<c:iterate select="/Domainmodel/Entity" var="currentEntity">
+CREATE TABLE <c:get select="$currentEntity/@tableDBName" />
+(
+	id bigserial,
+	<c:iterate select="$currentEntity/Feature" var="currentFeature"
+	><c:if test="(($currentFeature/DataType/@name != '') or ($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1))"
+		><c:get select="$currentFeature/@name" /> <c:if test="($currentFeature/DataType/@name = 'string')"
+		>text</c:if><c:if test="($currentFeature/DataType/@name = 'int')"
+		>integer</c:if><c:if test="($currentFeature/DataType/@name = 'float')"
+		>real</c:if><c:if test="($currentFeature/DataType/@name = 'time')"
+		>time without time zone</c:if><c:if test="($currentFeature/DataType/@name = 'currency')"
+		>money</c:if><c:if test="($currentFeature/DataType/@name = 'date') or ($currentFeature/DataType/@name = 'boolean')"
+		><c:get select="$currentFeature/DataType/@name" /></c:if><c:if test="($currentFeature/EntityType/entity/@name != '')"
+		>bigint</c:if>,
+	</c:if></c:iterate>CONSTRAINT <c:get select="$currentEntity/@tableDBName" />_pkey PRIMARY KEY (id)
+	<c:iterate select="$currentEntity/Feature" var="currentFeature"><c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)"
+		>CONSTRAINT <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/@name" />_fkey FOREIGN KEY (<c:get select="$currentFeature/@name" />)
+			REFERENCES <c:get select="$currentFeature/EntityType/entity/@tableDBName" /> (id) MATCH SIMPLE
+			ON UPDATE NO ACTION ON DELETE NO ACTION
+	</c:if></c:iterate>
+);
+
+<c:iterate select="$currentEntity/Feature" var="currentFeature"><c:if test="($currentFeature/EntityType/entity/@name != '') and (($currentFeature/@min > 1) or ($currentFeature/@max > 1))"
+	>CREATE TABLE <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/@name" />
+(
+	CONSTRAINT <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/@name" />_fkey FOREIGN KEY (<c:get select="$currentFeature/@name" />)
+		REFERENCES <c:get select="$currentFeature/EntityType/entity/@tableDBName" /> (id) MATCH SIMPLE
+		ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+</c:if></c:iterate>
+</c:iterate>

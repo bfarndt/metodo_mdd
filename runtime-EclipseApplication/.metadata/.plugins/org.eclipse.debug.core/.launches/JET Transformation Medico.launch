@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jet.jet2Transformation">
+<stringAttribute key="org.eclipse.jet.id" value="gerador"/>
+<intAttribute key="org.eclipse.jet.logFilterLevel" value="3"/>
+<stringAttribute key="org.eclipse.jet.mappingFile" value="ProjetoMedicoModelo/mapa.txt"/>
+<stringAttribute key="org.eclipse.jet.source" value="ProjetoMedicoModelo/src/entrada.dmodel"/>
+</launchConfiguration>

@@ -1,0 +1,23 @@
+
+CREATE TABLE daniel
+(
+	id bigserial,
+	cpf text,
+	endereco text,
+	CONSTRAINT daniel_pkey PRIMARY KEY (id)
+	
+);
+
+CREATE TABLE bruno
+(
+	id bigserial,
+	cpf text,
+	endereco text,
+	nascimento date,
+	mensalidade money,
+	CONSTRAINT bruno_pkey PRIMARY KEY (id)
+	CONSTRAINT bruno_orientador_fkey FOREIGN KEY (orientador)
+			REFERENCES daniel (id) MATCH SIMPLE
+			ON UPDATE NO ACTION ON DELETE NO ACTION
+	
+);

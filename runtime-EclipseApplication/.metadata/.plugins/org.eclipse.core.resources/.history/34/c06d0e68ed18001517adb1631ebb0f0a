@@ -1,0 +1,157 @@
+<?php
+	include_once "Daniel.class.php";
+
+	class Bruno
+	{
+		private $id;
+		private $cpf;
+		private $endereco;
+		private $nascimento;
+		private $mensalidade;
+		private $orientador;
+		
+
+		public function __construct()
+		{
+			$this->cpf = "";
+			$this->endereco = "";
+			$this->nascimento = "";
+			$this->mensalidade = "";
+			$this->orientador = new Daniel();
+			
+		}
+
+		public function getId()
+		{
+			return $this->id;
+		}
+
+		public function setId($id)
+		{
+			$this->id = $id;
+		}
+
+	
+		public function getCpf()
+		{
+			return $this->cpf;
+		}
+
+		public function setCpf($cpf)
+		{
+			$this->cpf = $cpf;
+		}
+	
+		public function getCpf()
+		{
+			return $this->cpf;
+		}
+		
+		public function addCpf($cpf)
+		{
+			$this->cpf[] = $cpf;
+		}
+		
+		public function removeCpf($cpf)
+		{
+			
+		}
+		
+		public function removeAllCpf()
+		{
+			$this->cpf = array();
+		}
+	
+		public function getEndereco()
+		{
+			return $this->endereco;
+		}
+
+		public function setEndereco($endereco)
+		{
+			$this->endereco = $endereco;
+		}
+	
+		public function getEndereco()
+		{
+			return $this->endereco;
+		}
+		
+		public function addEndereco($endereco)
+		{
+			$this->endereco[] = $endereco;
+		}
+		
+		public function removeEndereco($endereco)
+		{
+			
+		}
+		
+		public function removeAllEndereco()
+		{
+			$this->endereco = array();
+		}
+	
+		public function getNascimento()
+		{
+			return $this->nascimento;
+		}
+
+		public function setNascimento($nascimento)
+		{
+			$this->nascimento = $nascimento;
+		}
+	
+		public function getNascimento()
+		{
+			return $this->nascimento;
+		}
+		
+		public function addNascimento($nascimento)
+		{
+			$this->nascimento[] = $nascimento;
+		}
+		
+		public function removeNascimento($nascimento)
+		{
+			
+		}
+		
+		public function removeAllNascimento()
+		{
+			$this->nascimento = array();
+		}
+	
+		public function getMensalidade()
+		{
+			return $this->mensalidade;
+		}
+
+		public function setMensalidade($mensalidade)
+		{
+			$this->mensalidade = $mensalidade;
+		}
+	
+		public function getMensalidade()
+		{
+			return $this->mensalidade;
+		}
+		
+		public function addMensalidade($mensalidade)
+		{
+			$this->mensalidade[] = $mensalidade;
+		}
+		
+		public function removeMensalidade($mensalidade)
+		{
+			
+		}
+		
+		public function removeAllMensalidade()
+		{
+			$this->mensalidade = array();
+		}
+	
+	}
+
+?>

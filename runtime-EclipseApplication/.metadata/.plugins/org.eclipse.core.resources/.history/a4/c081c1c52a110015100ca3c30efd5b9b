@@ -1,8 +1,0 @@
-<c:iterate select="/Domainmodel/Entity" var="currentEntity">
-	<c:set select="$currentEntity" name="className"><f:uc length="1"><c:get select="$currentEntity/@name" /></f:uc></c:set>
-	<c:set select="$currentEntity" name="tableDBName"><f:lc><c:get select="$currentEntity/@name" /></f:lc></c:set>
-	
-	<c:iterate select="$currentEntity/Feature" var="currentFeature">
-		<c:set select="$currentEntity" name="methodName"><f:uc length="1"><c:get select="$currentFeature/@name" /></f:uc></c:set>
-	</c:iterate>
-</c:iterate>

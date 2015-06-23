@@ -592,3 +592,391 @@ Binding(ALT+SHIFT+ARROW_LEFT,
 
 !ENTRY org.eclipse.jet 4 0 2015-06-12 15:27:29.101
 !MESSAGE Error! Disable split editing before running JET transformation
+!SESSION 2015-06-22 10:15:00.972 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /var/www/html/pacoteExperimento.v3/workspace/../runtime-EclipseApplication -dev file:/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/dev.properties -os linux -ws gtk -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-06-22 10:21:59.474
+!MESSAGE The debug port 10000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-06-22 10:21:59.495
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.jface 2 0 2015-06-22 10:23:12.315
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-06-22 10:23:12.315
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@68d4fefe,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@77b10b76,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2015-06-22 16:28:30.717 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /var/www/html/pacoteExperimento.v3/workspace/../runtime-EclipseApplication -dev file:/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/dev.properties -os linux -ws gtk -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-06-22 16:36:29.816
+!MESSAGE The debug port 10000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.jet 4 0 2015-06-22 16:36:33.833
+!MESSAGE Error! Disable split editing before running JET transformation
+
+!ENTRY org.eclipse.jface 2 0 2015-06-22 16:38:40.626
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-06-22 16:38:40.626
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@443fae9c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@30e0a6c5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-06-22 16:47:06.347
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generateJumpCode(JET2JavaGeneratorNew.java:686)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.access$1(JET2JavaGeneratorNew.java:674)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew$7.endVisit(JET2JavaGeneratorNew.java:586)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:101)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:98)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:98)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.JETCompilationUnit.accept0(JETCompilationUnit.java:133)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generate(JET2JavaGeneratorNew.java:362)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:50)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:55)
+	at org.eclipse.jet.internal.compiler.SimplifiedCompiler.compile(SimplifiedCompiler.java:373)
+	at org.eclipse.jet.internal.builder.WorkspaceCompiler.compile(WorkspaceCompiler.java:196)
+	at org.eclipse.jet.internal.builder.JET2Builder.incrementalBuild(JET2Builder.java:207)
+	at org.eclipse.jet.internal.builder.JET2Builder.build(JET2Builder.java:117)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-06-22 16:47:06.354
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jet 4 75 2015-06-22 16:47:06.354
+!MESSAGE Errors running builder 'JET Template Builder' on project 'gerador'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generateJumpCode(JET2JavaGeneratorNew.java:686)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.access$1(JET2JavaGeneratorNew.java:674)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew$7.endVisit(JET2JavaGeneratorNew.java:586)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:101)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:98)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:98)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.JETCompilationUnit.accept0(JETCompilationUnit.java:133)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generate(JET2JavaGeneratorNew.java:362)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:50)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:55)
+	at org.eclipse.jet.internal.compiler.SimplifiedCompiler.compile(SimplifiedCompiler.java:373)
+	at org.eclipse.jet.internal.builder.WorkspaceCompiler.compile(WorkspaceCompiler.java:196)
+	at org.eclipse.jet.internal.builder.JET2Builder.incrementalBuild(JET2Builder.java:207)
+	at org.eclipse.jet.internal.builder.JET2Builder.build(JET2Builder.java:117)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-06-22 16:57:18.745
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.core.resources 4 75 2015-06-22 16:57:18.748
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jet 4 75 2015-06-22 16:57:18.748
+!MESSAGE Errors running builder 'JET Template Builder' on project 'gerador'.
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.core.resources 4 2 2015-06-22 23:55:33.267
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.core.resources 4 75 2015-06-22 23:55:33.270
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jet 4 75 2015-06-22 23:55:33.270
+!MESSAGE Errors running builder 'JET Template Builder' on project 'gerador'.
+!STACK 0
+java.lang.NullPointerException
+!SESSION 2015-06-23 14:11:03.450 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /var/www/html/pacoteExperimento.v3/workspace/../runtime-EclipseApplication -dev file:/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/dev.properties -os linux -ws gtk -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.jface 4 2 2015-06-23 14:12:58.353
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jface".
+!STACK 0
+java.lang.ClassCastException: org.eclipse.jdt.internal.core.JavaProject cannot be cast to org.eclipse.jdt.debug.core.IJavaBreakpoint
+	at org.eclipse.jdt.internal.debug.ui.propertypages.JavaBreakpointPage.getBreakpoint(JavaBreakpointPage.java:255)
+	at org.eclipse.xtext.xbase.ui.debug.ConditionPage.createTypeSpecificEditors(ConditionPage.java:54)
+	at org.eclipse.xtext.xbase.ui.debug.ConditionPage.createContents(ConditionPage.java:39)
+	at org.eclipse.jface.preference.PreferencePage.createControl(PreferencePage.java:233)
+	at org.eclipse.jdt.internal.debug.ui.propertypages.JavaBreakpointPage.createControl(JavaBreakpointPage.java:414)
+	at org.eclipse.jface.preference.PreferenceDialog.createPageControl(PreferenceDialog.java:1537)
+	at org.eclipse.jface.preference.PreferenceDialog$13.run(PreferenceDialog.java:1289)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:50)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:178)
+	at org.eclipse.jface.preference.PreferenceDialog.showPage(PreferenceDialog.java:1281)
+	at org.eclipse.ui.internal.dialogs.FilteredPreferenceDialog.showPage(FilteredPreferenceDialog.java:699)
+	at org.eclipse.jface.preference.PreferenceDialog$9$1.run(PreferenceDialog.java:730)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.preference.PreferenceDialog$9.selectionChanged(PreferenceDialog.java:725)
+	at org.eclipse.jface.viewers.StructuredViewer$3.run(StructuredViewer.java:876)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:50)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:178)
+	at org.eclipse.jface.viewers.StructuredViewer.firePostSelectionChanged(StructuredViewer.java:873)
+	at org.eclipse.jface.viewers.StructuredViewer.handlePostSelect(StructuredViewer.java:1217)
+	at org.eclipse.jface.viewers.StructuredViewer$5.widgetSelected(StructuredViewer.java:1243)
+	at org.eclipse.jface.util.OpenStrategy.firePostSelectionEvent(OpenStrategy.java:265)
+	at org.eclipse.jface.util.OpenStrategy.access$5(OpenStrategy.java:259)
+	at org.eclipse.jface.util.OpenStrategy$1$2.run(OpenStrategy.java:440)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:136)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3774)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3412)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:832)
+	at org.eclipse.jface.window.Window.open(Window.java:808)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.run(PropertyDialogAction.java:160)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:519)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:420)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4454)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1388)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3799)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3409)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.jface 4 2 2015-06-23 14:13:04.258
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jface".
+!STACK 0
+java.lang.ClassCastException: org.eclipse.jdt.internal.core.JavaProject cannot be cast to org.eclipse.jdt.debug.core.IJavaBreakpoint
+	at org.eclipse.jdt.internal.debug.ui.propertypages.JavaBreakpointPage.getBreakpoint(JavaBreakpointPage.java:255)
+	at org.eclipse.jdt.internal.debug.ui.propertypages.JavaBreakpointPage.performCancel(JavaBreakpointPage.java:399)
+	at org.eclipse.jface.preference.PreferenceDialog$1.run(PreferenceDialog.java:266)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:50)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:178)
+	at org.eclipse.jface.preference.PreferenceDialog.cancelPressed(PreferenceDialog.java:263)
+	at org.eclipse.jface.preference.PreferenceDialog.buttonPressed(PreferenceDialog.java:240)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:619)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4454)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1388)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3799)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3409)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:832)
+	at org.eclipse.jface.window.Window.open(Window.java:808)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.run(PropertyDialogAction.java:160)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:519)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:420)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4454)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1388)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3799)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3409)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-06-23 14:21:48.276
+!MESSAGE The debug port 10000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-06-23 14:21:48.277
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.jface 2 0 2015-06-23 14:27:47.793
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-06-23 14:27:47.793
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6f75c451,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1cabdb02,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.core.resources 4 2 2015-06-23 15:17:32.748
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generateJumpCode(JET2JavaGeneratorNew.java:686)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.access$1(JET2JavaGeneratorNew.java:674)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew$7.endVisit(JET2JavaGeneratorNew.java:586)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:101)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:98)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.JETCompilationUnit.accept0(JETCompilationUnit.java:133)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generate(JET2JavaGeneratorNew.java:362)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:50)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:55)
+	at org.eclipse.jet.internal.compiler.SimplifiedCompiler.compile(SimplifiedCompiler.java:373)
+	at org.eclipse.jet.internal.builder.WorkspaceCompiler.compile(WorkspaceCompiler.java:196)
+	at org.eclipse.jet.internal.builder.JET2Builder.incrementalBuild(JET2Builder.java:207)
+	at org.eclipse.jet.internal.builder.JET2Builder.build(JET2Builder.java:117)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 75 2015-06-23 15:17:32.752
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jet 4 75 2015-06-23 15:17:32.752
+!MESSAGE Errors running builder 'JET Template Builder' on project 'gerador'.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generateJumpCode(JET2JavaGeneratorNew.java:686)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.access$1(JET2JavaGeneratorNew.java:674)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew$7.endVisit(JET2JavaGeneratorNew.java:586)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:101)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.XMLBodyElement.accept0(XMLBodyElement.java:98)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.core.parser.ast.JETCompilationUnit.accept0(JETCompilationUnit.java:133)
+	at org.eclipse.jet.core.parser.ast.JETASTElement.accept(JETASTElement.java:105)
+	at org.eclipse.jet.internal.compiler.templates.v2.JET2JavaGeneratorNew.generate(JET2JavaGeneratorNew.java:362)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:50)
+	at org.eclipse.jet.internal.compiler.TemplateRunner.generate(TemplateRunner.java:55)
+	at org.eclipse.jet.internal.compiler.SimplifiedCompiler.compile(SimplifiedCompiler.java:373)
+	at org.eclipse.jet.internal.builder.WorkspaceCompiler.compile(WorkspaceCompiler.java:196)
+	at org.eclipse.jet.internal.builder.JET2Builder.incrementalBuild(JET2Builder.java:207)
+	at org.eclipse.jet.internal.builder.JET2Builder.build(JET2Builder.java:117)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
