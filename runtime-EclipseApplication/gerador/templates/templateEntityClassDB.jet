@@ -20,36 +20,101 @@ class <c:get select="$currentEntity/@className" />DB
 
 	public function add($<c:get select="$currentEntity/@name" />)
 	{
-		$query = pg_query("INSERT INTO <c:get select="$currentEntity/@tableDBName" />(<c:iterate select="$currentEntity/Feature" var="currentFeature" delimiter=", ">
-				<c:get select="$currentFeature/@name" /></c:iterate>
-			) VALUES(<c:iterate select="$currentEntity/Feature" var="currentFeature" delimiter=", ">
-				<c:if test="($currentFeature/EntityType/entity/@name != '')"
-					>" . $<c:get select="$currentEntity/@name" />->get<c:get select="$currentFeature/@methodName" />()->getId() . "
+		$query = pg_query("INSERT INTO <c:get select="$currentEntity/@tableDBName" />(<c:iterate select="$currentEntity/Feature" var="currentFeature">
+				<c:if test="($currentFeature/DataType/@name != '') or (($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1))"
+					><c:get select="$currentFeature/@name" />,</c:if></c:iterate>created_at,
+				update_at
+			) VALUES(<c:iterate select="$currentEntity/Feature" var="currentFeature">
+				<c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)"
+					>" . $<c:get select="$currentEntity/@name" />->get<c:get select="$currentFeature/@methodName" />()->getId() . ",
 				</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
-					>'" . $<c:get select="$currentEntity/@name" />->get<c:get select="$currentFeature/@methodName" />() . "'</c:if></c:iterate>
-			)
+					>'" . $<c:get select="$currentEntity/@name" />->get<c:get select="$currentFeature/@methodName" />() . "',</c:if></c:iterate>now(),
+				now()
+			) RETURNING id;
 		");
+		
+		$result = (pg_affected_rows($query) > 0);
+		$id = pg_fetch_assoc($query);
+		$id = $id['id'];
+		
+		<c:iterate select="$currentEntity/Feature" var="currentFeature"
+		><c:if test="($currentFeature/EntityType/entity/@name != '') and (($currentFeature/@min > 1) or ($currentFeature/@max > 1))"
+		>foreach ($<c:get select="$currentEntity/@name" />->get<c:get select="$currentFeature/@methodName" />() as $row<c:get select="$currentFeature/@methodName" />) {
+			$query = pg_query("INSERT INTO <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />(
+					<c:get select="$currentEntity/@tableDBName" />_id,
+					<c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id,
+					created_at,
+					update_at
+				) VALUES(
+					" . $id . ",
+					" . $row<c:get select="$currentFeature/@methodName" />->getId() . ",
+					now(),
+					now()
+				)
+			");
+			
+			$result = $result && (pg_affected_rows($query) > 0);
+		}</c:if></c:iterate>
 
-		return (pg_affected_rows($query) > 0);
+		return $result;
 	}
 
 	public function update($<c:get select="$currentEntity/@name" />)
 	{
-		$query = pg_query("UPDATE <c:get select="$currentEntity/@tableDBName" /> SET<c:iterate select="$currentEntity/Feature" var="currentFeature" delimiter=", ">
-			<c:if test="($currentFeature/EntityType/entity/@name != '')"
-				><c:get select="$currentFeature/@name" /> = " . $<c:get select="$currentEntity/@name" />->get<c:get select="$currentFeature/@methodName" />()->getId() . "
-			</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
-				><c:get select="$currentFeature/@name" /> = '" . $<c:get select="$currentEntity/@name" />->get<c:get select="$currentFeature/@methodName" />() . "'</c:if></c:iterate>
-			WHERE id = " . $<c:get select="$currentEntity/@name" />->getId());
+		$query = pg_query("UPDATE <c:get select="$currentEntity/@tableDBName" /> SET<c:iterate select="$currentEntity/Feature" var="currentFeature">
+				<c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)"
+					><c:get select="$currentFeature/@name" /> = " . $<c:get select="$currentEntity/@name" />->get<c:get select="$currentFeature/@methodName" />()->getId() . ",
+				</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+					><c:get select="$currentFeature/@name" /> = '" . $<c:get select="$currentEntity/@name" />->get<c:get select="$currentFeature/@methodName" />() . "',</c:if></c:iterate>update_at = now()
+			WHERE id = " . $<c:get select="$currentEntity/@name" />->getId()
+		);
 
-		return (pg_affected_rows($query) > 0);
+		$result = (pg_affected_rows($query) > 0);
+		
+		<c:iterate select="$currentEntity/Feature" var="currentFeature"
+		><c:if test="($currentFeature/EntityType/entity/@name != '') and (($currentFeature/@min > 1) or ($currentFeature/@max > 1))"
+		>$query = pg_query("DELETE FROM <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />
+			WHERE <c:get select="$currentEntity/@tableDBName" />_id = " . $<c:get select="$currentEntity/@name" />->getId()
+		);
+		
+		$result = $result && (pg_affected_rows($query) > 0);
+
+		foreach ($<c:get select="$currentEntity/@name" />->get<c:get select="$currentFeature/@methodName" />() as $row<c:get select="$currentFeature/@methodName" />) {
+			$query = pg_query("INSERT INTO <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />(
+					<c:get select="$currentEntity/@tableDBName" />_id,
+					<c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id,
+					created_at,
+					update_at
+				) VALUES(
+					" . $<c:get select="$currentEntity/@name" />->getId() . ",
+					" . $row<c:get select="$currentFeature/@methodName" />->getId() . ",
+					now(),
+					now()
+				)
+			");
+			
+			$result = $result && (pg_affected_rows($query) > 0);
+		}</c:if></c:iterate>
+
+		return $result;
 	}
 
 	public function destroy($<c:get select="$currentEntity/@name" />)
 	{
+		$result = true;
+		<c:iterate select="$currentEntity/Feature" var="currentFeature"
+		><c:if test="($currentFeature/EntityType/entity/@name != '') and (($currentFeature/@min > 1) or ($currentFeature/@max > 1))"
+		>$query = pg_query("DELETE FROM <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />
+			WHERE <c:get select="$currentEntity/@tableDBName" />_id = " . $<c:get select="$currentEntity/@name" />->getId()
+		);
+		
+		$result = $result && (pg_affected_rows($query) > 0);</c:if></c:iterate>
+
 		$query = pg_query("DELETE FROM <c:get select="$currentEntity/@tableDBName" /> WHERE id = " . $<c:get select="$currentEntity/@name" />->getId());
 
-		return (pg_affected_rows($query) > 0);
+		$result = $result && (pg_affected_rows($query) > 0);
+		
+		return $result;
 	}
 
 	public function getAll()
@@ -57,15 +122,17 @@ class <c:get select="$currentEntity/@className" />DB
 		$result = array();
 
 		$query = pg_query("SELECT
-			<c:get select="$currentEntity/@tableDBName" />.id AS <c:get select="$currentEntity/@tableDBName" />_id,
-			<c:iterate select="$currentEntity/Feature" var="currentFeature"  delimiter=", "
-			><c:if test="($currentFeature/EntityType/entity/@name != '')">
-				<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.id AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id,<c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature" delimiter=", "
-				><c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentEntityRelationshipFeature/@name" /> AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_<c:get select="$currentEntityRelationshipFeature/@name" /></c:iterate>
-			</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
-				><c:get select="$currentEntity/@tableDBName" />.<c:get select="$currentFeature/@name" /> AS <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/@name" /></c:if></c:iterate>
+				<c:get select="$currentEntity/@tableDBName" />.id AS <c:get select="$currentEntity/@tableDBName" />_id,
+				<c:iterate select="$currentEntity/Feature" var="currentFeature"
+				><c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)">
+					<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.id AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id, <c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature"
+					><c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentEntityRelationshipFeature/@name" /> AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_<c:get select="$currentEntityRelationshipFeature/@name" />,</c:iterate>
+				</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+				><c:get select="$currentEntity/@tableDBName" />.<c:get select="$currentFeature/@name" /> AS <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/@name" />,</c:if></c:iterate>
+				created_at,
+				update_at
 			FROM <c:get select="$currentEntity/@tableDBName" />
-			<c:iterate select="$currentEntity/Feature" var="currentFeature"><c:if test="($currentFeature/EntityType/entity/@name != '')"
+			<c:iterate select="$currentEntity/Feature" var="currentFeature"><c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)"
 			>INNER JOIN <c:get select="$currentFeature/EntityType/entity/@tableDBName" /> ON <c:get select="$currentFeature/EntityType/entity/@tableDBName" />.id = <c:get select="$currentEntity/@tableDBName" />.<c:get select="$currentFeature/@name" /></c:if></c:iterate>
 			ORDER BY <c:get select="$currentEntity/@tableDBName" />.id
 		");
@@ -76,7 +143,7 @@ class <c:get select="$currentEntity/@className" />DB
 
 				$<c:get select="$currentEntity/@name" />->setId($row["<c:get select="$currentEntity/@tableDBName" />_id"]);
 			<c:iterate select="$currentEntity/Feature" var="currentFeature"
-			><c:if test="($currentFeature/EntityType/entity/@name != '')">
+			><c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)">
 				$<c:get select="$currentFeature/EntityType/entity/@name" /> = new <c:get select="$currentFeature/EntityType/entity/@className" />();
 				$<c:get select="$currentFeature/EntityType/entity/@name" />->setId($row["<c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id"]);
 				<c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature"
@@ -85,6 +152,27 @@ class <c:get select="$currentEntity/@className" />DB
 				$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/EntityType/entity/@name" />);
 			</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')">
 				$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($row["<c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/@name" />"]);
+			</c:if><c:if test="($currentFeature/EntityType/entity/@name != '') and (($currentFeature/@min > 1) or ($currentFeature/@max > 1))">
+				$query_<c:get select="$currentFeature/@name" /> = pg_query("SELECT
+						<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.id AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id, <c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature"
+						><c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentEntityRelationshipFeature/@name" /> AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_<c:get select="$currentEntityRelationshipFeature/@name" />,</c:iterate>
+						<c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.created_at,
+						<c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.update_at
+					FROM <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />
+					INNER JOIN <c:get select="$currentFeature/EntityType/entity/@tableDBName" /> ON <c:get select="$currentFeature/EntityType/entity/@tableDBName" />.id = <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id 
+					WHERE <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentEntity/@tableDBName" />_id = " . $<c:get select="$currentEntity/@name" />->getId()
+				);
+				
+				if ($query_<c:get select="$currentFeature/@name" />) {
+					while ($row_<c:get select="$currentFeature/@name" /> = pg_fetch_assoc($query_<c:get select="$currentFeature/@name" />)) {
+						$<c:get select="$currentFeature/EntityType/entity/@name" /> = new <c:get select="$currentFeature/EntityType/entity/@className" />();
+						$<c:get select="$currentFeature/EntityType/entity/@name" />->setId($row_<c:get select="$currentFeature/@name" />["<c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id"]);
+						<c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature"
+						>$<c:get select="$currentFeature/EntityType/entity/@name" />->set<c:get select="$currentEntityRelationshipFeature/@methodName" />($row_<c:get select="$currentFeature/@name" />["<c:get select="$currentFeature/EntityType/entity/@tableDBName" />_<c:get select="$currentEntityRelationshipFeature/@name" />"]);
+						</c:iterate>
+						$<c:get select="$currentEntity/@name" />->add<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/EntityType/entity/@name" />);
+					}
+				}
 			</c:if></c:iterate>
 				$result[] = $<c:get select="$currentEntity/@name" />;
 			}
@@ -120,7 +208,17 @@ class <c:get select="$currentEntity/@className" />DB
 							$where .= " OR ";
 						}
 
-						$where .= "<c:get select="$currentEntity/@tableDBName" />.<c:get select="$currentFeature/@name" /> = " . $<c:get select="$currentFeature/@name" />->getId();
+						<c:if test="($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)"
+						>$where .= "<c:get select="$currentEntity/@tableDBName" />.<c:get select="$currentFeature/@name" /> = " . $<c:get select="$currentFeature/@name" />->getId();
+						</c:if><c:if test="($currentFeature/@min > 1) or ($currentFeature/@max > 1)"
+						>$where .= "(
+							SELECT count(*)
+							FROM <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />
+							WHERE
+								<c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentEntity/@tableDBName" />_id = <c:get select="$currentEntity/@tableDBName" />.id
+								AND <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id = " . $<c:get select="$currentFeature/@name" />->getId() . "
+						) > 0";
+						</c:if>
 						$first = false;
 					}
 					$where .= ")";
@@ -133,14 +231,17 @@ class <c:get select="$currentEntity/@className" />DB
 		}
 	</c:iterate>
 		$query = pg_query("SELECT
-			<c:get select="$currentEntity/@tableDBName" />.id AS <c:get select="$currentEntity/@tableDBName" />_id,<c:iterate select="$currentEntity/Feature" var="currentFeature"  delimiter=", "
-			><c:if test="($currentFeature/EntityType/entity/@name != '')">
-				<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.id AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id,<c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature" delimiter=", "
-				><c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentEntityRelationshipFeature/@name" /> AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_<c:get select="$currentEntityRelationshipFeature/@name" /></c:iterate>
-			</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
-				><c:get select="$currentEntity/@tableDBName" />.<c:get select="$currentFeature/@name" /> AS <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/@name" /></c:if></c:iterate>
+				<c:get select="$currentEntity/@tableDBName" />.id AS <c:get select="$currentEntity/@tableDBName" />_id,
+				<c:iterate select="$currentEntity/Feature" var="currentFeature"
+				><c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)">
+					<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.id AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id, <c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature"
+					><c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentEntityRelationshipFeature/@name" /> AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_<c:get select="$currentEntityRelationshipFeature/@name" />,</c:iterate>
+				</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+				><c:get select="$currentEntity/@tableDBName" />.<c:get select="$currentFeature/@name" /> AS <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/@name" />,</c:if></c:iterate>
+				created_at,
+				update_at
 			FROM <c:get select="$currentEntity/@tableDBName" />
-			<c:iterate select="$currentEntity/Feature" var="currentFeature"><c:if test="($currentFeature/EntityType/entity/@name != '')"
+			<c:iterate select="$currentEntity/Feature" var="currentFeature"><c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)"
 			>INNER JOIN <c:get select="$currentFeature/EntityType/entity/@tableDBName" /> ON <c:get select="$currentFeature/EntityType/entity/@tableDBName" />.id = <c:get select="$currentEntity/@tableDBName" />.<c:get select="$currentFeature/@name" /></c:if></c:iterate>
 		" . $where . "ORDER BY <c:get select="$currentEntity/@tableDBName" />.id");
 
@@ -150,7 +251,7 @@ class <c:get select="$currentEntity/@className" />DB
 
 				$<c:get select="$currentEntity/@name" />->setId($row["<c:get select="$currentEntity/@tableDBName" />_id"]);
 			<c:iterate select="$currentEntity/Feature" var="currentFeature"
-			><c:if test="($currentFeature/EntityType/entity/@name != '')">
+			><c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)">
 				$<c:get select="$currentFeature/EntityType/entity/@name" /> = new <c:get select="$currentFeature/EntityType/entity/@className" />();
 				$<c:get select="$currentFeature/EntityType/entity/@name" />->setId($row["<c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id"]);
 				<c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature"
@@ -159,6 +260,27 @@ class <c:get select="$currentEntity/@className" />DB
 				$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/EntityType/entity/@name" />);
 			</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')">
 				$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($row["<c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/@name" />"]);
+			</c:if><c:if test="($currentFeature/EntityType/entity/@name != '') and (($currentFeature/@min > 1) or ($currentFeature/@max > 1))">
+				$query_<c:get select="$currentFeature/@name" /> = pg_query("SELECT
+						<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.id AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id, <c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature"
+						><c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentEntityRelationshipFeature/@name" /> AS <c:get select="$currentFeature/EntityType/entity/@tableDBName" />_<c:get select="$currentEntityRelationshipFeature/@name" />,</c:iterate>
+						<c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.created_at,
+						<c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.update_at
+					FROM <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />
+					INNER JOIN <c:get select="$currentFeature/EntityType/entity/@tableDBName" /> ON <c:get select="$currentFeature/EntityType/entity/@tableDBName" />.id = <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id 
+					WHERE <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/EntityType/entity/@tableDBName" />.<c:get select="$currentEntity/@tableDBName" />_id = " . $<c:get select="$currentEntity/@name" />->getId()
+				);
+				
+				if ($query_<c:get select="$currentFeature/@name" />) {
+					while ($row_<c:get select="$currentFeature/@name" /> = pg_fetch_assoc($query_<c:get select="$currentFeature/@name" />)) {
+						$<c:get select="$currentFeature/EntityType/entity/@name" /> = new <c:get select="$currentFeature/EntityType/entity/@className" />();
+						$<c:get select="$currentFeature/EntityType/entity/@name" />->setId($row_<c:get select="$currentFeature/@name" />["<c:get select="$currentFeature/EntityType/entity/@tableDBName" />_id"]);
+						<c:iterate select="$currentFeature/EntityType/entity/Feature" var="currentEntityRelationshipFeature"
+						>$<c:get select="$currentFeature/EntityType/entity/@name" />->set<c:get select="$currentEntityRelationshipFeature/@methodName" />($row_<c:get select="$currentFeature/@name" />["<c:get select="$currentFeature/EntityType/entity/@tableDBName" />_<c:get select="$currentEntityRelationshipFeature/@name" />"]);
+						</c:iterate>
+						$<c:get select="$currentEntity/@name" />->add<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/EntityType/entity/@name" />);
+					}
+				}
 			</c:if></c:iterate>
 				$result[] = $<c:get select="$currentEntity/@name" />;
 			}

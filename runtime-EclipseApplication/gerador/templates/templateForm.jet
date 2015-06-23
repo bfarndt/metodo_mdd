@@ -14,10 +14,9 @@
 					foreach ($json as $entity) {
 						$<c:get select="$currentFeature/EntityType/entity/@className" /> = new <c:get select="$currentFeature/EntityType/entity/@className" />();
 						$<c:get select="$currentFeature/EntityType/entity/@className" />->setId($entity["id"]);
-						$<c:get select="$currentFeature/@name" />[] = $<c:get select="$currentFeature/EntityType/entity/@className" />;
+						$<c:get select="$currentEntity/@name" />->add<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/EntityType/entity/@className" />);
 					}
 				}
-				$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />);
 			}
 		</c:if>
 		<c:if test="not($currentFeature/EntityType/entity/@name != '')">
@@ -79,7 +78,7 @@
 					<tr>
 						<th>#</th>
 						<c:iterate select="$currentEntity/Feature" var="currentFeature">
-							<c:if test="($currentFeature/EntityType/entity/@name != '')">
+							<c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)">
 								<c:setVariable select="$currentFeature/EntityType/entity" var="currentEntityRelationship" />
 								<c:iterate select="$currentEntityRelationship/Feature" var="currentEntityRelationshipFeature">
 									<th><c:get select="$currentEntityRelationship/@name" /> - <c:get select="$currentEntityRelationshipFeature/@name" /></th>
@@ -101,7 +100,7 @@
 							<tr>
 								<td><?php echo $row->getId(); ?></td>
 								<c:iterate select="$currentEntity/Feature" var="currentFeature">
-									<c:if test="($currentFeature/EntityType/entity/@name != '')">
+									<c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)">
 										<c:setVariable select="$currentFeature/EntityType/entity" var="currentEntityRelationship" />
 										<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<c:get select="$currentFeature/@methodName" />()->getId(); ?>">
 										<c:iterate select="$currentEntityRelationship/Feature" var="currentEntityRelationshipFeature">

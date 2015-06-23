@@ -12,7 +12,8 @@
 		public function __construct()
 		{
 			<c:iterate select="$currentEntity/Feature" var="currentFeature"
-				>$this-><c:get select="$currentFeature/@name" /> = <c:if test="($currentFeature/EntityType/entity/@name != '')"
+				>$this-><c:get select="$currentFeature/@name" /> = <c:if test="($currentFeature/EntityType/entity/@name != '') and (($currentFeature/@min > 1) or ($currentFeature/@max > 1))"
+					>array()</c:if><c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)"
 					>new <c:get select="$currentFeature/EntityType/entity/@className" />()</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
 					>""</c:if>;
 			</c:iterate>
@@ -28,7 +29,8 @@
 			$this->id = $id;
 		}
 
-	<c:iterate select="$currentEntity/Feature" var="currentFeature">
+	<c:iterate select="$currentEntity/Feature" var="currentFeature"
+	><c:if test="($currentFeature/DataType/@name != '') or (($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1))">
 		public function get<c:get select="$currentFeature/@methodName" />()
 		{
 			return $this-><c:get select="$currentFeature/@name" />;
@@ -38,7 +40,31 @@
 		{
 			$this-><c:get select="$currentFeature/@name" /> = $<c:get select="$currentFeature/@name" />;
 		}
-	</c:iterate>
+	</c:if><c:if test="($currentFeature/EntityType/entity/@name != '') and (($currentFeature/@min > 1) or ($currentFeature/@max > 1))">
+		public function get<c:get select="$currentFeature/@methodName" />()
+		{
+			return $this-><c:get select="$currentFeature/@name" />;
+		}
+		
+		public function add<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />)
+		{
+			$this-><c:get select="$currentFeature/@name" />[] = $<c:get select="$currentFeature/@name" />;
+		}
+		
+		public function remove<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />)
+		{
+			foreach ($this-><c:get select="$currentFeature/@name" /> as $key => $value) {
+				if ($value->getId() == $<c:get select="$currentFeature/@name" />->getId()) {
+					unset($this-><c:get select="$currentFeature/@name" />[$key]);
+				}
+			}
+		}
+		
+		public function removeAll<c:get select="$currentFeature/@methodName" />()
+		{
+			$this-><c:get select="$currentFeature/@name" /> = array();
+		}
+	</c:if></c:iterate>
 	}
 
 ?>

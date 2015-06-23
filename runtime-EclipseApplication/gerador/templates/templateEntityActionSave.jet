@@ -14,9 +14,9 @@
 				foreach ($json as $entity) {
 					$<c:get select="$currentFeature/@name" /> = new <c:get select="$currentFeature/EntityType/entity/@name" />();
 					$<c:get select="$currentFeature/@name" />->setId($entity["id"]);
+					$<c:get select="$currentEntity/@name" />->add<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />);
 				}
 			}
-			$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />);
 		}
 	</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
 		>$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($_POST["<c:get select="$currentFeature/@name" />"]);
