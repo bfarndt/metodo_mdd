@@ -14,7 +14,7 @@ CREATE TABLE <c:get select="$currentEntity/@tableDBName" />
 		>bigint</c:if>,
 	</c:if></c:iterate>created_at timestamp with time zone,
 	update_at timestamp with time zone,
-	CONSTRAINT <c:get select="$currentEntity/@tableDBName" />_pkey PRIMARY KEY (id),
+	CONSTRAINT <c:get select="$currentEntity/@tableDBName" />_pkey PRIMARY KEY (id)
 	<c:iterate select="$currentEntity/Feature" var="currentFeature"><c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)"
 		>CONSTRAINT <c:get select="$currentEntity/@tableDBName" />_<c:get select="$currentFeature/@name" />_fkey FOREIGN KEY (<c:get select="$currentFeature/@name" />)
 			REFERENCES <c:get select="$currentFeature/EntityType/entity/@tableDBName" /> (id) MATCH SIMPLE
