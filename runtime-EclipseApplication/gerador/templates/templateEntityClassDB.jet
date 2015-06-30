@@ -9,7 +9,7 @@ class <c:get select="$currentEntity/@className" />DB
 	private $dbconn;
 	private $host = "localhost";
 	private $port = "5432";
-	private $dbname = "jet";
+	private $dbname = "<c:get select="/Domainmodel/@nomeProj" />";
 	private $user = "postgres";
 	private $password = "teste";
 
