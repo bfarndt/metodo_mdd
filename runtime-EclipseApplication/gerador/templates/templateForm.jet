@@ -95,6 +95,11 @@
 				</thead>
 				<tbody>
 					<?php
+						<c:iterate select="$currentEntity/Feature" var="currentFeature">
+							<c:if test="($currentFeature/DataType/@name = 'int') or ($currentFeature/DataType/@name = 'float') or ($currentFeature/DataType/@name = 'currency')">
+								$total<c:get select="$currentFeature/@methodName" /> = 0; 
+							</c:if>
+						</c:iterate>
 						foreach ($rows as $row) {
 							?>
 							<tr>
@@ -108,8 +113,15 @@
 										</c:iterate>
 									</c:if>
 									<c:if test="not($currentFeature/EntityType/entity/@name != '')">
-										<td><?php echo $row->get<c:get select="$currentFeature/@methodName" />(); ?></td>
+										<c:if test="($currentFeature/DataType/@name = 'currency')"
+										><td><?php echo $row->get<c:get select="$currentFeature/@methodName" />Formated(); ?></td>
+										</c:if><c:if test="not($currentFeature/DataType/@name = 'currency')"
+										><td><?php echo $row->get<c:get select="$currentFeature/@methodName" />(); ?></td>
+										</c:if>
 										<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<c:get select="$currentFeature/@methodName" />(); ?>">
+									</c:if>
+									<c:if test="($currentFeature/DataType/@name = 'int') or ($currentFeature/DataType/@name = 'float') or ($currentFeature/DataType/@name = 'currency')">
+										<?php $total<c:get select="$currentFeature/@methodName" /> += $row->get<c:get select="$currentFeature/@methodName" />(); ?> 
 									</c:if>
 								</c:iterate>
 								<c:if test="($currentForm/@put = 'true') or ($currentForm/@delete = 'true')">
@@ -129,6 +141,16 @@
 							</tr>
 					<?php } ?>
 				</tbody>
+				<tfoot>
+					<tr>
+						<td>Total <?php echo count($rows); ?></td>
+						<c:iterate select="$currentEntity/Feature" var="currentFeature">
+							<td><c:if test="($currentFeature/DataType/@name = 'int') or ($currentFeature/DataType/@name = 'float') or ($currentFeature/DataType/@name = 'currency')">
+								<?php echo 'R$ ' . number_format($total<c:get select="$currentFeature/@methodName" />, 2, ',', '.'); ?>
+							</c:if></td>
+						</c:iterate>
+					</tr>
+				</tfoot>
 			</table>
 		</div>
 	</div>

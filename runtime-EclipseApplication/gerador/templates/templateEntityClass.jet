@@ -30,7 +30,29 @@
 		}
 
 	<c:iterate select="$currentEntity/Feature" var="currentFeature"
-	><c:if test="($currentFeature/DataType/@name != '') or (($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1))">
+	><c:if test="($currentFeature/DataType/@name = 'currency')">
+		public function get<c:get select="$currentFeature/@methodName" />()
+		{
+			return $this-><c:get select="$currentFeature/@name" />;
+		}
+		
+		public function get<c:get select="$currentFeature/@methodName" />Formated()
+		{
+			return 'R$ ' . number_format($this-><c:get select="$currentFeature/@name" />, 2, ',', '.');
+		}
+
+		public function set<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />)
+		{
+			if (stripos($<c:get select="$currentFeature/@name" />, 'r$') !== false) {
+				$<c:get select="$currentFeature/@name" /> = str_ireplace('r$', '', $<c:get select="$currentFeature/@name" />);
+				$<c:get select="$currentFeature/@name" /> = str_ireplace('.', '', $<c:get select="$currentFeature/@name" />);
+				$<c:get select="$currentFeature/@name" /> = str_ireplace(',', '.', $<c:get select="$currentFeature/@name" />);
+				$<c:get select="$currentFeature/@name" /> = trim($<c:get select="$currentFeature/@name" />);
+			}
+
+			$this-><c:get select="$currentFeature/@name" /> = $<c:get select="$currentFeature/@name" />;
+		}
+	</c:if><c:if test="($currentFeature/DataType/@name != 'currency') or (($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1))">
 		public function get<c:get select="$currentFeature/@methodName" />()
 		{
 			return $this-><c:get select="$currentFeature/@name" />;
