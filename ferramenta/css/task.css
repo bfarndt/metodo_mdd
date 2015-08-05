@@ -15,6 +15,10 @@
     cursor: pointer;
 }
 
+.alert_modal {
+    border-bottom: 1px solid #a94442;
+}
+
 body {
     overflow: hidden;
     margin: 0px;

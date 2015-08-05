@@ -190,6 +190,55 @@
             </div>
         </div>
 
+        <div class="modal fade" id="dvErrorMessage" tabindex="-1" role="dialog" aria-labelledby="lblErrorMsgTitle">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content alert alert-danger">
+                    <div class="modal-header alert_modal">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="lblErrorMsgTitle">Erro!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <label>Status:</label>
+                                </div>
+                            </div>
+                            <div id="dvStatus" class="col-lg-8">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <label>Tipo de erro HTTP:</label>
+                                </div>
+                            </div>
+                            <div id="dvTipoErroHTTP" class="col-lg-8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="dvProgressBarDialog" tabindex="-1" role="dialog" aria-labelledby="lblProgressBarTitle">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="lblProgressBarTitle">Progress Bar</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="progress">
+                            <div id="dvProgressBar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                0%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="dvBaseTarefa" class="panel panel-primary">
             <div class="panel-heading">
                 <div class="row panel-title">
@@ -198,6 +247,7 @@
                     </div>
                     <div class="col-lg-7">
                         <h3 id="lblBaseTarefaNome" class="panel-title"></h3>
+                        <input type="hidden" name="txtTaskId" id="txtTaskId">
                     </div>
                     <div id="dvBaseTarefaTempos" class="col-lg-4">
                         0h/0h

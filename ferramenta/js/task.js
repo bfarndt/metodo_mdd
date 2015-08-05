@@ -39,24 +39,49 @@ $(function() {
 
         var tarefaEnglobaModelo = $("input[name='rdbModel']:checked").val() == "Sim";
         var tarefaEnglobaDSL = $("input[name='rdbDSL']:checked").val() == "Sim";
-        var tarefaEnglobaTemplate = $("input[name='rdbTemplate']:checked").val() == "Sim";
+        var tarefaEnglobaTemplate = ($("input[name='rdbTemplate']:checked").val() == "Sim") || ! tarefaEnglobaModelo;
 
         $.ajax({
             url: "criarTask.php",
             method: "POST",
             cache: false,
-            data: "tarefaNome=" + tarefaNome + "&tempoGasto=" + tempoGasto + "&tempoEstimado=" + tempoEstimado + "&tarefaDescricao=" + tarefaDescricao + "&tarefaPrazo=" + tarefaPrazo + "&tarefaEnglobaModelo=" + tarefaEnglobaModelo + "&tarefaEnglobaDSL=" + tarefaEnglobaDSL + "&tarefaEnglobaTemplate=" + tarefaEnglobaTemplate,
+            data: "tarefaNome=" + tarefaNome + "&tempoGasto=" + tempoGasto + "&tempoEstimado=" + tempoEstimado + "&tarefaDescricao=" + tarefaDescricao + "&tarefaPrazo=" + tarefaPrazo + "&tarefaEnglobaModelo=" + tarefaEnglobaModelo + "&tarefaEnglobaDSL=" + tarefaEnglobaDSL + "&tarefaEnglobaTemplate=" + tarefaEnglobaTemplate + "&tarefaColKanban=" + currentCol,
             beforeSend: function(jqXHR, settings) {
+                $("#dvAddTarefaDialog").modal("hide");
+
+                $("#lblProgressBarTitle", "#dvProgressBarDialog").html("Salvando a Tarefa no Banco de Dados");
+
+                $("#dvProgressBar", "#dvProgressBarDialog").attr("aria-valuenow", "0");
+                $("#dvProgressBar", "#dvProgressBarDialog").css("width", "0%");
+                $("#dvProgressBar", "#dvProgressBarDialog").html("0%");
+
+                $("#dvProgressBarDialog").modal("show");
             },
             error: function(jqXHR, textStatus, errorThrown) {
+                $("#dvProgressBarDialog").modal("hide");
 
+                $("#dvStatus", "#dvErrorMessage").html(textStatus);
+                $("#dvTipoErroHTTP", "#dvErrorMessage").html(errorThrown);
+
+                $("#dvErrorMessage").modal("show");
             },
             success: function(data, textStatus, jqXHR) {
+                $("#lblProgressBarTitle", "#dvProgressBarDialog").html("Criando o HTML da Tarefa");
+
+                $("#dvProgressBar", "#dvProgressBarDialog").attr("aria-valuenow", "50");
+                $("#dvProgressBar", "#dvProgressBarDialog").css("width", "50%");
+                $("#dvProgressBar", "#dvProgressBarDialog").html("50%");
+
+                var tarefaId = jQuery.parseJSON(data);
+                tarefaId = tarefaId.id;
+
                 var newTask = $("#dvBaseTarefa")
                     .clone(true)
                     .attr("id", "dvTask" + idTask)
                     .show()
                     .appendTo($("#" + currentCol));
+
+                $("#txtTaskId", newTask).val(tarefaId);
 
                 $("#lblBaseTarefaNome", newTask).html(tarefaNome);
 
@@ -111,9 +136,15 @@ $(function() {
                     }
                 });
 
+                $("#lblProgressBarTitle", "#dvProgressBarDialog").html("Tarefa criada com sucesso!");
+
+                $("#dvProgressBar", "#dvProgressBarDialog").attr("aria-valuenow", "100");
+                $("#dvProgressBar", "#dvProgressBarDialog").css("width", "100%");
+                $("#dvProgressBar", "#dvProgressBarDialog").html("100%");
+
                 idTask++;
 
-                $("#dvAddTarefaDialog").modal("hide");
+                $("#dvProgressBarDialog").modal("hide");
             }
         });
 
