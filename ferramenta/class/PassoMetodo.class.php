@@ -5,13 +5,14 @@
         private $id;
         private $nome;
         private $tipo;
-
+        private $ja_realizada;
 
         public function __construct()
         {
             $this->id = 0;
             $this->nome = "";
             $this->tipo = "";
+            $this->ja_realizada = false;
         }
 
         public function getId()
@@ -43,6 +44,16 @@
         public function setTipo($tipo)
         {
             $this->tipo = $tipo;
+        }
+
+        public function getJaRealizada()
+        {
+            return $this->ja_realizada;
+        }
+
+        public function setJaRealizada($ja_realizada)
+        {
+            $this->ja_realizada = $ja_realizada;
         }
 
     }

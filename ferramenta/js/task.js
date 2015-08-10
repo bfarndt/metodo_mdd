@@ -75,11 +75,15 @@ $(function() {
                 var tarefaId = jQuery.parseJSON(data);
                 tarefaId = tarefaId.id;
 
+                var tarefaDivId = "dvTask" + tarefaId;
+
                 var newTask = $("#dvBaseTarefa")
                     .clone(true)
-                    .attr("id", "dvTask" + idTask)
+                    .attr("id", tarefaDivId)
                     .show()
                     .appendTo($("#" + currentCol));
+
+                $(".btnDisplayTask", newTask).data("tarefa-div", tarefaDivId);
 
                 $("#txtTaskId", newTask).val(tarefaId);
 
@@ -112,28 +116,8 @@ $(function() {
                     $(".sub_task_model", newTask).remove();
                 }
 
-                $("#btnDisplayTask", newTask).click(function() {
-                    if ($(this).hasClass("glyphicon-minus")) {
-                        $(".panel-body", newTask).hide();
-
-                        $(this).removeClass("glyphicon-minus");
-                        $(this).addClass("glyphicon-unchecked");
-                    } else {
-                        $(".panel-body", newTask).show();
-
-                        $(this).addClass("glyphicon-minus");
-                        $(this).removeClass("glyphicon-unchecked");
-                    }
-                });
-
-                $(".sub_task_model, .sub_task_dsl, .sub_task_template", newTask).click(function() {
-                    if ($("input[type='checkbox']", this).prop('checked')) {
-                        $("label", this).removeClass("task_done");
-                        $("input[type='checkbox']", this).prop('checked', false);
-                    } else {
-                        $("label", this).addClass("task_done");
-                        $("input[type='checkbox']", this).prop('checked', true);
-                    }
+                $("input[type='checkbox']", newTask).each(function() {
+                    $(this).data("tarefa", tarefaId);
                 });
 
                 $("#lblProgressBarTitle", "#dvProgressBarDialog").html("Tarefa criada com sucesso!");
@@ -149,6 +133,32 @@ $(function() {
         });
 
         $(btnAddTarefa).button('reset');
+    });
+
+    $(".btnDisplayTask").on("click", function() {
+        var tarefaDivId = $(this).data("tarefa-div");
+
+        if ($(this).hasClass("glyphicon-minus")) {
+            $(".panel-body", "#" + tarefaDivId).hide();
+
+            $(this).removeClass("glyphicon-minus");
+            $(this).addClass("glyphicon-unchecked");
+        } else {
+            $(".panel-body", tarefaDivId).show();
+
+            $(this).addClass("glyphicon-minus");
+            $(this).removeClass("glyphicon-unchecked");
+        }
+    });
+
+    $(".sub_task_model, .sub_task_dsl, .sub_task_template").on("click", function() {
+        if ($("input[type='checkbox']", this).prop('checked')) {
+            $("label", this).removeClass("task_done");
+            $("input[type='checkbox']", this).prop('checked', false);
+        } else {
+            $("label", this).addClass("task_done");
+            $("input[type='checkbox']", this).prop('checked', true);
+        }
     });
 
     $("#btnAddToDo").click(function() {
@@ -189,13 +199,9 @@ $(function() {
         appendTo: document.body
     }).disableSelection();
 
-    var marginColKanban = $(".panel-default").outerHeight(true) - $(".col_kanban").height();
-
-    $(".col_kanban").height($(window).outerHeight(true) - marginColKanban);
+    $(".col_kanban").height($(window).outerHeight(true) - $("footer").outerHeight(true)  - $("#dvKanbanColTitle").outerHeight(true));
 
     $(window).resize(function() {
-        var marginColKanban = $(".panel-default").outerHeight(true) - $(".col_kanban").height();
-
-        $(".col_kanban").height($(window).outerHeight(true) - marginColKanban);
+        $(".col_kanban").height($(window).outerHeight(true) - $("footer").outerHeight(true)  - $("#dvKanbanColTitle").outerHeight(true));
     });
 });

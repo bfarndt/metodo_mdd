@@ -1,5 +1,7 @@
 <?php
 
+    include_once "PassoMetodo.class.php";
+
     class Tarefa
     {
         private $id;
@@ -12,6 +14,7 @@
         private $engloba_dsl;
         private $engloba_template;
         private $col_kanban;
+        private $PassosMetodo;
 
         public function __construct()
         {
@@ -25,6 +28,7 @@
             $this->engloba_dsl = false;
             $this->engloba_template = false;
             $this->col_kanban = "";
+            $this->PassosMetodo = array();
         }
 
         public function getId()
@@ -130,6 +134,21 @@
         public function setColKanban($col_kanban)
         {
             $this->col_kanban = $col_kanban;
+        }
+
+        public function getPassosMetodo()
+        {
+            return $this->PassosMetodo;
+        }
+
+        public function addPassoMetodo($PassoMetodo)
+        {
+            $this->PassosMetodo[] = $PassoMetodo;
+        }
+
+        public function clearPassosMetodo()
+        {
+            $this->PassosMetodo = array();
         }
 
     }
