@@ -84,6 +84,7 @@ $(function() {
                     .appendTo($("#" + currentCol));
 
                 $(".btnDisplayTask", newTask).data("tarefa-div", tarefaDivId);
+                $(".btnDestroyTask", newTask).data("tarefa", tarefaId);
 
                 $("#txtTaskId", newTask).val(tarefaId);
 
@@ -144,11 +145,69 @@ $(function() {
             $(this).removeClass("glyphicon-minus");
             $(this).addClass("glyphicon-unchecked");
         } else {
-            $(".panel-body", tarefaDivId).show();
+            $(".panel-body", "#" + tarefaDivId).show();
 
             $(this).addClass("glyphicon-minus");
             $(this).removeClass("glyphicon-unchecked");
         }
+    });
+
+    $(".btnDestroyTask").on("click", function() {
+        var tarefaId = $(this).data("tarefa");
+
+        $("#btnDeleteTask").data("tarefa", tarefaId);
+
+        $("#lblConfirmTitle").html("Deletar a Tarefa!");
+        $("#lblConfirmDeleteTaskName").html("Voc&ecirc; realmente deseja remover a tarefa <label>" + $("#lblBaseTarefaNome", "#dvTask" + tarefaId).html() + "</label>?");
+
+        $("#dvConfirmDeleteTask").modal("show");
+    });
+
+    $("#btnDeleteTask").click(function() {
+        var tarefaId = $("#btnDeleteTask").data("tarefa");
+
+        $.ajax({
+            url: "deletarTask.php",
+            method: "POST",
+            cache: false,
+            data: "tarefaId=" + tarefaId,
+            beforeSend: function(jqXHR, settings) {
+                $("#dvConfirmDeleteTask").modal("hide");
+
+                $("#lblProgressBarTitle", "#dvProgressBarDialog").html("Deletando a Tarefa do Banco de Dados");
+
+                $("#dvProgressBar", "#dvProgressBarDialog").attr("aria-valuenow", "0");
+                $("#dvProgressBar", "#dvProgressBarDialog").css("width", "0%");
+                $("#dvProgressBar", "#dvProgressBarDialog").html("0%");
+
+                $("#dvProgressBarDialog").modal("show");
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#dvProgressBarDialog").modal("hide");
+
+                $("#dvStatus", "#dvErrorMessage").html(textStatus);
+                $("#dvTipoErroHTTP", "#dvErrorMessage").html(errorThrown);
+
+                $("#dvErrorMessage").modal("show");
+            },
+            success: function(data, textStatus, jqXHR) {
+                $("#lblProgressBarTitle", "#dvProgressBarDialog").html("Deletando o HTML da Tarefa");
+
+                $("#dvProgressBar", "#dvProgressBarDialog").attr("aria-valuenow", "50");
+                $("#dvProgressBar", "#dvProgressBarDialog").css("width", "50%");
+                $("#dvProgressBar", "#dvProgressBarDialog").html("50%");
+
+                $("#dvTask" + tarefaId).remove();
+
+                $("#lblProgressBarTitle", "#dvProgressBarDialotarefaIdg").html("Tarefa deletada com sucesso do Banco de Dados!");
+
+                $("#dvProgressBar", "#dvProgressBarDialog").attr("aria-valuenow", "100");
+                $("#dvProgressBar", "#dvProgressBarDialog").css("width", "100%");
+                $("#dvProgressBar", "#dvProgressBarDialog").html("100%");
+
+                $("#dvProgressBarDialog").modal("hide");
+            }
+        });
     });
 
     $(".sub_task_model, .sub_task_dsl, .sub_task_template").on("click", function() {

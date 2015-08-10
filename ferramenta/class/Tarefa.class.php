@@ -41,7 +41,6 @@
             $this->id = $id;
         }
 
-
         public function getNome()
         {
             return $this->nome;

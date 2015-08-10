@@ -102,9 +102,12 @@
                                                     <div class="panel-heading">
                                                         <div class="row panel-title">
                                                             <div class="col-lg-1">
+                                                                <span class="glyphicon glyphicon-trash btnDestroyTask" style="cursor: pointer;" aria-hidden="true" data-tarefa="<?php echo $Tarefa->getId(); ?>"></span>
+                                                            </div>
+                                                            <div class="col-lg-1">
                                                                 <span class="glyphicon glyphicon-minus btnDisplayTask" style="cursor: pointer;" aria-hidden="true" data-tarefa-div="dvTask<?php echo $Tarefa->getId(); ?>"></span>
                                                             </div>
-                                                            <div class="col-lg-7">
+                                                            <div class="col-lg-6">
                                                                 <h3 id="lblBaseTarefaNome" class="panel-title"><?php echo $Tarefa->getNome(); ?></h3>
                                                                 <input type="hidden" name="txtTaskId" id="txtTaskId" value="<?php echo $Tarefa->getId(); ?>">
                                                             </div>
@@ -299,6 +302,29 @@
                 </div>
             </div>
 
+            <div class="modal fade" id="dvConfirmDeleteTask" tabindex="-1" role="dialog" aria-labelledby="lblConfirmTitle">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content alert alert-warning">
+                        <div class="modal-header warning_modal_title">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="lblConfirmTitle"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div id="lblConfirmDeleteTaskName" class="input-group">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer warning_modal_footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                            <button type="button" id="btnDeleteTask" class="btn btn-warning">Deletar Tarefa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="modal fade" id="dvProgressBarDialog" tabindex="-1" role="dialog" aria-labelledby="lblProgressBarTitle">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -320,9 +346,12 @@
                 <div class="panel-heading">
                     <div class="row panel-title">
                         <div class="col-lg-1">
+                            <span class="glyphicon glyphicon-trash btnDestroyTask" style="cursor: pointer;" aria-hidden="true"></span>
+                        </div>
+                        <div class="col-lg-1">
                             <span class="glyphicon glyphicon-minus btnDisplayTask" style="cursor: pointer;" aria-hidden="true"></span>
                         </div>
-                        <div class="col-lg-7">
+                        <div class="col-lg-6">
                             <h3 id="lblBaseTarefaNome" class="panel-title"></h3>
                             <input type="hidden" name="txtTaskId" id="txtTaskId">
                         </div>
