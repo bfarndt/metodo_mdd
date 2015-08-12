@@ -389,12 +389,6 @@
                 </div>
             </div>
         </div>
-
-        <footer class="footer">
-            <div class="container">
-                <p class="text-muted">Place sticky footer content here.</p>
-            </div>
-        </footer>
     </body>
     <!-- Datepicker - Retirado de: http://websocialdev.com/calendario-input-date-com-datepicker-bootstrap/ -->
     <script src="js/bootstrap-datepicker.js"></script>

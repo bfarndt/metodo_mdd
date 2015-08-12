@@ -1,4 +1,5 @@
 var currentCol;
+var originalHeightColKanban = 20;
 
 $(document).ready(function () {
     $('.datepicker').datepicker({
@@ -258,9 +259,9 @@ $(function() {
         appendTo: document.body
     }).disableSelection();
 
-    $(".col_kanban").height($(window).outerHeight(true) - $("footer").outerHeight(true)  - $("#dvKanbanColTitle").outerHeight(true));
+    $(".col_kanban").height($(window).outerHeight(true)  - $("#dvKanbanColTitle").outerHeight(true) - originalHeightColKanban);
 
     $(window).resize(function() {
-        $(".col_kanban").height($(window).outerHeight(true) - $("footer").outerHeight(true)  - $("#dvKanbanColTitle").outerHeight(true));
+        $(".col_kanban").height($(window).outerHeight(true)  - $("#dvKanbanColTitle").outerHeight(true) - originalHeightColKanban);
     });
 });
