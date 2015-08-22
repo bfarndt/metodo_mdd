@@ -98,21 +98,28 @@
                                         foreach ($tarefas as $key => $Tarefa) {
                                             if ($Tarefa->getColKanban() == $col_kanban) {
                                                 ?>
-                                                <div id="dvTask<?php echo $Tarefa->getId(); ?>" class="panel panel-primary">
+                                                <div id="dvTask<?php echo $Tarefa->getId(); ?>" class="panel panel-primary" data-tarefa="<?php echo $Tarefa->getId(); ?>">
                                                     <div class="panel-heading">
                                                         <div class="row panel-title">
                                                             <div class="col-lg-1">
                                                                 <span class="glyphicon glyphicon-trash btnDestroyTask" style="cursor: pointer;" aria-hidden="true" data-tarefa="<?php echo $Tarefa->getId(); ?>"></span>
                                                             </div>
                                                             <div class="col-lg-1">
+                                                                <span class="glyphicon glyphicon-pencil btnEditTask" style="cursor: pointer;" aria-hidden="true" data-tarefa="<?php echo $Tarefa->getId(); ?>"></span>
+                                                            </div>
+                                                            <div class="col-lg-1">
                                                                 <span class="glyphicon glyphicon-minus btnDisplayTask" style="cursor: pointer;" aria-hidden="true" data-tarefa-div="dvTask<?php echo $Tarefa->getId(); ?>"></span>
                                                             </div>
-                                                            <div class="col-lg-6">
+                                                            <div class="col-lg-5">
                                                                 <h3 id="lblBaseTarefaNome" class="panel-title"><?php echo $Tarefa->getNome(); ?></h3>
                                                                 <input type="hidden" name="txtTaskId" id="txtTaskId" value="<?php echo $Tarefa->getId(); ?>">
                                                             </div>
                                                             <div id="dvBaseTarefaTempos" class="col-lg-4">
-                                                                <?php echo $Tarefa->getTempoGasto() . " / " . $Tarefa->getTempoEstimado(); ?>
+                                                                <span id="lblBaseTarefaTempoGasto"><?php
+                                                                    echo $Tarefa->getTempoGasto();
+                                                                ?></span> / <span id="lblBaseTarefaTempoEstimado"><?php
+                                                                    echo $Tarefa->getTempoEstimado();
+                                                                ?></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -131,12 +138,21 @@
                                                                         <div class="row sub_task_<?php echo $PassoMetodo->getTipo(); ?>">
                                                                             <div class="col-lg-1">
                                                                                 <div class="input-group">
-                                                                                    <input type="checkbox" data-tarefa="<?php echo $Tarefa->getId(); ?>" value="<?php echo $PassoMetodo->getId(); ?>">
+                                                                                    <?php
+                                                                                        if ($PassoMetodo->getJaRealizada()) {
+                                                                                            $taskDoneIcon = "check";
+                                                                                            $taskDoneText = "task_done";
+                                                                                        } else {
+                                                                                            $taskDoneIcon = "unchecked";
+                                                                                            $taskDoneText = "";
+                                                                                        }
+                                                                                    ?>
+                                                                                    <span class="glyphicon glyphicon-<?php echo $taskDoneIcon; ?>" aria-hidden="true" data-tarefa="<?php echo $Tarefa->getId(); ?>" data-passo="<?php echo $PassoMetodo->getId(); ?>"></span>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-11">
                                                                                 <div class="input-group">
-                                                                                    <label><?php echo $PassoMetodo->getNome(); ?></label>
+                                                                                    <label class="<?php echo $taskDoneText; ?>"><?php echo $PassoMetodo->getNome(); ?></label>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -349,14 +365,17 @@
                             <span class="glyphicon glyphicon-trash btnDestroyTask" style="cursor: pointer;" aria-hidden="true"></span>
                         </div>
                         <div class="col-lg-1">
+                            <span class="glyphicon glyphicon-pencil btnEditTask" style="cursor: pointer;" aria-hidden="true"></span>
+                        </div>
+                        <div class="col-lg-1">
                             <span class="glyphicon glyphicon-minus btnDisplayTask" style="cursor: pointer;" aria-hidden="true"></span>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-5">
                             <h3 id="lblBaseTarefaNome" class="panel-title"></h3>
                             <input type="hidden" name="txtTaskId" id="txtTaskId">
                         </div>
                         <div id="dvBaseTarefaTempos" class="col-lg-4">
-                            0h/0h
+                            <span id="lblBaseTarefaTempoGasto"></span> / <span id="lblBaseTarefaTempoEstimado"></span>
                         </div>
                     </div>
                 </div>

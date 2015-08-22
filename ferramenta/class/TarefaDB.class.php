@@ -101,7 +101,67 @@ class TarefaDB extends DB
 
         $result = (pg_affected_rows($query) > 0);
 
+        $query = pg_query("DELETE FROM tarefa_passos WHERE tarefa_id = " . $Tarefa->getId());
+
+        $result = $result && (pg_affected_rows($query) > 0);
+
+        $PassoMetodo = new PassoMetodo();
+        $PassoMetodoDB = new PassoMetodoDB();
+
+        if ($Tarefa->getEnglobaModelo() == "true") {
+            $PassoMetodo->setTipo("model");
+            $PassosMetodo = $PassoMetodoDB->get($PassoMetodo);
+
+            if ( ! $this->addPassoMetodo($Tarefa, $PassosMetodo)) {
+                return false;
+            }
+        }
+
+        if ($Tarefa->getEnglobaDSL() == "true") {
+            $PassoMetodo->setTipo("dsl");
+            $PassosMetodo = $PassoMetodoDB->get($PassoMetodo);
+
+            if ( ! $this->addPassoMetodo($Tarefa, $PassosMetodo)) {
+                return false;
+            }
+        }
+
+        if ($Tarefa->getEnglobaTemplate() == "true") {
+            $PassoMetodo->setTipo("template");
+            $PassosMetodo = $PassoMetodoDB->get($PassoMetodo);
+
+            if ( ! $this->addPassoMetodo($Tarefa, $PassosMetodo)) {
+                return false;
+            }
+        }
+
         return $result;
+    }
+
+    public function updateColKanban($Tarefa)
+    {
+        $query = pg_query("UPDATE tarefa SET
+                col_kanban = '" . $Tarefa->getColKanban() . "'
+            WHERE id = " . $Tarefa->getId());
+
+        $result = (pg_affected_rows($query) > 0);
+
+        return $result;
+    }
+
+    public function updatePassoMetodo($Tarefa)
+    {
+        foreach ($Tarefa->getPassosMetodo() as $PassoMetodo) {
+            $query = pg_query("UPDATE tarefa_passos SET
+                    ja_realizada = '" . $PassoMetodo->getJaRealizada() . "'
+                WHERE passos_metodo_id = " . $PassoMetodo->getId() . " AND tarefa_id = " . $Tarefa->getId());
+
+            if (pg_affected_rows($query) < 1) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public function destroy($Tarefa)
@@ -160,7 +220,7 @@ class TarefaDB extends DB
                         $PassoMetodo->setId($row_passos["id"]);
                         $PassoMetodo->setNome($row_passos["nome"]);
                         $PassoMetodo->setTipo($row_passos["tipo"]);
-                        $PassoMetodo->setJaRealizada($row_passos["ja_realizada"]);
+                        $PassoMetodo->setJaRealizada($row_passos["ja_realizada"] == "t");
 
                         $Tarefa->addPassoMetodo($PassoMetodo);
                     }
