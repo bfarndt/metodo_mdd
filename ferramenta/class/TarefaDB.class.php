@@ -31,7 +31,7 @@ class TarefaDB extends DB
     public function add($Tarefa)
     {
         $query = pg_query("INSERT INTO tarefa(
-                nome, descricao, tempo_gasto, tempo_estimado, prazo, engloba_modelo, engloba_dsl, engloba_template, col_kanban
+                nome, descricao, tempo_gasto, tempo_estimado, prazo, engloba_modelo, engloba_dsl, engloba_template, col_kanban, usuario_id
             ) VALUES (
                 " . (strlen($Tarefa->getNome()) < 1 ? "NULL" : "'" . $Tarefa->getNome() . "'") . ",
                 " . (strlen($Tarefa->getDescricao()) < 1 ? "NULL" : "'" . $Tarefa->getDescricao() . "'") . ",
@@ -41,7 +41,8 @@ class TarefaDB extends DB
                 " . $Tarefa->getEnglobaModelo() . ",
                 " . $Tarefa->getEnglobaDSL() . ",
                 " . $Tarefa->getEnglobaTemplate() . ",
-                '" . $Tarefa->getColKanban() . "'
+                '" . $Tarefa->getColKanban() . "',
+                " . $Tarefa->getUsuario()->getId() . "
             ) RETURNING id;
         ");
 
@@ -181,12 +182,14 @@ class TarefaDB extends DB
 
     public function getAll()
     {
+        $Tarefa = new Tarefa();
         $result = array();
 
         $query = pg_query("SELECT
                 id, nome, descricao, tempo_gasto, tempo_estimado, prazo, engloba_modelo,
                 engloba_dsl, engloba_template, col_kanban
             FROM tarefa
+            WHERE usuario_id = " . $Tarefa->getUsuario()->getId() . "
             ORDER BY tarefa.id
         ");
 

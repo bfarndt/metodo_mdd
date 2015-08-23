@@ -1,12 +1,26 @@
 <?php
-        include_once "class/PassoMetodoDB.class.php";
-        include_once "class/TarefaDB.class.php";
+    session_start();
 
-        $TarefaDB = new TarefaDB();
-        $tarefas = $TarefaDB->getAll();
+    if ( ! isSet($_SESSION["user_kanban_id"])) {
+        ?><META http-equiv="refresh" content="0;URL=login.php"><?php
+    }
 
-        $PassoMetodoDB = new PassoMetodoDB();
-        $passos_metodo = $PassoMetodoDB->getAll();
+    include_once "class/PassoMetodoDB.class.php";
+    include_once "class/TarefaDB.class.php";
+    include_once "class/UsuarioDB.class.php";
+
+    $TarefaDB = new TarefaDB();
+    $tarefas = $TarefaDB->getAll();
+
+    $PassoMetodoDB = new PassoMetodoDB();
+    $passos_metodo = $PassoMetodoDB->getAll();
+
+    $UsuarioDB = new UsuarioDB();
+    $Usuario = $UsuarioDB->getUsuarioById($_SESSION["user_kanban_id"]);
+
+    if ($Usuario === false) {
+        ?><META http-equiv="refresh" content="0;URL=login.php"><?php
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,10 +91,17 @@
                                 </h3>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             <div class="input-group">
                                 <h3 class="panel-title">
                                     Done <span id="btnAddDone" class="glyphicon glyphicon-plus" style="cursor: pointer;" aria-hidden="true" data-toggle="modal" data-target="#dvAddTarefaDialog"></span>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="input-group" style="float: right;">
+                                <h3 class="panel-title">
+                                    <label id="lblUserName"><?php echo $Usuario->getNome(); ?></label> <span id="btnUserMenu" class="glyphicon glyphicon-off" style="cursor: pointer;" aria-hidden="true"></span>
                                 </h3>
                             </div>
                         </div>

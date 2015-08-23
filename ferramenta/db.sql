@@ -1,3 +1,13 @@
+CREATE TABLE usuario (
+    id bigserial NOT NULL,
+    nome text NOT NULL,
+    email text NOT NULL,
+    senha text NOT NULL,
+    ativo boolean DEFAULT true,
+
+    CONSTRAINT usuario_pkey PRIMARY KEY (id)
+);
+
 CREATE TABLE passos_metodo (
     id bigserial NOT NULL,
     nome text NOT NULL,
@@ -17,8 +27,12 @@ CREATE TABLE tarefa (
     engloba_dsl boolean DEFAULT false,
     engloba_template boolean DEFAULT false,
     col_kanban text NOT NULL,
+    usuario_id bigint NOT NULL,
 
-    CONSTRAINT tarefa_pkey PRIMARY KEY (id)
+    CONSTRAINT tarefa_pkey PRIMARY KEY (id),
+    CONSTRAINT tarefa_usuario_fkey FOREIGN KEY (usuario_id)
+        REFERENCES usuario (id) MATCH SIMPLE
+        ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
 CREATE TABLE tarefa_passos (
@@ -53,3 +67,5 @@ INSERT INTO passos_metodo(nome, tipo) VALUES('Testar as modifica&ccedil;&otilde;
 INSERT INTO passos_metodo(nome, tipo) VALUES('Aplicar as modifica&ccedil;&otilde;es nos templates correspondentes.', 'template');
 INSERT INTO passos_metodo(nome, tipo) VALUES('No bot&atilde;o "Run As" da inst&acirc;ncia nova do Eclipse, clicar em "JET Transformation".', 'template');
 INSERT INTO passos_metodo(nome, tipo) VALUES('Testar as modifica&ccedil;&otilde;es.', 'template');
+
+INSERT INTO usuario(nome, email, senha) VALUES('Bruno Arndt', 'bruno.arndt@dc.ufscar.br', '428366d66ec6cef0cefc4323f3689235');

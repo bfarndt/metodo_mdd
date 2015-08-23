@@ -62,6 +62,10 @@ function formAddReset()
 }
 
 $(function() {
+    $("#btnUserMenu").click(function() {
+        window.location.href = "deslogar.php"
+    });
+
     addTarefaDialog = $("#dvAddTarefaDialog");
 
     editTarefaDialog = $(addTarefaDialog)

@@ -1,6 +1,7 @@
 <?php
 
     include_once "PassoMetodo.class.php";
+    include_once "Usuario.class.php";
 
     class Tarefa
     {
@@ -15,6 +16,7 @@
         private $engloba_template;
         private $col_kanban;
         private $PassosMetodo;
+        private $Usuario;
 
         public function __construct()
         {
@@ -29,6 +31,8 @@
             $this->engloba_template = false;
             $this->col_kanban = "";
             $this->PassosMetodo = array();
+            $this->Usuario = new Usuario();
+            $this->Usuario = $this->Usuario->getUsuarioSession();
         }
 
         public function getId()
@@ -148,6 +152,11 @@
         public function clearPassosMetodo()
         {
             $this->PassosMetodo = array();
+        }
+
+        public function getUsuario()
+        {
+            return $this->Usuario;
         }
 
     }
