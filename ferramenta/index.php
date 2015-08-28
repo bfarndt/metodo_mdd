@@ -91,17 +91,17 @@
                                 </h3>
                             </div>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-1">
                             <div class="input-group">
                                 <h3 class="panel-title">
                                     Done <span id="btnAddDone" class="glyphicon glyphicon-plus" style="cursor: pointer;" aria-hidden="true" data-toggle="modal" data-target="#dvAddTarefaDialog"></span>
                                 </h3>
                             </div>
                         </div>
-                        <div class="col-lg-1">
+                        <div class="col-lg-2">
                             <div class="input-group" style="float: right;">
                                 <h3 class="panel-title">
-                                    <label id="lblUserName"><?php echo $Usuario->getNome(); ?></label> <span id="btnUserMenu" class="glyphicon glyphicon-off" style="cursor: pointer;" aria-hidden="true"></span>
+                                    <label id="lblUserName"><?php echo htmlentities($Usuario->getNome()); ?></label> <span id="btnUserMenu" class="glyphicon glyphicon-off" style="cursor: pointer;" aria-hidden="true"></span>
                                 </h3>
                             </div>
                         </div>

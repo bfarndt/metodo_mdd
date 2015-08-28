@@ -69,3 +69,4 @@ INSERT INTO passos_metodo(nome, tipo) VALUES('No bot&atilde;o "Run As" da inst&a
 INSERT INTO passos_metodo(nome, tipo) VALUES('Testar as modifica&ccedil;&otilde;es.', 'template');
 
 INSERT INTO usuario(nome, email, senha) VALUES('Bruno Arndt', 'bruno.arndt@dc.ufscar.br', '428366d66ec6cef0cefc4323f3689235');
+INSERT INTO usuario(nome, email, senha) VALUES('Daniel Lucrédio', 'dlucredio@gmail.com', '698dc19d489c4e4db73e28a713eab07b');
