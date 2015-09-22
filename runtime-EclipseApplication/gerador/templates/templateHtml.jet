@@ -96,18 +96,11 @@
 				</div>
 			<?php
 			}
+
+			<c:iterate select="$currentPage/forms" var="currentForm">
+				include "forms/<c:get select="$currentForm/@name" />.php";
+			</c:iterate>
 		?>
-		<c:iterate select="$currentPage/forms" var="currentForm">
-			<c:if test="(emf.eClass($currentForm)/@name = 'Form')">
-				<c:include template="templates/templateForm.jet" />
-			</c:if>
-			<c:if test="(emf.eClass($currentForm)/@name = 'FormReport')">
-				<c:include template="templates/templateFormReport.jet" />
-			</c:if>
-			<c:if test="(emf.eClass($currentForm)/@name = 'FormNewEntityOnly')">
-				<c:include template="templates/templateFormNewEntityOnly.jet" />
-			</c:if>
-		</c:iterate>
 	</div>
 	
 	<c:if test="($currentPage/@footer = 'true')">

@@ -66,6 +66,22 @@ such as ws:file, ws:folder and ws:project
 				<ws:file template="templates/templateEntityJS.jet" path="{$currentEntity/@name}.js" />
 			</c:iterate>
 		</ws:folder>
+
+		<ws:folder path="forms">
+			<c:iterate select="/Domainmodel/Page" var="currentPage">
+				<c:iterate select="$currentPage/forms" var="currentForm">
+					<c:if test="(emf.eClass($currentForm)/@name = 'Form')">
+						<ws:file template="templates/templateForm.jet" path="{$currentForm/@name}.php" />
+					</c:if>
+					<c:if test="(emf.eClass($currentForm)/@name = 'FormReport')">
+						<ws:file template="templates/templateFormReport.jet" path="{$currentForm/@name}.php" />
+					</c:if>
+					<c:if test="(emf.eClass($currentForm)/@name = 'FormNewEntityOnly')">
+						<ws:file template="templates/templateFormNewEntityOnly.jet" path="{$currentForm/@name}.php" />
+					</c:if>
+				</c:iterate>
+			</c:iterate>
+		</ws:folder>
 	</ws:folder>
 
 	<ws:file template="templates/templateSql.jet" path="db.sql"/>

@@ -1,0 +1,70 @@
+project "ProjetoMedicoIR"
+
+begin
+
+entity Medico {
+	nome: string
+	crm: string
+}
+
+form FormMedico {
+	get: true
+	post: true
+	put: true
+	delete: true
+	Medico
+}
+page PageMedico {
+	title: 'Cadastro de Médico'
+	header: true
+	footer: true
+	FormMedico
+}
+
+entity Paciente {
+	nome: string
+	cpf: string
+	data_nasc: date
+	endereco: string
+	cidade: string
+	estado: string
+}
+
+
+form FormPaciente {
+	get: true
+	post: true
+	put: true
+	delete: true
+	Paciente
+}
+
+page PagePaciente {
+	title: 'Cadastro de Paciente'
+	header: true
+	footer: true
+	FormPaciente
+}
+
+entity Medicamento {
+	nome: string
+	fabricante: string
+	dose: string
+}
+
+form FormMedicamento {
+	get: true
+	post: true
+	put: true
+	delete: true
+	Medicamento
+}
+
+page PageMedicamento {
+	title: 'Cadastro de Medicamento'
+	header: true
+	footer: true
+	FormMedicamento
+}
+
+end
