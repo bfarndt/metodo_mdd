@@ -31,6 +31,10 @@
         $Tarefa->setEnglobaModelo($_POST['tarefaEnglobaModelo']);
     }
 
+    if (isSet($_POST['tarefaEnglobaCriacao'])) {
+        $Tarefa->setEnglobaCriacao($_POST['tarefaEnglobaCriacao']);
+    }
+
     if (isSet($_POST['tarefaEnglobaDSL'])) {
         $Tarefa->setEnglobaDSL($_POST['tarefaEnglobaDSL']);
     }
@@ -44,4 +48,6 @@
     }
 
     $Tarefa = $TarefaDB->update($Tarefa);
+
+    echo json_encode(array("id" => $Tarefa->getId()));
 ?>

@@ -11,12 +11,13 @@ function addTarefaHtml(dataTarefa)
         .attr("id", dataTarefa.divId)
         .show()
         .appendTo($("#" + dataTarefa.currentCol))
-        .data("tarefa", dataTarefa.id);
+        .data("tarefa", dataTarefa.taskId);
 
     $(".btnDisplayTask", newTask).data("tarefa-div", dataTarefa.divId);
-    $(".btnDestroyTask", newTask).data("tarefa", dataTarefa.id);
+    $(".btnEditTask", newTask).data("tarefa", dataTarefa.taskId);
+    $(".btnDestroyTask", newTask).data("tarefa", dataTarefa.taskId);
 
-    $("#txtTaskId", newTask).val(dataTarefa.id);
+    $("#txtTaskId", newTask).val(dataTarefa.taskId);
 
     $("#lblBaseTarefaNome", newTask).html(dataTarefa.nome);
 
@@ -35,17 +36,20 @@ function addTarefaHtml(dataTarefa)
         $("#dvBaseTarefaPrazo", newTask).hide();
     }
 
-    if (dataTarefa.englobaModelo) {
-        if ( ! dataTarefa.englobaDSL) {
-            $(".sub_task_dsl", newTask).remove();
-        }
-
-        if ( ! dataTarefa.englobaTemplate) {
-            $(".sub_task_template", newTask).remove();
-        }
-    } else {
-        $(".sub_task_dsl", newTask).remove();
+    if ( ! dataTarefa.englobaModelo) {
         $(".sub_task_model", newTask).remove();
+    }
+
+    if ( ! dataTarefa.englobaCriacao) {
+        $(".sub_task_criacao", newTask).remove();
+    }
+
+    if ( ! dataTarefa.englobaDSL) {
+        $(".sub_task_dsl", newTask).remove();
+    }
+
+    if ( ! dataTarefa.englobaTemplate) {
+        $(".sub_task_template", newTask).remove();
     }
 
     $("input[type='checkbox']", newTask).each(function() {
@@ -57,8 +61,9 @@ function formAddReset()
 {
     $("#formAddTarefa", addTarefaDialog)[0].reset();
 
-    $("#dvInputDSL").hide();
-    $("#dvInputTemplate").hide();
+    $("#dvInputCriacao", addTarefaDialog).hide();
+    $("#dvInputDSL", addTarefaDialog).hide();
+    $("#dvInputTemplate", addTarefaDialog).hide();
 }
 
 $(function() {
@@ -84,24 +89,6 @@ $(function() {
     $("#lblAddTarefaDialogTitle", editTarefaDialog)
         .attr("id", "lblEditTarefaDialogTitle")
         .html("Editar Tarefa");
-
-    $("#dvInputDSL", editTarefaDialog)
-        .attr("id", "dvEditInputDSL")
-        .hide();
-
-    $("#dvInputTemplate", editTarefaDialog)
-        .attr("id", "dvEditInputTemplate")
-        .hide();
-
-    $("input[name='rdbModel']", editTarefaDialog).on("click", function() {
-        if ($(this).val() == "Sim") {
-            $("#dvEditInputDSL").show();
-            $("#dvEditInputTemplate").show();
-        } else {
-            $("#dvEditInputDSL").hide();
-            $("#dvEditInputTemplate").hide();
-        }
-    });
 
     $('.datepicker').datepicker({
         format: "dd/mm/yyyy"
@@ -138,14 +125,15 @@ $(function() {
         }
 
         var tarefaEnglobaModelo = $("input[name='rdbModel']:checked", addTarefaDialog).val() == "Sim";
-        var tarefaEnglobaDSL = $("input[name='rdbDSL']:checked", addTarefaDialog).val() == "Sim";
-        var tarefaEnglobaTemplate = ($("input[name='rdbTemplate']:checked", addTarefaDialog).val() == "Sim") || ! tarefaEnglobaModelo;
+        var tarefaEnglobaCriacao = $("input[name='rdbCriacao']:checked", addTarefaDialog).val() == "Sim";
+        var tarefaEnglobaDSL = ($("input[name='rdbDSL']:checked", addTarefaDialog).val() == "Sim");
+        var tarefaEnglobaTemplate = ($("input[name='rdbTemplate']:checked", addTarefaDialog).val() == "Sim") || ( ! tarefaEnglobaModelo && ! tarefaEnglobaCriacao && ! tarefaEnglobaDSL);
 
         $.ajax({
             url: "criarTask.php",
             method: "POST",
             cache: false,
-            data: "tarefaNome=" + tarefaNome + "&tempoGasto=" + tempoGasto + "&tempoEstimado=" + tempoEstimado + "&tarefaDescricao=" + tarefaDescricao + "&tarefaPrazo=" + tarefaPrazo + "&tarefaEnglobaModelo=" + tarefaEnglobaModelo + "&tarefaEnglobaDSL=" + tarefaEnglobaDSL + "&tarefaEnglobaTemplate=" + tarefaEnglobaTemplate + "&tarefaColKanban=" + currentCol,
+            data: "tarefaNome=" + tarefaNome + "&tempoGasto=" + tempoGasto + "&tempoEstimado=" + tempoEstimado + "&tarefaDescricao=" + tarefaDescricao + "&tarefaPrazo=" + tarefaPrazo + "&tarefaEnglobaModelo=" + tarefaEnglobaModelo + "&tarefaEnglobaCriacao=" + tarefaEnglobaCriacao + "&tarefaEnglobaDSL=" + tarefaEnglobaDSL + "&tarefaEnglobaTemplate=" + tarefaEnglobaTemplate + "&tarefaColKanban=" + currentCol,
             beforeSend: function(jqXHR, settings) {
                 $(addTarefaDialog).modal("hide");
 
@@ -178,7 +166,7 @@ $(function() {
                 var tarefaDivId = "dvTask" + tarefaId;
 
                 addTarefaHtml({
-                    id: tarefaId,
+                    taskId: tarefaId,
                     divId: tarefaDivId,
                     currentCol: currentCol,
                     nome: tarefaNome,
@@ -187,6 +175,7 @@ $(function() {
                     tempoEstimado: tempoEstimado,
                     prazo: tarefaPrazo,
                     englobaModelo: tarefaEnglobaModelo,
+                    englobaCriacao: tarefaEnglobaCriacao,
                     englobaDSL: tarefaEnglobaDSL,
                     englobaTemplate: tarefaEnglobaTemplate
                 });
@@ -307,31 +296,61 @@ $(function() {
         }
 
         var tarefaEnglobaModelo = $(".sub_task_model", dvTask).length > 0;
+        var tarefaEnglobaCriacao = $(".sub_task_criacao", dvTask).length > 0;
         var tarefaEnglobaDSL = $(".sub_task_dsl", dvTask).length > 0;
         var tarefaEnglobaTemplate = $(".sub_task_template", dvTask).length > 0;
+
+        console.log(dvTask);dvTask
+        console.log(tarefaEnglobaDSL);
+        console.log(tarefaEnglobaTemplate);
 
         if (tarefaEnglobaModelo) {
             $("#rdbModelSim", editTarefaDialog).prop('checked', true);
 
-            $("#dvEditInputDSL", editTarefaDialog).show();
-            $("#dvEditInputTemplate", editTarefaDialog).show();
-
-            if (tarefaEnglobaDSL) {
-                $("#rdbDSLSim", editTarefaDialog).prop('checked', true);
-            } else {
-                $("#rdbDSLNao", editTarefaDialog).prop('checked', true);
-            }
-
-            if (tarefaEnglobaTemplate) {
-                $("#rdbTemplateSim", editTarefaDialog).prop('checked', true);
-            } else {
-                $("#rdbTemplateNao", editTarefaDialog).prop('checked', true);
-            }
+            $("#rdbCriacaoNao", editTarefaDialog).prop('checked', true);
+            $("#dvInputCriacao", editTarefaDialog).hide();
+            $("#rdbDSLNao", editTarefaDialog).prop('checked', true);
+            $("#dvInputDSL", editTarefaDialog).hide();
+            $("#rdbTemplateNao", editTarefaDialog).prop('checked', true);
+            $("#dvInputTemplate", editTarefaDialog).hide();
         } else {
             $("#rdbModelNao", editTarefaDialog).prop('checked', true);
+            $("#dvInputCriacao", editTarefaDialog).show();
 
-            $("#dvEditInputDSL", editTarefaDialog).hide();
-            $("#dvEditInputTemplate", editTarefaDialog).hide();
+            if (tarefaEnglobaCriacao) {
+                $("#rdbCriacaoSim", editTarefaDialog).prop('checked', true);
+
+                $("#rdbDSLNao", editTarefaDialog).prop('checked', true);
+                $("#dvInputDSL", editTarefaDialog).hide();
+                $("#rdbTemplateNao", editTarefaDialog).prop('checked', true);
+                $("#dvInputTemplate", editTarefaDialog).hide();
+            } else {
+                $("#rdbCriacaoNao", editTarefaDialog).prop('checked', true);
+
+                $("#dvInputDSL", editTarefaDialog).show();
+
+                if (tarefaEnglobaDSL) {
+                    $("#rdbDSLSim", editTarefaDialog).prop('checked', true);
+
+                    $("#dvInputTemplate", editTarefaDialog).show();
+
+                    if (tarefaEnglobaTemplate) {
+                        $("#rdbTemplateSim", editTarefaDialog).prop('checked', true);
+                    } else {
+                        $("#rdbTemplateNao", editTarefaDialog).prop('checked', true);
+                    }
+                } else {
+                    $("#rdbDSLNao", editTarefaDialog).prop('checked', true);
+
+                    $("#dvInputTemplate", editTarefaDialog).show();
+
+                    if (tarefaEnglobaTemplate) {
+                        $("#rdbTemplateSim", editTarefaDialog).prop('checked', true);
+                    } else {
+                        $("#rdbTemplateNao", editTarefaDialog).prop('checked', true);
+                    }
+                }
+            }
         }
 
         $(editTarefaDialog).modal("show");
@@ -374,14 +393,15 @@ $(function() {
         }
 
         var tarefaEnglobaModelo = $("input[name='rdbModel']:checked", editTarefaDialog).val() == "Sim";
-        var tarefaEnglobaDSL = $("input[name='rdbDSL']:checked", editTarefaDialog).val() == "Sim";
-        var tarefaEnglobaTemplate = ($("input[name='rdbTemplate']:checked", editTarefaDialog).val() == "Sim") || ! tarefaEnglobaModelo;
+        var tarefaEnglobaCriacao = $("input[name='rdbCriacao']:checked", editTarefaDialog).val() == "Sim";
+        var tarefaEnglobaDSL = ($("input[name='rdbDSL']:checked", editTarefaDialog).val() == "Sim");
+        var tarefaEnglobaTemplate = ($("input[name='rdbTemplate']:checked", editTarefaDialog).val() == "Sim") || ( ! tarefaEnglobaModelo && ! tarefaEnglobaCriacao && ! tarefaEnglobaDSL);
 
         $.ajax({
             url: "editarTask.php",
             method: "POST",
             cache: false,
-            data: "tarefaId=" + tarefaId + "&tarefaNome=" + tarefaNome + "&tempoGasto=" + tempoGasto + "&tempoEstimado=" + tempoEstimado + "&tarefaDescricao=" + tarefaDescricao + "&tarefaPrazo=" + tarefaPrazo + "&tarefaEnglobaModelo=" + tarefaEnglobaModelo + "&tarefaEnglobaDSL=" + tarefaEnglobaDSL + "&tarefaEnglobaTemplate=" + tarefaEnglobaTemplate + "&tarefaColKanban=" + currentCol,
+            data: "tarefaId=" + tarefaId + "&tarefaNome=" + tarefaNome + "&tempoGasto=" + tempoGasto + "&tempoEstimado=" + tempoEstimado + "&tarefaDescricao=" + tarefaDescricao + "&tarefaPrazo=" + tarefaPrazo + "&tarefaEnglobaModelo=" + tarefaEnglobaModelo + "&tarefaEnglobaCriacao=" + tarefaEnglobaCriacao + "&tarefaEnglobaDSL=" + tarefaEnglobaDSL + "&tarefaEnglobaTemplate=" + tarefaEnglobaTemplate + "&tarefaColKanban=" + currentCol,
             beforeSend: function(jqXHR, settings) {
                 $(editTarefaDialog).modal("hide");
 
@@ -411,7 +431,7 @@ $(function() {
                 $(currentTask).remove();
 
                 addTarefaHtml({
-                    id: tarefaId,
+                    taskId: tarefaId,
                     divId: tarefaDivId,
                     currentCol: currentCol,
                     nome: tarefaNome,
@@ -420,6 +440,7 @@ $(function() {
                     tempoEstimado: tempoEstimado,
                     prazo: tarefaPrazo,
                     englobaModelo: tarefaEnglobaModelo,
+                    englobaCriacao: tarefaEnglobaCriacao,
                     englobaDSL: tarefaEnglobaDSL,
                     englobaTemplate: tarefaEnglobaTemplate
                 });
@@ -512,16 +533,71 @@ $(function() {
 
     $("#txtPrazo").datepicker();
 
+    $("#dvInputCriacao").hide();
     $("#dvInputDSL").hide();
     $("#dvInputTemplate").hide();
 
-    $("input[name='rdbModel']").click(function() {
+    $("input[name='rdbModel']", addTarefaDialog).click(function() {
         if ($(this).val() == "Sim") {
-            $("#dvInputDSL").show();
-            $("#dvInputTemplate").show();
+            $("#dvInputCriacao", addTarefaDialog).hide();
+            $("#dvInputDSL", addTarefaDialog).hide();
+            $("#dvInputTemplate", addTarefaDialog).hide();
+
+            $("#rdbCriacaoNao", addTarefaDialog).prop('checked', true);
         } else {
-            $("#dvInputDSL").hide();
-            $("#dvInputTemplate").hide();
+            $("#dvInputCriacao", addTarefaDialog).show();
+
+            $("#rdbCriacaoSim", addTarefaDialog).prop('checked', true);
+        }
+    });
+
+    $("input[name='rdbCriacao']", addTarefaDialog).click(function() {
+        if ($(this).val() == "Sim") {
+            $("#dvInputDSL", addTarefaDialog).hide();
+            $("#dvInputTemplate", addTarefaDialog).hide();
+
+            $("#rdbDSLNao", addTarefaDialog).prop('checked', true);
+            $("#rdbTemplateNao", addTarefaDialog).prop('checked', true);
+        } else {
+            $("#dvInputDSL", addTarefaDialog).show();
+
+            $("#rdbDSLSim", addTarefaDialog).prop('checked', true);
+
+            $("#dvInputTemplate", addTarefaDialog).show();
+
+            $("#rdbTemplateSim", addTarefaDialog).prop('checked', true);
+        }
+    });
+
+    $("input[name='rdbModel']", editTarefaDialog).click(function() {
+        if ($(this).val() == "Sim") {
+            $("#dvInputCriacao", editTarefaDialog).hide();
+            $("#dvInputDSL", editTarefaDialog).hide();
+            $("#dvInputTemplate", editTarefaDialog).hide();
+
+            $("#rdbCriacaoNao", editTarefaDialog).prop('checked', true);
+        } else {
+            $("#dvInputCriacao", editTarefaDialog).show();
+
+            $("#rdbCriacaoSim", editTarefaDialog).prop('checked', true);
+        }
+    });
+
+    $("input[name='rdbCriacao']", editTarefaDialog).click(function() {
+        if ($(this).val() == "Sim") {
+            $("#dvInputDSL", editTarefaDialog).hide();
+            $("#dvInputTemplate", editTarefaDialog).hide();
+
+            $("#rdbDSLNao", editTarefaDialog).prop('checked', true);
+            $("#rdbTemplateNao", editTarefaDialog).prop('checked', true);
+        } else {
+            $("#dvInputDSL", editTarefaDialog).show();
+
+            $("#rdbDSLSim", editTarefaDialog).prop('checked', true);
+
+            $("#dvInputTemplate", editTarefaDialog).show();
+
+            $("#rdbTemplateSim", editTarefaDialog).prop('checked', true);
         }
     });
 

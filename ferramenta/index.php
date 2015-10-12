@@ -245,7 +245,7 @@
                                         <div id="dvInputModel" class="row">
                                             <div class="col-lg-9">
                                                 <div class="input-group">
-                                                    <label>A tarefa engloba a inclus&atilde;o/altera&ccedil;&atilde;o de elementos do modelo (exemplo: classes ou atributos)?</label>
+                                                    <label>A tarefa engloba apenas a altera&ccedil;&atilde;o do modelo?</label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-1">
@@ -260,10 +260,28 @@
                                             </div>
                                         </div>
 
+                                        <div id="dvInputCriacao" class="row">
+                                            <div class="col-lg-9">
+                                                <div class="input-group">
+                                                    <label>A tarefa engloba apenas a cria&ccedil;&atilde;o de templates ou modifica&ccedil;&atilde;o de arquivos fixos?</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-1">
+                                                <div class="input-group">
+                                                    <input type="radio" id="rdbCriacaoSim" name="rdbCriacao" value="Sim"> Sim
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="input-group">
+                                                    <input type="radio" id="rdbCriacaoNao" name="rdbCriacao" value="Nao"> N&atilde;o
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div id="dvInputDSL" class="row">
                                             <div class="col-lg-9">
                                                 <div class="input-group">
-                                                    <label>Existe alguma caracter&iacute;stica dos novos elementos que n&atilde;o &eacute; suportado pelo modelo (exemplo: novo tipo de atributo)?</label>
+                                                    <label>A tarefa engloba a manuten&ccedil;&atilde;o no metamodelo?</label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-1">
@@ -281,7 +299,7 @@
                                         <div id="dvInputTemplate" class="row">
                                             <div class="col-lg-9">
                                                 <div class="input-group">
-                                                    <label>&Eacute; necess&aacute;rio a modifica&ccedil;&atilde;o de algum template?</label>
+                                                    <label>A tarefa engloba a manuten&ccedil;&atilde;o dos templates?</label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-1">

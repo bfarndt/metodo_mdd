@@ -31,7 +31,7 @@ class TarefaDB extends DB
     public function add($Tarefa)
     {
         $query = pg_query("INSERT INTO tarefa(
-                nome, descricao, tempo_gasto, tempo_estimado, prazo, engloba_modelo, engloba_dsl, engloba_template, col_kanban, usuario_id
+                nome, descricao, tempo_gasto, tempo_estimado, prazo, engloba_modelo, engloba_criacao, engloba_dsl, engloba_template, col_kanban, usuario_id
             ) VALUES (
                 " . (strlen($Tarefa->getNome()) < 1 ? "NULL" : "'" . $Tarefa->getNome() . "'") . ",
                 " . (strlen($Tarefa->getDescricao()) < 1 ? "NULL" : "'" . $Tarefa->getDescricao() . "'") . ",
@@ -39,6 +39,7 @@ class TarefaDB extends DB
                 " . (strlen($Tarefa->getTempoEstimado()) < 1 ? "NULL" : "'" . $Tarefa->getTempoEstimado() . "'") . ",
                 " . (strlen($Tarefa->getPrazo()) != 10 ? "NULL" : "'" . $Tarefa->getPrazo() . "'") . ",
                 " . $Tarefa->getEnglobaModelo() . ",
+                " . $Tarefa->getEnglobaCriacao() . ",
                 " . $Tarefa->getEnglobaDSL() . ",
                 " . $Tarefa->getEnglobaTemplate() . ",
                 '" . $Tarefa->getColKanban() . "',
@@ -58,6 +59,15 @@ class TarefaDB extends DB
 
         if ($Tarefa->getEnglobaModelo() == "true") {
             $PassoMetodo->setTipo("model");
+            $PassosMetodo = $PassoMetodoDB->get($PassoMetodo);
+
+            if ( ! $this->addPassoMetodo($Tarefa, $PassosMetodo)) {
+                return false;
+            }
+        }
+
+        if ($Tarefa->getEnglobaCriacao() == "true") {
+            $PassoMetodo->setTipo("criacao");
             $PassosMetodo = $PassoMetodoDB->get($PassoMetodo);
 
             if ( ! $this->addPassoMetodo($Tarefa, $PassosMetodo)) {
@@ -95,6 +105,7 @@ class TarefaDB extends DB
                 tempo_estimado = " . (strlen($Tarefa->getTempoEstimado()) < 1 ? "NULL" : "'" . $Tarefa->getTempoEstimado() . "'") . ",
                 prazo = " . (strlen($Tarefa->getPrazo()) != 10 ? "NULL" : "'" . $Tarefa->getPrazo() . "'") . ",
                 engloba_modelo = " . $Tarefa->getEnglobaModelo() . ",
+                engloba_criacao = " . $Tarefa->getEnglobaCriacao() . ",
                 engloba_dsl = " . $Tarefa->getEnglobaDSL() . ",
                 engloba_template = " . $Tarefa->getEnglobaTemplate() . ",
                 col_kanban = '" . $Tarefa->getColKanban() . "'
@@ -111,6 +122,15 @@ class TarefaDB extends DB
 
         if ($Tarefa->getEnglobaModelo() == "true") {
             $PassoMetodo->setTipo("model");
+            $PassosMetodo = $PassoMetodoDB->get($PassoMetodo);
+
+            if ( ! $this->addPassoMetodo($Tarefa, $PassosMetodo)) {
+                return false;
+            }
+        }
+
+        if ($Tarefa->getEnglobaCriacao() == "true") {
+            $PassoMetodo->setTipo("criacao");
             $PassosMetodo = $PassoMetodoDB->get($PassoMetodo);
 
             if ( ! $this->addPassoMetodo($Tarefa, $PassosMetodo)) {
@@ -187,7 +207,7 @@ class TarefaDB extends DB
 
         $query = pg_query("SELECT
                 id, nome, descricao, tempo_gasto, tempo_estimado, prazo, engloba_modelo,
-                engloba_dsl, engloba_template, col_kanban
+                engloba_criacao, engloba_dsl, engloba_template, col_kanban
             FROM tarefa
             WHERE usuario_id = " . $Tarefa->getUsuario()->getId() . "
             ORDER BY tarefa.id
@@ -204,6 +224,7 @@ class TarefaDB extends DB
                 $Tarefa->setTempoEstimado($row['tempo_estimado']);
                 $Tarefa->setPrazo($row['prazo']);
                 $Tarefa->setEnglobaModelo($row['engloba_modelo']);
+                $Tarefa->setEnglobaCriacao($row['engloba_criacao']);
                 $Tarefa->setEnglobaDSL($row['engloba_dsl']);
                 $Tarefa->setEnglobaTemplate($row['engloba_template']);
                 $Tarefa->setColKanban($row['col_kanban']);

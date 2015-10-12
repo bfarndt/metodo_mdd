@@ -24,6 +24,7 @@ CREATE TABLE tarefa (
     tempo_estimado text,
     prazo date,
     engloba_modelo boolean DEFAULT false,
+    engloba_criacao boolean DEFAULT false,
     engloba_dsl boolean DEFAULT false,
     engloba_template boolean DEFAULT false,
     col_kanban text NOT NULL,
@@ -49,23 +50,22 @@ CREATE TABLE tarefa_passos (
         ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-INSERT INTO passos_metodo(nome, tipo) VALUES('Fechar a inst&acirc;ncia atual do Eclipse.', 'dsl');
-INSERT INTO passos_metodo(nome, tipo) VALUES('Abrir o arquivo <strong>.xtex</strong> no projeto da DSL.', 'dsl');
-INSERT INTO passos_metodo(nome, tipo) VALUES('Modificar e salvar o Xtext de acordo com as necessidades da tarefa (caso tenha d&uacute;vidas sobre a sintaxe do Xtext, <a href="http://www.eclipse.org/Xtext/documentation/" target="_blank">clique aqui</a>).', 'dsl');
-INSERT INTO passos_metodo(nome, tipo) VALUES('Clicar com o bot&atilde;o direito sobre o arquivo <strong>.mwe2</strong> e na op&ccedil;&atilde;o "Run As", clicar em "MWE2 Workflow".', 'dsl');
-INSERT INTO passos_metodo(nome, tipo) VALUES('Abrir a pasta da inst&acirc;ncia nova do Eclipse e apagar a pasta <strong>.metadata</strong>.', 'dsl');
-INSERT INTO passos_metodo(nome, tipo) VALUES('No bot&atilde;o "Run As" do Eclipse, clicar em "Eclipse Application".', 'dsl');
-
-INSERT INTO passos_metodo(nome, tipo) VALUES('Modificar e salvar o Modelo de acordo com as necessidades da tarefa e seguindo as defini&ccedil;&otilde;es da DSL (Xtext).', 'model');
-INSERT INTO passos_metodo(nome, tipo) VALUES('No bot&atilde;o "Run As" da inst&acirc;ncia nova do Eclipse, clicar em "JET Transformation".', 'model');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Tentar modificar o Modelo de acordo com as necessidades da tarefa e seguindo as defini&ccedil;&otilde;es do Metamodelo.', 'model');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Tentar executar novamente a transforma&ccedil;&atilde;o.', 'model');
 INSERT INTO passos_metodo(nome, tipo) VALUES('Testar as modifica&ccedil;&otilde;es.', 'model');
+
+INSERT INTO passos_metodo(nome, tipo) VALUES('Utilizando o "Split JET Editor", abrir os templates correspondentes, deixando-os em uma view e os arquivos da IR em outra.', 'criacao');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Criar / Editar os arquivos utilizando o "Split JET Editor"', 'criacao');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Testar as modifica&ccedil;&otilde;es.', 'criacao');
+
+INSERT INTO passos_metodo(nome, tipo) VALUES('Refazer o deploy do Metamodelo', 'dsl');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Tentar modificar o Modelo de acordo com as necessidades da tarefa e seguindo as defini&ccedil;&otilde;es do Metamodelo.', 'dsl');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Tentar executar novamente a transforma&ccedil;&atilde;o.', 'dsl');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Testar as modifica&ccedil;&otilde;es.', 'dsl');
 
 INSERT INTO passos_metodo(nome, tipo) VALUES('Localizar e abrir os arquivos da IR que precisam ser modificados.', 'template');
 INSERT INTO passos_metodo(nome, tipo) VALUES('Utilizando o "Split JET Editor", abrir os templates correspondentes, deixando-os em uma view e os arquivos da IR em outra.', 'template');
-INSERT INTO passos_metodo(nome, tipo) VALUES('Modificar e salvar os arquivos da IR de acordo com as necessidades da tarefa.', 'template');
-INSERT INTO passos_metodo(nome, tipo) VALUES('Testar as modifica&ccedil;&otilde;es da IR.', 'template');
-INSERT INTO passos_metodo(nome, tipo) VALUES('Aplicar as modifica&ccedil;&otilde;es nos templates correspondentes.', 'template');
-INSERT INTO passos_metodo(nome, tipo) VALUES('No bot&atilde;o "Run As" da inst&acirc;ncia nova do Eclipse, clicar em "JET Transformation".', 'template');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Modificar e salvar os arquivos de acordo com as necessidades da tarefa.', 'template');
 INSERT INTO passos_metodo(nome, tipo) VALUES('Testar as modifica&ccedil;&otilde;es.', 'template');
 
 INSERT INTO usuario(nome, email, senha) VALUES('Bruno Arndt', 'bruno.arndt@dc.ufscar.br', '428366d66ec6cef0cefc4323f3689235');

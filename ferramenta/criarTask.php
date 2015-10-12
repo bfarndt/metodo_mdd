@@ -11,6 +11,7 @@
     $Tarefa->setDescricao($_POST['tarefaDescricao']);
     $Tarefa->setPrazo($_POST['tarefaPrazo']);
     $Tarefa->setEnglobaModelo($_POST['tarefaEnglobaModelo']);
+    $Tarefa->setEnglobaCriacao($_POST['tarefaEnglobaCriacao']);
     $Tarefa->setEnglobaDSL($_POST['tarefaEnglobaDSL']);
     $Tarefa->setEnglobaTemplate($_POST['tarefaEnglobaTemplate']);
     $Tarefa->setColKanban($_POST['tarefaColKanban']);

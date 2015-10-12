@@ -12,6 +12,7 @@
         private $tempo_estimado;
         private $prazo;
         private $engloba_modelo;
+        private $engloba_criacao;
         private $engloba_dsl;
         private $engloba_template;
         private $col_kanban;
@@ -27,6 +28,7 @@
             $this->tempo_estimado = "";
             $this->prazo = "";
             $this->engloba_modelo = false;
+            $this->engloba_criacao = false;
             $this->engloba_dsl = false;
             $this->engloba_template = false;
             $this->col_kanban = "";
@@ -107,6 +109,16 @@
         public function setEnglobaModelo($engloba_modelo)
         {
             $this->engloba_modelo = $engloba_modelo;
+        }
+
+        public function getEnglobaCriacao()
+        {
+            return $this->engloba_criacao;
+        }
+
+        public function setEnglobaCriacao($engloba_criacao)
+        {
+            $this->engloba_criacao = $engloba_criacao;
         }
 
         public function getEnglobaDSL()
