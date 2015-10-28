@@ -132,7 +132,7 @@
                                                                 <span class="glyphicon glyphicon-minus btnDisplayTask" style="cursor: pointer;" aria-hidden="true" data-tarefa-div="dvTask<?php echo $Tarefa->getId(); ?>"></span>
                                                             </div>
                                                             <div class="col-lg-5">
-                                                                <h3 id="lblBaseTarefaNome" class="panel-title"><?php echo $Tarefa->getNome(); ?></h3>
+                                                                <h3 id="lblBaseTarefaNome" class="panel-title"><?php echo htmlentities($Tarefa->getNome()); ?></h3>
                                                                 <input type="hidden" name="txtTaskId" id="txtTaskId" value="<?php echo $Tarefa->getId(); ?>">
                                                             </div>
                                                             <div id="dvBaseTarefaTempos" class="col-lg-4">
@@ -147,9 +147,9 @@
                                                     <div class="panel-body">
                                                         <ul class="list-group">
                                                             <li id="dvBaseTarefaDesc" class="list-group-item"<?php if (strlen($Tarefa->getDescricao()) < 1) { ?>style="display: none;"<?php } ?>>
-                                                                <?php echo $Tarefa->getDescricao(); ?>
+                                                                <?php echo htmlentities($Tarefa->getDescricao()); ?>
                                                             </li>
-                                                            <li id="dvBaseTarefaPrazo" class="list-group-item"<?php if (strlen($Tarefa->getDescricao()) < 1) { ?>style="display: none;"<?php } ?>>
+                                                            <li id="dvBaseTarefaPrazo" class="list-group-item"<?php if (strlen($Tarefa->getPrazo()) < 1) { ?>style="display: none;"<?php } ?>>
                                                                 <strong>Prazo</strong>: <?php echo $Tarefa->getPrazo(); ?>
                                                             </li>
                                                             <li id="dvBaseTarefaBody" class="list-group-item">
