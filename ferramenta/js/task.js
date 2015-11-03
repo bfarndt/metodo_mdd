@@ -290,7 +290,9 @@ $(function() {
         }
 
         if ($("#dvBaseTarefaPrazo", dvTask).is(":visible")) {
-            $("#txtPrazo", editTarefaDialog).val($("#dvBaseTarefaPrazo", dvTask).html());
+            var txtPrazo = $("#dvBaseTarefaPrazo", dvTask).html();
+            txtPrazo = txtPrazo.replace("<strong>").replace("</strong>");
+            $("#txtPrazo", editTarefaDialog).val();
         } else {
             $("#txtPrazo", editTarefaDialog).val("");
         }
