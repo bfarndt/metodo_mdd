@@ -9,7 +9,7 @@
         <div class="container theme-showcase" role="main">
             <div class="page-header">
                 <h1>
-                    Home
+                    Downloads
                 </h1>
             </div>
         </div>
