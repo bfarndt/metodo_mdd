@@ -1,5 +1,4 @@
 <?php
-    $imgFolder = $sysPath . "/img/";
     $experimento = array(
         array(
             "id" => "intoducao",

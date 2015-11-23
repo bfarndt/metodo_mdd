@@ -9,6 +9,8 @@
     $path = implode("/", $path);
     $sysPath = $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["HTTP_HOST"] . $path;
 
+    $imgFolder = $sysPath . "/img/";
+
     $menu = array(
         "/index.php" => "Home",
         "/introducao_mdd.php" => "Introdu&ccedil;&atilde;o ao MDD",
