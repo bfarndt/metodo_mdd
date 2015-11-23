@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jet.jet2Transformation">
+<stringAttribute key="org.eclipse.jet.id" value="my.jet.transformation"/>
+<intAttribute key="org.eclipse.jet.logFilterLevel" value="3"/>
+<stringAttribute key="org.eclipse.jet.mappingFile" value="my.project.jet/mapping.txt"/>
+<stringAttribute key="org.eclipse.jet.source" value="my.project.jet2/src-gen/output.xmi"/>
+</launchConfiguration>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contents projectName="my.project.jet2">
+    <extended:elements name="String"/>
+    <extended:elements name="my.company.blog">
+        <extended:elements importedNamespace="java.lang.*"/>
+        <extended:elements name="Blog">
+            <extended:features name="title"/>
+            <extended:features many="true" name="posts"/>
+        </extended:elements>
+        <extended:elements name="HasAuthor">
+            <extended:features name="author"/>
+        </extended:elements>
+        <extended:elements name="Post">
+            <extended:features name="title"/>
+            <extended:features name="content"/>
+            <extended:features many="true" name="comments"/>
+        </extended:elements>
+        <extended:elements name="Comment">
+            <extended:features name="content"/>
+        </extended:elements>
+    </extended:elements>
+</contents>

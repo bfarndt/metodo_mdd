@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: my.jet.transformation
+Bundle-SymbolicName: my.jet.transformation;singleton:=true
+Bundle-Version: 1.0.0
+Require-Bundle: org.eclipse.jet,
+ org.example.domainmodel;bundle-version="1.0.0"
+Bundle-ClassPath: .,bin/
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

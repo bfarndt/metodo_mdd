@@ -1,0 +1,20 @@
+----------------------------------------------------------------
+Thu Nov 06 15:48:05 BRST 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-0149-8638-6ed2-ffffa11c7b11 
+on database directory /home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/derbyDatabases/WebDomainDB with class loader WebappClassLoader
+  context: /ProjetoTeste
+  delegate: false
+  repositories:
+    /WEB-INF/classes/
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@67a685ae
+ 
+Loaded from file:/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ProjetoTeste/WEB-INF/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_71-b14
+user.dir=/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3
+os.name=Linux
+os.arch=amd64
+os.version=3.13.0-35-generic
+derby.system.home=./derbyDatabases
+Database Class Loader started - derby.database.classpath=''

@@ -1,0 +1,10 @@
+<html>
+<head><title>teste</title></head>
+
+<?php
+
+?>
+
+<c:iterate select="/Domainmodel/Entity" var="e">
+Achei uma entidade! Seu nome é: <c:get select="$e/@Name" />
+</c:iterate>

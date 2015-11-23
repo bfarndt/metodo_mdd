@@ -1,0 +1,14 @@
+<html>
+<head><title>teste</title></head>
+
+<?php
+
+?>
+
+Achei uma entidade! Seu nome é: <c:get select="$e/@name" />
+
+<c:iterate select="$e/Feature" var="f">
+Achei um feature! <c:get select="$f/@name" /> do tipo <c:get select="$f/type/@name" />
+</c:iterate>
+
+</c:iterate>
