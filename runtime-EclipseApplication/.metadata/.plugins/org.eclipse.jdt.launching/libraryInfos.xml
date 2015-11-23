@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="/var/www/html/pacoteExperimento.v3/eclipse" version="1.7.0_71">
+<bootpath>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/resources.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/rt.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/jsse.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/jce.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/charsets.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/jfr.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/var/www/html/pacoteExperimento.v3/eclipse/jre" version="1.7.0_71">
+<bootpath>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/resources.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/rt.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/jsse.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/jce.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/charsets.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/jfr.jar"/>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/var/www/html/pacoteExperimento.v3/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

@@ -1,0 +1,5 @@
+<ws:project name="{$theConfiguration/@project}">
+	<ws:folder path="scripts">
+		<ws:file path="create.sql" template="templates/persistence/daos/derby/sql/createDerby.sql.jet" />
+	</ws:folder>
+</ws:project>

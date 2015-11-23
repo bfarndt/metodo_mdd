@@ -1,0 +1,10 @@
+<context path="/ProjetoTeste">         
+         <!-- Datasource for Derby database -->
+         <Resource name="jdbc/WebDomainDB"
+              type="javax.sql.DataSource"  auth="Container"
+              description="Derby database for the Web Domain"
+              maxActive="100" maxIdle="30" maxWait="10000"
+              username="" password="" 
+              driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
+              url="jdbc:derby:WebDomainDB"/>
+</context>

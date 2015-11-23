@@ -1,0 +1,10 @@
+<%-- Depends: common/common.jet --%>
+
+<%-- Generate messages resource file --%>
+<ws:project name="{$theConfiguration/@project}">
+	<ws:folder path="{$theConfiguration/@srcfolder}">
+		<java:package name="{$theConfiguration/@resourcesPackage}">
+			<java:resource name="messages.properties" template="templates/persistence/resources/files/messages.properties.jet" />
+		</java:package>
+	</ws:folder>
+</ws:project>

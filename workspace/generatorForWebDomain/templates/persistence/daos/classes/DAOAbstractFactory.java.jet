@@ -1,0 +1,11 @@
+package <c:get select="$theConfiguration/@daosPackage" />;
+
+<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+import <c:get select="$userType/@fullDaoClassName" />;
+</c:iterate>
+
+public abstract class <c:get select="$theConfiguration/@daoAbstractFactoryClass" /> {
+<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+    public abstract <c:get select="$userType/@daoClass" /> get<c:get select="$userType/@daoClass" />();
+</c:iterate>
+}

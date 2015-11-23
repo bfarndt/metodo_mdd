@@ -1,0 +1,27 @@
+<%-- Depends: common/common.jet --%>
+<c:if test="$featuresModel/WebDomainFeatures/@userContent = 'true'">
+<ws:project name="{$theConfiguration/@project}">
+	<ws:folder path="{$theConfiguration/@srcfolder}">
+		<java:package name="generated.usercontent">
+			<java:class name="UserContent" template="templates/userContent/files/UserContent.java.jet" />
+			<java:class name="UserContentActions" template="templates/userContent/files/UserContentActions.java.jet" />
+			<java:class name="UserContentDAO" template="templates/userContent/files/UserContentDAO.java.jet" />
+			<java:class name="UserContentDAOAbstractFactory" template="templates/userContent/files/UserContentDAOAbstractFactory.java.jet" />
+			<java:class name="DefaultUserContentDAOFactoryProvider" template="templates/userContent/files/DefaultUserContentDAOFactoryProvider.java.jet" />
+		</java:package>
+		<java:package name="generated.usercontent.derby">
+			<java:class name="DerbyUserContentDAO" template="templates/userContent/files/DerbyUserContentDAO.java.jet" />
+			<java:class name="DerbyUserContentDAOFactory" template="templates/userContent/files/DerbyUserContentDAOFactory.java.jet" />
+		</java:package>
+	</ws:folder>
+<c:if test="$featuresModel/WebDomainFeatures/@moderation = 'true'">
+	<ws:folder path="{$theConfiguration/@webfolder}">
+		<ws:folder path="{$theConfiguration/@webpath}">
+			<ws:file path="moderation.jsp" template="templates/userContent/files/moderation.jsp.jet" />
+		</ws:folder>
+	</ws:folder>
+</c:if>
+</ws:project>
+
+
+</c:if>

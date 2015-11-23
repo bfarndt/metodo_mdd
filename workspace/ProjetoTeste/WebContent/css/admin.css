@@ -1,0 +1,96 @@
+/* @CHARSET "ISO-8859-1"; */
+
+table.adminMainTable {
+    border: 1px solid #000000;
+}
+
+td.adminMainTitle {
+    font-size: xx-large;
+    text-align: center;
+    background-color: #CCFFCC;
+}
+
+td.menu {
+    width: 200px;
+    background-color: #CCFFCC;
+    vertical-align: top;
+}
+td.mainArea {
+    font-size: large;
+    text-align: left;
+    vertical-align: top;
+}
+div.userContentTitle {
+	font-size: medium;
+	color: #005500;
+	text-align: center;
+	background: #AAEEAA;
+}
+
+div.userContent {
+	border: 1px solid #000000;
+	margin: 10px;
+	padding: 5px;
+}
+
+span.userContentDate {
+	font-size: small;
+	color: #005500;
+}
+
+span.userContentName {
+	font-size: small;
+	color: #000000;
+	font-weight: bold;
+	font-style: italic;
+}
+
+div.userContentTextTitle {
+	font-size: medium;
+	color: #000000;
+	background: #DDDDDD;
+	padding-left: 5px;
+	font-weight: bold;
+}
+
+div.userContentText {
+	font-size: small;
+	font-style: italic;
+	color: #555555;
+	background: #EEEEEE;
+	padding: 8px;
+}
+div.moderationActions {
+	text-align: center;
+	padding: 10px;
+}
+a.button {
+   border-top: 2px solid #eee;
+   border-left: 2px solid #eee;
+   border-bottom: 2px solid #999;
+   border-right: 2px solid #999;
+   background: #ccc;
+   text-decoration: none;
+   color: black;
+   padding: 3px;
+}
+a.button:visited {
+   border-top: 2px solid #eee;
+   border-left: 2px solid #eee;
+   border-bottom: 2px solid #999;
+   border-right: 2px solid #999;
+   background: #ccc;
+   text-decoration: none;
+   color: black;
+   padding: 3px;
+}
+a.button:active {
+   border-top: 2px solid #999;
+   border-left: 2px solid #999;
+   border-bottom: 2px solid #eee;
+   border-right: 2px solid #eee;
+   background: #aaa;
+   text-decoration: none;
+   color: black;
+   padding: 3px;
+}

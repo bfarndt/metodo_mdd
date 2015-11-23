@@ -1,0 +1,148 @@
+project "projTRILO"
+
+begin
+
+entity Prova {
+	pontuacao_maxima: int
+}
+
+entity ProvaNomeacao {
+	id_prova: Prova
+	transcricao: string
+	imagem: string
+	nome: string
+	pontuacao_maxima: int
+}
+
+entity ProvaSintaxe {
+	id_prova: Prova
+	imagem: string
+	nome: string
+	pontuacao_maxima: int
+}
+
+entity ProvaSequencia {
+	id_prova: Prova
+	pontuacao_maxima: int
+}
+
+entity ProvaSequenciaImagens {
+	id_prova_sequencia: ProvaSequencia
+	imagem: string
+	ordem: int
+}
+
+entity ProvaOrdem {
+	id_prova: Prova
+	ordem: string
+	pontuacao_maxima: int
+}
+
+entity ProvaOrdemImagens {
+	id_prova_ordem: ProvaOrdem
+	imagem: string
+	correta: boolean
+}
+
+entity ProvaAbsurdo {
+	id_prova: Prova
+	imagem: string
+	pontuacao_maxima: int
+}
+
+entity Usuario {
+	nome: string
+	email: string
+	email_relatorio: string
+	senha: string
+	crfa: string
+}
+
+entity Paciente {
+	foto: string
+	nome: string
+	nome_mae: string
+	telefone: string
+	data_nasc: date
+	qtde_semanas_nasc: int
+	problema_parto: string
+	parto_normal: boolean
+	gemeos: boolean
+	inflamacao_ouvido: boolean
+	problemas_respiratorios: boolean
+	teve_desnutricao: boolean
+	anemia: boolean
+	problema_familia_ling: string
+	data_cadastro: date
+}
+
+entity QuestionarioPais {
+	id_paciente: Paciente
+	troca_sons: boolean
+	troca_sons_mesma_idade: boolean
+	forma_frases: boolean
+	forma_frases_qtde_palavras: int
+	perguntas_pronomes: boolean
+	frase_utiliza_artigos: boolean
+	frase_correta_tempo_verbal: boolean
+	compreende_palavras_frases: boolean
+	escolhe_corretamente_palavras: boolean
+	conta_historia_coerencia: boolean
+	faz_pergunta_coerente: boolean
+}
+
+entity Triagem {
+	id_paciente: Paciente
+	pontuacao: int
+}
+
+entity TriagemNomeacao {
+	id_triagem: Triagem
+	id_prova_nomeacao: ProvaNomeacao
+	nomeacao: string
+	pontuacao: int
+}
+
+entity TriagemNomeacaoErrosFonetica {
+	id_triagem_nomeacao: TriagemNomeacao
+	fonema: string
+	tipo_troca: string
+	substituicao: string
+}
+
+entity TriagemSintaxe {
+	id_triagem: Triagem
+	id_prova_sintaxe: ProvaSintaxe
+	frase: string
+	frase_formulada: string
+	utilizou_artigos: string
+	utilizou_elem_ligacao:string
+	utilizou_adjetivos: string
+	pontuacao: int
+}
+
+entity TriagemSequencia {
+	id_triagem: Triagem
+	id_prova_sequencia: ProvaSequencia
+	ordenou_corretamente: boolean
+	narrou_sequencia: boolean
+	narrativa_coerente: boolean
+	precisou_ajuda: string
+	pontuacao: int
+}
+
+entity TriagemOrdem {
+	id_triagem: Triagem
+	id_prova_ordem: ProvaOrdem
+	acertou: boolean
+	pontuacao: int
+}
+
+entity TriagemAbsurdo {
+	id_triagem: Triagem
+	id_prova_absurdo: ProvaAbsurdo
+	identificou: string
+	pontuacao: int
+}
+
+end

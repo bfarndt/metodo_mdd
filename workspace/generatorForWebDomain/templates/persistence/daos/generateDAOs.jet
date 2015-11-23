@@ -1,0 +1,41 @@
+<%-- Depends: common/common.jet --%>
+<%-- Uses: beans/generateBeans.jet --%>
+
+<ws:project name="{$theConfiguration/@project}">
+	<ws:folder path="{$theConfiguration/@srcfolder}">
+		<java:package name="{$theConfiguration/@daosPackage}">
+			<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+				<java:class name="{$userType/@daoClass}" template="templates/persistence/daos/classes/DAOAbstractClass.java.jet" />
+			</c:iterate>    
+		</java:package>
+	</ws:folder>
+</ws:project>
+
+<%-- Generate DAO abstract factory --%>
+<ws:project name="{$theConfiguration/@project}">
+	<ws:folder path="{$theConfiguration/@srcfolder}">
+		<java:package name="{$theConfiguration/@daosPackage}">
+			<java:class name="{$theConfiguration/@daoAbstractFactoryClass}" template="templates/persistence/daos/classes/DAOAbstractFactory.java.jet" />
+		</java:package>
+	</ws:folder>
+</ws:project>
+
+<%-- Generate Derby Concrete DAOs --%>
+<c:include template="templates/persistence/daos/derby/generateDerbyDAOs.jet" />
+<%-- Include other concrete DAOs here (ex: Oracle, Postgres, Mysql, etc) --%>
+<%--
+<c:include template="templates/persistence/daos/mysql/generateMySQLDAOs.jet" />
+<c:include template="templates/persistence/daos/mssql/generateMSSQLDAOs.jet" />
+--%>
+
+<%-- Generate DefaultDAOFactoryProvider --%>
+<%-- Removed. I think it is better if DefaultDAOFactoryProvider remains outside the generated packages --%>
+<%-- 
+<ws:project name="{$theConfiguration/@project}">
+	<ws:folder path="{$theConfiguration/@srcfolder}">
+		<java:package name="{$theConfiguration/@daosPackage}">
+			<java:class name="{$theConfiguration/@defaultDAOFactoryProviderClass}" template="templates/persistence/daos/classes/DefaultDAOFactoryProvider.java.jet" />
+		</java:package>
+	</ws:folder>
+</ws:project>
+--%>

@@ -1,0 +1,39 @@
+#dvBaseTarefaTempos {
+    text-align: right;
+}
+.col_kanban {
+    vertical-align: top;
+    border-left: 1px solid #e8e8e8;
+    overflow: auto;
+}
+
+.task_done {
+    text-decoration: line-through;
+}
+
+.panel-heading {
+    cursor: pointer;
+}
+
+.alert_modal {
+    border-bottom: 1px solid #a94442;
+}
+
+.warning_modal_title {
+    border-bottom: 1px solid #66512c;
+}
+
+.warning_modal_footer {
+    border-top: 1px solid #66512c;
+}
+
+body {
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+body > .container {
+    padding: 0px;
+    width: 100%;
+}

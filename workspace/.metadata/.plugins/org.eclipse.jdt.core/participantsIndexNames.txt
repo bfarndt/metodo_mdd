@@ -1,0 +1,33 @@
+INDEX VERSION 1.127
+/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1570873924.index
+/ProjetoTeste/src
+/home/daniel/Área de Trabalho/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4217350359.index
+/ProjetoTeste/src
+/home/daniel/Área de Trabalho/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1245808873.index
+/ProjetoTeste/src
+/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/109685540.index
+/ProjetoTeste/src
+/home/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4217350359.index
+/ProjetoTeste/src
+/home/daniel/Área de Trabalho/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/109685540.index
+/ProjetoTeste/src
+/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1570873924.index
+/ProjetoTeste/src
+/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/109685540.index
+/ProjetoTeste/src
+/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1245808873.index
+/ProjetoTeste/src
+/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4217350359.index
+/ProjetoTeste/src
+/home/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1245808873.index
+/ProjetoTeste/src
+/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4217350359.index
+/ProjetoTeste/src
+/home/daniel/Documentos/experimentoMigracao2014/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1245808873.index
+/ProjetoTeste/src
+/home/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1570873924.index
+/ProjetoTeste/src
+/home/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/109685540.index
+/ProjetoTeste/src
+/home/daniel/Área de Trabalho/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1570873924.index
+/ProjetoTeste/src

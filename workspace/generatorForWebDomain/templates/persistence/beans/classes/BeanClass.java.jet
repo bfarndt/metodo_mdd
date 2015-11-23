@@ -1,0 +1,75 @@
+<%-- Selected variable: userType --%>
+
+package <c:get select="$theConfiguration/@beansPackage" />;
+
+/* Esta classe foi gerada! */
+public class <c:get select="$userType/@name" /> {
+	// id field
+	private <c:get select="$userType/@idFieldType" /> <c:get select="$userType/@idField" />;
+
+	// fields
+<c:iterate select="$userType/attributes" var="anAttribute">
+	private <c:get select="$anAttribute/@javaType" /> <c:get select="$anAttribute/@name" />;
+</c:iterate>
+
+	// references
+<c:iterate select="$userType/referenceList" var="aReference">
+	private <c:get select="$aReference/@javaType" /> <c:get select="$aReference/@name" />;
+</c:iterate>
+
+	// default constructor
+	public <c:get select="$userType/@name" />() {
+	}
+	
+	// id fields setter and getter
+	public void <c:get select="$userType/@idFieldSetter" />(<c:get select="$userType/@idFieldType" /> <c:get select="$userType/@idField" />) { this.<c:get select="$userType/@idField" /> = <c:get select="$userType/@idField" />; }    
+	public <c:get select="$userType/@idFieldType" /> <c:get select="$userType/@idFieldGetter" />() { return this.<c:get select="$userType/@idField" />; }    
+
+	// fields setters and getters
+<c:iterate select="$userType/attributes" var="anAttribute">
+	public void <c:get select="$anAttribute/@javaSetter" />(<c:get select="$anAttribute/@javaType" /> <c:get select="$anAttribute/@name" />) { this.<c:get select="$anAttribute/@name" /> = <c:get select="$anAttribute/@name" />; }    
+	public <c:get select="$anAttribute/@javaType" /> <c:get select="$anAttribute/@javaGetter" />() { return this.<c:get select="$anAttribute/@name" />; }    
+</c:iterate>
+
+	// references setters and getters
+<c:iterate select="$userType/referenceList" var="aReference">
+	public void <c:get select="$aReference/@javaSetter" />(<c:get select="$aReference/@javaType" /> <c:get select="$aReference/@name" />) { this.<c:get select="$aReference/@name" /> = <c:get select="$aReference/@name" />; }    
+	public <c:get select="$aReference/@javaType" /> <c:get select="$aReference/@javaGetter" />() { return this.<c:get select="$aReference/@name" />; }    
+</c:iterate>
+
+<%  String strTypeSummaryJavaCommand = "";
+    webDomainAdministrationSubDomain.Type t = (webDomainAdministrationSubDomain.Type)context.getVariable("userType");
+    String typeSummary = t.getTypeSummary();
+    int index1 = typeSummary.indexOf("{");
+    int index2 = typeSummary.indexOf("}");
+    while(index1 != -1 && index2 != -1) {
+        String prefix = typeSummary.substring(0,index1);
+        String fieldName = typeSummary.substring(index1+1, index2);
+        if(fieldName.equals("id"))
+            fieldName = "get" + t.getName() + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1);
+        else
+            fieldName = "get" + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1);
+        if(prefix.length() > 0) strTypeSummaryJavaCommand += "\""+prefix+"\" + ";
+        strTypeSummaryJavaCommand += fieldName + "() + ";
+        typeSummary = typeSummary.substring(index2+1);
+        index1 = typeSummary.indexOf("{");
+        index2 = typeSummary.indexOf("}");
+    }
+    if(typeSummary.length() > 0)
+        strTypeSummaryJavaCommand += "\"" + typeSummary + "\"";
+    if(strTypeSummaryJavaCommand.endsWith(" + "))
+        strTypeSummaryJavaCommand = strTypeSummaryJavaCommand.substring(0,strTypeSummaryJavaCommand.length()-3);  
+    %>
+    // summary getter
+    public String getSummary() {
+        return <%=strTypeSummaryJavaCommand%>;
+    }
+    // generic id getter
+    public long getId() {
+        return <c:get select="$userType/@idFieldGetter" />();
+    }
+    
+    public String toString() {
+        return getSummary();
+    }    
+}

@@ -1,0 +1,1029 @@
+!SESSION 2015-10-30 23:21:15.233 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /var/www/html/pacoteExperimento.v3/workspace/../runtime-EclipseApplication -dev file:/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/dev.properties -os linux -ws gtk -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.ui 4 0 2015-10-30 23:23:35.077
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /ModelosDeEntrada
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2137)
+	at org.eclipse.core.internal.resources.Container.getFile(Container.java:167)
+	at br.ufscar.dc.splitjeteditor.views.SplitJETEditorView.loadMappingFile(SplitJETEditorView.java:544)
+	at br.ufscar.dc.splitjeteditor.views.SplitJETEditorView.updateConfigComposite(SplitJETEditorView.java:465)
+	at br.ufscar.dc.splitjeteditor.views.SplitJETEditorView.buttonTurnOnSplitEditingSelected(SplitJETEditorView.java:282)
+	at br.ufscar.dc.splitjeteditor.views.SplitJETEditorView.access$5(SplitJETEditorView.java:274)
+	at br.ufscar.dc.splitjeteditor.views.SplitJETEditorView$5.mouseUp(SplitJETEditorView.java:639)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:220)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4454)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1388)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3799)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3409)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 0 2015-10-30 23:23:41.788
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /ProjetoMedicoModelo
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2137)
+	at org.eclipse.core.internal.resources.Container.getFile(Container.java:167)
+	at br.ufscar.dc.splitjeteditor.views.SplitJETEditorView.loadMappingFile(SplitJETEditorView.java:544)
+	at br.ufscar.dc.splitjeteditor.views.SplitJETEditorView.access$2(SplitJETEditorView.java:537)
+	at br.ufscar.dc.splitjeteditor.views.SplitJETEditorView$2.widgetSelected(SplitJETEditorView.java:594)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4454)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1388)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3799)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3409)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-10-30 23:27:15.415
+!MESSAGE The debug port 10000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-10-30 23:27:15.416
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.jet 4 0 2015-10-30 23:31:34.417
+!MESSAGE Error! Disable split editing before running JET transformation
+
+!ENTRY org.eclipse.jface 2 0 2015-10-30 23:31:53.771
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-10-30 23:31:53.771
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7f1e80ca,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2b998ef9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2015-11-02 18:57:08.263 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /var/www/html/pacoteExperimento.v3/workspace/../runtime-EclipseApplication -dev file:/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/dev.properties -os linux -ws gtk -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-11-02 18:58:53.007
+!MESSAGE The debug port 10000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-11-02 18:58:53.017
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.771
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.777
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.780
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.783
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.786
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.789
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.792
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.795
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.799
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.802
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.805
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.808
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.811
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jet 4 2 2015-11-02 19:01:43.813
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jet".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.next(XPathTokenScanner.java:314)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner$WhitespaceRule.evaluate(XPathTokenScanner.java:206)
+	at org.eclipse.jet.internal.xpath.parser.XPathTokenScanner.nextToken(XPathTokenScanner.java:324)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.scanTokens(XPathParser.java:103)
+	at org.eclipse.jet.internal.xpath.parser.XPathParser.<init>(XPathParser.java:81)
+	at org.eclipse.jet.internal.xpath.XPathImpl.compile(XPathImpl.java:99)
+	at org.eclipse.jet.XPathContextExtender.compileXPath(XPathContextExtender.java:250)
+	at org.eclipse.jet.XPathContextExtender.resolveAsObject(XPathContextExtender.java:597)
+	at org.eclipse.jet.internal.taglib.control.IfTag.doEvalCondition(IfTag.java:60)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag$1.doRun(SafeConditionalRuntimeTag.java:69)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeConditionalRuntimeTag.okToProcessBody(SafeConditionalRuntimeTag.java:64)
+	at gerador.compiled._jet_templateSql.generate(_jet_templateSql.java:548)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.internal.taglib.workspace.FileTag.doAction(FileTag.java:91)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag$1.doRun(SafeEmptyRuntimeTag.java:49)
+	at org.eclipse.jet.internal.runtime.SafeCustomRuntimeTag$TagSafeRunnable.run(SafeCustomRuntimeTag.java:78)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.jet.internal.runtime.SafeEmptyRuntimeTag.doStart(SafeEmptyRuntimeTag.java:43)
+	at gerador.compiled._jet_main.generate(_jet_main.java:1216)
+	at org.eclipse.jet.transform.TransformContextExtender.doExecute(TransformContextExtender.java:236)
+	at org.eclipse.jet.transform.TransformContextExtender.executeWithMonitor(TransformContextExtender.java:147)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:206)
+	at org.eclipse.jet.transform.TransformContextExtender.execute(TransformContextExtender.java:124)
+	at org.eclipse.jet.JET2Platform$4.run(JET2Platform.java:519)
+	at org.eclipse.jet.internal.runtime.JETBundleManager.run(JETBundleManager.java:340)
+	at org.eclipse.jet.JET2Platform.runTransform(JET2Platform.java:487)
+	at org.eclipse.jet.internal.launch.JETProcess.run(JETProcess.java:169)
+	at org.eclipse.jet.internal.launch.JET2TransformationDelegate.launch(JET2TransformationDelegate.java:81)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface 2 0 2015-11-02 19:01:45.526
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-02 19:01:45.526
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@52eae490,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3b43d477,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2015-11-14 09:41:05.853 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /var/www/html/pacoteExperimento.v3/workspace/../runtime-EclipseApplication -dev file:/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/dev.properties -os linux -ws gtk -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.jface 2 0 2015-11-14 10:01:13.066
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-14 10:01:13.067
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@49d72f2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7ce5703b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2015-11-22 09:37:23.754 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /var/www/html/pacoteExperimento.v3/workspace/../runtime-EclipseApplication -dev file:/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/dev.properties -os linux -ws gtk -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-11-22 09:47:01.217
+!MESSAGE The debug port 10000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-11-22 09:47:01.234
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+!SESSION 2015-11-23 00:52:47.309 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /var/www/html/pacoteExperimento.v3/workspace/../runtime-EclipseApplication -dev file:/var/www/html/pacoteExperimento.v3/workspace/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/dev.properties -os linux -ws gtk -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-11-23 00:53:00.933
+!MESSAGE The debug port 10000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.php.debug.core 4 4 2015-11-23 00:53:00.949
+!MESSAGE The debug port 9000 is in use. Please select a different port for the debugger.
+
+!ENTRY org.eclipse.jface 2 0 2015-11-23 00:53:10.116
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-23 00:53:10.116
+!MESSAGE A conflict occurred for CTRL+SHIFT+F:
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.format.document,Format,
+		Format selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@71993a7d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.xtext.ui.FormatAction,Format,
+		Format text,
+		Category(org.eclipse.xtext.ui.category.XtextEditor,Editing,Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@67453ef8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.XtextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-23 00:53:10.116
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_UP:
+Binding(ALT+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.enclosing,Select Enclosing Element,
+		Expand selection to include enclosing element,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@184e82c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.xtext.ui.editor.select.enclosing,Select Enclosing Element,
+		Expand selection to include enclosing element,
+		Category(org.eclipse.xtext.ui.category.XtextEditor,Editing,Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@732940bf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.XtextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-23 00:53:10.117
+!MESSAGE A conflict occurred for CTRL+O:
+Binding(CTRL+O,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.quick_outline,Quick Outline,
+		Show the quick outline for the editor input,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1959f6aa,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+Binding(CTRL+O,
+	ParameterizedCommand(Command(org.eclipse.xtext.ui.editor.outline.QuickOutline,Quick Outline,
+		Open the quick outline.,
+		Category(org.eclipse.core.commands.categories.autogenerated,Uncategorized,Commands that were either auto-generated or have no category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@61511fe6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.XtextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-23 00:53:10.117
+!MESSAGE A conflict occurred for CTRL+SHIFT+P:
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.goto.matching.bracket,Matching Character,
+		Go to Matching Character,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1e72c853,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.xtext.ui.GotToMatchingBracketAction,Go to Matching Bracket,
+		Go to Matching Bracket,
+		Category(org.eclipse.xtext.ui.category.XtextEditor,Editing,Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@150566f4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.XtextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-23 00:53:10.117
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
+		Open an editor on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@15aa27f4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.open.file.from.source,Open Selection,
+		Open an editor on the selected link,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@56250f48,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration,Open Declaration,
+		Opens the declaration for the currently selected cross reference,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1b0e6c27,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.XtextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-23 00:53:10.117
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_DOWN:
+Binding(ALT+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.last,Restore Last Selection,
+		Restore last selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7b1607db,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.xtext.ui.editor.select.last,Restore Last Selection,
+		Restore last selection from History,
+		Category(org.eclipse.xtext.ui.category.XtextEditor,Editing,Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4fde8251,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.XtextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-23 00:53:10.118
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_RIGHT:
+Binding(ALT+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.next,Select Next Element,
+		Expand selection to include next sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3a36076b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.xtext.ui.editor.select.next,Select Next Element,
+		Expand selection to include next element,
+		Category(org.eclipse.xtext.ui.category.XtextEditor,Editing,Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@193dbcce,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.XtextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-23 00:53:10.118
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.toggle.comment,Toggle Comment,
+		Toggle Comment,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@15b4634,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.xtext.ui.ToggleCommentAction,Toggle Comment,
+		Toggle Comment,
+		Category(org.eclipse.xtext.ui.category.XtextEditor,Editing,Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@24368554,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.XtextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-23 00:53:10.118
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_LEFT:
+Binding(ALT+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.previous,Select Previous Element,
+		Expand selection to include previous sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@e52b943,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.xtext.ui.editor.select.previous,Select Previous Element,
+		Expand selection to include previous element,
+		Category(org.eclipse.xtext.ui.category.XtextEditor,Editing,Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@776b605e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.XtextEditorScope,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2015-11-23 00:53:44.495
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-23 00:53:44.496
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@f629156,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1033acfe,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)

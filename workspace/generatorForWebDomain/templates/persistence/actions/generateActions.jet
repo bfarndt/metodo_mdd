@@ -1,0 +1,16 @@
+<%-- Depends: common/common.jet --%>
+<%-- Uses: daos/generateDAOs.jet --%>
+
+<%-- Generate action classes --%>
+<ws:project name="{$theConfiguration/@project}">
+	<ws:folder path="{$theConfiguration/@srcfolder}">
+		<java:package name="{$theConfiguration/@actionsPackage}">
+			<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+				<c:set select="$userType" name="editPageConstant"><f:uc><c:get select="$userType/@name" /></f:uc>_EDIT_PAGE</c:set>
+				<c:set select="$userType" name="listPageConstant"><f:uc><c:get select="$userType/@name" /></f:uc>_LIST_PAGE</c:set>
+                <c:set select="$userType" name="listPageForSelectionConstant"><f:uc><c:get select="$userType/@name" /></f:uc>_LIST_PAGE_FOR_SELECTION</c:set>
+				<java:class name="{$userType/@actionClass}" template="templates/persistence/actions/classes/ActionClass.java.jet" />
+			</c:iterate>    
+		</java:package>
+	</ws:folder>
+</ws:project>

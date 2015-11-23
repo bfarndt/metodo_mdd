@@ -1,0 +1,172 @@
+<%-- Selected variable: userType --%>
+package <c:get select="$theConfiguration/@actionsPackage" />;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import core.database.<c:get select="$theConfiguration/@defaultDAOFactoryProviderClass" />;
+import <c:get select="$userType/@fullDaoClassName" />;
+import <c:get select="$userType/@fullBeanName" />;
+
+public class <c:get select="$userType/@actionClass" /> {
+    public final static String <c:get select="$userType/@editPageConstant" /> = "<c:get select="$userType/@editPagePath" />";
+    public final static String <c:get select="$userType/@listPageConstant" /> = "<c:get select="$userType/@listPagePath" />";
+    public final static String <c:get select="$userType/@listPageForSelectionConstant" /> = "popups/selectReferenceForm.jsp";
+
+    public String <c:get select="$userType/@loadFormAction" />(HttpServletRequest req, HttpServletResponse resp) {
+        String <c:get select="$userType/@idField" />Parameter = req.getParameter("<c:get select="$userType/@idField" />");
+        
+        <c:iterate select="$userType/attributes" var="attribute">
+            <c:if test="$attribute/@fieldType = 'IMAGE'">
+        req.getSession().removeAttribute("<c:get select="$userType/@name" /><c:get select="$attribute/@name" />ContentType");
+        req.getSession().removeAttribute("<c:get select="$userType/@name" /><c:get select="$attribute/@name" />");
+            </c:if>
+        </c:iterate>
+        
+        if(<c:get select="$userType/@idField" />Parameter != null) {
+            <c:get select="$userType/@idFieldType" /> <c:get select="$userType/@idField" /> = <c:get select="$userType/@idFieldTypeFromStringMethod" />(<c:get select="$userType/@idField" />Parameter);
+            <c:get select="$userType/@daoClass" /> dao = <c:get select="$theConfiguration/@defaultDAOFactoryProviderClass" />.getDefaultDAOFactoryInstance().get<c:get select="$userType/@daoClass" />();
+            <c:get select="$userType/@name" /> <c:get select="$userType/@instanceName" /> = dao.get<c:get select="$userType/@name" />(<c:get select="$userType/@idField" />);
+            if(<c:get select="$userType/@instanceName" /> != null) {
+                req.setAttribute("<c:get select="$userType/@instanceName" />",<c:get select="$userType/@instanceName" />);
+
+                <c:iterate select="$userType/attributes" var="attribute">
+                    <c:if test="$attribute/@fieldType = 'IMAGE'">
+                req.getSession().setAttribute("<c:get select="$userType/@name" /><c:get select="$attribute/@name" />ContentType",<c:get select="$userType/@instanceName" />.<c:get select="$attribute/@javaGetter" />ContentType());
+                req.getSession().setAttribute("<c:get select="$userType/@name" /><c:get select="$attribute/@name" />",<c:get select="$userType/@instanceName" />.<c:get select="$attribute/@javaGetter" />());
+                    </c:if>
+                </c:iterate>
+
+            }
+        }
+        
+        return <c:get select="$userType/@editPageConstant" />;
+    }
+    
+    public String <c:get select="$userType/@deleteAction" />(HttpServletRequest req, HttpServletResponse resp) {
+        String <c:get select="$userType/@idField" />Parameter = req.getParameter("<c:get select="$userType/@idField" />");
+        <c:get select="$userType/@daoClass" /> dao = <c:get select="$theConfiguration/@defaultDAOFactoryProviderClass" />.getDefaultDAOFactoryInstance().get<c:get select="$userType/@daoClass" />();
+        
+        <c:get select="$userType/@idFieldType" /> <c:get select="$userType/@idField" /> = <c:get select="$userType/@idFieldTypeFromStringMethod" />(<c:get select="$userType/@idField" />Parameter);
+        boolean result = dao.delete<c:get select="$userType/@name" />(<c:get select="$userType/@idField" />);
+        
+        if(result) {
+            req.setAttribute("message", "<c:get select="$userType/@fullBeanName" />.delete.ok");
+        }
+        else req.setAttribute("message", "<c:get select="$userType/@fullBeanName" />.delete.failed");
+        
+        return <c:get select="$userType/@showAllAction" />(req,resp);
+    }
+    
+    public String <c:get select="$userType/@saveAction" />(HttpServletRequest req, HttpServletResponse resp) {
+        String <c:get select="$userType/@idField" />Parameter = req.getParameter("<c:get select="$userType/@idField" />");
+        <c:iterate select="$userType/attributes" var="attribute">
+            <c:if test="not($attribute/@fieldType = 'IMAGE' or $attribute/@isImageContentType = 'true')">
+        String <c:get select="$attribute/@name" />Parameter = req.getParameter("<c:get select="$attribute/@name" />");
+            </c:if>
+            <c:if test="$attribute/@fieldType = 'IMAGE'">
+        byte[] <c:get select="$attribute/@name" />Parameter = (byte[]) req.getSession().getAttribute("<c:get select="$userType/@name" /><c:get select="$attribute/@name" />");
+        if(<c:get select="$attribute/@name" />Parameter == null) <c:get select="$attribute/@name" />Parameter = new byte[0];
+        String <c:get select="$attribute/@name" />ContentTypeParameter = (String) req.getSession().getAttribute("<c:get select="$userType/@name" /><c:get select="$attribute/@name" />ContentType");
+            </c:if>
+        </c:iterate>
+        <c:iterate select="$userType/referenceList" var="reference">
+        String <c:get select="$reference/@name" />Parameter = req.getParameter("<c:get select="$reference/@name" />");
+        </c:iterate>
+        
+        <c:get select="$userType/@name" /> <c:get select="$userType/@instanceName" /> = setup<c:get select="$userType/@name" />(<c:get select="$userType/@idField" />Parameter, <c:iterate select="$userType/attributes" var="attribute" delimiter=", "
+        ><c:get select="$attribute/@name" />Parameter</c:iterate
+        ><c:iterate select="$userType/referenceList" var="reference">, <c:get select="$reference/@name" />Parameter</c:iterate>);
+        
+        <c:get select="$userType/@daoClass" /> dao = <c:get select="$theConfiguration/@defaultDAOFactoryProviderClass" />.getDefaultDAOFactoryInstance().get<c:get select="$userType/@daoClass" />();
+        boolean result = dao.saveOrUpdate<c:get select="$userType/@name" />(<c:get select="$userType/@instanceName" />);
+        
+        if(result) {
+            req.setAttribute("message", "<c:get select="$userType/@fullBeanName" />.save.ok");
+        }
+        else req.setAttribute("message", "<c:get select="$userType/@fullBeanName" />.save.failed");
+        
+        return <c:get select="$userType/@showAllAction" />(req,resp);
+    }
+    
+    public String <c:get select="$userType/@showAllAction" />(HttpServletRequest req, HttpServletResponse resp) {
+        <c:get select="$userType/@daoClass" /> dao = <c:get select="$theConfiguration/@defaultDAOFactoryProviderClass" />.getDefaultDAOFactoryInstance().get<c:get select="$userType/@daoClass" />();
+        
+        List<<c:get select="$userType/@name" />> all<c:get select="$userType/@name" />s = dao.getAll<c:get select="$userType/@name" />s();
+        
+        req.setAttribute("all<c:get select="$userType/@name" />s", all<c:get select="$userType/@name" />s);
+        
+        return <c:get select="$userType/@listPageConstant" />;
+    }
+
+    public String <c:get select="$userType/@showAllForSelectionAction" />(HttpServletRequest req, HttpServletResponse resp) {
+        <c:get select="$userType/@daoClass" /> dao = <c:get select="$theConfiguration/@defaultDAOFactoryProviderClass" />.getDefaultDAOFactoryInstance().get<c:get select="$userType/@daoClass" />();
+        
+        List<<c:get select="$userType/@name" />> all<c:get select="$userType/@name" />s = dao.getAll<c:get select="$userType/@name" />s();
+        
+        req.setAttribute("allElements", all<c:get select="$userType/@name" />s);
+        
+        req.setAttribute("currentlySelectedMessageKey", "<c:get select="$userType/@fullBeanName" />.currentlySelected.label");
+        req.setAttribute("selectMessageKey", "<c:get select="$userType/@fullBeanName" />.select.label");
+        
+        return <c:get select="$userType/@listPageForSelectionConstant" />;
+    }
+
+    private <c:get select="$userType/@name" /> setup<c:get select="$userType/@name" />(String <c:get select="$userType/@idField" />Parameter, <c:iterate select="$userType/attributes" var="attribute" delimiter=", "
+        ><c:if test="not($attribute/@fieldType = 'IMAGE')"
+        >String</c:if
+        ><c:if test="$attribute/@fieldType = 'IMAGE'">byte []</c:if
+        > <c:get select="$attribute/@name" />Parameter</c:iterate
+        ><c:iterate select="$userType/referenceList" var="reference">, String <c:get select="$reference/@name" />Parameter</c:iterate>) {
+        <c:get select="$userType/@name" /> <c:get select="$userType/@instanceName" /> = new <c:get select="$userType/@name" />();
+        if(<c:get select="$userType/@idField" />Parameter != null && <c:get select="$userType/@idField" />Parameter.trim().length()>0)
+            <c:get select="$userType/@instanceName" />.<c:get select="$userType/@idFieldSetter" />(<c:get select="$userType/@idFieldTypeFromStringMethod" />(<c:get select="$userType/@idField" />Parameter));
+
+		<c:iterate select="$userType/attributes" var="attribute">
+		<c:if test="$attribute/@fieldType = 'TEXT'">
+		<c:get select="$userType/@instanceName" />.<c:get select="$attribute/@javaSetter" />(<c:get select="$attribute/@name" />Parameter);
+		</c:if>
+		<c:if test="$attribute/@fieldType = 'PASSWORD'">
+		<c:get select="$userType/@instanceName" />.<c:get select="$attribute/@javaSetter" />(<c:get select="$attribute/@name" />Parameter);
+		</c:if>
+        <c:if test="$attribute/@fieldType = 'INT'">
+        <c:get select="$userType/@instanceName" />.<c:get select="$attribute/@javaSetter" />(Integer.parseInt(<c:get select="$attribute/@name" />Parameter));
+        </c:if>
+        <c:if test="$attribute/@fieldType = 'LONG'">
+        <c:get select="$userType/@instanceName" />.<c:get select="$attribute/@javaSetter" />(Long.parseLong(<c:get select="$attribute/@name" />Parameter));
+        </c:if>
+        <c:if test="$attribute/@fieldType = 'REAL'">
+        <c:get select="$userType/@instanceName" />.<c:get select="$attribute/@javaSetter" />(Float.parseFloat(<c:get select="$attribute/@name" />Parameter));
+        </c:if>
+        <c:if test="$attribute/@fieldType = 'CURRENCY'">
+        <c:get select="$userType/@instanceName" />.<c:get select="$attribute/@javaSetter" />(Float.parseFloat(<c:get select="$attribute/@name" />Parameter));
+        </c:if>
+		<c:if test="$attribute/@fieldType = 'DATE'">
+        try {
+            if(<c:get select="$attribute/@name" />Parameter != null && <c:get select="$attribute/@name" />Parameter.trim().length()>0) {
+                java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy");
+                <c:get select="$userType/@instanceName" />.<c:get select="$attribute/@javaSetter" />(sdf.parse(<c:get select="$attribute/@name" />Parameter));
+            }
+        }
+        catch(java.text.ParseException pe) {
+            pe.printStackTrace();
+        }
+		</c:if>
+        <c:if test="$attribute/@fieldType = 'IMAGE'">
+        <c:get select="$userType/@instanceName" />.<c:get select="$attribute/@javaSetter" />(<c:get select="$attribute/@name" />Parameter);
+        </c:if>
+		</c:iterate>
+		
+        <c:iterate select="$userType/referenceList" var="reference">
+        if(<c:get select="$reference/@name" />Parameter != null && <c:get select="$reference/@name" />Parameter.length() > 0) {
+            <c:get select="$reference/referencedType/@fullBeanName" /> <c:get select="$reference/@name" /> = new <c:get select="$reference/referencedType/@fullBeanName" />();
+            <c:get select="$reference/@name" />.<c:get select="$reference/referencedType/@idFieldSetter" />(Long.parseLong(<c:get select="$reference/@name" />Parameter));
+            <c:get select="$userType/@instanceName" />.<c:get select="$reference/@javaSetter" />(<c:get select="$reference/@name" />);
+        }
+        </c:iterate>
+            
+        return <c:get select="$userType/@instanceName" />;
+    }
+}

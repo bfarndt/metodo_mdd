@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webDomainAdministrationSubDomain:WebDomainAdministrationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:webDomainAdministrationSubDomain="webDomainAdministrationSubDomain">
+  <configuration project="ProjetoTeste" webfolder="WebContent" srcfolder="src" package="generated" webpath="admin"/>
+  <userTypes name="Noticia" typeSummary="{titulo}">
+    <attributes name="titulo" fieldSize="100" appearsInLists="true"/>
+    <attributes name="resumo" fieldSize="250"/>
+    <attributes name="conteudo" fieldSize="1000"/>
+    <attributes name="imagem" fieldType="IMAGE"/>
+    <attributes name="data" fieldType="DATE" appearsInLists="true"/>
+  </userTypes>
+  <userTypes name="AreaDePesquisa" typeSummary="{nome}">
+    <attributes name="nome" fieldSize="100" appearsInLists="true"/>
+    <attributes name="descricao" fieldSize="255"/>
+  </userTypes>
+  <userTypes name="ProjetoDePesquisa" typeSummary="{titulo}">
+    <attributes name="titulo" fieldSize="100" appearsInLists="true"/>
+    <attributes name="descricao" fieldSize="255"/>
+    <attributes name="dataInicio" fieldType="DATE" appearsInLists="true"/>
+    <attributes name="dataFim" fieldType="DATE" appearsInLists="true"/>
+    <referenceList name="apoio" referencedType="//@userTypes.3"/>
+    <referenceList name="area" referencedType="//@userTypes.1"/>
+  </userTypes>
+  <userTypes name="Suporte" typeSummary="{agencia}">
+    <attributes name="agencia" fieldSize="100" appearsInLists="true"/>
+    <attributes name="icone" fieldType="IMAGE"/>
+  </userTypes>
+  <userTypes name="Link" typeSummary="{titulo}">
+    <attributes name="titulo" fieldSize="100" appearsInLists="true"/>
+    <attributes name="url" fieldSize="255" appearsInLists="true"/>
+  </userTypes>
+  <userTypes name="Publicacao" typeSummary="{autores}. In: {local}. {data}">
+    <attributes name="autores" fieldSize="255" appearsInLists="true"/>
+    <attributes name="local" fieldSize="255" appearsInLists="true"/>
+    <attributes name="data" fieldSize="100"/>
+    <referenceList name="area" referencedType="//@userTypes.1"/>
+  </userTypes>
+  <userTypes name="Colega" typeSummary="Colegas de trabalho">
+    <attributes name="nome" fieldSize="35" appearsInLists="true"/>
+    <attributes name="homepage" fieldSize="255"/>
+  </userTypes>
+</webDomainAdministrationSubDomain:WebDomainAdministrationModel>

@@ -1,0 +1,10 @@
+<ws:project name="{$theConfiguration/@project}">
+    <ws:folder path="{$theConfiguration/@webfolder}/gen">
+    	<c:iterate select="$navigationModel/Navigation/pages" var="page">
+            <ws:file path="{$page/@name}.jsp" template="templates/navigation/pages/page.jsp.jet" />
+    	</c:iterate>
+    	<c:if test="$featuresModel/WebDomainFeatures/@userContent = 'true'">
+			<ws:file path="uploadUserCommentForm.jsp" template="templates/navigation/pages/uploadUserCommentForm.jsp.jet" />
+		</c:if>
+    </ws:folder>
+</ws:project>

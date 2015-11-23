@@ -1,0 +1,47 @@
+<?php
+	include_once "../class/<c:get select="$currentEntity/@className" />.class.php";
+	include_once "../class/<c:get select="$currentEntity/@className" />DB.class.php";
+
+	$<c:get select="$currentEntity/@className" /> = new <c:get select="$currentEntity/@className" />();
+	$<c:get select="$currentEntity/@className" />DB = new <c:get select="$currentEntity/@className" />DB();
+
+	<c:iterate select="$currentEntity/Feature" var="currentFeature"
+	><c:if test="($currentFeature/EntityType/entity/@name != '') and (($currentFeature/@min > 1) or ($currentFeature/@max > 1))">
+		$<c:get select="$currentFeature/@name" /> = array();
+		if (isSet($_POST['txt<c:get select="$currentFeature/EntityType/entity/@name" />'])) {
+			$json = json_decode($_POST['txt<c:get select="$currentFeature/EntityType/entity/@name" />'], true);
+			if (is_array($json)) {
+				foreach ($json as $entity) {
+					$<c:get select="$currentFeature/@name" /> = new <c:get select="$currentFeature/EntityType/entity/@name" />();
+					$<c:get select="$currentFeature/@name" />->setId($entity["id"]);
+					$<c:get select="$currentEntity/@name" />->add<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />);
+				}
+			}
+		}
+	</c:if><c:if test="not($currentFeature/EntityType/entity/@name != '')"
+		><c:if test="($currentFeature/DataType/@name = 'boolean')"
+			>$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />(isSet($_POST["<c:get select="$currentFeature/@name" />"]));
+		</c:if><c:if test="($currentFeature/DataType/@name != 'boolean')"
+			>$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($_POST["<c:get select="$currentFeature/@name" />"]);
+		</c:if>
+	</c:if><c:if test="($currentFeature/EntityType/entity/@name != '') and ($currentFeature/@min <= 1) and ($currentFeature/@max <= 1)"
+		>$json = json_decode($_POST['txt<c:get select="$currentFeature/EntityType/entity/@name" />'], true);
+		
+		$<c:get select="$currentFeature/@name" /> = new <c:get select="$currentFeature/EntityType/entity/@name" />();
+		$<c:get select="$currentFeature/@name" />->setId($json[0]["id"]);
+		$<c:get select="$currentEntity/@name" />->set<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />);
+	</c:if></c:iterate>
+
+	if (isSet($_POST['id']) && $_POST['id'] > 0) {
+		$<c:get select="$currentEntity/@name" />->setId($_POST["id"]);
+		$result = $<c:get select="$currentEntity/@className" />DB->update($<c:get select="$currentEntity/@className" />);
+	} else {
+		$result = $<c:get select="$currentEntity/@className" />DB->add($<c:get select="$currentEntity/@className" />);
+	}
+
+	if ($result) {
+		die('<META http-equiv="refresh" content="1;URL=/' . $_POST["pageBack"] . '.php?success=1">');
+	} else {
+		die('<META http-equiv="refresh" content="1;URL=/' . $_POST["pageBack"] . '.php?error=1">');
+	}
+?>

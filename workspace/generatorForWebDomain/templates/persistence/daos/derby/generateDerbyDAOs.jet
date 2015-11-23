@@ -1,0 +1,34 @@
+<%-- Depends: common/common.jet --%>
+<%-- Uses: beans/generateBeans.jet --%>
+
+<%-- Set useful values --%>
+<c:set select="$theConfiguration" name="derbyDaosPackage"><c:get select="$theConfiguration/@daosPackage" />.derby</c:set>
+<c:set select="$theConfiguration" name="derbyDaoFactoryClass">DerbyDAOFactory</c:set>
+<c:set select="$theConfiguration" name="derbyDaoFactoryFullName"><c:get select="$theConfiguration/@derbyDaosPackage" />.<c:get select="$theConfiguration/@derbyDaoFactoryClass" /></c:set>
+<c:set select="$theConfiguration" name="derbyConnectionProviderConstant">Derby</c:set>
+<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+	<c:set select="$userType" name="derbyDAOClass">Derby<c:get select="$userType/@daoClass" /></c:set>
+</c:iterate>    
+
+<%-- Generate concrete Derby classes --%>
+<ws:project name="{$theConfiguration/@project}">
+	<ws:folder path="{$theConfiguration/@srcfolder}">
+		<java:package name="{$theConfiguration/@derbyDaosPackage}">
+			<c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+				<java:class name="{$userType/@derbyDAOClass}" template="templates/persistence/daos/derby/classes/DerbyDAOClass.java.jet" />
+			</c:iterate>    
+		</java:package>
+	</ws:folder>
+</ws:project>
+
+<%-- Generate concrete Derby DAO factory --%>
+<ws:project name="{$theConfiguration/@project}">
+	<ws:folder path="{$theConfiguration/@srcfolder}">
+		<java:package name="{$theConfiguration/@derbyDaosPackage}">
+			<java:class name="{$theConfiguration/@derbyDaoFactoryClass}" template="templates/persistence/daos/derby/classes/DerbyDAOFactory.java.jet" />
+		</java:package>
+	</ws:folder>
+</ws:project>
+
+<%-- Generate Derby database creation script --%>
+<c:include template="templates/persistence/daos/derby/sql/generateDerbyScript.jet" />

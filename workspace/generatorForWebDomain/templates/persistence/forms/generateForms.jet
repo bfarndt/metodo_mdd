@@ -1,0 +1,15 @@
+<%-- Depends: common/common.jet --%>
+<%-- Uses: actions/generateActions.jet --%>
+
+<ws:project name="{$theConfiguration/@project}">
+    <ws:folder path="{$theConfiguration/@webfolder}">
+        <c:iterate select="/WebDomainAdministrationModel/userTypes" var="userType">
+            <ws:file path="{$userType/@editPagePath}" template="templates/persistence/forms/pages/editpage.jsp.jet" />
+            <ws:file path="{$userType/@listPagePath}" template="templates/persistence/forms/pages/listpage.jsp.jet" />
+        </c:iterate>
+        <ws:folder path="{$theConfiguration/@webpath}/jspf">
+            <ws:file path="adminPrefix.jspf" template="templates/persistence/forms/pages/jspf/adminPrefix.jspf.jet" />
+            <ws:file path="adminSuffix.jspf" template="templates/persistence/forms/pages/jspf/adminSuffix.jspf.jet" />
+        </ws:folder>
+    </ws:folder>
+</ws:project>

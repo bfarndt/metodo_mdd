@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="ASCII"?>
+<extended:Domainmodel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:extended="http://www.example.org/domainmodel/Extended" nomeProj="projTRILO">
+  <elements xsi:type="extended:Entity" name="Prova">
+    <features name="pontuacao_maxima">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="ProvaNomeacao">
+    <features name="id_prova">
+      <type xsi:type="extended:EntityType" entity="//@elements.0"/>
+    </features>
+    <features name="transcricao">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="imagem">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="nome">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="pontuacao_maxima">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="ProvaSintaxe">
+    <features name="id_prova">
+      <type xsi:type="extended:EntityType" entity="//@elements.0"/>
+    </features>
+    <features name="imagem">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="nome">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="pontuacao_maxima">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="ProvaSequencia">
+    <features name="id_prova">
+      <type xsi:type="extended:EntityType" entity="//@elements.0"/>
+    </features>
+    <features name="pontuacao_maxima">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="ProvaSequenciaImagens">
+    <features name="id_prova_sequencia">
+      <type xsi:type="extended:EntityType" entity="//@elements.3"/>
+    </features>
+    <features name="imagem">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="ordem">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="ProvaOrdem">
+    <features name="id_prova">
+      <type xsi:type="extended:EntityType" entity="//@elements.0"/>
+    </features>
+    <features name="ordem">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="pontuacao_maxima">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="ProvaOrdemImagens">
+    <features name="id_prova_ordem">
+      <type xsi:type="extended:EntityType" entity="//@elements.5"/>
+    </features>
+    <features name="imagem">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="correta">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="ProvaAbsurdo">
+    <features name="id_prova">
+      <type xsi:type="extended:EntityType" entity="//@elements.0"/>
+    </features>
+    <features name="imagem">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="pontuacao_maxima">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="Usuario">
+    <features name="nome">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="email">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="email_relatorio">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="senha">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="crfa">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="Paciente">
+    <features name="foto">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="nome">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="nome_mae">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="telefone">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="data_nasc">
+      <type xsi:type="extended:DataType" name="date"/>
+    </features>
+    <features name="qtde_semanas_nasc">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+    <features name="problema_parto">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="parto_normal">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="gemeos">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="inflamacao_ouvido">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="problemas_respiratorios">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="teve_desnutricao">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="anemia">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="problema_familia_ling">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="data_cadastro">
+      <type xsi:type="extended:DataType" name="date"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="QuestionarioPais">
+    <features name="id_paciente">
+      <type xsi:type="extended:EntityType" entity="//@elements.9"/>
+    </features>
+    <features name="troca_sons">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="troca_sons_mesma_idade">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="forma_frases">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="forma_frases_qtde_palavras">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+    <features name="perguntas_pronomes">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="frase_utiliza_artigos">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="frase_correta_tempo_verbal">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="compreende_palavras_frases">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="escolhe_corretamente_palavras">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="conta_historia_coerencia">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="faz_pergunta_coerente">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="Triagem">
+    <features name="id_paciente">
+      <type xsi:type="extended:EntityType" entity="//@elements.9"/>
+    </features>
+    <features name="pontuacao">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="TriagemNomeacao">
+    <features name="id_triagem">
+      <type xsi:type="extended:EntityType" entity="//@elements.11"/>
+    </features>
+    <features name="id_prova_nomeacao">
+      <type xsi:type="extended:EntityType" entity="//@elements.1"/>
+    </features>
+    <features name="nomeacao">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="pontuacao">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="TriagemNomeacaoErrosFonetica">
+    <features name="id_triagem_nomeacao">
+      <type xsi:type="extended:EntityType" entity="//@elements.12"/>
+    </features>
+    <features name="fonema">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="tipo_troca">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="substituicao">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="TriagemSintaxe">
+    <features name="id_triagem">
+      <type xsi:type="extended:EntityType" entity="//@elements.11"/>
+    </features>
+    <features name="id_prova_sintaxe">
+      <type xsi:type="extended:EntityType" entity="//@elements.2"/>
+    </features>
+    <features name="frase">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="frase_formulada">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="utilizou_artigos">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="utilizou_elem_ligacao">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="utilizou_adjetivos">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="pontuacao">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="TriagemSequencia">
+    <features name="id_triagem">
+      <type xsi:type="extended:EntityType" entity="//@elements.11"/>
+    </features>
+    <features name="id_prova_sequencia">
+      <type xsi:type="extended:EntityType" entity="//@elements.3"/>
+    </features>
+    <features name="ordenou_corretamente">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="narrou_sequencia">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="narrativa_coerente">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="precisou_ajuda">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="pontuacao">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="TriagemOrdem">
+    <features name="id_triagem">
+      <type xsi:type="extended:EntityType" entity="//@elements.11"/>
+    </features>
+    <features name="id_prova_ordem">
+      <type xsi:type="extended:EntityType" entity="//@elements.5"/>
+    </features>
+    <features name="acertou">
+      <type xsi:type="extended:DataType" name="boolean"/>
+    </features>
+    <features name="pontuacao">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+  <elements xsi:type="extended:Entity" name="TriagemAbsurdo">
+    <features name="id_triagem">
+      <type xsi:type="extended:EntityType" entity="//@elements.11"/>
+    </features>
+    <features name="id_prova_absurdo">
+      <type xsi:type="extended:EntityType" entity="//@elements.7"/>
+    </features>
+    <features name="identificou">
+      <type xsi:type="extended:DataType" name="string"/>
+    </features>
+    <features name="pontuacao">
+      <type xsi:type="extended:DataType" name="int"/>
+    </features>
+  </elements>
+</extended:Domainmodel>
