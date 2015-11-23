@@ -1,4 +1,8 @@
 <?php
+    $urlPacoteExperimento = "https://www.dropbox.com/s/wecq4t44rwumv93/experimento.zip?dl=0";
+    $urlQuestionaioExperimento = "http://goo.gl/forms/tYiGPFp9dO";
+    $urlFerramentaKanban = "http://arndt-server.ddns.net:8080/metodo_mdd/ferramenta/";
+
     $path = $_SERVER["SCRIPT_NAME"];
     $path = explode("/", $path);
     unset($path[count($path) - 1]);
@@ -11,7 +15,8 @@
         "/ferramenta_possatto.php" => "Ferramenta Possatto",
         "/ferramenta_perini.php" => "Ferramenta Perini",
         "/metodo.php" => "M&eacute;todo",
-        "/downloads.php" => "Downloads"
+        "/downloads.php" => "Downloads",
+        "/experimento.php" => "Experimento"
     );
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">

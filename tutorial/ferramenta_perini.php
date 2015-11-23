@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="caption">
-                            <h3>Como usar?</h3>
+                            <h3>Como usar?<a name="dvComoUsar"></a></h3>
                         </div>
                         <div class="row">
                             <div class="col-lg-8 col-md-3">
