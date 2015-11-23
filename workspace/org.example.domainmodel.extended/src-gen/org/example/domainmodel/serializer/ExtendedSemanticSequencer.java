@@ -170,7 +170,7 @@ public class ExtendedSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     ((min=INT max=INT)? name=ID type=AbstractType)
+	 *     (required='required'? (min=INT max=INT)? name=ID type=AbstractType)
 	 */
 	protected void sequence_Feature(EObject context, Feature semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

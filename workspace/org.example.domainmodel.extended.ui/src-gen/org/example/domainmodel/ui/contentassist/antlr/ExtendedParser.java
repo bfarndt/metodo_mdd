@@ -51,7 +51,7 @@ public class ExtendedParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup_2(), "rule__Entity__Group_2__0");
 					put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
-					put(grammarAccess.getFeatureAccess().getGroup_0(), "rule__Feature__Group_0__0");
+					put(grammarAccess.getFeatureAccess().getGroup_1(), "rule__Feature__Group_1__0");
 					put(grammarAccess.getPageAccess().getGroup(), "rule__Page__Group__0");
 					put(grammarAccess.getPageAccess().getGroup_3(), "rule__Page__Group_3__0");
 					put(grammarAccess.getFormAccess().getGroup(), "rule__Form__Group__0");
@@ -67,10 +67,11 @@ public class ExtendedParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityAccess().getNameAssignment_1(), "rule__Entity__NameAssignment_1");
 					put(grammarAccess.getEntityAccess().getSuperTypeAssignment_2_1(), "rule__Entity__SuperTypeAssignment_2_1");
 					put(grammarAccess.getEntityAccess().getFeaturesAssignment_4(), "rule__Entity__FeaturesAssignment_4");
-					put(grammarAccess.getFeatureAccess().getMinAssignment_0_0(), "rule__Feature__MinAssignment_0_0");
-					put(grammarAccess.getFeatureAccess().getMaxAssignment_0_2(), "rule__Feature__MaxAssignment_0_2");
-					put(grammarAccess.getFeatureAccess().getNameAssignment_1(), "rule__Feature__NameAssignment_1");
-					put(grammarAccess.getFeatureAccess().getTypeAssignment_3(), "rule__Feature__TypeAssignment_3");
+					put(grammarAccess.getFeatureAccess().getRequiredAssignment_0(), "rule__Feature__RequiredAssignment_0");
+					put(grammarAccess.getFeatureAccess().getMinAssignment_1_0(), "rule__Feature__MinAssignment_1_0");
+					put(grammarAccess.getFeatureAccess().getMaxAssignment_1_2(), "rule__Feature__MaxAssignment_1_2");
+					put(grammarAccess.getFeatureAccess().getNameAssignment_2(), "rule__Feature__NameAssignment_2");
+					put(grammarAccess.getFeatureAccess().getTypeAssignment_4(), "rule__Feature__TypeAssignment_4");
 					put(grammarAccess.getPageAccess().getNameAssignment_1(), "rule__Page__NameAssignment_1");
 					put(grammarAccess.getPageAccess().getTitleAssignment_3_2(), "rule__Page__TitleAssignment_3_2");
 					put(grammarAccess.getPageAccess().getHeaderAssignment_6(), "rule__Page__HeaderAssignment_6");

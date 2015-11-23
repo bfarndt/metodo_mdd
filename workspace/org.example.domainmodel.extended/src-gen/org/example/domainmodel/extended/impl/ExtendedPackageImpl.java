@@ -390,7 +390,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFeature_Min()
+  public EAttribute getFeature_Required()
   {
     return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
   }
@@ -400,7 +400,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFeature_Max()
+  public EAttribute getFeature_Min()
   {
     return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
   }
@@ -410,7 +410,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFeature_Name()
+  public EAttribute getFeature_Max()
   {
     return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
   }
@@ -420,9 +420,19 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getFeature_Name()
+  {
+    return (EAttribute)featureEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getFeature_Type()
   {
-    return (EReference)featureEClass.getEStructuralFeatures().get(3);
+    return (EReference)featureEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -672,6 +682,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
     createEReference(entityEClass, ENTITY__FEATURES);
 
     featureEClass = createEClass(FEATURE);
+    createEAttribute(featureEClass, FEATURE__REQUIRED);
     createEAttribute(featureEClass, FEATURE__MIN);
     createEAttribute(featureEClass, FEATURE__MAX);
     createEAttribute(featureEClass, FEATURE__NAME);
@@ -770,6 +781,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
     initEReference(getEntity_Features(), this.getFeature(), null, "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFeature_Required(), ecorePackage.getEString(), "required", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFeature_Min(), ecorePackage.getEInt(), "min", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFeature_Max(), ecorePackage.getEInt(), "max", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

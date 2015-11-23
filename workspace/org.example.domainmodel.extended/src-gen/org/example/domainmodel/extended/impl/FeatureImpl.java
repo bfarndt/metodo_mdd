@@ -22,6 +22,7 @@ import org.example.domainmodel.extended.Feature;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.example.domainmodel.extended.impl.FeatureImpl#getRequired <em>Required</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.impl.FeatureImpl#getMin <em>Min</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.impl.FeatureImpl#getMax <em>Max</em>}</li>
  *   <li>{@link org.example.domainmodel.extended.impl.FeatureImpl#getName <em>Name</em>}</li>
@@ -33,6 +34,26 @@ import org.example.domainmodel.extended.Feature;
  */
 public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
 {
+  /**
+   * The default value of the '{@link #getRequired() <em>Required</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRequired()
+   * @generated
+   * @ordered
+   */
+  protected static final String REQUIRED_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getRequired() <em>Required</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRequired()
+   * @generated
+   * @ordered
+   */
+  protected String required = REQUIRED_EDEFAULT;
+
   /**
    * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -122,6 +143,29 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   protected EClass eStaticClass()
   {
     return ExtendedPackage.Literals.FEATURE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getRequired()
+  {
+    return required;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRequired(String newRequired)
+  {
+    String oldRequired = required;
+    required = newRequired;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExtendedPackage.FEATURE__REQUIRED, oldRequired, required));
   }
 
   /**
@@ -267,6 +311,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
+      case ExtendedPackage.FEATURE__REQUIRED:
+        return getRequired();
       case ExtendedPackage.FEATURE__MIN:
         return getMin();
       case ExtendedPackage.FEATURE__MAX:
@@ -289,6 +335,9 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
+      case ExtendedPackage.FEATURE__REQUIRED:
+        setRequired((String)newValue);
+        return;
       case ExtendedPackage.FEATURE__MIN:
         setMin((Integer)newValue);
         return;
@@ -315,6 +364,9 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
+      case ExtendedPackage.FEATURE__REQUIRED:
+        setRequired(REQUIRED_EDEFAULT);
+        return;
       case ExtendedPackage.FEATURE__MIN:
         setMin(MIN_EDEFAULT);
         return;
@@ -341,6 +393,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
+      case ExtendedPackage.FEATURE__REQUIRED:
+        return REQUIRED_EDEFAULT == null ? required != null : !REQUIRED_EDEFAULT.equals(required);
       case ExtendedPackage.FEATURE__MIN:
         return min != MIN_EDEFAULT;
       case ExtendedPackage.FEATURE__MAX:
@@ -364,7 +418,9 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (min: ");
+    result.append(" (required: ");
+    result.append(required);
+    result.append(", min: ");
     result.append(min);
     result.append(", max: ");
     result.append(max);

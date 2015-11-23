@@ -53,14 +53,25 @@ such as ws:file, ws:folder and ws:project
 			<ws:file template="templates/CSS/templateBootstrap-datepicker.standalone.jet" path="bootstrap-datepicker.standalone.css" />
 			<ws:file template="templates/CSS/templateBootstrap-datepicker3.jet" path="bootstrap-datepicker3.css" />
 			<ws:file template="templates/CSS/templateBootstrap-datepicker3.standalone.jet" path="bootstrap-datepicker3.standalone.css" />
+			<ws:file template="templates/CSS/templateBootstrap-theme.css.map.jet" path="bootstrap-theme.css.map" />
+			<ws:file template="templates/CSS/templateBootstrap-theme.jet" path="bootstrap-theme.css" />
+			<ws:file template="templates/CSS/templateBootstrap-theme.min.jet" path="bootstrap-theme.min.css" />
+			<ws:file template="templates/CSS/templateBootstrap.css.map.jet" path="bootstrap.css.map" />
+			<ws:file template="templates/CSS/templateBootstrap.jet" path="bootstrap.css" />
+			<ws:file template="templates/CSS/templateBootstrap.min.jet" path="bootstrap.min.css" />
+			<ws:file template="templates/CSS/templateSticky-footer-navbar.jet" path="sticky-footer-navbar.css" />
+			<ws:file template="templates/CSS/templateTheme.jet" path="theme.css" />
 			
 			<ws:file template="templates/CSS/templateBootstrap-table.jet" path="bootstrap-table.css" />
 		</ws:folder>
 
 		<ws:folder path="js">
 			<ws:file template="templates/JS/templateBootstrap-datepicker.jet" path="bootstrap-datepicker.js" />
-			
 			<ws:file template="templates/JS/templateBootstrap-table.jet" path="bootstrap-table.js" />
+			<ws:file template="templates/JS/templateNpm.jet" path="npm.js" />
+			<ws:file template="templates/JS/templateBootstrap.jet" path="bootstrap.js" />
+			<ws:file template="templates/JS/templateBootstrap.min.jet" path="bootstrap.min.js" />
+			<ws:file template="templates/JS/templateIe-emulation-modes-warning.jet" path="ie-emulation-modes-warning.js" />
 
 			<c:iterate select="/Domainmodel/Entity" var="currentEntity">
 				<ws:file template="templates/templateEntityJS.jet" path="{$currentEntity/@name}.js" />

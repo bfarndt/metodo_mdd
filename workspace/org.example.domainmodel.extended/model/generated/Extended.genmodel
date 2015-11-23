@@ -32,6 +32,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Extended.ecore#//Entity/features"/>
     </genClasses>
     <genClasses ecoreClass="Extended.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Feature/required"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Feature/min"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Feature/max"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Extended.ecore#//Feature/name"/>

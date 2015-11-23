@@ -9,7 +9,7 @@ page index {
 }
 
 entity Medico {
-	nome: string
+	required nome: string
 	crm: string
 }
 
@@ -28,8 +28,8 @@ page PageMedico {
 }
 
 entity Paciente {
-	nome: string
-	cpf: string
+	required nome: string
+	required cpf: string
 	data_nasc: date
 	endereco: string
 	cidade: string
@@ -55,7 +55,10 @@ page PagePaciente {
 entity Medicamento {
 	nome: string
 	fabricante: string
-	dose: string
+	composicao: string
+	generico: boolean
+	custo: currency
+	medico: Medico
 }
 
 form FormMedicamento {
