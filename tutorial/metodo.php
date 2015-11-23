@@ -16,7 +16,7 @@
                 <div class="col-lg-12 col-md-4">
                     <div class="thumbnail">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rTUNEUiQ1OI" frameborder="0" allowfullscreen></iframe>
+                            <iframe id="videoIntroducao" class="embed-responsive-item" src="https://www.youtube.com/embed/rTUNEUiQ1OI" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="caption">
                             <h3>Introdução</h3>
@@ -75,7 +75,35 @@
                                 <div class="caption">
                                     <div class="texto_explicativo">
                                         <p>
-                                            O Metamodelo representa as abstrações de um software, representando apenas os conceitos do domínio e, com isso, não há dependência da computação.
+                                            A Domain-Specifi Language (DSL) é uma linguagem para especificação de um domínio,
+                                            sendo utilizada para criar uma linguagem específica para resolver os problemas de um domínio específico.
+                                            Um grande exemplo de DSL é o SQL.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="caption">
+                            <h3>Mas, o que é um Modelo?</h3>
+                        </div>
+                         <div class="row">
+                            <div class="col-lg-6 col-md-2">
+                                <div class="thumbnail thumbnail_col">
+                                   <a name="figura_metodo_dsl">
+                                        <img src="img/metodo_modelo.png" alt="Exemplo de um Modelo">
+                                    </a>
+                                    <legend>
+                                        FIGURA 3 - Exemplo de um Modelo.
+                                    </legend>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-2">
+                                <div class="caption">
+                                    <div class="texto_explicativo">
+                                        <p>
+                                            O Modelo defini a arquitetura do software seguindo as definições do Metamodelo, sendo independente das tecnologias de implementação,
+                                            ou seja, não há qualquer dependência de uma linguagem de desenvolvimento, sistema operacional ou framework.
+                                            Um exemplo de modelo é o Modelo de Classe.
                                         </p>
                                     </div>
                                 </div>
@@ -91,7 +119,7 @@
                                         <img src="img/metodo_template.png" alt="Exemplo de um Template">
                                     </a>
                                     <legend>
-                                        FIGURA 3 - Exemplo de um <i>Template</i>.
+                                        FIGURA 4 - Exemplo de um <i>Template</i>.
                                     </legend>
                                 </div>
                             </div>
@@ -117,7 +145,7 @@
                                         <img src="img/metodo_IR.png" alt="Exemplo de uma Implementação de Referência">
                                     </a>
                                     <legend>
-                                        FIGURA 4 - Exemplo de uma Implementação de Referência.
+                                        FIGURA 5 - Exemplo de uma Implementação de Referência.
                                     </legend>
                                 </div>
                             </div>
@@ -141,7 +169,7 @@
                             <img src="img/metodo_experimento_pastas_home.png" alt="Pastas incluídas no pacote de experimento">
                         </a>
                         <legend>
-                            FIGURA 5 - Pastas incluídas no pacote de experimento.
+                            FIGURA 6 - Pastas incluídas no pacote de experimento.
                         </legend>
                         <div class="caption">
                             <div class="texto_explicativo">
@@ -170,7 +198,7 @@
                             <img src="img/metodo_experimento_pastas_runtime.png" alt="Pastas incluídas na pasta runtime-EclipseApplication">
                         </a>
                         <legend>
-                            FIGURA 6 - Pastas incluídas na pasta runtime-EclipseApplication.
+                            FIGURA 7 - Pastas incluídas na pasta runtime-EclipseApplication.
                         </legend>
                         <div class="caption">
                             <div class="texto_explicativo">
@@ -195,7 +223,7 @@
                             <img src="img/metodo_experimento_pastas_workspace.png" alt="Pastas incluídas na pasta workspace">
                         </a>
                         <legend>
-                            FIGURA 7 - Pastas incluídas na pasta workspace.
+                            FIGURA 8 - Pastas incluídas na pasta workspace.
                         </legend>
                         <div class="caption">
                             <div class="texto_explicativo">
@@ -225,7 +253,7 @@
                             <img src="img/metodo_ferramenta_index.png" alt="Ferramenta Kanban desenvolvida por Bruno Arndt e Daniel Lucrédio">
                         </a>
                         <legend>
-                            FIGURA 8 - Ferramenta Kanban desenvolvida por Bruno Arndt e Daniel Lucrédio.
+                            FIGURA 9 - Ferramenta Kanban desenvolvida por Bruno Arndt e Daniel Lucrédio.
                         </legend>
                         <div class="row">
                             <div class="col-lg-6 col-md-2">
@@ -234,7 +262,7 @@
                                         <img src="img/metodo_ferramenta_adicionar.png" alt="Adicionar uma Nova Tarefa na Ferramenta Kanban">
                                     </a>
                                     <legend>
-                                        FIGURA 9 - Adicionar uma Nova Tarefa na Ferramenta Kanban.
+                                        FIGURA 10 - Adicionar uma Nova Tarefa na Ferramenta Kanban.
                                     </legend>
                                 </div>
                             </div>
@@ -265,7 +293,7 @@
                                         <img src="img/metodo_ferramenta_modificar.png" alt="Modificando uma tarefa na Ferramenta Kanban">
                                     </a>
                                     <legend>
-                                        FIGURA 10 - Modificando uma tarefa na Ferramenta Kanban.
+                                        FIGURA 11 - Modificando uma tarefa na Ferramenta Kanban.
                                     </legend>
                                 </div>
                             </div>
@@ -300,25 +328,25 @@
                             <h3>Passo 1</h3>
                         </div>
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HpB8m7qeqy8" frameborder="0" allowfullscreen></iframe>
+                            <iframe id="videoPasso1" class="embed-responsive-item" src="https://www.youtube.com/embed/HpB8m7qeqy8" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="caption">
                             <h3>Passo 2, 3 e 4</h3>
                         </div>
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3CGk3kep3fI" frameborder="0" allowfullscreen></iframe>
+                            <iframe id="videoPasso2" class="embed-responsive-item" src="https://www.youtube.com/embed/3CGk3kep3fI" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="caption">
                             <h3>Passo 5</h3>
                         </div>
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8HggkRBWaj0" frameborder="0" allowfullscreen></iframe>
+                            <iframe id="videoPasso5" class="embed-responsive-item" src="https://www.youtube.com/embed/8HggkRBWaj0" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="caption">
                             <h3>Passo 6</h3>
                         </div>
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kaMaGxWq21o" frameborder="0" allowfullscreen></iframe>
+                            <iframe id="videoPasso6" class="embed-responsive-item" src="https://www.youtube.com/embed/kaMaGxWq21o" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
