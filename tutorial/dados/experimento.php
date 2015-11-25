@@ -59,7 +59,7 @@
                 "alt" => "Abrir o Eclipse",
                 "html" => "Conforme demonstrado no v&iacute;deo, devemos abrir a inst&acirc;ncia de edi&ccedil;&atilde;o do Modelo, Template e Implementa&ccedil;&atilde;o de Refer&ecirc;ncia (IR).
                     Caso voc&ecirc; tenha alguma d&uacute;vida, o passo-a-passo para abrir esta inst&acirc;ncia est&aacute; descrita
-                    <a href='" . $sysPath . "/ferramenta_perini.php#dvComoUsar' target='_blank'>aqui</a>."
+                    <a href='#abrir_eclipse' class='open_dialog'>aqui</a>."
             )
         );
     }
@@ -118,7 +118,7 @@
                 "alt" => "Abrir o Eclipse",
                 "html" => "Conforme demonstrado no v&iacute;deo, devemos abrir a inst&acirc;ncia de edi&ccedil;&atilde;o do Modelo, Template e Implementa&ccedil;&atilde;o de Refer&ecirc;ncia (IR).
                     Caso voc&ecirc; tenha alguma d&uacute;vida, o passo-a-passo para abrir esta inst&acirc;ncia est&aacute; descrita
-                    <a href='" . $sysPath . "/ferramenta_perini.php#dvComoUsar' target='_blank'>aqui</a>."
+                    <a href='#abrir_eclipse' class='open_dialog'>aqui</a>."
             )
         );
     }
@@ -177,7 +177,7 @@
                 "alt" => "Abrir o Eclipse",
                 "html" => "Conforme demonstrado no v&iacute;deo, devemos abrir a inst&acirc;ncia de edi&ccedil;&atilde;o do Modelo, Template e Implementa&ccedil;&atilde;o de Refer&ecirc;ncia (IR).
                     Caso voc&ecirc; tenha alguma d&uacute;vida, o passo-a-passo para abrir esta inst&acirc;ncia est&aacute; descrita
-                    <a href='" . $sysPath . "/ferramenta_perini.php#dvComoUsar' target='_blank'>aqui</a>."
+                    <a href='#abrir_eclipse' class='open_dialog'>aqui</a>."
             )
         );
     }
@@ -236,7 +236,7 @@
                 "alt" => "Abrir o Eclipse",
                 "html" => "Conforme demonstrado no v&iacute;deo, devemos abrir a inst&acirc;ncia de edi&ccedil;&atilde;o do Metamodelo.
                     Caso voc&ecirc; tenha alguma d&uacute;vida, o passo-a-passo para abrir esta inst&acirc;ncia est&aacute; descrita
-                    <a href='" . $sysPath . "/ferramenta_perini.php#dvComoUsar' target='_blank'>aqui</a>."
+                    <a href='#abrir_eclipse' class='open_dialog'>aqui</a>."
             )
         );
     }
@@ -317,7 +317,7 @@
                 "alt" => "Abrir o Eclipse",
                 "html" => "Conforme demonstrado no v&iacute;deo, devemos abrir a inst&acirc;ncia de edi&ccedil;&atilde;o do Modelo, Template e Implementa&ccedil;&atilde;o de Refer&ecirc;ncia (IR).
                     Caso voc&ecirc; tenha alguma d&uacute;vida, o passo-a-passo para abrir esta inst&acirc;ncia est&aacute; descrita
-                    <a href='" . $sysPath . "/ferramenta_perini.php#dvComoUsar' target='_blank'>aqui</a>."
+                    <a href='#abrir_eclipse' class='open_dialog'>aqui</a>."
             )
         );
     }

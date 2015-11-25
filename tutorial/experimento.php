@@ -184,7 +184,9 @@
                                                 <div class="col-lg-6 col-md-2">
                                                     <div class="thumbnail thumbnail_col">
                                                        <a name="figura_experimento_executar_eclipse_modelo">
-                                                            <img src="img/experimento_executar_eclipse_modelo.png" alt="Abrindo a instancia do Eclipse de edicao do Modelo, Templates e Implementacao de Referencia">
+                                                            <img src="img/experimento_executar_eclipse_modelo.png"
+                                                                class="img_zoom" data-zoom-image="img/experimento_executar_eclipse_modelo.png"
+                                                                alt="Abrindo a instancia do Eclipse de edicao do Modelo, Templates e Implementacao de Referencia">
                                                         </a>
                                                         <legend>
                                                             FIGURA 2 - Abrindo a inst&acirc;ncias do Eclipse de edi&ccedil;&atilde;o do <strong>Modelo, Templates e Implementa&ccedil;&atilde;o de Refer&ecirc;ncia</strong>.
@@ -216,19 +218,25 @@
                                                 <div class="col-lg-6 col-md-2">
                                                     <div class="thumbnail thumbnail_col">
                                                        <a name="figura_experimento_excluir_metadata">
-                                                            <img src="img/experimento_excluir_metadata.png" alt="Excluindo a pasta .metadata">
+                                                            <img src="img/experimento_excluir_metadata.png"
+                                                                class="img_zoom" data-zoom-image="img/experimento_excluir_metadata.png"
+                                                                alt="Excluindo a pasta .metadata">
                                                         </a>
                                                         <legend>
                                                             FIGURA 1 - Excluindo a pasta <strong>.metadata</strong>.
                                                         </legend>
                                                         <a name="figura_experimento_executar_mwe2">
-                                                            <img src="img/experimento_executar_mwe2.png" alt="Executando o MWE2 Workflow">
+                                                            <img src="img/experimento_executar_mwe2.png"
+                                                                class="img_zoom" data-zoom-image="img/experimento_executar_mwe2.png"
+                                                                alt="Executando o MWE2 Workflow">
                                                         </a>
                                                         <legend>
                                                             FIGURA 2 - Executando o <strong>MWE2 Workflow</strong>.
                                                         </legend>
                                                         <a name="figura_experimento_executar_eclipse_app">
-                                                            <img src="img/experimento_executar_eclipse_app.png" alt="Executando o Run As Eclipse Application">
+                                                            <img src="img/experimento_executar_eclipse_app.png"
+                                                                class="img_zoom" data-zoom-image="img/experimento_executar_eclipse_app.png"
+                                                                alt="Executando o Run As Eclipse Application">
                                                         </a>
                                                         <legend>
                                                             FIGURA 3 - Executando o <strong>Run As Eclipse Application</strong>.
@@ -280,19 +288,25 @@
                                                 <div class="col-lg-6 col-md-2">
                                                     <div class="thumbnail thumbnail_col">
                                                        <a name="figura_experimento_run_configuration">
-                                                            <img src="img/experimento_run_configuration.png" alt="Clicando em Run Configuration">
+                                                            <img src="img/experimento_run_configuration.png"
+                                                                class="img_zoom" data-zoom-image="img/experimento_run_configuration.png"
+                                                                alt="Clicando em Run Configuration">
                                                         </a>
                                                         <legend>
                                                             FIGURA 1 - Clicando em <strong>Run Configuration</strong>.
                                                         </legend>
                                                         <a name="figura_experimento_jet_transformation_add">
-                                                            <img src="img/experimento_jet_transformation_add.png" alt="Adicionando um JET Transformation">
+                                                            <img src="img/experimento_jet_transformation_add.png"
+                                                                class="img_zoom" data-zoom-image="img/experimento_jet_transformation_add.png"
+                                                                alt="Adicionando um JET Transformation">
                                                         </a>
                                                         <legend>
                                                             FIGURA 2 - Adicionando um <strong>JET Transformation</strong>.
                                                         </legend>
                                                         <a name="figura_experimento_jet_transformation_config">
-                                                            <img src="img/experimento_jet_transformation_config.png" alt="Configurando um JET Transformation">
+                                                            <img src="img/experimento_jet_transformation_config.png"
+                                                                class="img_zoom" data-zoom-image="img/experimento_jet_transformation_config.png"
+                                                                alt="Configurando um JET Transformation">
                                                         </a>
                                                         <legend>
                                                             FIGURA 3 - Configurando um <strong>JET Transformation</strong>.

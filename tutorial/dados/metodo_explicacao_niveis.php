@@ -15,7 +15,7 @@
     <div class="col-lg-6 col-md-2">
         <div class="thumbnail thumbnail_col">
            <a name="figura_metodo_dsl">
-                <img src="img/metodo_dsl.png" alt="Exemplo de uma DSL">
+                <img src="img/metodo_dsl.png" class="img_zoom" data-zoom-image="img/metodo_dsl.png" alt="Exemplo de uma DSL">
             </a>
             <legend>
                 FIGURA <?php echo ++$contImg; ?> - Exemplo de uma DSL.
@@ -67,7 +67,7 @@
     <div class="col-lg-6 col-md-2">
         <div class="thumbnail thumbnail_col">
            <a name="figura_metodo_template">
-                <img src="img/metodo_template.png" alt="Exemplo de um Template">
+                <img src="img/metodo_template.png" class="img_zoom" data-zoom-image="img/metodo_template.png" alt="Exemplo de um Template">
             </a>
             <legend>
                 FIGURA <?php echo ++$contImg; ?> - Exemplo de um <i>Template</i>.
@@ -93,7 +93,7 @@
     <div class="col-lg-6 col-md-2">
         <div class="thumbnail thumbnail_col">
            <a name="figura_metodo_IR">
-                <img src="img/metodo_IR.png" alt="Exemplo de uma Implementação de Referência">
+                <img src="img/metodo_IR.png" class="img_zoom" data-zoom-image="img/metodo_IR.png" alt="Exemplo de uma Implementação de Referência">
             </a>
             <legend>
                 FIGURA <?php echo ++$contImg; ?> - Exemplo de uma Implementação de Referência.

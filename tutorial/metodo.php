@@ -22,7 +22,7 @@
                             <h3>Introdução</h3>
                         </div>
                         <a name="figura_metodo">
-                            <img src="img/metodo.png" alt="Método criado por Bruno Arndt e Daniel Lucrédio">
+                            <img src="img/metodo.png" class="img_zoom" data-zoom-image="img/metodo.png" alt="Método criado por Bruno Arndt e Daniel Lucrédio">
                         </a>
                         <legend>
                             FIGURA 1 - Método criado por Bruno Arndt e Daniel Lucrédio.
@@ -56,7 +56,7 @@
                             <h3>Ferramenta Kanban</h3>
                         </div>
                         <a name="figura_metodo_ferramenta_index">
-                            <img src="img/metodo_ferramenta_index.png" alt="Ferramenta Kanban desenvolvida por Bruno Arndt e Daniel Lucrédio">
+                            <img src="img/metodo_ferramenta_index.png" class="img_zoom" data-zoom-image="img/metodo_ferramenta_index.png" alt="Ferramenta Kanban desenvolvida por Bruno Arndt e Daniel Lucrédio">
                         </a>
                         <legend>
                             FIGURA 9 - Ferramenta Kanban desenvolvida por Bruno Arndt e Daniel Lucrédio.
@@ -65,7 +65,7 @@
                             <div class="col-lg-6 col-md-2">
                                 <div class="thumbnail thumbnail_col">
                                    <a name="figura_metodo_ferramenta_adicionar">
-                                        <img src="img/metodo_ferramenta_adicionar.png" alt="Adicionar uma Nova Tarefa na Ferramenta Kanban">
+                                        <img src="img/metodo_ferramenta_adicionar.png" class="img_zoom" data-zoom-image="img/metodo_ferramenta_adicionar.png" alt="Adicionar uma Nova Tarefa na Ferramenta Kanban">
                                     </a>
                                     <legend>
                                         FIGURA 10 - Adicionar uma Nova Tarefa na Ferramenta Kanban.

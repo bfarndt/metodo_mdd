@@ -10,10 +10,19 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 
+<!-- Image Zoom: http://www.elevateweb.co.uk/image-zoom -->
+<script src="js/jquery.elevateZoom-3.0.8.min.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function () {
         $('.datepicker').datepicker({
             format: "yyyy-mm-dd"
+        });
+
+        $(".img_zoom").elevateZoom({
+            zoomType: "lens",
+            lensShape: "round",
+            lensSize: 200
         });
 
         $('.open_dialog').click(function() {
