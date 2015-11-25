@@ -16,7 +16,7 @@
                 <div class="col-lg-12 col-md-4">
                     <div class="thumbnail">
                         <a name="figura_split_jet_editor">
-                            <img src="img/split_jet_editor.png" alt="O Split JET Editor">
+                            <img src="img/split_jet_editor.png" class="img_zoom" data-zoom-image="img/split_jet_editor.png" alt="O Split JET Editor">
                         </a>
                          <legend>
                             FIGURA 1 - O Split JET Editor desenvolvido por Perini (<a href="<?php echo $sysPath;?>/downloads/pdf/Perini2015.pdf" target="_blank">2015</a>).
@@ -70,7 +70,7 @@
                                     </legend>
                                     <br>
                                     <a name="figura_ferramenta_perini_abrir_instancia">
-                                        <img src="img/ferramenta_perini_abrir_instancia.png" alt="O Split JET Editor">
+                                        <img src="img/ferramenta_perini_abrir_instancia.png" class="img_zoom" data-zoom-image="img/ferramenta_perini_abrir_instancia.png" alt="O Split JET Editor">
                                     </a>
                                      <legend>
                                         FIGURA 3 - Abrindo a instância de edição do Modelo, template e IR.
