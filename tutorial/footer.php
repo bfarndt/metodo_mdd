@@ -15,6 +15,13 @@
         $('.datepicker').datepicker({
             format: "yyyy-mm-dd"
         });
+
+        $('.open_dialog').click(function() {
+            $('.modal-body', '#dvDialogMaisInfos').html($($(this).attr('href')).html());
+            $('#dvDialogMaisInfos').modal('show');
+
+            return false;
+        });
     });
 </script>
 
