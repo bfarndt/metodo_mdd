@@ -1,3 +1,10 @@
+<?php
+    $adhocKey = "90f4519b5ad011c87d86d7a123fbb25c";
+    $experimentoAdHoc = false;
+    if (isSet($_GET['accessId']) && $_GET['accessId'] == $adhocKey) {
+        $experimentoAdHoc = true;
+    }
+?>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">

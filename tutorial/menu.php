@@ -20,6 +20,14 @@
         "/downloads.php" => "Downloads",
         "/experimento.php" => "Experimento"
     );
+
+    if ($experimentoAdHoc) {
+        unset($menu["/ferramenta_possatto.php"]);
+        unset($menu["/ferramenta_perini.php"]);
+        unset($menu["/metodo.php"]);
+
+        $urlPacoteExperimento = "https://www.dropbox.com/s/cuyaqupdgyx0cwe/experimento_adhoc.zip?dl=0";
+    }
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -30,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Tutorial</a>
+            <a class="navbar-brand" href="#">Tutorial</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -40,9 +48,14 @@
                             if ($_SERVER["SCRIPT_NAME"] == $pageURL) {
                                 $active = "active";
                             }
+
+                            $url = $sysPath . $pageURL;
+                            if ($experimentoAdHoc) {
+                                $url .= "?accessId=" . $adhocKey;
+                            }
                         ?>
                             <li class="<?php echo $active; ?>">
-                                <a href="<?php echo $sysPath . $pageURL; ?>"><?php echo $pageName; ?></a>
+                                <a href="<?php echo $url; ?>"><?php echo $pageName; ?></a>
                             </li>
                         <?php
                     }
