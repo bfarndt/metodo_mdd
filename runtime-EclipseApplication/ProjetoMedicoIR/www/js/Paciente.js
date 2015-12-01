@@ -1,0 +1,33 @@
+function deletePaciente(id, pageBack) {
+	window.location = "/Paciente/delete.php?id=" + id + "&pageBack=" + pageBack;
+}
+
+function updatePaciente(id) {
+	$("#id").val(id);
+	$("#nome").val($("#Paciente_" + id + "_nome").val());
+	$("#cpf").val($("#Paciente_" + id + "_cpf").val());
+	$("#data_nasc").val($("#Paciente_" + id + "_data_nasc").val());
+	$("#endereco").val($("#Paciente_" + id + "_endereco").val());
+	$("#cidade").val($("#Paciente_" + id + "_cidade").val());
+	$("#estado").val($("#Paciente_" + id + "_estado").val());
+	
+	
+	$("#formAddPaciente").modal();
+
+	return true;
+}
+
+function addPaciente() {
+	$("#id").val("");
+	$("#nome").val("");
+	$("#cpf").val("");
+	$("#data_nasc").val("");
+	$("#endereco").val("");
+	$("#cidade").val("");
+	$("#estado").val("");
+	
+	
+	$("#formAddPaciente").modal();
+
+	return true;
+}

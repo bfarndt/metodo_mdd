@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<extended:Domainmodel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:extended="http://www.example.org/domainmodel/Extended">
+  <elements xsi:type="extended:DataType" name="String"/>
+  <elements xsi:type="extended:Entity" name="E1"/>
+  <elements xsi:type="extended:Entity" name="E2"/>
+  <elements xsi:type="extended:Entity" name="Bruno"/>
+  <elements xsi:type="extended:PackageDeclaration" name="my.company.blog">
+    <elements xsi:type="extended:Import" importedNamespace="java.lang.*"/>
+    <elements xsi:type="extended:Entity" name="Blog">
+      <features name="title" type="//@elements.0"/>
+      <features many="true" name="posts" type="//@elements.4/@elements.3"/>
+    </elements>
+    <elements xsi:type="extended:Entity" name="HasAuthor">
+      <features name="author" type="//@elements.0"/>
+    </elements>
+    <elements xsi:type="extended:Entity" name="Post" superType="//@elements.4/@elements.2">
+      <features name="title" type="//@elements.0"/>
+      <features name="content" type="//@elements.0"/>
+      <features many="true" name="comments" type="//@elements.4/@elements.4"/>
+    </elements>
+    <elements xsi:type="extended:Entity" name="Comment" superType="//@elements.4/@elements.2">
+      <features name="content" type="//@elements.0"/>
+    </elements>
+  </elements>
+</extended:Domainmodel>
