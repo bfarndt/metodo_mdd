@@ -78,3 +78,11 @@ td[rowspan] {
 .container_tab {
     width: 100%;
 }
+
+.code {
+    text-indent: 0px;
+}
+
+pre > p {
+    margin: 0px;
+}
