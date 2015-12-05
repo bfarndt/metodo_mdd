@@ -5,7 +5,8 @@
             "img" => $imgFolder . "logo_download",
             "alt" =>"Baixar o pacote do experimento",
             "html" => "Baixar o pacote do experimento clicando <a href='" . $urlPacoteExperimento . "' target='_blank'>aqui</a>.
-                Para que o experimento funcione, &eacute; preciso que voc&ecirc; utilize Linux e tenha instalado o Apache, PHP e PostgreSQL."
+                Para que o experimento funcione, &eacute; preciso que voc&ecirc; utilize Linux e tenha instalado o Apache, PHP e PostgreSQL.
+                Caso voc&ecirc; utilize <strong>Windows</strong>, clique <a href='#instalar_linux' class='open_dialog'>aqui</a>."
         ), array(
             "img" => $imgFolder . "logo_extrair",
             "alt" => "Extrair o experimento",
