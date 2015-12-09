@@ -91,6 +91,13 @@
         "html" => "Responder o <strong>Questionário de Opinião sobre o Método e Tutorial Proposto</strong>
             clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>."
     );
+    $passosTarefa1[] = array(
+        "img" => $imgFolder . "logo_enviar",
+        "alt" => "Enviar o c&oacute;digo-fonte da Tarefa",
+        "html" => "Clique <a href='#dvDialogUploadTarefa' class='open_dialog_upload' data-tarefa-id='1'>aqui</a> para enviar o c&oacute;digo-fonte da Tarefa.
+            Favor enviar as pastas <strong>workspace</strong> e <strong>runtime-EclipseApplication</strong>.
+            Deixar o nome do arquivo com o <strong>seu nome</strong>."
+    );
 
      /*** Passos Tarefa 2 ***/
     if ($experimentoAdHoc) {
@@ -150,6 +157,13 @@
         "html" => "Responder o <strong>Questionário de Opinião sobre o Método e Tutorial Proposto</strong>
             clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>."
     );
+    $passosTarefa2[] = array(
+        "img" => $imgFolder . "logo_enviar",
+        "alt" => "Enviar o c&oacute;digo-fonte da Tarefa",
+        "html" => "Clique <a href='#dvDialogUploadTarefa' class='open_dialog_upload' data-tarefa-id='2'>aqui</a> para enviar o c&oacute;digo-fonte da Tarefa.
+            Favor enviar as pastas <strong>workspace</strong> e <strong>runtime-EclipseApplication</strong>.
+            Deixar o nome do arquivo com o <strong>seu nome</strong>."
+    );
 
     /*** Passos Tarefa 3 ***/
     if ($experimentoAdHoc) {
@@ -208,6 +222,13 @@
         "alt" => "Assistir Responder o questionario",
         "html" => "Responder o <strong>Questionário de Opinião sobre o Método e Tutorial Proposto</strong>
             clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>."
+    );
+    $passosTarefa3[] = array(
+        "img" => $imgFolder . "logo_enviar",
+        "alt" => "Enviar o c&oacute;digo-fonte da Tarefa",
+        "html" => "Clique <a href='#dvDialogUploadTarefa' class='open_dialog_upload' data-tarefa-id='3'>aqui</a> para enviar o c&oacute;digo-fonte da Tarefa.
+            Favor enviar as pastas <strong>workspace</strong> e <strong>runtime-EclipseApplication</strong>.
+            Deixar o nome do arquivo com o <strong>seu nome</strong>."
     );
 
     /*** Passos Tarefa 4 ***/
@@ -289,6 +310,13 @@
         "alt" => "Assistir Responder o questionario",
         "html" => "Responder o <strong>Questionário de Opinião sobre o Método e Tutorial Proposto</strong>
             clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>."
+    );
+    $passosTarefa4[] = array(
+        "img" => $imgFolder . "logo_enviar",
+        "alt" => "Enviar o c&oacute;digo-fonte da Tarefa",
+        "html" => "Clique <a href='#dvDialogUploadTarefa' class='open_dialog_upload' data-tarefa-id='4'>aqui</a> para enviar o c&oacute;digo-fonte da Tarefa.
+            Favor enviar as pastas <strong>workspace</strong> e <strong>runtime-EclipseApplication</strong>.
+            Deixar o nome do arquivo com o <strong>seu nome</strong>."
     );
 
     /*** Passos Tarefa 5 ***/
@@ -390,6 +418,13 @@
         "alt" => "Assistir Responder o questionario",
         "html" => "Responder o <strong>Questionário de Opinião sobre o Método e Tutorial Proposto</strong>
             clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>."
+    );
+    $passosTarefa5[] = array(
+        "img" => $imgFolder . "logo_enviar",
+        "alt" => "Enviar o c&oacute;digo-fonte da Tarefa",
+        "html" => "Clique <a href='#dvDialogUploadTarefa' class='open_dialog_upload' data-tarefa-id='5'>aqui</a> para enviar o c&oacute;digo-fonte da Tarefa.
+            Favor enviar as pastas <strong>workspace</strong> e <strong>runtime-EclipseApplication</strong>.
+            Deixar o nome do arquivo com o <strong>seu nome</strong>."
     );
 
     $experimento = array(
