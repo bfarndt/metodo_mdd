@@ -575,16 +575,32 @@
             </div>
         </div>
 
-        <!-- Modal -->
-        <div class="modal fade bs-example-modal-lg" id="dvDialogMaisInfos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!-- Modal  Mais Infos-->
+        <div class="modal fade bs-example-modal-lg" id="dvDialogMaisInfos" tabindex="-1" role="dialog" aria-labelledby="lblDialogMaisInfos">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Mais Informa&ccedil;&otilde;es</h4>
+                        <h4 class="modal-title" id="lblDialogMaisInfos">Mais Informa&ccedil;&otilde;es</h4>
                     </div>
                     <div class="modal-body">
                     ...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Upload -->
+        <div class="modal fade bs-example-modal-lg" id="dvDialogUploadTarefa" tabindex="-1" role="dialog" aria-labelledby="lblDialogUploadTarefa">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="lblDialogUploadTarefa">Enviar o c&oacute;digo-fonte da Tarefa <label id="lblDialogUploadTarefaId"></label></h4>
+                    </div>
+                    <div class="modal-body">
+                        <input id='txtArquivoTarefa1' name='txtArquivoTarefa1' type='file' class='file-loading'>
+                        <div id='errorBlock' class='help-block'></div>
                     </div>
                 </div>
             </div>

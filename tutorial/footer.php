@@ -15,6 +15,8 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        var $input = $("#txtArquivoTarefa1");
+
         $('.datepicker').datepicker({
             format: "yyyy-mm-dd"
         });
@@ -30,6 +32,33 @@
             $('#dvDialogMaisInfos').modal('show');
 
             return false;
+        });
+
+        $('.open_dialog_upload').click(function() {
+            if (tarefaId != 0) {
+                $input.fileinput('destroy');
+            }
+            tarefaId = $(this).data('tarefaId');
+            $('#lblDialogUploadTarefaId').html(tarefaId);
+            $('#dvDialogUploadTarefa').modal('show');
+
+            $input.fileinput({
+                language:"pt-BR",
+                uploadUrl: "<?php echo $sysPath; ?>/upload.php", // server upload action
+                uploadExtraData: {tarefa: tarefaId},
+                browseClass: "btn btn-primary btn-block",
+                showCaption: false,
+                showUpload: false, // hide upload button
+                showRemove: false, // hide remove button
+                initialPreviewShowDelete: false,
+                allowedFileExtensions: ['zip', 'rar', 'gz', 'tgz'],
+                elErrorContainer: '#errorBlock',
+                minFileCount: 1,
+                maxFileCount: 1
+            }).on("filebatchselected", function(event, files) {
+                // trigger upload method immediately after files are selected
+                $input.fileinput("upload");
+            });
         });
     });
 </script>
