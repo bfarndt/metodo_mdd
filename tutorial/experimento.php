@@ -11,7 +11,7 @@
 
         <div class="container theme-showcase" role="main">
             <div class="page-header">
-                <h1>Experimento</h1>
+                <h1>Experimento - <?php echo ($experimentoAdHoc ? "Ad-hoc" : "com M&eacute;todo"); ?></h1>
             </div>
             <div class="row">
                 <div class="col-lg-12 col-md-4">

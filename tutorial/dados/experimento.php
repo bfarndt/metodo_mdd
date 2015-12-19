@@ -1,4 +1,9 @@
 <?php
+    if ($experimentoAdHoc) {
+        $respostaUtilizaMetodo = '<strong>Na quest&atilde;o "Você utilizou o método para a realização das tarefas?" responder <u>N&Atilde;O</u>.</strong>';
+    } else {
+        $respostaUtilizaMetodo = '<strong>Na quest&atilde;o "Você utilizou o método para a realização das tarefas?" responder <u>SIM</u>.</strong>';
+    }
     /*** Passos Introducao ***/
     $passosIntroducao = array(
         array(
@@ -89,7 +94,7 @@
         "img" => $imgFolder . "logo_questionario",
         "alt" => "Assistir Responder o questionario",
         "html" => "Responder o <strong>Questionário de Opinião sobre o Método e Tutorial Proposto</strong>
-            clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>."
+            clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>. " . $respostaUtilizaMetodo
     );
     $passosTarefa1[] = array(
         "img" => $imgFolder . "logo_enviar",
@@ -155,7 +160,7 @@
         "img" => $imgFolder . "logo_questionario",
         "alt" => "Assistir Responder o questionario",
         "html" => "Responder o <strong>Questionário de Opinião sobre o Método e Tutorial Proposto</strong>
-            clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>."
+            clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>. " . $respostaUtilizaMetodo
     );
     $passosTarefa2[] = array(
         "img" => $imgFolder . "logo_enviar",
@@ -221,7 +226,7 @@
         "img" => $imgFolder . "logo_questionario",
         "alt" => "Assistir Responder o questionario",
         "html" => "Responder o <strong>Questionário de Opinião sobre o Método e Tutorial Proposto</strong>
-            clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>."
+            clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>. " . $respostaUtilizaMetodo
     );
     $passosTarefa3[] = array(
         "img" => $imgFolder . "logo_enviar",
@@ -309,7 +314,7 @@
         "img" => $imgFolder . "logo_questionario",
         "alt" => "Assistir Responder o questionario",
         "html" => "Responder o <strong>Questionário de Opinião sobre o Método e Tutorial Proposto</strong>
-            clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>."
+            clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>. " . $respostaUtilizaMetodo
     );
     $passosTarefa4[] = array(
         "img" => $imgFolder . "logo_enviar",
@@ -417,7 +422,7 @@
         "img" => $imgFolder . "logo_questionario",
         "alt" => "Assistir Responder o questionario",
         "html" => "Responder o <strong>Questionário de Opinião sobre o Método e Tutorial Proposto</strong>
-            clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>."
+            clicando <a href='" . $urlQuestionaioExperimento . "'' target='_blank'>aqui</a>. " . $respostaUtilizaMetodo
     );
     $passosTarefa5[] = array(
         "img" => $imgFolder . "logo_enviar",
