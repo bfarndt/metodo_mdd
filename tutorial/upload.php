@@ -7,7 +7,7 @@
             unset($nomeArq[count($nomeArq) - 1]);
             $nomeArq = implode('.', $nomeArq);
 
-            $extensaoArq = '.tarefa' . $_POST['tarefa'] . '.' . $extensaoArq;
+            $extensaoArq = '.' . time() . '.tarefa' . $_POST['tarefa'] . '.' . $extensaoArq;
 
             move_uploaded_file($arquivo['tmp_name'], $uploads_dir . '/' . $nomeArq . $extensaoArq);
         }

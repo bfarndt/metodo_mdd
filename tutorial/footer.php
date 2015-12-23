@@ -54,7 +54,8 @@
                 allowedFileExtensions: ['zip', 'rar', 'gz', 'tgz'],
                 elErrorContainer: '#errorBlock',
                 minFileCount: 1,
-                maxFileCount: 1
+                maxFileCount: 1,
+		maxFileSize: 102400
             }).on("filebatchselected", function(event, files) {
                 // trigger upload method immediately after files are selected
                 $input.fileinput("upload");
