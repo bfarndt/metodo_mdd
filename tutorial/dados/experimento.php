@@ -457,7 +457,7 @@
             "id" => "tarefa_2",
             "nome" => "Tarefa 2",
             "html" => "<p class='lead'>
-                    Criar um arquivo de configura&ccedi;&atilde;o fixo para o Banco de Dados, deixando os seguintes dados como padr&atilde;o:
+                    Criar um arquivo de configura&ccedil;&atilde;o fixo para o Banco de Dados, deixando os seguintes dados como padr&atilde;o:
                 </p>
                 <ul class='lead'>
                     <li><strong>Host</strong>: localhost;</li>
