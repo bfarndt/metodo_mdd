@@ -208,10 +208,40 @@
     );
     $passosTarefa3[] = array(
         "img" => $imgFolder . "logo_editar",
-        "alt" => "Fazer a alteracao no Template",
-        "html" => "Fazer a altera&ccedil;&atilde;o no Template. Os Templates est&atilde;o localizados no projeto <strong>Gerador</strong>,
-            na pasta <strong>templates</strong>."
+        "alt" => "Fazer a alteracao no Modelo e no C&oacute;digo-Fonte da IR",
+        "html" => "Fazer a altera&ccedil;&atilde;o no Modelo e no C&oacute;digo-Fonte da IR.
+            O Modelo est&aacute; localizado no projeto <strong>ProjetoMedicoModelo</strong>, na pasta <strong>src</strong>, arquivo <strong>entrada.dmodel</strong>.
+            Os arquivos do C&oacute;digo-Fonte da IR est&atilde;o localizados no projeto <strong>ProjetoMedicoIR</strong>, na pasta <strong>www</strong>."
     );
+    $passosTarefa3[] = array(
+        "img" => $imgFolder . "logo_teste",
+        "alt" => "Testar as modificacoes",
+        "html" => "Testar as modifica&ccedil;&otilde;es."
+    );
+    if ($experimentoAdHoc) {
+        $passosTarefa3[] = array(
+            "img" => $imgFolder . "logo_migrar",
+            "alt" => "Migrar as altera&ccedil;&otilde;es para o Template",
+            "html" => "Migrar as altera&ccedil;&otilde;es realizadas no C&oacute;digo-Fonte da IR para os Templates.
+                Os arquivos do C&oacute;digo-Fonte da IR est&atilde;o localizados no projeto <strong>ProjetoMedicoIR</strong>, na pasta <strong>www</strong>.
+                Os Templates est&atilde;o localizados no projeto <strong>gerador</strong>, na pasta <strong>templates</strong>."
+        );
+        $passosTarefa3[] = array(
+            "img" => $imgFolder . "logo_editar",
+            "alt" => "Editar o Template",
+            "html" => "No Template, fazer o IF para o Total utilizando a TAG JET <strong>&lt;c:if&gt;</strong>
+                e o nome da vari&aacute;vel a ser somada utilizar a TAG JET <strong>&lt;c:get&gt;</strong>.
+                Os Templates est&atilde;o localizados no projeto <strong>gerador</strong>, na pasta <strong>templates</strong>."
+        );
+    } else {
+        $passosTarefa3[] = array(
+            "img" => $imgFolder . "logo_editar",
+            "alt" => "Editar o Template",
+            "html" => "Desabilitar o <strong>Split JET Editor</strong>. No Template, fazer o IF para o Total utilizando a TAG JET <strong>&lt;c:if&gt;</strong>
+                e o nome da vari&aacute;vel a ser somada utilizar a TAG JET <strong>&lt;c:get&gt;</strong>.
+                Os Templates est&atilde;o localizados no projeto <strong>gerador</strong>, na pasta <strong>templates</strong>."
+        );
+    }
     $passosTarefa3[] = array(
         "img" => $imgFolder . "logo_teste",
         "alt" => "Testar as modificacoes",
@@ -351,7 +381,7 @@
                 "alt" => "Abrir o Eclipse",
                 "html" => "Conforme demonstrado no v&iacute;deo, devemos abrir a inst&acirc;ncia de edi&ccedil;&atilde;o do Modelo, Template e Implementa&ccedil;&atilde;o de Refer&ecirc;ncia (IR).
                     Caso voc&ecirc; tenha alguma d&uacute;vida, o passo-a-passo para abrir esta inst&acirc;ncia est&aacute; descrita
-                    <a href='#abrir_eclipse' class='open_dialog'>aqui</a>."
+                    <a href='#abrir_eclipse' class='open_dialog'>aqui</a>. Al&eacute;m disso, o <strong>Split JET Editor</strong> deve estar habilitado."
             )
         );
     }
@@ -362,11 +392,25 @@
     );
     $passosTarefa5[] = array(
         "img" => $imgFolder . "logo_editar",
-        "alt" => "Fazer a alteracao no Modelo e no Template",
-        "html" => "Fazer a altera&ccedil;&atilde;o no Modelo e no Template.
+        "alt" => "Fazer a alteracao no Modelo e no C&oacute;digo-Fonte da IR",
+        "html" => "Fazer a altera&ccedil;&atilde;o no Modelo e no C&oacute;digo-Fonte da IR.
             O Modelo est&aacute; localizado no projeto <strong>ProjetoMedicoModelo</strong>, na pasta <strong>src</strong>, arquivo <strong>entrada.dmodel</strong>.
-            Os Templates est&atilde;o localizados no projeto <strong>Gerador</strong>, na pasta <strong>templates</strong>."
+            Os arquivos do C&oacute;digo-Fonte da IR est&atilde;o localizados no projeto <strong>ProjetoMedicoIR</strong>, na pasta <strong>www</strong>."
     );
+    if ($experimentoAdHoc) {
+        $passosTarefa5[] = array(
+            "img" => $imgFolder . "logo_teste",
+            "alt" => "Testar as modificacoes",
+            "html" => "Testar as modifica&ccedil;&otilde;es."
+        );
+        $passosTarefa5[] = array(
+            "img" => $imgFolder . "logo_migrar",
+            "alt" => "Migrar as altera&ccedil;&otilde;es para o Template",
+            "html" => "Migrar as altera&ccedil;&otilde;es realizadas no C&oacute;digo-Fonte da IR para os Templates.
+                Os arquivos do C&oacute;digo-Fonte da IR est&atilde;o localizados no projeto <strong>ProjetoMedicoIR</strong>, na pasta <strong>www</strong>.
+                Os Templates est&atilde;o localizados no projeto <strong>gerador</strong>, na pasta <strong>templates</strong>."
+        );
+    }
     $passosTarefa5[] = array(
         "img" => $imgFolder . "logo_eclipse",
         "alt" => "Abrir o Eclipse",
@@ -403,11 +447,25 @@
     );
     $passosTarefa5[] = array(
         "img" => $imgFolder . "logo_editar",
-        "alt" => "Fazer a alteracao no Modelo e no Template",
-        "html" => "Fazer a altera&ccedil;&atilde;o no Modelo e no Template.
+        "alt" => "Fazer a alteracao no Modelo e no C&oacute;digo-Fonte da IR",
+        "html" => "Fazer a altera&ccedil;&atilde;o no Modelo e no C&oacute;digo-Fonte da IR.
             O Modelo est&aacute; localizado no projeto <strong>ProjetoMedicoModelo</strong>, na pasta <strong>src</strong>, arquivo <strong>entrada.dmodel</strong>.
-            Os Templates est&atilde;o localizados no projeto <strong>Gerador</strong>, na pasta <strong>templates</strong>."
+            Os arquivos do C&oacute;digo-Fonte da IR est&atilde;o localizados no projeto <strong>ProjetoMedicoIR</strong>, na pasta <strong>www</strong>."
     );
+    if ($experimentoAdHoc) {
+        $passosTarefa5[] = array(
+            "img" => $imgFolder . "logo_teste",
+            "alt" => "Testar as modificacoes",
+            "html" => "Testar as modifica&ccedil;&otilde;es."
+        );
+        $passosTarefa5[] = array(
+            "img" => $imgFolder . "logo_migrar",
+            "alt" => "Migrar as altera&ccedil;&otilde;es para o Template",
+            "html" => "Migrar as altera&ccedil;&otilde;es realizadas no C&oacute;digo-Fonte da IR para os Templates.
+                Os arquivos do C&oacute;digo-Fonte da IR est&atilde;o localizados no projeto <strong>ProjetoMedicoIR</strong>, na pasta <strong>www</strong>.
+                Os Templates est&atilde;o localizados no projeto <strong>gerador</strong>, na pasta <strong>templates</strong>."
+        );
+    }
     $passosTarefa5[] = array(
         "img" => $imgFolder . "logo_teste",
         "alt" => "Testar as modificacoes",
