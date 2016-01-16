@@ -95,6 +95,11 @@
 				</thead>
 				<tbody>
 					<?php
+						<c:iterate select="$currentEntity/Feature" var="currentFeature">
+							<c:if test="($currentFeature/DataType/@name = 'currency')"
+								>$total<c:get select="$currentFeature/@name" /> = 0;
+							</c:if>
+						</c:iterate>
 						foreach ($rows as $row) {
 							?>
 							<tr>
@@ -108,7 +113,12 @@
 										</c:iterate>
 									</c:if>
 									<c:if test="not($currentFeature/EntityType/entity/@name != '')">
-										<td><?php echo $row->get<c:get select="$currentFeature/@methodName" />(); ?></td>
+										<td><?php
+											echo $row->get<c:get select="$currentFeature/@methodName" />();
+											<c:if test="($currentFeature/DataType/@name = 'currency')"
+												>$total<c:get select="$currentFeature/@name" /> += $row->get<c:get select="$currentFeature/@methodName" />();
+											</c:if>
+										?></td>
 										<input type="hidden" id="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" name="<c:get select="$currentEntity/@name" />_<?php echo $row->getId(); ?>_<c:get select="$currentFeature/@name" />" value="<?php echo $row->get<c:get select="$currentFeature/@methodName" />(); ?>">
 									</c:if>
 								</c:iterate>
@@ -129,6 +139,16 @@
 							</tr>
 					<?php } ?>
 				</tbody>
+				<tfooter>
+				<td></td>
+				<c:iterate select="$currentEntity/Feature" var="currentFeature">
+					<c:if test="not($currentFeature/DataType/@name = 'currency')"
+						><td></td>
+					</c:if><c:if test="($currentFeature/DataType/@name = 'currency')"
+						><td><?php echo $total<c:get select="$currentFeature/@name" />; ?></td>
+					</c:if>
+				</c:iterate>
+				</tfooter>
 			</table>
 		</div>
 	</div>
