@@ -55,12 +55,30 @@ such as ws:file, ws:folder and ws:project
 			<ws:file template="templates/CSS/templateBootstrap-datepicker3.standalone.jet" path="bootstrap-datepicker3.standalone.css" />
 			
 			<ws:file template="templates/CSS/templateBootstrap-table.jet" path="bootstrap-table.css" />
+			<ws:file template="templates/CSS/bootstrap.css.jet" path="bootstrap.css" />
+			<ws:file template="templates/CSS/theme.css.jet" path="theme.css" />
+			<ws:file template="templates/CSS/sticky-footer-navbar.css.jet" path="sticky-footer-navbar.css" />
+			<ws:file template="templates/CSS/bootstrap.min.css.jet" path="bootstrap.min.css" />
+			<ws:file template="templates/CSS/bootstrap.css.map.jet" path="bootstrap.css.map" />
+			<ws:file template="templates/CSS/bootstrap-theme.min.css.jet" path="bootstrap-theme.min.css" />
+			<ws:file template="templates/CSS/bootstrap-theme.css.map.jet" path="bootstrap-theme.css.map" />
+			<ws:file template="templates/CSS/bootstrap-theme.css.jet" path="bootstrap-theme.css" />
 		</ws:folder>
 
 		<ws:folder path="js">
 			<ws:file template="templates/JS/templateBootstrap-datepicker.jet" path="bootstrap-datepicker.js" />
 			
 			<ws:file template="templates/JS/templateBootstrap-table.jet" path="bootstrap-table.js" />
+
+			<ws:file template="templates/JS/validator.js.jet" path="validator.js" />
+			<ws:file template="templates/JS/jquery.min.js.jet" path="jquery.min.js" />
+			<ws:file template="templates/JS/jquery.maskMoney.js.jet" path="jquery.maskMoney.js" />
+			<ws:file template="templates/JS/ie-emulation-modes-warning.js.jet" path="ie-emulation-modes-warning.js" />
+			<ws:file template="templates/JS/bootstrap.min.js.jet" path="bootstrap.min.js" />
+			<ws:file template="templates/JS/bootstrap.js.jet" path="bootstrap.js" />
+			<ws:file template="templates/JS/bootstrap-table.js.jet" path="bootstrap-table.js" />
+			<ws:file template="templates/JS/bootstrap-datepicker.js.jet" path="bootstrap-datepicker.js" />
+			<ws:file template="templates/JS/npm.js.jet" path="npm.js" />
 
 			<c:iterate select="/Domainmodel/Entity" var="currentEntity">
 				<ws:file template="templates/templateEntityJS.jet" path="{$currentEntity/@name}.js" />
