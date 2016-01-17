@@ -38,6 +38,12 @@
 
 		public function set<c:get select="$currentFeature/@methodName" />($<c:get select="$currentFeature/@name" />)
 		{
+			<c:if test="($currentFeature/DataType/@name) = 'currency'">
+				$<c:get select="$currentFeature/@name" /> = str_ireplace(".", "", $<c:get select="$currentFeature/@name" />);
+				$<c:get select="$currentFeature/@name" /> = str_ireplace(",", ".", $<c:get select="$currentFeature/@name" />);
+				$<c:get select="$currentFeature/@name" /> = str_ireplace("R$", "", $<c:get select="$currentFeature/@name" />);
+				$<c:get select="$currentFeature/@name" /> = (float) $<c:get select="$currentFeature/@name" />;
+			</c:if>
 			$this-><c:get select="$currentFeature/@name" /> = $<c:get select="$currentFeature/@name" />;
 		}
 	</c:if><c:if test="($currentFeature/EntityType/entity/@name != '') and (($currentFeature/@min > 1) or ($currentFeature/@max > 1))">
