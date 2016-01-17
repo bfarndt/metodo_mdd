@@ -153,8 +153,8 @@
 		</div>
 	</div>
 	<c:if test="($currentForm/@post = 'true')">
-		<form action="/<c:get select="$currentEntity/@name" />/save.php" method="post">
-			<div class="modal fade" id="formAdd<c:get select="$currentEntity/@name" />" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<form id="formAdd<c:get select="$currentEntity/@name" />" action="/<c:get select="$currentEntity/@name" />/save.php" method="post">
+			<div class="modal fade" id="divFformAdd<c:get select="$currentEntity/@name" />" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -167,20 +167,41 @@
 							<c:iterate select="$currentEntity/Feature" var="currentFeature">
 								<div class="input-group">
 									<c:if test="($currentFeature/DataType/@name = 'string') or ($currentFeature/DataType/@name = 'int') or ($currentFeature/DataType/@name = 'float') or ($currentFeature/DataType/@name = 'time')">
-										<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
-										<input type="text" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1">
+										<span class="input-group-addon">
+											<c:get select="$currentFeature/@name" />
+											<c:if test="($currentFeature/@required != '')">
+												<span style="color:red;">*</span>
+											</c:if>
+										</span>
+										<input type="text" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />"
+											class="form-control <c:if test="($currentFeature/@required != '')"> required</c:if>" placeholder="" aria-describedby="basic-addon1">
 									</c:if>
 									<c:if test="($currentFeature/DataType/@name = 'currency')">
-										<span class="input-group-addon"><c:get select="$currentFeature/@name" /> (R$)</span>
-										<input type="text" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1">
+										<span class="input-group-addon">
+											<c:get select="$currentFeature/@name" /> (R$)
+											<c:if test="($currentFeature/@required != '')">
+												<span style="color:red;">*</span>
+											</c:if>
+										</span>
+										<input type="text" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control <c:if test="($currentFeature/@required != '')"> required</c:if>" placeholder="" aria-describedby="basic-addon1">
 									</c:if>
 									<c:if test="($currentFeature/DataType/@name = 'date')">
-										<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
-										<input type="text" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control datepicker" placeholder="" aria-describedby="basic-addon1">
+										<span class="input-group-addon">
+											<c:get select="$currentFeature/@name" />
+											<c:if test="($currentFeature/@required != '')">
+												<span style="color:red;">*</span>
+											</c:if>
+										</span>
+										<input type="text" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control datepicker <c:if test="($currentFeature/@required != '')"> required</c:if>" placeholder="" aria-describedby="basic-addon1">
 									</c:if>
 									<c:if test="($currentFeature/DataType/@name = 'boolean')">
-										<span class="input-group-addon"><c:get select="$currentFeature/@name" /></span>
-										<input type="checkbox" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control" placeholder="" aria-describedby="basic-addon1">
+										<span class="input-group-addon">
+											<c:get select="$currentFeature/@name" />
+											<c:if test="($currentFeature/@required != '')">
+												<span style="color:red;">*</span>
+											</c:if>
+										</span>
+										<input type="checkbox" name="<c:get select="$currentFeature/@name" />" id="<c:get select="$currentFeature/@name" />" class="form-control <c:if test="($currentFeature/@required != '')"> required</c:if>" placeholder="" aria-describedby="basic-addon1">
 									</c:if>
 									<c:if test="($currentFeature/EntityType/entity/@name != '')">
 										<c:setVariable select="$currentFeature/EntityType/entity" var="currentEntityRelationship" />

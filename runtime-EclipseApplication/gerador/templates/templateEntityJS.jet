@@ -13,10 +13,23 @@ function update<c:get select="$currentEntity/@name" />(id) {
 		>$("#<c:get select="$currentFeature/@name" />").val($("#<c:get select="$currentEntity/@name" />_" + id + "_<c:get select="$currentFeature/@name" />").val());
 	</c:if></c:iterate>
 	
-	$("#formAdd<c:get select="$currentEntity/@name" />").modal();
+	$("#divFformAdd<c:get select="$currentEntity/@name" />").modal();
 
 	return true;
 }
+
+$(function() {
+	$("#formAdd<c:get select="$currentEntity/@name" />").submit(function() {
+		var sendForm = true;
+		$(".required", this).each(function() {
+			if ($(this).val().length <= 0) {
+				sendForm = false;
+			}
+		});
+		
+		return sendForm;
+	});
+});
 
 function add<c:get select="$currentEntity/@name" />() {
 	$("#id").val("");
@@ -28,7 +41,7 @@ function add<c:get select="$currentEntity/@name" />() {
 		>$("#<c:get select="$currentFeature/@name" />").val("");
 	</c:if></c:iterate>
 	
-	$("#formAdd<c:get select="$currentEntity/@name" />").modal();
+	$("#divFformAdd<c:get select="$currentEntity/@name" />").modal();
 
 	return true;
 }

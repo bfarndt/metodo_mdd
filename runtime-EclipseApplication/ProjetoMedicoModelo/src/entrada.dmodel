@@ -53,7 +53,7 @@ page PagePaciente {
 }
 
 entity Medicamento {
-	nome: string
+	required nome: string
 	fabricante: string
 	composicao: string
 	generico: boolean

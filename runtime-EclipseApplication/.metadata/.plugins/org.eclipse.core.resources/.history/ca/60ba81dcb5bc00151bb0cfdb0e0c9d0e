@@ -1,0 +1,50 @@
+
+CREATE TABLE medico
+(
+	id bigserial,
+	nome textNULL,
+	crm textNULL,
+	created_at timestamp with time zone,
+	update_at timestamp with time zone,
+	CONSTRAINT medico_pkey PRIMARY KEY (id)
+	
+);
+
+
+
+CREATE TABLE paciente
+(
+	id bigserial,
+	nome textNULL,
+	cpf textNULL,
+	data_nasc dateNULL,
+	endereco textNULL,
+	cidade textNULL,
+	estado textNULL,
+	created_at timestamp with time zone,
+	update_at timestamp with time zone,
+	CONSTRAINT paciente_pkey PRIMARY KEY (id)
+	
+);
+
+
+
+CREATE TABLE medicamento
+(
+	id bigserial,
+	nome textNULL,
+	fabricante textNULL,
+	composicao textNULL,
+	generico booleanNULL,
+	custo moneyNULL,
+	medico bigintNULL,
+	created_at timestamp with time zone,
+	update_at timestamp with time zone,
+	CONSTRAINT medicamento_pkey PRIMARY KEY (id)
+	CONSTRAINT medicamento_medico_fkey FOREIGN KEY (medico)
+			REFERENCES medico (id) MATCH SIMPLE
+			ON UPDATE NO ACTION ON DELETE NO ACTION
+	
+);
+
+

@@ -5,7 +5,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="/var/www/html/pacoteExperimento.v3/runtime-EclipseApplication"/>
+			<item value="/var/www/html/experimento/runtime-EclipseApplication"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
@@ -14,10 +14,8 @@
 	<section name="SaveAsDialogSettings">
 		<item value="613" key="DIALOG_WIDTH"/>
 		<item value="-46" key="DIALOG_Y_ORIGIN"/>
-		<item value="10" key="DIALOG_X_ORIGIN"/>
 		<item value="596" key="DIALOG_HEIGHT"/>
+		<item value="10" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-	</section>
-	<section name="NewWizardAction">
 	</section>
 </section>
