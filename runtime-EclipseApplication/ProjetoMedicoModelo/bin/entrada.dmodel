@@ -52,4 +52,28 @@ page PagePaciente {
 	FormPaciente
 }
 
+entity Medicamento {
+	nome: string
+	fabricante: string
+	composicao: string
+	generico: boolean
+	custo: currency
+	medico: Medico
+}
+
+form FormMedicamento {
+	get: true
+	post: true
+	put: true
+	delete: true
+	Medicamento
+}
+
+page PageMedicamento {
+	title: 'Cadastro de Medicamento'
+	header: true
+	footer: true
+	FormMedicamento
+}
+
 end
