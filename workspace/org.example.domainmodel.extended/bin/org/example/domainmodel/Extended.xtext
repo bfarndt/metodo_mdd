@@ -54,7 +54,7 @@ Entity:
 ;
 
 Feature:
-	(min=INT '..' max=INT)? name = ID ':' type = AbstractType
+	(required='required')? (min=INT '..' max=INT)? name = ID ':' type = AbstractType
 ;
 
 Boolean:
