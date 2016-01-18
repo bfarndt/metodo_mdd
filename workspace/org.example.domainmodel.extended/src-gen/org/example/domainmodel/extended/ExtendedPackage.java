@@ -309,13 +309,22 @@ public interface ExtendedPackage extends EPackage
   int FEATURE = 8;
 
   /**
+   * The feature id for the '<em><b>Required</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE__REQUIRED = 0;
+
+  /**
    * The feature id for the '<em><b>Min</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE__MIN = 0;
+  int FEATURE__MIN = 1;
 
   /**
    * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -324,7 +333,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE__MAX = 1;
+  int FEATURE__MAX = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -333,7 +342,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE__NAME = 2;
+  int FEATURE__NAME = 3;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -342,7 +351,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE__TYPE = 3;
+  int FEATURE__TYPE = 4;
 
   /**
    * The number of structural features of the '<em>Feature</em>' class.
@@ -351,7 +360,7 @@ public interface ExtendedPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_FEATURE_COUNT = 4;
+  int FEATURE_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.example.domainmodel.extended.impl.PageImpl <em>Page</em>}' class.
@@ -830,6 +839,17 @@ public interface ExtendedPackage extends EPackage
   EClass getFeature();
 
   /**
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.Feature#getRequired <em>Required</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Required</em>'.
+   * @see org.example.domainmodel.extended.Feature#getRequired()
+   * @see #getFeature()
+   * @generated
+   */
+  EAttribute getFeature_Required();
+
+  /**
    * Returns the meta object for the attribute '{@link org.example.domainmodel.extended.Feature#getMin <em>Min</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1269,6 +1289,14 @@ public interface ExtendedPackage extends EPackage
      * @generated
      */
     EClass FEATURE = eINSTANCE.getFeature();
+
+    /**
+     * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FEATURE__REQUIRED = eINSTANCE.getFeature_Required();
 
     /**
      * The meta object literal for the '<em><b>Min</b></em>' attribute feature.

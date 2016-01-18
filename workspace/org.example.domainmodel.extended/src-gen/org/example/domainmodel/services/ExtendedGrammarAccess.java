@@ -349,57 +349,65 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	public class FeatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Feature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
-		private final Assignment cMinAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cMinINTTerminalRuleCall_0_0_0 = (RuleCall)cMinAssignment_0_0.eContents().get(0);
-		private final Keyword cFullStopFullStopKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cMaxAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cMaxINTTerminalRuleCall_0_2_0 = (RuleCall)cMaxAssignment_0_2.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTypeAbstractTypeParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		private final Assignment cRequiredAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cRequiredRequiredKeyword_0_0 = (Keyword)cRequiredAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cMinAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cMinINTTerminalRuleCall_1_0_0 = (RuleCall)cMinAssignment_1_0.eContents().get(0);
+		private final Keyword cFullStopFullStopKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cMaxAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cMaxINTTerminalRuleCall_1_2_0 = (RuleCall)cMaxAssignment_1_2.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTypeAbstractTypeParserRuleCall_4_0 = (RuleCall)cTypeAssignment_4.eContents().get(0);
 		
 		//Feature:
-		//	(min=INT ".." max=INT)? name=ID ":" type=AbstractType;
+		//	required="required"? (min=INT ".." max=INT)? name=ID ":" type=AbstractType;
 		public ParserRule getRule() { return rule; }
 
-		//(min=INT ".." max=INT)? name=ID ":" type=AbstractType
+		//required="required"? (min=INT ".." max=INT)? name=ID ":" type=AbstractType
 		public Group getGroup() { return cGroup; }
 
+		//required="required"?
+		public Assignment getRequiredAssignment_0() { return cRequiredAssignment_0; }
+
+		//"required"
+		public Keyword getRequiredRequiredKeyword_0_0() { return cRequiredRequiredKeyword_0_0; }
+
 		//(min=INT ".." max=INT)?
-		public Group getGroup_0() { return cGroup_0; }
+		public Group getGroup_1() { return cGroup_1; }
 
 		//min=INT
-		public Assignment getMinAssignment_0_0() { return cMinAssignment_0_0; }
+		public Assignment getMinAssignment_1_0() { return cMinAssignment_1_0; }
 
 		//INT
-		public RuleCall getMinINTTerminalRuleCall_0_0_0() { return cMinINTTerminalRuleCall_0_0_0; }
+		public RuleCall getMinINTTerminalRuleCall_1_0_0() { return cMinINTTerminalRuleCall_1_0_0; }
 
 		//".."
-		public Keyword getFullStopFullStopKeyword_0_1() { return cFullStopFullStopKeyword_0_1; }
+		public Keyword getFullStopFullStopKeyword_1_1() { return cFullStopFullStopKeyword_1_1; }
 
 		//max=INT
-		public Assignment getMaxAssignment_0_2() { return cMaxAssignment_0_2; }
+		public Assignment getMaxAssignment_1_2() { return cMaxAssignment_1_2; }
 
 		//INT
-		public RuleCall getMaxINTTerminalRuleCall_0_2_0() { return cMaxINTTerminalRuleCall_0_2_0; }
+		public RuleCall getMaxINTTerminalRuleCall_1_2_0() { return cMaxINTTerminalRuleCall_1_2_0; }
 
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
 		//":"
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 
 		//type=AbstractType
-		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
+		public Assignment getTypeAssignment_4() { return cTypeAssignment_4; }
 
 		//AbstractType
-		public RuleCall getTypeAbstractTypeParserRuleCall_3_0() { return cTypeAbstractTypeParserRuleCall_3_0; }
+		public RuleCall getTypeAbstractTypeParserRuleCall_4_0() { return cTypeAbstractTypeParserRuleCall_4_0; }
 	}
 
 	public class BooleanElements extends AbstractParserRuleElementFinder {
@@ -967,7 +975,7 @@ public class ExtendedGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Feature:
-	//	(min=INT ".." max=INT)? name=ID ":" type=AbstractType;
+	//	required="required"? (min=INT ".." max=INT)? name=ID ":" type=AbstractType;
 	public FeatureElements getFeatureAccess() {
 		return pFeature;
 	}
