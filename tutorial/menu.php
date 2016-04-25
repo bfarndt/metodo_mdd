@@ -1,10 +1,10 @@
 <?php
-    $urlPacoteExperimento = "https://www.dropbox.com/s/wecq4t44rwumv93/experimento.zip?dl=0";
+    $urlPacoteExperimento = "http://www.mediafire.com/download/cay39cy3ra0mnig/experimento.zip";
     $urlQuestionaioExperimento = "http://goo.gl/forms/YC3ReZ6z2P";
     $urlFerramentaKanban = "http://arndt-server.ddns.net:8080/metodo_mdd/ferramenta/";
-    $urlMaquinaVirtual = "https://www.dropbox.com/sh/jb9ha4eb6atmx1u/AADtQ3paRPRTxbWAV6TijdL2a?dl=0";
-    $urlVirtualBox = "https://www.dropbox.com/s/fn9v5i6b6dn826u/VirtualBox-5.0.10-104061-Win.exe?dl=0";
-    $urlUbuntu1404LTS = "https://www.dropbox.com/s/hz14hkoe1hsptm4/ubuntu-14.04.2-desktop-amd64.iso?dl=0";
+    $urlMaquinaVirtual = "https://www.mediafire.com/folder/vr1864m3c1v53/vm_experimento_modelo";
+    $urlVirtualBox = "http://www.mediafire.com/download/99nnks6dd74xvi8/VirtualBox-5.0.10-104061-Win.exe";
+    $urlUbuntu1404LTS = "http://www.mediafire.com/download/0wcj7bs90afeska/ubuntu-14.04.2-desktop-amd64.iso";
 
     $path = $_SERVER["SCRIPT_NAME"];
     $path = explode("/", $path);
@@ -29,8 +29,8 @@
         unset($menu["/ferramenta_perini.php"]);
         unset($menu["/metodo.php"]);
 
-        $urlPacoteExperimento = "https://www.dropbox.com/s/cuyaqupdgyx0cwe/experimento_adhoc.zip?dl=0";
-        $urlMaquinaVirtual = "https://www.dropbox.com/sh/02ohnhepqy8hyuf/AAC3-VHAmhDFzRoamkZQFht-a?dl=0";
+        $urlPacoteExperimento = "http://www.mediafire.com/download/zhse07rfxsfgrtu/experimento_adhoc.zip";
+        $urlMaquinaVirtual = "https://www.mediafire.com/folder/bfgx7v9v966j6/vm_experimento_ad_hoc";
     }
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
