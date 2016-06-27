@@ -54,12 +54,13 @@ INSERT INTO passos_metodo(nome, tipo) VALUES('Tentar modificar o Modelo de acord
 INSERT INTO passos_metodo(nome, tipo) VALUES('Tentar executar novamente a transforma&ccedil;&atilde;o.', 'model');
 INSERT INTO passos_metodo(nome, tipo) VALUES('Testar as modifica&ccedil;&otilde;es.', 'model');
 
-INSERT INTO passos_metodo(nome, tipo) VALUES('Utilizando o "Split JET Editor", abrir os templates correspondentes, deixando-os em uma view e os arquivos da IR em outra.', 'criacao');
-INSERT INTO passos_metodo(nome, tipo) VALUES('Criar / Editar os arquivos utilizando o "Split JET Editor"', 'criacao');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Desabilitar o "Split JET Editor".', 'criacao');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Criar / Editar os arquivos.', 'criacao');
 INSERT INTO passos_metodo(nome, tipo) VALUES('Testar as modifica&ccedil;&otilde;es.', 'criacao');
 
-INSERT INTO passos_metodo(nome, tipo) VALUES('Refazer o deploy do Metamodelo', 'dsl');
-INSERT INTO passos_metodo(nome, tipo) VALUES('Tentar modificar o Modelo de acordo com as necessidades da tarefa e seguindo as defini&ccedil;&otilde;es do Metamodelo.', 'dsl');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Tentar modificar o Metamodelo e sua DSL.', 'dsl');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Refazer o deploy do Metamodelo.', 'dsl');
+INSERT INTO passos_metodo(nome, tipo) VALUES('Tentar modificar o Modelo de acordo com as necessidades da tarefa e seguindo as novas defini&ccedil;&otilde;es do Metamodelo.', 'dsl');
 INSERT INTO passos_metodo(nome, tipo) VALUES('Tentar executar novamente a transforma&ccedil;&atilde;o.', 'dsl');
 INSERT INTO passos_metodo(nome, tipo) VALUES('Testar as modifica&ccedil;&otilde;es.', 'dsl');
 

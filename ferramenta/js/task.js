@@ -460,7 +460,7 @@ $(function() {
         $(btnEditTarefa).button('reset');
     });
 
-    $(".sub_task_model, .sub_task_dsl, .sub_task_template").on("click", function() {
+    $(".sub_task_model, .sub_task_dsl, .sub_task_template, .sub_task_criacao").on("click", function() {
         var taskDone;
         var tarefaId = $("span", this).data("tarefa");
         var passoId = $("span", this).data("passo");

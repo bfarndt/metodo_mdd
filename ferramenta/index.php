@@ -299,7 +299,7 @@
                                         <div id="dvInputTemplate" class="row">
                                             <div class="col-lg-9">
                                                 <div class="input-group">
-                                                    <label>A tarefa engloba a manuten&ccedil;&atilde;o dos templates?</label>
+                                                    <label>A tarefa engloba a manuten&ccedil;&atilde;o da IR e/ou dos templates?</label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-1">
